@@ -1,4 +1,3 @@
-import React from 'react'
 import dialogStyles from '../Dialog.module.scss'
 import styles from './LoadingDialog.module.scss'
 
@@ -11,7 +10,7 @@ interface LoadingDialogProps {
 export const LoadingDialog = ({
   colorTheme = 'light',
   title,
-  message
+  message,
 }: LoadingDialogProps) => {
 
   return (

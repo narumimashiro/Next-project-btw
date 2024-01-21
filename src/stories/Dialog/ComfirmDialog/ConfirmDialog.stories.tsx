@@ -1,35 +1,11 @@
-# StoryBook Component Template
-
-## Template.tsx
-
-```ts
-import React from 'react'
-import './template.scss'
-
-interface TemplateProps {
-
-}
-
-export const Template = ({
-
-}: TemplateProps) => {
-
-  return (
-    <></>
-  )
-}
-```
-
-## Template.stories.ts
-
-```ts
 import type { Meta, StoryObj } from '@storybook/react'
+import React from 'react'
 
-import { Template } from './Template'
+import { ConfirmDialog } from './ConfirmDialog'
 
 const meta = {
-  title: 'BTW-Custom/Template',
-  component: Template,
+  title: 'BTW-Custom/Dialog/ConfirmDialog',
+  component: ConfirmDialog,
   parameters: {
     layout: 'centered',
     backgrounds: {
@@ -49,17 +25,28 @@ const meta = {
       }
     },
   }
-} satisfies Meta<typeof Template>
+} satisfies Meta<typeof ConfirmDialog>
 
 export default meta
 type Story = StoryObj<typeof meta>
+
+// component
+const ArgsComponent = () => {
+  return (
+    <p>You can make changes after confirm</p>
+  )
+}
 
 export const Light: Story = {
   parameters: {
     backgrounds: { default: 'light' }
   },
   args: {
-
+    title: 'Is this content okay?',
+    children: <ArgsComponent />,
+    colorTheme: 'light',
+    buttonString: 'OK',
+    ariaLabel: 'Is this content okay?',
   }
 }
 
@@ -68,7 +55,10 @@ export const Dark: Story = {
     backgrounds: { default: 'dark' }
   },
   args: {
-    
+    title: 'Is this content okay?',
+    children: <ArgsComponent />,
+    colorTheme: 'dark',
+    buttonString: 'OK',
+    ariaLabel: 'Is this content okay?',
   }
 }
-```
