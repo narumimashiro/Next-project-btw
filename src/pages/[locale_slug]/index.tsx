@@ -2,14 +2,14 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
 
 // hooks
-import { VALID_LOCALE } from '@/hooks/useLocaleSlug'
+import { language } from '@/locales/config'
 
 // MyComponents
-import Meta from '@/components/Meta'
+import Meta from '@/components/meta'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = VALID_LOCALE.map(locale => ({
-    params: {locale_slug: locale}
+  const paths = language.map(locale => ({
+    params: { locale_slug: locale }
   }))
 
   return {
