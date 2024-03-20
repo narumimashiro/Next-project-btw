@@ -1,13 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
 
-// hooks
-import { language } from '@/locales/config'
-
 // MyComponents
 import Meta from '@/components/meta'
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const { language }: { language: string[] } = require('@/locales/config')
   const paths = language.map(locale => ({
     params: { locale_slug: locale }
   }))
@@ -34,7 +32,7 @@ const MainPage = () => {
 
   return (
     <>
-      <Meta pageTitle={t('STRID_cmn_pagetitle').replace('{var}', 'Top')} />
+      <Meta pageTitle={t('STRID_cmn_pagetitle').replace('{var}', t('TEMP_Top'))} />
     </>
   )
 }

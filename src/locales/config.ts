@@ -4,7 +4,7 @@ const { initReactI18next } = require('react-i18next')
 const t_ja = require('./i18n/ja.json')
 const t_en = require('./i18n/en.json')
 
-export const language = [
+const language = [
   'ja-jp',
   'en-us'
 ]
@@ -27,3 +27,7 @@ i18n
       escpeValue: false
     }
   })
+
+module.exports = {
+  language
+}
