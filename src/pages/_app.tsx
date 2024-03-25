@@ -1,23 +1,17 @@
 import type { AppProps } from 'next/app'
 import { useEffect } from 'react'
-
-// Recoil
 import { RecoilRoot } from 'recoil'
-
-// hooks
-import { useLocaleSlug, I18NEXT_LOCALE } from '@/hooks/useLocaleSlug'
-
-// MyComponents
-import Layout from '@/components/layout'
-
-// i18next
 import { appWithTranslation, useTranslation } from 'next-i18next'
 import '@/locales/config'
 
-// Styles
-import '@/styles/globals.sass'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
+
+import '@/styles/globals.sass'
+
+import Layout from '@/components/layout'
+
+import { useLocaleSlug, I18NEXT_LOCALE } from '@/hooks/useLocaleSlug'
 import { useThemeStyle } from '@/hooks/useThemeStyle'
 
 const lightTheme = createTheme({
