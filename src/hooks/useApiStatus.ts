@@ -6,10 +6,10 @@
 import { useState, useCallback } from 'react'
 
 export const API_STATUS = {
-  IDLE: 'Idle',
-  LOADING: 'Loading',
-  SUCCESS: 'Success',
-  FAILED: 'Failed'
+  IDLE: 'API_FETCH_IDLE',
+  LOADING: 'API_FETCH_LOADING',
+  SUCCESS: 'API_FETCH_SUCCESS',
+  FAILED: 'API_FETCH_FAILED'
 } as const
 
 type AptStatusType = typeof API_STATUS[keyof typeof API_STATUS]
