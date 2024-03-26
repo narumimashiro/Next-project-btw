@@ -17,6 +17,51 @@
     ],
     "no-console": "error",
     "@next/next/no-img-element": "off",
-    "unused-imports/no-unused-imports": "error"
+    "unused-imports/no-unused-imports": "error",
+    "import/order": ["error", {
+      "groups": ["builtin", "external", "internal"],
+      "pathGroups": [
+        {
+          "pattern": "next/**",
+          "group": "external",
+          "position": "before"
+        },
+        {
+          "pattern": "react",
+          "group": "external",
+          "position": "before"
+        },
+        {
+          "pattern": "recoil",
+          "group": "external",
+          "position": "before"
+        },
+        {
+          "pattern": "@mui/**",
+          "group": "external",
+          "position": "before"
+        },
+        {
+          "pattern": "@/styles/**",
+          "group": "internal"
+        },
+        {
+          "pattern": "@/components/**",
+          "group": "internal"
+        },
+        {
+          "pattern": "@/recoil/**",
+          "group": "internal"
+        },
+        {
+          "pattern": "@/hooks/**",
+          "group": "internal"
+        },
+        {
+          "pattern": "@/libs/**",
+          "group": "internal"
+        }
+      ]
+    }]
   }
 }
