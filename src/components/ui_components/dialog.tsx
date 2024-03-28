@@ -16,10 +16,10 @@ const Dialog = ({
   colorTheme = 'light'
 }: DialogProps) => {
 
-  const dialogVisible = open ? 'dialog-visible' : 'dialog-hidden'
+  const displayDialog = open ? 'dialog-visible' : 'dialog-hidden'
 
   return (
-    <div className={styles[dialogVisible]}>
+    <div className={styles[displayDialog]}>
       <div className={styles[`overlay-${colorTheme}`]}>
         <div className={`absolute-center ${styles[`dialog-${colorTheme}`]}`}>
           { children }
