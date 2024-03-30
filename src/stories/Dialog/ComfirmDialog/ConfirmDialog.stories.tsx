@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
+import React, { useState } from 'react'
 
 import { ConfirmDialog } from './ConfirmDialog'
 
@@ -9,56 +9,92 @@ const meta = {
   parameters: {
     layout: 'centered',
     backgrounds: {
-      default: 'light',
       values: [
-        {name: 'light', value: '#FFFFFF'},
-        {name: 'dark', value: '#000000'}
+        { name: 'light', value: '#FFFFFF' },
+        { name: 'dark', value: '#333333' }
       ]
     }
   },
-  tags: ['autodocs'],
+  args: {
+    children: <></>,
+  },
   argTypes: {
-    colorTheme: {
-      control: {
-        type: 'radio',
-        options: ['light', 'dark']
-      }
-    },
-  }
+    open: { control: false },
+    colorTheme: { control: false },
+    children: { table: { disable: true }},
+    onConfirm: { control: false },
+  },
 } satisfies Meta<typeof ConfirmDialog>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-// component
-const ArgsComponent = () => {
-  return (
-    <p>You can make changes after confirm</p>
-  )
-}
-
 export const Light: Story = {
-  parameters: {
-    backgrounds: { default: 'light' }
+  render: (args) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [isOpen, setIsOpen] = useState(false)
+
+    return (
+      <div>
+        <button onClick={() => setIsOpen(true)}>{args.buttonString || 'Open Dialog'}</button>
+        <ConfirmDialog
+          open={isOpen}
+          title={args.title || 'Confirm Dialog'}
+          colorTheme='light'
+          onConfirm={() => setIsOpen(false)}
+        >
+          <span>This is a dialog</span>
+          <span>Click the button below to close.</span>
+        </ConfirmDialog>
+      </div>
+    )
   },
   args: {
-    title: 'Is this content okay?',
-    children: <ArgsComponent />,
+    open: true,
     colorTheme: 'light',
-    buttonString: 'OK',
-    ariaLabel: 'Is this content okay?',
-  }
-}
+    title: 'Confirm Dialog',
+    buttonString: 'Open Dialog',
+    ariaLabel: 'Confirm OK',
+    onConfirm: () => {}
+  },
+  parameters: {
+    backgrounds: {
+      default: 'light'
+    },
+  },
+};
 
 export const Dark: Story = {
-  parameters: {
-    backgrounds: { default: 'dark' }
+  render: (args) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [isOpen, setIsOpen] = useState(false)
+
+    return (
+      <div>
+        <button onClick={() => setIsOpen(true)}>{args.buttonString || 'Open Dialog'}</button>
+        <ConfirmDialog
+          open={isOpen}
+          title={args.title || 'Confirm Dialog'}
+          colorTheme='dark'
+          onConfirm={() => setIsOpen(false)}
+        >
+          <span>This is a dialog</span>
+          <span>Click the button below to close.</span>
+        </ConfirmDialog>
+      </div>
+    )
   },
   args: {
-    title: 'Is this content okay?',
-    children: <ArgsComponent />,
+    open: true,
     colorTheme: 'dark',
-    buttonString: 'OK',
-    ariaLabel: 'Is this content okay?',
-  }
-}
+    title: 'Confirm Dialog',
+    buttonString: 'Open Dialog',
+    ariaLabel: 'Confirm OK',
+    onConfirm: () => {}
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    },
+  },
+};

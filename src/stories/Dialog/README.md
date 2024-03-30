@@ -1,3 +1,26 @@
+# Dialogのカスタムコンポーネント作成にあたって
+
+### DialogのWrapコンポーネント
+
+```Ts
+const displayDialog = open ? 'dialog-visible' : 'dialog-hidden'
+
+return (
+  <div className={styles[displayDialog]}>
+    <div className={styles[`overlay-${colorTheme}`]}>
+      <div className={`absolute-center ${styles[`dialog-${colorTheme}`]}`}>
+
+      </div>
+    </div>
+  </div>
+)
+```
+
+### Dialogの共通スタイル
+
+上記ラップコンポーネントのスタイリング
+
+```scss
 // dialog common style
 
 $border-radius-px: 4px;
@@ -43,37 +66,4 @@ $border-radius-px: 4px;
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   box-shadow: 0px 6px 9px -5px rgba(255,255,255,0.5), 0px 12px 17px 2px rgba(255,255,255,0.34), 0px 5px 25px 4px rgba(255,255,255,0.32);
 }
-
-.horizon-light {
-  border-top: 1px solid rgba(0, 0, 0, 0.5);
-  width: 100%;
-  margin: 0;
-}
-
-.horizon-dark {
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  width: 100%;
-  margin: 0;
-}
-
-.contentsWrap {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-
-  .title {
-    margin: 0
-  }
-}
-
-.button-radius {
-  border-bottom-left-radius: $border-radius-px;
-  border-bottom-right-radius: $border-radius-px;
-}
-
-.confirmButton {
-  width: 100%;
-  height: 30px;
-  @extend .button-radius;
-}
-
+```

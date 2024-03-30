@@ -16,7 +16,7 @@ const preview: Preview = {
     (Story) => (
       <div style={{
         minWidth: '390px',
-        width: '39vw',
+        width: '50vw',
         minHeight: '250px',
         height: '39svh'
       }}
