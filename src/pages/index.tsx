@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next'
 
 // MyComponents
-import Meta from "@/components/Meta"
+import Meta from "@/components/meta"
 
 const Home = () => {
 
