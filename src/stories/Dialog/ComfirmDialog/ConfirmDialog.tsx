@@ -1,8 +1,7 @@
-import globalStyle from '../../Global.module.scss'
-import dialogStyles from '../Dialog.module.scss'
 import styles from './ConfirmDialog.module.scss'
 
-interface ConfirmDialogProps {
+export interface ConfirmDialogProps {
+  open: boolean
   title: string
   children: React.ReactNode
   colorTheme?: 'light' | 'dark'
@@ -12,6 +11,7 @@ interface ConfirmDialogProps {
 }
 
 export const ConfirmDialog = ({
+  open,
   title,
   children,
   colorTheme = 'light',
@@ -20,23 +20,23 @@ export const ConfirmDialog = ({
   onConfirm
 }: ConfirmDialogProps) => {
 
+  const displayDialog = open ? 'dialog-visible' : 'dialog-hidden'
+
   return (
-    <div className={dialogStyles[`dialog-${colorTheme}`]}>
-      <div className={styles.wrapDialog}>
-        <div className={styles.container}>
-          <h2 className={styles.title}>{title}</h2>
-          <div className={`${styles.content} ${globalStyle['invisible-scroll']}`}>
-            {children}
+    <div className={styles[displayDialog]}>
+      <div className={styles[`overlay-${colorTheme}`]}>
+        <div className={`absolute-center ${styles[`dialog-${colorTheme}`]}`}>
+          <div className={styles.contentsWrap}>
+            <h2 className={`text-2xl-bold ${styles.title}`}>{title}</h2>
+            { children }
           </div>
-        </div>
-        <div className={styles.confirm}>
-          <div className={globalStyle[`webHorizon-${colorTheme}`]}/>
+          <div className={styles[`horizon-${colorTheme}`]}></div>
           <button
-            className={`${globalStyle[`button-${colorTheme}`]} ${styles.confirmButton}`}
+            className={`${`button-active-${colorTheme}`} ${styles.confirmButton}`}
             aria-label={ariaLabel}
             onClick={onConfirm}
           >
-            {buttonString}
+            { buttonString }
           </button>
         </div>
       </div>
