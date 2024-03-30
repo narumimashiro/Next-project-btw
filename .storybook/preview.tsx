@@ -1,6 +1,6 @@
 import React from 'react';
-
-import { Preview } from '@storybook/react';
+import { Preview } from '@storybook/react'
+import '@/styles/globals.sass'
 
 const preview: Preview = {
   parameters: {
@@ -27,4 +27,4 @@ const preview: Preview = {
   ],
 };
 
-export default preview;
+export default preview
