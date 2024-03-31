@@ -71,10 +71,17 @@ $border-radius-px: 4px;
   border-bottom-right-radius: $border-radius-px;
 }
 
-.confirmButton {
+.bottomButton {
+  position: absolute;
+  bottom: 0;
   width: 100%;
   height: 30px;
   @extend .button-radius;
+
+  button {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .containerWrap {
