@@ -16,7 +16,6 @@ const meta = {
       ]
     }
   },
-  tags: ['autodocs'],
   args: {
     apiStatus: API_STATUS.IDLE,
     resetApiState: () => {}
@@ -182,6 +181,7 @@ export const SuccessDark: Story = {
     backgrounds: {
       default: 'dark'
     },
+    theme: 'dark'
   },
 }
 
@@ -306,5 +306,6 @@ export const FailedDark: Story = {
     backgrounds: {
       default: 'dark'
     },
+    theme: 'dark'
   },
 }
