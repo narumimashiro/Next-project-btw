@@ -15,7 +15,9 @@ const meta = {
       ]
     }
   },
+  // tags: ['autodocs'],
   args: {
+    open: true,
     children: <></>,
   },
   argTypes: {
@@ -36,11 +38,12 @@ export const Light: Story = {
 
     return (
       <div>
-        <button onClick={() => setIsOpen(true)}>{args.buttonString || 'Open Dialog'}</button>
+        <button onClick={() => setIsOpen(true)}>Open Dialog</button>
         <ConfirmDialog
           open={isOpen}
-          title={args.title || 'Confirm Dialog'}
+          title={args.title}
           colorTheme='light'
+          buttonString={args.buttonString}
           onConfirm={() => setIsOpen(false)}
         >
           <span>This is a dialog</span>
@@ -50,19 +53,17 @@ export const Light: Story = {
     )
   },
   args: {
-    open: true,
     colorTheme: 'light',
     title: 'Confirm Dialog',
-    buttonString: 'Open Dialog',
+    buttonString: 'OK',
     ariaLabel: 'Confirm OK',
-    onConfirm: () => {}
   },
   parameters: {
     backgrounds: {
       default: 'light'
     },
   },
-};
+}
 
 export const Dark: Story = {
   render: (args) => {
@@ -71,11 +72,12 @@ export const Dark: Story = {
 
     return (
       <div>
-        <button onClick={() => setIsOpen(true)}>{args.buttonString || 'Open Dialog'}</button>
+        <button onClick={() => setIsOpen(true)}>Open Dialog</button>
         <ConfirmDialog
           open={isOpen}
-          title={args.title || 'Confirm Dialog'}
+          title={args.title}
           colorTheme='dark'
+          buttonString={args.buttonString}
           onConfirm={() => setIsOpen(false)}
         >
           <span>This is a dialog</span>
@@ -85,16 +87,14 @@ export const Dark: Story = {
     )
   },
   args: {
-    open: true,
     colorTheme: 'dark',
     title: 'Confirm Dialog',
-    buttonString: 'Open Dialog',
+    buttonString: 'OK',
     ariaLabel: 'Confirm OK',
-    onConfirm: () => {}
   },
   parameters: {
     backgrounds: {
       default: 'dark'
     },
   },
-};
+}

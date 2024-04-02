@@ -1,6 +1,19 @@
 import React from 'react';
 import { Preview } from '@storybook/react'
 import '@/styles/globals.sass'
+import { ThemeProvider, createTheme } from '@mui/material/styles'
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+})
+
+const lightTheme = createTheme({
+  palette: {
+    mode: 'light',
+  },
+})
 
 const preview: Preview = {
   parameters: {
@@ -13,17 +26,24 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story) => (
-      <div style={{
-        minWidth: '390px',
-        width: '50vw',
-        minHeight: '250px',
-        height: '39svh'
-      }}
-      >
-        <Story />
-      </div>
-    ),
+    (Story, context) => {
+      
+      const theme = context.parameters.theme === 'dark' ? darkTheme : lightTheme
+
+      return (
+        <ThemeProvider theme={theme}>
+          <div style={{
+            minWidth: '390px',
+            width: '50vw',
+            minHeight: '250px',
+            height: '39svh'
+          }}
+          >
+            <Story />
+          </div>
+        </ThemeProvider>
+      )
+    },
   ],
 };
 
