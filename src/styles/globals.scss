@@ -48,10 +48,12 @@
 }
 
 // Static values
-$light-hover-color: #EEEEEE;
-$dark-hover-color: #252525;
-$light-disabled-text-color: #C0C0C0;
-$dark-disabled-text-color: #555555;
+:root {
+  --light-hover-color: #EEEEEE;
+  --dark-hover-color: #333333;
+  --light-disabled-text-color: #C0C0C0;
+  --dark-disabled-text-color: #555555;
+}
 
 // Common styles
 .flex-center {
@@ -114,14 +116,13 @@ $dark-disabled-text-color: #555555;
   @extend .button-light;
   &:hover,
   &:focus {
-    background-color: $light-hover-color;
+    background-color: var(--light-hover-color);
   }
-}
-
-.button-disabled-light {
-  color: $light-disabled-text-color;
-  background-color: #FFFFFF;
-  border: 2px solid $light-disabled-text-color;
+  &:disabled {
+    color: var(--light-disabled-text-color);
+    background-color: #FFFFFF;
+    border: 2px solid var(--light-disabled-text-color);
+  }
 }
 
 .button-dark {
@@ -134,12 +135,11 @@ $dark-disabled-text-color: #555555;
   @extend .button-dark;
   &:hover,
   &:focus {
-    background-color: $dark-hover-color;
+    background-color: var(--dark-hover-color);
   }
-}
-
-.button-disabled-dark {
-  color: $dark-disabled-text-color;
-  background-color: #000000;
-  border: 2px solid $dark-disabled-text-color;
+  &:disabled {
+    color: var(--dark-disabled-text-color);
+    background-color: #000000;
+    border: 2px solid var(--dark-disabled-text-color);
+  }
 }
