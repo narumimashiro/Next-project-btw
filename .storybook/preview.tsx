@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 import { Preview } from '@storybook/react'
-import '@/styles/globals.sass'
+import '@/styles/globals.scss'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 
 const darkTheme = createTheme({
@@ -36,7 +36,10 @@ const preview: Preview = {
             minWidth: '390px',
             width: '50vw',
             minHeight: '250px',
-            height: '39svh'
+            height: '39svh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
           }}
           >
             <Story />
@@ -45,6 +48,6 @@ const preview: Preview = {
       )
     },
   ],
-};
+}
 
 export default preview

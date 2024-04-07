@@ -1,0 +1,32 @@
+.strong-button {
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.strongButton-light {
+  color: #FFFFFF;
+  background-color: #000000;
+  border: 2px solid #000000;
+  @extend .strong-button;
+  &:hover {
+    background-color: var(--dark-hover-color);
+  }
+  &:disabled {
+    color: var(--dark-disabled-text-color);
+    background-color: #000000;
+  }
+}
+
+.strongButton-dark {
+  color: #000000;
+  background-color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  @extend .strong-button;
+  &:hover {
+    background-color: var(--light-hover-color);
+  }
+  &:disabled {
+    color: var(--light-disabled-text-color);
+    background-color: #FFFFFF;
+  }
+}
