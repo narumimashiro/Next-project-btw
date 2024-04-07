@@ -1,7 +1,7 @@
 import React from 'react'
-import styles from './BasicButton.module.scss'
+import styles from './StrongButton.module.scss'
 
-export type BasicButtonProps = {
+export type StrongButtonProps = {
   className?: string
   children?: React.ReactNode
   colorTheme?: 'light' | 'dark'
@@ -9,18 +9,18 @@ export type BasicButtonProps = {
   onClick: () => void
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
-export const BasicButton = ({
+export const StrongButton = ({
   className,
   colorTheme = 'light',
   children,
   disabled,
   onClick,
   ...buttonProps
-}: BasicButtonProps) => {
+}: StrongButtonProps) => {
 
   return (
     <button
-      className={`${styles[`basicButton-${colorTheme}`]} ${className}`}
+      className={`${styles[`strongButton-${colorTheme}`]}${className}`}
       disabled={disabled}
       onClick={onClick}
       {...buttonProps}
