@@ -7,7 +7,7 @@ import '@/locales/config'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 
-import '@/styles/globals.sass'
+import '@/styles/globals.scss'
 
 import Layout from '@/components/layout'
 
