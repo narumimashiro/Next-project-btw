@@ -1,0 +1,34 @@
+.basic-button {
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.basicButton-light {
+  color: #000000;
+  background-color: #FFFFFF;
+  border: 2px solid #000000;
+  @extend .basic-button;
+  &:hover {
+    background-color: var(--light-hover-color);
+  }
+  &:disabled {
+    color: var(--light-disabled-text-color);
+    background-color: #FFFFFF;
+    border: 2px solid var(--light-disabled-text-color);
+  }
+}
+
+.basicButton-dark {
+  color: #FFFFFF;
+  background-color: #000000;
+  border: 2px solid #FFFFFF;
+  @extend .basic-button;
+  &:hover {
+    background-color: var(--dark-hover-color);
+  }
+  &:disabled {
+    color: var(--dark-disabled-text-color);
+    background-color: #000000;
+    border: 2px solid var(--dark-disabled-text-color);
+  }
+}

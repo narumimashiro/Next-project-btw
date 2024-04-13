@@ -1,74 +1,43 @@
 # StoryBook Component Template
 
-## Template.tsx
+## Template.stories.tsx
 
-```ts
-import React from 'react'
-import './template.scss'
-
-interface TemplateProps {
-
-}
-
-export const Template = ({
-
-}: TemplateProps) => {
-
-  return (
-    <></>
-  )
-}
-```
-
-## Template.stories.ts
-
-```ts
+```tsx
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Template } from './Template'
+import { BasicButton, BasicButtonProps } from './BasicButton'
 
 const meta = {
-  title: 'BTW-Custom/Template',
-  component: Template,
+  title: 'BTW-Custom/Button/BasicButton',
+  component: BasicButton,
   parameters: {
     layout: 'centered',
     backgrounds: {
-      default: 'light',
       values: [
-        {name: 'light', value: '#FFFFFF'},
-        {name: 'dark', value: '#000000'}
+        { name: 'light', value: '#FFFFFF' },
+        { name: 'dark', value: '#333333' }
       ]
     }
   },
-  tags: ['autodocs'],
+  args: {
+  },
   argTypes: {
-    colorTheme: {
-      control: {
-        type: 'radio',
-        options: ['light', 'dark']
-      }
-    },
-  }
-} satisfies Meta<typeof Template>
+  },
+} satisfies Meta<typeof BasicButton>
 
 export default meta
-type Story = StoryObj<typeof meta>
+
+type Story = StoryObj<typeof BasicButton>
+
+const TemplateStory: Story = {
+  render: (args: BasicButtonProps) => <BasicButton {...args} />
+}
 
 export const Light: Story = {
-  parameters: {
-    backgrounds: { default: 'light' }
-  },
+  ...TemplateStory,
   args: {
 
   }
 }
 
-export const Dark: Story = {
-  parameters: {
-    backgrounds: { default: 'dark' }
-  },
-  args: {
-    
-  }
-}
 ```

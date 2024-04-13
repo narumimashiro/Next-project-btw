@@ -1,6 +1,6 @@
 import styles from './ConfirmDialog.module.scss'
 
-export interface ConfirmDialogProps {
+export type ConfirmDialogProps = {
   open: boolean
   title: string
   children: React.ReactNode
