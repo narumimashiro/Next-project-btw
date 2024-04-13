@@ -111,7 +111,7 @@
 .button-light {
   color: #000000;
   background-color: #FFFFFF;
-  border: 2px solid #000000;
+  border: none;
 }
 
 .button-active-light {
@@ -123,14 +123,13 @@
   &:disabled {
     color: var(--light-disabled-text-color);
     background-color: #FFFFFF;
-    border: 2px solid var(--light-disabled-text-color);
   }
 }
 
 .button-dark {
   color: #FFFFFF;
   background-color: #000000;
-  border: 2px solid #FFFFFF;
+  border: none;
 }
 
 .button-active-dark {
@@ -142,6 +141,5 @@
   &:disabled {
     color: var(--dark-disabled-text-color);
     background-color: #000000;
-    border: 2px solid var(--dark-disabled-text-color);
   }
 }
