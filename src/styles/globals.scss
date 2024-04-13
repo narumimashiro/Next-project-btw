@@ -1,8 +1,18 @@
+// Static values
+:root {
+  --light-background-color: #FFFFFF;
+  --dark-background-color: #333333;
+  --light-hover-color: #EEEEEE;
+  --dark-hover-color: #333333;
+  --light-disabled-text-color: #C0C0C0;
+  --dark-disabled-text-color: #555555;
+}
+
 /* Light theme styles */
 @media (prefers-color-scheme: light) {
   html {
     height: 100dvh;
-    background-color: #FFFFFF;
+    background-color: var(--light-background-color);
   }
 }
 
@@ -10,7 +20,7 @@
 @media (prefers-color-scheme: dark) {
   html {
     height: 100dvh;
-    background-color: #333333;
+    background-color: var(--dark-background-color);
   }
 }
 
@@ -45,14 +55,6 @@
   h1 {
     font-size: 24px;
   }
-}
-
-// Static values
-:root {
-  --light-hover-color: #EEEEEE;
-  --dark-hover-color: #333333;
-  --light-disabled-text-color: #C0C0C0;
-  --dark-disabled-text-color: #555555;
 }
 
 // Common styles
