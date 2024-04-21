@@ -103,15 +103,15 @@ export const SuccessLight: Story = {
     colorTheme: 'light',
     bodyLoading: {
       title: 'Loading API',
-      bodyText: 'API呼び出し中です...'
+      bodyText: ['API呼び出し中です...', 'しばらくお待ちください']
     },
     bodySuccess: {
       title: 'Success API',
-      bodyText: '成功しました',
+      bodyText: ['成功しました', 'OKでダイアログが閉じます'],
     },
     bodyFailed: {
       title: 'Failed API',
-      bodyText: '失敗しました',
+      bodyText: ['失敗しました'],
     },
   },
 }
@@ -122,15 +122,15 @@ export const SuccessDark: Story = {
     colorTheme: 'dark',
     bodyLoading: {
       title: 'Loading API',
-      bodyText: 'API呼び出し中です...'
+      bodyText: ['API呼び出し中です...']
     },
     bodySuccess: {
       title: 'Success API',
-      bodyText: '成功しました',
+      bodyText: ['成功しました'],
     },
     bodyFailed: {
       title: 'Failed API',
-      bodyText: '失敗しました',
+      bodyText: ['失敗しました'],
     },
   },
   parameters: {
@@ -147,15 +147,15 @@ export const FailedLight: Story = {
     colorTheme: 'light',
     bodyLoading: {
       title: 'Loading API',
-      bodyText: 'API呼び出し中です...'
+      bodyText: ['API呼び出し中です...']
     },
     bodySuccess: {
       title: 'Success API',
-      bodyText: '成功しました',
+      bodyText: ['成功しました'],
     },
     bodyFailed: {
       title: 'Failed API',
-      bodyText: '失敗しました',
+      bodyText: ['失敗しました'],
     },
   },
 }
@@ -166,15 +166,15 @@ export const FailedDark: Story = {
     colorTheme: 'dark',
     bodyLoading: {
       title: 'Loading API',
-      bodyText: 'API呼び出し中です...'
+      bodyText: ['API呼び出し中です...']
     },
     bodySuccess: {
       title: 'Success API',
-      bodyText: '成功しました',
+      bodyText: ['成功しました'],
     },
     bodyFailed: {
       title: 'Failed API',
-      bodyText: '失敗しました',
+      bodyText: ['失敗しました'],
     },
   },
   parameters: {
