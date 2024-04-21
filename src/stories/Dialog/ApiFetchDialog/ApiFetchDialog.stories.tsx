@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { API_STATUS, AptStatusType } from '@/hooks/useApiStatus'
-import { ApiFetchDialog } from './ApiFetchDialog'
+import { ApiFetchDialog, ApiFetchDialogProps } from './ApiFetchDialog'
 
 const meta = {
   title: 'BTW-Custom/Dialog/ApiFetchDialog',
@@ -34,7 +34,8 @@ const meta = {
 } satisfies Meta<typeof ApiFetchDialog>
 
 export default meta
-type Story = StoryObj<typeof meta>
+
+type Story = StoryObj<typeof ApiFetchDialog>
 
 const SampleApi = () => {
 
@@ -60,42 +61,44 @@ const SampleApi = () => {
   return { status, sampleApi, resetApi }
 }
 
-export const SuccessLight: Story = {
-  render: (args) => {
+const TemplateSuccessStory: Story = {
+  render: (args: ApiFetchDialogProps) => {
 
     const { status: sampleApiFetchState, sampleApi, resetApi } = SampleApi()
 
-    const bodyLoading = {
-      title: args.bodyLoading.title,
-      bodyText: args.bodyLoading.bodyText
-    }
-    const bodySuccess = {
-      title: args.bodySuccess.title,
-      bodyText: args.bodySuccess.bodyText,
-      buttonString: args.bodySuccess.buttonString,
-      onClick: () => resetApi()
-    }
-    const bodyFailed = {
-      title: args.bodyFailed.title,
-      bodyText: args.bodyFailed.bodyText,
-      buttonString: args.bodyFailed.buttonString,
-      onClick: () => resetApi()
-    }
-
     return (
-      <div>
+      <>
         <button onClick={() => sampleApi(true)}>Call Sample API</button>
         <ApiFetchDialog
-          apiStatus={sampleApiFetchState}
-          bodyLoading={bodyLoading}
-          bodySuccess={bodySuccess}
-          bodyFailed={bodyFailed}
-          colorTheme='light'
-          resetApiState={() => resetApi()}
-        />
-      </div>
+        {...args}
+        apiStatus={sampleApiFetchState}
+        resetApiState={resetApi}
+      />
+      </>
     )
-  },
+  }
+}
+
+const TemplateFailedStory: Story = {
+  render: (args: ApiFetchDialogProps) => {
+
+    const { status: sampleApiFetchState, sampleApi, resetApi } = SampleApi()
+
+    return (
+      <>
+        <button onClick={() => sampleApi(false)}>Call Sample API</button>
+        <ApiFetchDialog
+        {...args}
+        apiStatus={sampleApiFetchState}
+        resetApiState={resetApi}
+      />
+      </>
+    )
+  }
+}
+
+export const SuccessLight: Story = {
+  ...TemplateSuccessStory,
   args: {
     colorTheme: 'light',
     bodyLoading: {
@@ -105,59 +108,16 @@ export const SuccessLight: Story = {
     bodySuccess: {
       title: 'Success API',
       bodyText: '成功しました',
-      buttonString: 'OK',
-      onClick: () => {}
     },
     bodyFailed: {
       title: 'Failed API',
       bodyText: '失敗しました',
-      buttonString: 'OK',
-      onClick: () => {}
-    },
-  },
-  parameters: {
-    backgrounds: {
-      default: 'light'
     },
   },
 }
 
 export const SuccessDark: Story = {
-  render: (args) => {
-
-    const { status: sampleApiFetchState, sampleApi, resetApi } = SampleApi()
-
-    const bodyLoading = {
-      title: args.bodyLoading.title,
-      bodyText: args.bodyLoading.bodyText
-    }
-    const bodySuccess = {
-      title: args.bodySuccess.title,
-      bodyText: args.bodySuccess.bodyText,
-      buttonString: args.bodySuccess.buttonString,
-      onClick: () => resetApi()
-    }
-    const bodyFailed = {
-      title: args.bodyFailed.title,
-      bodyText: args.bodyFailed.bodyText,
-      buttonString: args.bodyFailed.buttonString,
-      onClick: () => resetApi()
-    }
-
-    return (
-      <div>
-        <button onClick={() => sampleApi(true)}>Call Sample API</button>
-        <ApiFetchDialog
-          apiStatus={sampleApiFetchState}
-          bodyLoading={bodyLoading}
-          bodySuccess={bodySuccess}
-          bodyFailed={bodyFailed}
-          colorTheme='dark'
-          resetApiState={() => resetApi()}
-        />
-      </div>
-    )
-  },
+  ...TemplateSuccessStory,
   args: {
     colorTheme: 'dark',
     bodyLoading: {
@@ -167,14 +127,10 @@ export const SuccessDark: Story = {
     bodySuccess: {
       title: 'Success API',
       bodyText: '成功しました',
-      buttonString: 'OK',
-      onClick: () => {}
     },
     bodyFailed: {
       title: 'Failed API',
       bodyText: '失敗しました',
-      buttonString: 'OK',
-      onClick: () => {}
     },
   },
   parameters: {
@@ -186,41 +142,7 @@ export const SuccessDark: Story = {
 }
 
 export const FailedLight: Story = {
-  render: (args) => {
-
-    const { status: sampleApiFetchState, sampleApi, resetApi } = SampleApi()
-
-    const bodyLoading = {
-      title: args.bodyLoading.title,
-      bodyText: args.bodyLoading.bodyText
-    }
-    const bodySuccess = {
-      title: args.bodySuccess.title,
-      bodyText: args.bodySuccess.bodyText,
-      buttonString: args.bodySuccess.buttonString,
-      onClick: () => resetApi()
-    }
-    const bodyFailed = {
-      title: args.bodyFailed.title,
-      bodyText: args.bodyFailed.bodyText,
-      buttonString: args.bodyFailed.buttonString,
-      onClick: () => resetApi()
-    }
-
-    return (
-      <div>
-        <button onClick={() => sampleApi(false)}>Call Sample API</button>
-        <ApiFetchDialog
-          apiStatus={sampleApiFetchState}
-          bodyLoading={bodyLoading}
-          bodySuccess={bodySuccess}
-          bodyFailed={bodyFailed}
-          colorTheme='light'
-          resetApiState={() => resetApi()}
-        />
-      </div>
-    )
-  },
+  ...TemplateFailedStory,
   args: {
     colorTheme: 'light',
     bodyLoading: {
@@ -230,59 +152,16 @@ export const FailedLight: Story = {
     bodySuccess: {
       title: 'Success API',
       bodyText: '成功しました',
-      buttonString: 'OK',
-      onClick: () => {}
     },
     bodyFailed: {
       title: 'Failed API',
       bodyText: '失敗しました',
-      buttonString: 'OK',
-      onClick: () => {}
-    },
-  },
-  parameters: {
-    backgrounds: {
-      default: 'light'
     },
   },
 }
 
 export const FailedDark: Story = {
-  render: (args) => {
-
-    const { status: sampleApiFetchState, sampleApi, resetApi } = SampleApi()
-
-    const bodyLoading = {
-      title: args.bodyLoading.title,
-      bodyText: args.bodyLoading.bodyText
-    }
-    const bodySuccess = {
-      title: args.bodySuccess.title,
-      bodyText: args.bodySuccess.bodyText,
-      buttonString: args.bodySuccess.buttonString,
-      onClick: () => resetApi()
-    }
-    const bodyFailed = {
-      title: args.bodyFailed.title,
-      bodyText: args.bodyFailed.bodyText,
-      buttonString: args.bodyFailed.buttonString,
-      onClick: () => resetApi()
-    }
-
-    return (
-      <div>
-        <button onClick={() => sampleApi(false)}>Call Sample API</button>
-        <ApiFetchDialog
-          apiStatus={sampleApiFetchState}
-          bodyLoading={bodyLoading}
-          bodySuccess={bodySuccess}
-          bodyFailed={bodyFailed}
-          colorTheme='dark'
-          resetApiState={() => resetApi()}
-        />
-      </div>
-    )
-  },
+  ...TemplateFailedStory,
   args: {
     colorTheme: 'dark',
     bodyLoading: {
@@ -292,14 +171,10 @@ export const FailedDark: Story = {
     bodySuccess: {
       title: 'Success API',
       bodyText: '成功しました',
-      buttonString: 'OK',
-      onClick: () => {}
     },
     bodyFailed: {
       title: 'Failed API',
       bodyText: '失敗しました',
-      buttonString: 'OK',
-      onClick: () => {}
     },
   },
   parameters: {

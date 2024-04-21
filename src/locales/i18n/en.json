@@ -1,4 +1,5 @@
 {
   "STRID_cmn_pagetitle": "{var} | B.T.W",
-  "STRID_not_found": "NotFound"
+  "STRID_not_found": "NotFound",
+  "STRID_cmn_ok": "OK"
 }
