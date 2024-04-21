@@ -1,6 +1,6 @@
 // dialog common style
 
-$border-radius-px: 4px;
+$border-radius-px: 5px;
 
 .dialog-visible {
   display: block;
@@ -59,7 +59,7 @@ $border-radius-px: 4px;
 .contentsWrap {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 20px;
 
   .title {
     margin: 0
@@ -75,12 +75,13 @@ $border-radius-px: 4px;
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 30px;
+  height: 45px;
   @extend .button-radius;
 
   button {
     width: 100%;
     height: 100%;
+    @extend .button-radius;
   }
 }
 

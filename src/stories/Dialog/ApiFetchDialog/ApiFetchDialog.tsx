@@ -1,4 +1,5 @@
-import { useEffect, useMemo } from 'react'
+import { useEffect } from 'react'
+import { useTranslation } from 'next-i18next'
 import Loading from '@/components/atom/loading'
 import { API_STATUS, AptStatusType } from '@/hooks/useApiStatus'
 import styles from './ApiFetchDialog.module.scss'
@@ -13,17 +14,17 @@ export type ApiFetchDialogProps = {
   bodySuccess: {
     title?: string,
     bodyText: string,
-    buttonString: string
-    onClick: () => void
+    buttonString?: string
+    onClick?: () => void
   }
   bodyFailed: {
     title?: string,
     bodyText: string,
-    buttonString: string
-    onClick: () => void
+    buttonString?: string
+    onClick?: () => void
   }
-  resetApiState: () => void
-}
+  resetApiState: () => void,
+} & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 export const ApiFetchDialog = ({
   colorTheme = 'light',
@@ -31,7 +32,8 @@ export const ApiFetchDialog = ({
   bodyLoading,
   bodySuccess,
   bodyFailed,
-  resetApiState
+  resetApiState,
+  ...buttonProps
 }: ApiFetchDialogProps) => {
 
   useEffect(() => {
@@ -39,9 +41,26 @@ export const ApiFetchDialog = ({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const { t } = useTranslation()
+
   const displayDialog = apiStatus !== API_STATUS.IDLE ? 'dialog-visible' : 'dialog-hidden'
-  const ariaLabelSuccess = useMemo(() => bodySuccess.title ?? 'api_success_confirm_ok', [bodySuccess])
-  const ariaLabelFailed = useMemo(() => bodyFailed.title ?? 'api_failed_conform_ok', [bodyFailed])
+
+  const ariaLabelSuccess = bodySuccess.title ?? 'api_success_confirm_ok'
+  const ariaLabelFailed = bodyFailed.title ?? 'api_failed_conform_ok'
+
+  const successBtnStr = bodySuccess.buttonString ?? 'STRID_cmn_ok'
+  const failedBtnStr = bodyFailed.buttonString ?? 'STRID_cmn_ok'
+
+  const handlerConform = () => {
+    if(apiStatus === API_STATUS.SUCCESS) {
+      if(bodySuccess.onClick) bodySuccess.onClick()
+    } else {
+      // apiStatus === API_STATUS.FAILED
+      if(bodyFailed.onClick) bodyFailed.onClick()
+    }
+    // Fetch reset function to close a dialog
+    resetApiState()
+  }
 
   return (
     <div className={styles[displayDialog]}>
@@ -49,16 +68,7 @@ export const ApiFetchDialog = ({
         <div className={`absolute-center ${styles[`dialog-${colorTheme}`]}`}>
           <div className={styles.containerWrap}>
             {
-              apiStatus === API_STATUS.LOADING ? (
-                <div className={styles.contentsWrap}>
-                  <h2 className={`text-2xl-bold ${styles.title}`}>{bodyLoading.title}</h2>
-                  <p>{bodyLoading.bodyText}</p>
-                  <div className={styles.loading}>
-                    <Loading />
-                  </div>
-                </div>
-              ) : apiStatus === API_STATUS.SUCCESS ||
-                  apiStatus === API_STATUS.FAILED ? (
+              apiStatus === API_STATUS.SUCCESS || apiStatus === API_STATUS.FAILED ? (
                 <>
                   <div className={styles.contentsWrap}>
                     <h2 className={`text-2xl-bold ${styles.title}`}>
@@ -69,16 +79,24 @@ export const ApiFetchDialog = ({
                   <div className={styles.bottomButton}>
                     <div className={styles[`horizon-${colorTheme}`]}></div>
                     <button
-                      className={`button-active-${colorTheme}`}
+                      className={`text-xl-bold button-active-${colorTheme}`}
                       aria-label={apiStatus === API_STATUS.SUCCESS ? ariaLabelSuccess : ariaLabelFailed}
-                      onClick={apiStatus === API_STATUS.SUCCESS ? bodySuccess.onClick : bodyFailed.onClick}
+                      onClick={handlerConform}
+                      {...buttonProps}
                     >
-                      {apiStatus === API_STATUS.SUCCESS ? bodySuccess.buttonString : bodyFailed.buttonString}
+                      {apiStatus === API_STATUS.SUCCESS ? t(`${successBtnStr}`) : t(`${failedBtnStr}`)}
                     </button>
                   </div>
                 </>
               ) : (
-                <></>
+                // apiStatus === API_STATUS.LOADING
+                <div className={styles.contentsWrap}>
+                  <h2 className={`text-2xl-bold ${styles.title}`}>{bodyLoading.title}</h2>
+                  <p>{bodyLoading.bodyText}</p>
+                  <div className={styles.loading}>
+                    <Loading />
+                  </div>
+                </div>
               )
             }
           </div>
