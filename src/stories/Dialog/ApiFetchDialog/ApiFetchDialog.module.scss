@@ -62,11 +62,11 @@ $border-radius-px: 5px;
   padding: 20px;
 
   .title {
-    margin: 0 0 10px;
+    margin: 0 0 5px;
   }
 
   p {
-    margin: 0 0 5px;
+    margin: 0;
   }
 }
 
@@ -100,5 +100,5 @@ $border-radius-px: 5px;
 }
 
 .loading {
-  margin-top: 25px;
+  margin: 25px 0;
 }
