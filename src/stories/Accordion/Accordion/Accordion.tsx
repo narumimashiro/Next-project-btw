@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 import ArrowDownLight from '@/img/light/arrow_down_light.svg'
 import ArrowDownDark from '@/img/dark/arrow_down_dark.svg'
@@ -8,9 +8,9 @@ import styles from './Accordion.module.scss'
 export type AccordionProps = {
   colorTheme?: 'light' | 'dark'
   summary: string
-  summaryStyle?: string,
-  detailTextList?: string[],
-  detailComponent?: React.ReactNode,
+  summaryStyle?: string
+  detailTextList?: string[]
+  detailComponent?: React.ReactNode
   detailStyle?: string
 }
 
@@ -24,9 +24,23 @@ export const Accordion = ({
 }: AccordionProps) => {
 
   const [detailsOpen, setDetailsOpen] = useState(false)
+  const accordionDetailRef = useRef<HTMLDivElement>(null)
+  const [detailHeight, setDetailHeight] = useState(0)
+
+  useEffect(() => {
+    if(accordionDetailRef.current) {
+      setDetailHeight(detailsOpen ? accordionDetailRef.current.scrollHeight : 0)
+    }
+  }, [detailsOpen])
+
+  const accordionDetailStyle = {
+    maxHeight: `${detailHeight}px`,
+    opacity: `${detailsOpen ? 1 : 0}`,
+    transition: 'max-height 0.3s ease-out, opacity 0.3s ease-out'
+  }
 
   return (
-    <div className={`${styles.accordionWrap} ${styles[colorTheme]}`}>
+    <div className={`${styles.accordionWrap} ${styles[colorTheme]} ${detailsOpen ? styles.open : ''}`}>
       <button
         className={`text-xl ${styles.summary} ${summaryStyle}`}
         onClick={() => setDetailsOpen(!detailsOpen)}
@@ -39,7 +53,11 @@ export const Accordion = ({
         />
       </button>
       <div className={styles[`horizon-${colorTheme}`]}></div>
-      <div className={`${styles.details} ${detailsOpen ? styles.open : ''} ${detailStyle}`}>
+      <div
+        ref={accordionDetailRef}
+        style={accordionDetailStyle}
+        className={`${styles.details} ${detailStyle}`}
+      >
         {
           detailTextList?.map((detail, index) => (
             <p key={`detail-text-${index}`} className={styles.detailText}>

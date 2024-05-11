@@ -32,6 +32,8 @@ const TemplateStory: Story = {
   render: (args: AccordionProps) => (
     <div style={{width: '100%', height: 100, justifyContent: 'center', alignItems: 'center'}}>
       <Accordion {...args} />
+      <Accordion {...args} />
+      <Accordion {...args} />
     </div>
   )
 }
