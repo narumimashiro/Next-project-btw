@@ -40,7 +40,7 @@ export const Accordion = ({
   }
 
   return (
-    <div className={`${styles.accordionWrap} ${styles[colorTheme]} ${detailsOpen ? styles.open : ''}`}>
+    <div className={`${styles.accordionWrap} ${styles[colorTheme]}`}>
       <button
         className={`text-xl ${styles.summary} ${summaryStyle}`}
         onClick={() => setDetailsOpen(!detailsOpen)}
