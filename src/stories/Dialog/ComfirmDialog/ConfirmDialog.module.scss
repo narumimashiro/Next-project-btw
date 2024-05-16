@@ -59,10 +59,14 @@ $border-radius-px: 4px;
 .contentsWrap {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  width: 90vw;
+  max-width: 390px;
+  height: auto;
+  max-height: 90svh;
+  padding: 15px;
 
   .title {
-    margin: 0
+    margin: 0 0 5px;
   }
 }
 

@@ -15,7 +15,6 @@ const meta = {
       ]
     }
   },
-  // tags: ['autodocs'],
   args: {
     open: true,
     children: <></>,

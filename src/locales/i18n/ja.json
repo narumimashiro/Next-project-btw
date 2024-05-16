@@ -1,5 +1,6 @@
 {
   "STRID_cmn_pagetitle": "{var} | B.T.W",
   "STRID_not_found": "ページが見つかりません",
-  "STRID_cmn_ok": "OK"
+  "STRID_cmn_ok": "OK",
+  "STRID_dont_ask_again": "次回から表示しない。"
 }
