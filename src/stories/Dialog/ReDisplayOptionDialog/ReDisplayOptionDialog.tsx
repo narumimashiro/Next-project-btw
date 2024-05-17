@@ -12,7 +12,7 @@ export type ReDisplayOptionDialogProps = {
   children: React.ReactNode
   buttonString?: string
   ariaLabel?: string
-  onConform: () => void
+  onConfirm: () => void
 }
 
 export const ReDisplayOptionDialog = ({
@@ -23,7 +23,7 @@ export const ReDisplayOptionDialog = ({
   children,
   buttonString,
   ariaLabel = 'Confirm_OK',
-  onConform
+  onConfirm
 }: ReDisplayOptionDialogProps) => {
 
   const { t } = useTranslation()
@@ -47,7 +47,7 @@ export const ReDisplayOptionDialog = ({
     if(isChecked) {
       localStorage.setItem(localStorageKey, NOT_SHOW_AGAIN)
     }
-    onConform()
+    onConfirm()
   }
 
   return (

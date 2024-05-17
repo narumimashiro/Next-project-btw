@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { ConfirmDialog } from './ConfirmDialog'
 
@@ -20,7 +20,6 @@ const meta = {
     children: <></>,
   },
   argTypes: {
-    open: { control: false },
     colorTheme: { control: false },
     children: { table: { disable: true }},
     onConfirm: { control: false },
@@ -33,7 +32,11 @@ type Story = StoryObj<typeof meta>
 export const Light: Story = {
   render: (args) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(args.open)
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => {
+      setIsOpen(args.open)
+    }, [args.open])
 
     return (
       <div>
@@ -52,6 +55,7 @@ export const Light: Story = {
     )
   },
   args: {
+    open: false,
     colorTheme: 'light',
     title: 'Confirm Dialog',
     buttonString: 'OK',
@@ -86,6 +90,7 @@ export const Dark: Story = {
     )
   },
   args: {
+    open: false,
     colorTheme: 'dark',
     title: 'Confirm Dialog',
     buttonString: 'OK',

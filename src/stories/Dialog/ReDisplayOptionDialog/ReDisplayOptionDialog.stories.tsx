@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { ReDisplayOptionDialog, ReDisplayOptionDialogProps } from './ReDisplayOptionDialog'
@@ -18,10 +18,9 @@ const meta = {
   args: {
   },
   argTypes: {
-    // summaryStyle: { control: false},
-    // detailStyle: { control: false},
-    // colorTheme: { control: false},
-    // detailComponent: { control: false},
+    colorTheme: { control: false},
+    children: { table: { disable: true }},
+    onConfirm: { control: false },
   },
 } satisfies Meta<typeof ReDisplayOptionDialog>
 
@@ -33,12 +32,16 @@ const TemplateStory: Story = {
   render: (args: ReDisplayOptionDialogProps) => {
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(args.open)
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => {
+      setIsOpen(args.open)
+    }, [args.open])
     
     return (
       <>
         <button onClick={() => setIsOpen(true)}>Open Dialog</button>
-        <ReDisplayOptionDialog {...args} open={isOpen} onConform={() => setIsOpen(false)}>
+        <ReDisplayOptionDialog {...args} open={isOpen} onConfirm={() => setIsOpen(false)}>
           <p style={{margin: 0}}>ここから先は外部サイトとなります。XXXに委託しています。</p>
         </ReDisplayOptionDialog>
       </>
@@ -49,8 +52,11 @@ const TemplateStory: Story = {
 export const Light: Story = {
   ...TemplateStory,
   args: {
+    open: false,
     localStorageKey: 'storybookSample',
     title: '実行してもよろしいですか',
+    buttonString: 'OK',
+    ariaLabel: 'Confirm_OK',
   },
   parameters: {
     backgrounds: {
@@ -62,9 +68,12 @@ export const Light: Story = {
 export const Dark: Story = {
   ...TemplateStory,
   args: {
+    open: false,
     localStorageKey: 'storybookSample',
     title: '実行してもよろしいですか',
     colorTheme: 'dark',
+    buttonString: 'OK',
+    ariaLabel: 'Confirm_OK'
   },
   parameters: {
     backgrounds: {
