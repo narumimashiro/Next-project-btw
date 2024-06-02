@@ -71,7 +71,7 @@ export const ApiFetchDialog = ({
               apiStatus === API_STATUS.SUCCESS || apiStatus === API_STATUS.FAILED ? (
                 <>
                   <div className={styles.contentsWrap}>
-                    <h2 className={`text-2xl-bold ${styles.title}`}>
+                    <h2 className={`text-xl-bold ${styles.title}`}>
                       {apiStatus === API_STATUS.SUCCESS ? bodySuccess.title : bodyFailed.title}
                     </h2>
                     {

@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next'
 import styles from './ConfirmDialog.module.scss'
 
 export type ConfirmDialogProps = {
@@ -15,19 +16,22 @@ export const ConfirmDialog = ({
   title,
   children,
   colorTheme = 'light',
-  buttonString = 'OK',
-  ariaLabel = 'Confirm OK',
+  buttonString,
+  ariaLabel = 'Confirm_OK',
   onConfirm
 }: ConfirmDialogProps) => {
 
+  const { t } = useTranslation()
+  
   const displayDialog = open ? 'dialog-visible' : 'dialog-hidden'
+  const btnString = buttonString ? buttonString : t('STRID_cmn_ok')
 
   return (
     <div className={styles[displayDialog]}>
       <div className={styles[`overlay-${colorTheme}`]}>
         <div className={`absolute-center ${styles[`dialog-${colorTheme}`]}`}>
           <div className={styles.contentsWrap}>
-            <h2 className={`text-2xl-bold ${styles.title}`}>{title}</h2>
+            <h2 className={`text-xl-bold ${styles.title}`}>{title}</h2>
             { children }
           </div>
           <div className={styles[`horizon-${colorTheme}`]}></div>
@@ -36,7 +40,7 @@ export const ConfirmDialog = ({
             aria-label={ariaLabel}
             onClick={onConfirm}
           >
-            { buttonString }
+            { btnString }
           </button>
         </div>
       </div>
