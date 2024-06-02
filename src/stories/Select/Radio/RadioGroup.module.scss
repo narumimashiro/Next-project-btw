@@ -1,0 +1,80 @@
+.radio-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+$radio-item-height: 24px;
+
+.radio-items input[type="radio"] {
+  visibility: hidden;
+  position: absolute;
+}
+
+.radio-items {
+  display: flex;
+  gap: 5px;
+  padding: 3px 6px;
+
+  span {
+    caret-color: transparent;
+  }
+
+  .radio-label-light {
+    height: $radio-item-height;
+    color: #000000;
+  }
+
+  .radio-label-dark {
+    height: $radio-item-height;
+    color: #FFFFFF;
+  }
+
+  .checkmark-light {
+    @extend .checkmark;
+    border: 1px solid var(--dark-background-color);
+  }
+  input[type='radio']:checked:checked + .checkmark-light {
+    background-color: var(--light-background-color);
+  }
+  .checkmark-light:after {
+    background: var(--dark-background-color);
+  }
+  input[type='radio']:checked + .checkmark-light:after {
+    display: block;
+  }
+
+  .checkmark-dark {
+    @extend .checkmark;
+    border: 1px solid var(--light-background-color);
+  }
+  input[type='radio']:checked:checked + .checkmark-dark {
+    background-color: var(--dark-background-color);
+  }
+  .checkmark-dark:after {
+    background: var(--light-background-color);
+  }
+  input[type='radio']:checked + .checkmark-dark:after {
+    display: block;
+  }
+}
+
+.checkmark {
+  display: inline-block;
+  position: relative;
+  width: $radio-item-height / 2;
+  height: $radio-item-height / 2;
+  border-radius: 50%;
+  margin: auto;
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: $radio-item-height / 3;
+    height: $radio-item-height / 3;
+    border-radius: 50%;
+  }
+}
