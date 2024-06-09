@@ -10,6 +10,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import '@/styles/globals.scss'
 
 import Layout from '@/components/layout'
+import { CustomProvider } from '@/components/customProvider'
 
 import { useLocaleSlug, I18NEXT_LOCALE } from '@/hooks/useLocaleSlug'
 import { useThemeStyle } from '@/hooks/useThemeStyle'
@@ -40,12 +41,14 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <RecoilRoot>
-      <ThemeProvider theme={selectedTheme}>
-        <CssBaseline />
-        <Layout>
-          <Component { ...pageProps } />
-        </Layout>
-      </ThemeProvider>
+      <CustomProvider>
+        <ThemeProvider theme={selectedTheme}>
+          <CssBaseline />
+          <Layout>
+            <Component { ...pageProps } />
+          </Layout>
+        </ThemeProvider>
+      </CustomProvider>
     </RecoilRoot>
   )
 }
