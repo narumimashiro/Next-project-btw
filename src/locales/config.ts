@@ -5,7 +5,7 @@ const t_ja = require('./i18n/ja.json')
 const t_en = require('./i18n/en.json')
 
 const language = [
-  'ja-jp',
+  'ja-jp', // default
   'en-us'
 ]
 
@@ -28,6 +28,4 @@ i18n
     }
   })
 
-module.exports = {
-  language
-}
+export { language }

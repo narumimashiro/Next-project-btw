@@ -1,9 +1,9 @@
-import { createContext, useContext } from 'react'
+import { createContext, useContext, useMemo } from 'react'
 
-import { useOrientation, useTabletSize } from '@/hooks/useWindowSize'
+import { ORIENTATION, useOrientation, useTabletSize } from '@/hooks/useWindowSize'
 
 export type CustomContextType = {
-  orientation: string
+  isPortrait: boolean
   isTabletSize: boolean
 }
 
@@ -12,10 +12,11 @@ const CustomContext = createContext<CustomContextType | null>(null)
 export const CustomProvider = ({ children }: { children: React.ReactNode }) => {
 
   const orientation = useOrientation()
+  const isPortrait = useMemo(() => ORIENTATION.PORTRAIT.HARD == orientation, [orientation])
   const isTabletSize = useTabletSize()
 
   const providerValue = {
-    orientation,
+    isPortrait,
     isTabletSize
   }
 
