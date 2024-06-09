@@ -9,7 +9,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 
 import '@/styles/globals.scss'
 
-import Layout from '@/components/layout'
+import { AdoLayout } from '@/components/layout'
 import { CustomProvider } from '@/components/customProvider'
 
 import { useLocaleSlug, I18NEXT_LOCALE } from '@/hooks/useLocaleSlug'
@@ -44,9 +44,9 @@ const App = ({ Component, pageProps }: AppProps) => {
       <CustomProvider>
         <ThemeProvider theme={selectedTheme}>
           <CssBaseline />
-          <Layout>
+          <AdoLayout>
             <Component { ...pageProps } />
-          </Layout>
+          </AdoLayout>
         </ThemeProvider>
       </CustomProvider>
     </RecoilRoot>
