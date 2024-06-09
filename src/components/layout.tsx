@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google'
+import styles from '@/styles/Layout.module.scss'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,13 +18,7 @@ export const AdoLayout = ({
 }: {
   children: React.ReactNode
 }) => {
-  const fontStyle = {
-    fontFamily: 'Noto Serif JP, Hiragino Mincho ProN, Yu Mincho, serif',
-    '--font-en': 'minion-pro, serif',
-    '--font-en2': 'interstate-condensed, sans-serif'
-  }
-
   return (
-    <div style={fontStyle}>{ children }</div>
+    <div className={styles['ado-layout']}>{ children }</div>
   )
 }
