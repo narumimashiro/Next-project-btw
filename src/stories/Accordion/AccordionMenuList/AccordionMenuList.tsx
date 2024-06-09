@@ -51,7 +51,7 @@ export const AccordionMenuList = ({
     <div className={`${styles.accordionMenuListWrap} ${styles[colorTheme]}`}>
       <div className={styles[`horizon-${colorTheme}`]}></div>
       <button
-        className={`text-xl ${styles[`summary-${listType}`]} ${summaryStyle}`}
+        className={`text-xl ${styles[`summary-${listType}`]} ${summaryStyle ? summaryStyle : ''}`}
         onClick={() => setOpenMenuList(!openMenuList)}
       >
         { summary }
