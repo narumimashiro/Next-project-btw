@@ -1,4 +1,4 @@
-import { language } from '@/locales/config'
+const { language }: { language: string[] } = require('@/locales/config')
 
 export const redirectUrl = () => {
 

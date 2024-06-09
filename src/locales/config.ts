@@ -28,4 +28,6 @@ i18n
     }
   })
 
-export { language }
+  module.exports = {
+    language
+  }
