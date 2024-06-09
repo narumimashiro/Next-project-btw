@@ -2,5 +2,7 @@
   "STRID_cmn_pagetitle": "{var} | B.T.W",
   "STRID_not_found": "NotFound",
   "STRID_cmn_ok": "OK",
-  "STRID_dont_ask_again": "Don't ask again"
+  "STRID_dont_ask_again": "Don't ask again",
+  "STRID_tap_to_top": "Tap to top",
+  "STRID_click_to_top": "Click to top"
 }

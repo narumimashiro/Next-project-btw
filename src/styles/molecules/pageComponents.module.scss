@@ -1,0 +1,17 @@
+.page-contents-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page-contents-wrap-portrait {
+  @extend .page-contents-wrap;
+  width: 100%;
+  padding: 10px;
+}
+
+.page-contents-wrap-landscape {
+  @extend .page-contents-wrap;
+  max-width: 720px;
+  margin: auto;
+}
