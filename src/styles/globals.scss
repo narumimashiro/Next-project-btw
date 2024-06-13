@@ -11,6 +11,7 @@
 /* Light theme styles */
 @media (prefers-color-scheme: light) {
   html {
+    color: '#000000';
     height: 100dvh;
     background-color: var(--light-background-color);
   }
@@ -19,6 +20,7 @@
 /* Dark theme styles */
 @media (prefers-color-scheme: dark) {
   html {
+    color: #FFFFFF;
     height: 100dvh;
     background-color: var(--dark-background-color);
   }

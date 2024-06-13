@@ -1,0 +1,37 @@
+.container {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  span {
+    caret-color: transparent;
+  }
+}
+
+@keyframes textScroll {
+  0% {
+    transform: translateX(0)
+  }
+  100% {
+    transform: translateX(-100%)
+  }
+}
+
+.scrollText {
+  max-width: 100%;
+  overflow: hidden;
+
+  span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &:hover span,
+  &:active span,
+  &:focus span {
+    display: inline-block;
+    overflow: visible;
+    animation: textScroll var(--scroll-duration, 5s) linear infinite;
+  }
+}
