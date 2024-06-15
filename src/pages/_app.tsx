@@ -9,6 +9,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 
 import '@/styles/globals.scss'
 
+import React from 'react'
 import { AdoLayout } from '@/components/layout'
 import { CustomProvider } from '@/components/customProvider'
 
@@ -28,7 +29,6 @@ const darkTheme = createTheme({
 })
 
 const App = ({ Component, pageProps }: AppProps) => {
-
   const theme = useThemeStyle()
   const selectedTheme = theme ? darkTheme : lightTheme
   const locale = useLocaleSlug()
@@ -41,14 +41,16 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <RecoilRoot>
-      <CustomProvider>
-        <ThemeProvider theme={selectedTheme}>
-          <CssBaseline />
-          <AdoLayout>
-            <Component { ...pageProps } />
-          </AdoLayout>
-        </ThemeProvider>
-      </CustomProvider>
+      <React.StrictMode>
+        <CustomProvider>
+          <ThemeProvider theme={selectedTheme}>
+            <CssBaseline />
+            <AdoLayout>
+              <Component {...pageProps} />
+            </AdoLayout>
+          </ThemeProvider>
+        </CustomProvider>
+      </React.StrictMode>
     </RecoilRoot>
   )
 }

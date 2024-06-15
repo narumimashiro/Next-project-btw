@@ -6,19 +6,30 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useState, useEffect } from 'react'
 
+const VIEW_BREAKPOINT_PORTRAIT = 768
+const VIEW_BREAKPOINT_TABLET = 1280
+
 export const ORIENTATION = {
-  PORTRAIT: { SIZE: 768, HARD: 'PORTRAIT' },
-  LANDSCAPE: { SIZE: 1280, HARD: 'LANDSCAPE'}
+  PORTRAIT: 'PORTRAIT',
+  LANDSCAPE: 'LANDSCAPE'
 }
 
 export const useInnerSize = () => {
-  const [windowSize, setWindowSize] = useState(0)
+
+  if (typeof window === 'undefined' || typeof document?.documentElement === 'undefined') {
+    return 0
+  }
+
+  const [windowSize, setWindowSize] = useState(() => {
+    return Math.min(document.documentElement.clientWidth, window.innerWidth)
+  })
 
   const handlerResize = () => {
-    setWindowSize(window.innerWidth)
+    setWindowSize(Math.min(document.documentElement.clientWidth, window.innerWidth))
   }
 
   useEffect(() => {
+
     handlerResize()
     window.addEventListener('resize', handlerResize)
 
@@ -32,10 +43,10 @@ export const useInnerSize = () => {
 
 export const useOrientation = () => {
   const windowSize = useInnerSize()
-  return windowSize <= ORIENTATION.PORTRAIT.SIZE ? ORIENTATION.PORTRAIT.HARD : ORIENTATION.LANDSCAPE.HARD
+  return windowSize <= VIEW_BREAKPOINT_PORTRAIT ? ORIENTATION.PORTRAIT : ORIENTATION.LANDSCAPE
 }
 
 export const useTabletSize = () => {
   const windowSize = useInnerSize()
-  return (windowSize >= ORIENTATION.PORTRAIT.SIZE) && (windowSize < ORIENTATION.LANDSCAPE.SIZE)
+  return (windowSize >= VIEW_BREAKPOINT_PORTRAIT) && (windowSize < VIEW_BREAKPOINT_TABLET)
 }
