@@ -22,12 +22,13 @@ export const Accordion = ({
   detailComponent,
   detailStyle
 }: AccordionProps) => {
+
   const [detailsOpen, setDetailsOpen] = useState(false)
   const accordionDetailRef = useRef<HTMLDivElement>(null)
   const [detailHeight, setDetailHeight] = useState(0)
 
   useEffect(() => {
-    if (accordionDetailRef.current) {
+    if(accordionDetailRef.current) {
       setDetailHeight(detailsOpen ? accordionDetailRef.current.scrollHeight : 0)
     }
   }, [detailsOpen])
@@ -42,27 +43,29 @@ export const Accordion = ({
     <div className={`${styles.accordionWrap} ${styles[colorTheme]}`}>
       <button
         className={`text-xl ${styles.summary} ${summaryStyle}`}
-        onClick={() => setDetailsOpen(!detailsOpen)}>
-        {summary}
+        onClick={() => setDetailsOpen(!detailsOpen)}
+      >
+        { summary }
         <img
-          className={`${styles.arrowIcon} ${
-            detailsOpen ? styles.clockwise : styles.counterclockwise
-          }`}
+          className={`${styles.arrowIcon} ${detailsOpen ? styles.clockwise : styles.counterclockwise}`}
           src={colorTheme === 'light' ? ArrowDownLight.src : ArrowDownDark.src}
-          alt=""
+          alt=''
         />
       </button>
       <div className={styles[`horizon-${colorTheme}`]}></div>
       <div
         ref={accordionDetailRef}
         style={accordionDetailStyle}
-        className={`${styles.details} ${detailStyle}`}>
-        {detailTextList?.map((detail, index) => (
-          <p key={`detail-text-${index}`} className={styles.detailText}>
-            {detail}
-          </p>
-        ))}
-        {detailComponent}
+        className={`${styles.details} ${detailStyle}`}
+      >
+        {
+          detailTextList?.map((detail, index) => (
+            <p key={`detail-text-${index}`} className={styles.detailText}>
+              { detail }
+            </p>
+          ))
+        }
+        { detailComponent }
       </div>
     </div>
   )

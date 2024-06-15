@@ -25,6 +25,7 @@ export const ReDisplayOptionDialog = ({
   ariaLabel = 'Confirm_OK',
   onConfirm
 }: ReDisplayOptionDialogProps) => {
+
   const { t } = useTranslation()
 
   const NOT_SHOW_AGAIN = 'do_not_show_again'
@@ -34,16 +35,16 @@ export const ReDisplayOptionDialog = ({
   const [isChecked, setIsChecked] = useState(false)
 
   useEffect(() => {
-    if (localStorage.getItem(localStorageKey) === NOT_SHOW_AGAIN) {
+    if(localStorage.getItem(localStorageKey) === NOT_SHOW_AGAIN) {
       setOpenDialog(false)
     } else {
       setOpenDialog(open)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open])
 
   const handleClick = () => {
-    if (isChecked) {
+    if(isChecked) {
       localStorage.setItem(localStorageKey, NOT_SHOW_AGAIN)
     }
     onConfirm()
@@ -55,10 +56,11 @@ export const ReDisplayOptionDialog = ({
       title={title}
       buttonString={btnString}
       ariaLabel={ariaLabel}
-      onConfirm={handleClick}>
+      onConfirm={handleClick}
+    >
       <>
-        {children}
-        <div className="flex-center text-sm">
+        { children }
+        <div className='flex-center text-sm'>
           <Checkbox
             colorTheme={colorTheme}
             isChecked={isChecked}

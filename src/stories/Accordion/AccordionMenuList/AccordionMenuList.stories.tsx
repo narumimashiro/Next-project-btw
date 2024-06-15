@@ -14,11 +14,12 @@ const meta = {
       ]
     }
   },
-  args: {},
+  args: {
+  },
   argTypes: {
-    summaryStyle: { control: false },
-    colorTheme: { control: false }
-  }
+    summaryStyle: { control: false},
+    colorTheme: { control: false},
+  },
 } satisfies Meta<typeof AccordionMenuList>
 
 export default meta
@@ -27,7 +28,7 @@ type Story = StoryObj<typeof AccordionMenuList>
 
 const TemplateStory: Story = {
   render: (args: AccordionMenuListProps) => (
-    <div style={{ width: '75%', height: 390, justifyContent: 'center', alignItems: 'center' }}>
+    <div style={{width: '75%', height: 390, justifyContent: 'center', alignItems: 'center'}}>
       <AccordionMenuList {...args} />
     </div>
   )
@@ -63,13 +64,13 @@ export const Light: Story = {
         displayText: 'internal link',
         link: '/internal-link'
       }
-    ]
+    ],
   },
   parameters: {
     backgrounds: {
       default: 'light'
-    }
-  }
+    },
+  },
 }
 
 export const Dark: Story = {
@@ -103,13 +104,13 @@ export const Dark: Story = {
         displayText: 'internal link',
         link: '/internal-link'
       }
-    ]
+    ],
   },
   parameters: {
     backgrounds: {
       default: 'dark'
-    }
-  }
+    },
+  },
 }
 
 export const ListRightLight: Story = {
@@ -143,13 +144,13 @@ export const ListRightLight: Story = {
         link: '/internal-link'
       }
     ],
-    listType: 'right'
+    listType: 'right',
   },
   parameters: {
     backgrounds: {
       default: 'light'
-    }
-  }
+    },
+  },
 }
 
 export const ListRightDark: Story = {
@@ -184,11 +185,11 @@ export const ListRightDark: Story = {
         link: '/internal-link'
       }
     ],
-    listType: 'right'
+    listType: 'right',
   },
   parameters: {
     backgrounds: {
       default: 'dark'
-    }
-  }
+    },
+  },
 }

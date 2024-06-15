@@ -12,12 +12,13 @@ const meta = {
         { name: 'light', value: '#FFFFFF' },
         { name: 'dark', value: '#333333' }
       ]
-    }
+    },
   },
-  args: {},
+  args: {
+  },
   argTypes: {
     // colorTheme: { control: false},
-  }
+  },
 } satisfies Meta<typeof MarqueeText>
 
 export default meta
@@ -26,7 +27,10 @@ type Story = StoryObj<typeof MarqueeText>
 
 const TemplateStory: Story = {
   render: (args: MarqueeTextProps) => {
-    return <MarqueeText {...args} />
+
+    return (
+      <MarqueeText {...args} />
+    )
   }
 }
 
@@ -38,8 +42,8 @@ export const Light: Story = {
   parameters: {
     backgrounds: {
       default: 'light'
-    }
-  }
+    },
+  },
 }
 
 export const Dark: Story = {
@@ -50,6 +54,6 @@ export const Dark: Story = {
   parameters: {
     backgrounds: {
       default: 'dark'
-    }
-  }
+    },
+  },
 }

@@ -1,10 +1,10 @@
 // Static values
 :root {
-  --light-background-color: #ffffff;
+  --light-background-color: #FFFFFF;
   --dark-background-color: #333333;
-  --light-hover-color: #eeeeee;
+  --light-hover-color: #EEEEEE;
   --dark-hover-color: #444444;
-  --light-disabled-text-color: #c0c0c0;
+  --light-disabled-text-color: #C0C0C0;
   --dark-disabled-text-color: #555555;
 }
 
@@ -20,7 +20,7 @@
 /* Dark theme styles */
 @media (prefers-color-scheme: dark) {
   html {
-    color: #ffffff;
+    color: #FFFFFF;
     height: 100dvh;
     background-color: var(--dark-background-color);
   }
@@ -116,7 +116,7 @@
 // Styles for button
 .button-light {
   color: #000000;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border: none;
 }
 
@@ -128,12 +128,12 @@
   }
   &:disabled {
     color: var(--light-disabled-text-color);
-    background-color: #ffffff;
+    background-color: #FFFFFF;
   }
 }
 
 .button-dark {
-  color: #ffffff;
+  color: #FFFFFF;
   background-color: #000000;
   border: none;
 }

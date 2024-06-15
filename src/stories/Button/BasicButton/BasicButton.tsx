@@ -17,13 +17,15 @@ export const BasicButton = ({
   onClick,
   ...buttonProps
 }: BasicButtonProps) => {
+
   return (
     <button
       className={`${styles[`basicButton-${colorTheme}`]} ${className}`}
       disabled={disabled}
       onClick={onClick}
-      {...buttonProps}>
-      {children}
+      {...buttonProps}
+    >
+      { children }
     </button>
   )
 }

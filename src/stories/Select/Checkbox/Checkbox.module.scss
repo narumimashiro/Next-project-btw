@@ -52,7 +52,7 @@
     background-color: var(--dark-background-color);
   }
   &.filling.checked::after {
-    border-color: #ffffff;
+    border-color: #FFFFFF;
   }
   &.disabled {
     border: 2px solid var(--light-disabled-text-color);
@@ -65,10 +65,10 @@
 .checkbox-dark {
   @extend .checkbox;
   background-color: var(--dark-background-color);
-  border: 2px solid #ffffff;
+  border: 2px solid #FFFFFF;
   &::after {
     @extend .checkmark;
-    border-color: #ffffff;
+    border-color: #FFFFFF;
     display: none;
   }
   &.checked::after {

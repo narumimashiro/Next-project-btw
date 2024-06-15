@@ -1,6 +1,12 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:storybook/recommended"],
-  "plugins": ["import", "unused-imports"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:storybook/recommended"
+  ],
+  "plugins": [
+    "import",
+    "unused-imports"
+  ],
   "rules": {
     "no-unused-expressions": "error",
     "no-empty": [
@@ -10,64 +16,52 @@
       }
     ],
     "no-console": "error",
-    "no-debugger": "error",
-    "no-alert": "error",
-    "no-unused-vars": "warn",
-    "no-multiple-empty-lines": ["error", { "max": 1 }],
     "@next/next/no-img-element": "off",
     "unused-imports/no-unused-imports": "error",
-    "import/order": [
-      "error",
-      {
-        "groups": ["builtin", "external", "internal"],
-        "pathGroups": [
-          {
-            "pattern": "next/**",
-            "group": "external",
-            "position": "before"
-          },
-          {
-            "pattern": "react",
-            "group": "external",
-            "position": "before"
-          },
-          {
-            "pattern": "recoil",
-            "group": "external",
-            "position": "before"
-          },
-          {
-            "pattern": "@mui/**",
-            "group": "external",
-            "position": "before"
-          },
-          {
-            "pattern": "@/styles/**",
-            "group": "internal"
-          },
-          {
-            "pattern": "@/components/**",
-            "group": "internal"
-          },
-          {
-            "pattern": "@/recoil/**",
-            "group": "internal"
-          },
-          {
-            "pattern": "@/hooks/**",
-            "group": "internal"
-          },
-          {
-            "pattern": "@/libs/**",
-            "group": "internal"
-          }
-        ]
-      }
-    ],
-    "complexity": ["error", { "max": 10 }],
-    "max-lines-per-function": [
-      "error",
-      { "max": 50, "skipBlankLines": true, "skipComments": true }
-    ]
+    "import/order": ["error", {
+      "groups": ["builtin", "external", "internal"],
+      "pathGroups": [
+        {
+          "pattern": "next/**",
+          "group": "external",
+          "position": "before"
+        },
+        {
+          "pattern": "react",
+          "group": "external",
+          "position": "before"
+        },
+        {
+          "pattern": "recoil",
+          "group": "external",
+          "position": "before"
+        },
+        {
+          "pattern": "@mui/**",
+          "group": "external",
+          "position": "before"
+        },
+        {
+          "pattern": "@/styles/**",
+          "group": "internal"
+        },
+        {
+          "pattern": "@/components/**",
+          "group": "internal"
+        },
+        {
+          "pattern": "@/recoil/**",
+          "group": "internal"
+        },
+        {
+          "pattern": "@/hooks/**",
+          "group": "internal"
+        },
+        {
+          "pattern": "@/libs/**",
+          "group": "internal"
+        }
+      ]
+    }]
   }
 }

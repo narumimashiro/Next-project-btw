@@ -13,7 +13,7 @@ $icon-position-right: 10px;
   }
   &.dark,
   &.dark button {
-    color: #ffffff;
+    color: #FFFFFF;
     background-color: var(--dark-background-color);
   }
 
@@ -31,9 +31,7 @@ $icon-position-right: 10px;
       bottom: calc(50% - $summary-height / 2);
       width: $summary-height * 0.7;
       height: $summary-height;
-      transition:
-        transform 0.3s ease-out,
-        opacity 0.3s ease-out;
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     }
 
     .plusIcon {
@@ -93,7 +91,7 @@ $icon-position-right: 10px;
 
     &.dark,
     &.dark * {
-      color: #ffffff;
+      color: #FFFFFF;
     }
 
     .menuItem {

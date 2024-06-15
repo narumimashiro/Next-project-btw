@@ -15,12 +15,13 @@ const meta = {
       ]
     }
   },
-  args: {},
+  args: {
+  },
   argTypes: {
-    colorTheme: { control: false },
-    className: { control: false },
-    onChange: { control: false }
-  }
+    colorTheme: { control: false},
+    className: { control: false},
+    onChange: { control: false},
+  },
 } satisfies Meta<typeof Checkbox>
 
 export default meta
@@ -29,6 +30,7 @@ type Story = StoryObj<typeof Checkbox>
 
 const TemplateStory: Story = {
   render: (args: CheckboxProps) => {
+
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [isChecked, setIsChecked] = useState(args.isChecked)
 
@@ -36,7 +38,7 @@ const TemplateStory: Story = {
       <Checkbox
         {...args}
         isChecked={isChecked || args.isChecked}
-        onChange={(value) => setIsChecked(value as boolean)}
+        onChange={(value) => setIsChecked(value as boolean)}  
       />
     )
   }
@@ -47,13 +49,13 @@ export const Light: Story = {
   args: {
     isChecked: false,
     disabled: false,
-    filling: false
+    filling: false,
   },
   parameters: {
     backgrounds: {
       default: 'light'
-    }
-  }
+    },
+  },
 }
 
 export const Dark: Story = {
@@ -62,13 +64,13 @@ export const Dark: Story = {
     colorTheme: 'dark',
     isChecked: false,
     disabled: false,
-    filling: false
+    filling: false,
   },
   parameters: {
     backgrounds: {
       default: 'dark'
-    }
-  }
+    },
+  },
 }
 
 export const LightFilling: Story = {
@@ -76,13 +78,13 @@ export const LightFilling: Story = {
   args: {
     isChecked: false,
     disabled: false,
-    filling: true
+    filling: true,
   },
   parameters: {
     backgrounds: {
       default: 'light'
-    }
-  }
+    },
+  },
 }
 
 export const DarkFilling: Story = {
@@ -91,13 +93,13 @@ export const DarkFilling: Story = {
     colorTheme: 'dark',
     isChecked: false,
     disabled: false,
-    filling: true
+    filling: true,
   },
   parameters: {
     backgrounds: {
       default: 'dark'
-    }
-  }
+    },
+  },
 }
 
 export const LightChecked: Story = {
@@ -105,13 +107,13 @@ export const LightChecked: Story = {
   args: {
     isChecked: true,
     disabled: false,
-    filling: false
+    filling: false,
   },
   parameters: {
     backgrounds: {
       default: 'light'
-    }
-  }
+    },
+  },
 }
 
 export const DarkChecked: Story = {
@@ -120,13 +122,13 @@ export const DarkChecked: Story = {
     colorTheme: 'dark',
     isChecked: true,
     disabled: false,
-    filling: false
+    filling: false,
   },
   parameters: {
     backgrounds: {
       default: 'dark'
-    }
-  }
+    },
+  },
 }
 
 export const LightDisabled: Story = {
@@ -134,13 +136,13 @@ export const LightDisabled: Story = {
   args: {
     isChecked: false,
     disabled: true,
-    filling: false
+    filling: false,
   },
   parameters: {
     backgrounds: {
       default: 'light'
-    }
-  }
+    },
+  },
 }
 
 export const DarkDisabled: Story = {
@@ -149,11 +151,11 @@ export const DarkDisabled: Story = {
     colorTheme: 'dark',
     isChecked: false,
     disabled: true,
-    filling: false
+    filling: false,
   },
   parameters: {
     backgrounds: {
       default: 'dark'
-    }
-  }
+    },
+  },
 }

@@ -12,7 +12,7 @@ const meta = {
         { name: 'light', value: '#FFFFFF' },
         { name: 'dark', value: '#333333' }
       ]
-    }
+    },
   },
   args: {
     children: 'Button',
@@ -21,8 +21,8 @@ const meta = {
   },
   argTypes: {
     colorTheme: { control: false },
-    className: { control: false }
-  }
+    className: { control: false },
+  },
 } satisfies Meta<typeof BasicButton>
 
 export default meta
@@ -31,27 +31,29 @@ type Story = StoryObj<typeof BasicButton>
 
 const TemplateStory: Story = {
   render: (args: BasicButtonProps) => {
-    return <BasicButton {...args}>{args.children}</BasicButton>
+    return (
+      <BasicButton {...args}>{args.children}</BasicButton>
+    )
   }
 }
 
 export const Light: Story = {
   ...TemplateStory,
   args: {
-    colorTheme: 'light'
+    colorTheme: 'light',
   }
 }
 
 export const Dark: Story = {
   ...TemplateStory,
   args: {
-    colorTheme: 'dark'
+    colorTheme: 'dark',
   },
   parameters: {
     backgrounds: {
       default: 'dark'
-    }
-  }
+    },
+  },
 }
 
 export const LightDisabled: Story = {
@@ -71,6 +73,6 @@ export const DarkDisabled: Story = {
   parameters: {
     backgrounds: {
       default: 'dark'
-    }
-  }
+    },
+  },
 }
