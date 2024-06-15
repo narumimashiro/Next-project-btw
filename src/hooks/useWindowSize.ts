@@ -15,7 +15,6 @@ export const ORIENTATION = {
 }
 
 export const useInnerSize = () => {
-
   if (typeof window === 'undefined' || typeof document?.documentElement === 'undefined') {
     return 0
   }
@@ -29,7 +28,6 @@ export const useInnerSize = () => {
   }
 
   useEffect(() => {
-
     handlerResize()
     window.addEventListener('resize', handlerResize)
 
@@ -48,5 +46,5 @@ export const useOrientation = () => {
 
 export const useTabletSize = () => {
   const windowSize = useInnerSize()
-  return (windowSize >= VIEW_BREAKPOINT_PORTRAIT) && (windowSize < VIEW_BREAKPOINT_TABLET)
+  return windowSize >= VIEW_BREAKPOINT_PORTRAIT && windowSize < VIEW_BREAKPOINT_TABLET
 }

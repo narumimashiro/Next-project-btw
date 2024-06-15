@@ -17,15 +17,13 @@ export const StrongButton = ({
   onClick,
   ...buttonProps
 }: StrongButtonProps) => {
-
   return (
     <button
       className={`${styles[`strongButton-${colorTheme}`]}${className}`}
       disabled={disabled}
       onClick={onClick}
-      {...buttonProps}
-    >
-      { children }
+      {...buttonProps}>
+      {children}
     </button>
   )
 }

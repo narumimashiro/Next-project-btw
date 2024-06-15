@@ -12,10 +12,9 @@ export const API_STATUS = {
   FAILED: 'API_FETCH_FAILED'
 } as const
 
-export type AptStatusType = typeof API_STATUS[keyof typeof API_STATUS]
+export type AptStatusType = (typeof API_STATUS)[keyof typeof API_STATUS]
 
 export const useApiStatus = () => {
-  
   const [status, setStatus] = useState<AptStatusType>(API_STATUS.IDLE)
 
   const startLoading = useCallback(() => {

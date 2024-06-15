@@ -4,7 +4,7 @@
 }
 
 .strongButton-light {
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: #000000;
   border: 2px solid #000000;
   @extend .strong-button;
@@ -19,14 +19,14 @@
 
 .strongButton-dark {
   color: #000000;
-  background-color: #FFFFFF;
-  border: 2px solid #FFFFFF;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
   @extend .strong-button;
   &:hover {
     background-color: var(--light-hover-color);
   }
   &:disabled {
     color: var(--light-disabled-text-color);
-    background-color: #FFFFFF;
+    background-color: #ffffff;
   }
 }

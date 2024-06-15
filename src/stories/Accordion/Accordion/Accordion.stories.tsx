@@ -14,14 +14,13 @@ const meta = {
       ]
     }
   },
-  args: {
-  },
+  args: {},
   argTypes: {
-    summaryStyle: { control: false},
-    detailStyle: { control: false},
-    colorTheme: { control: false},
-    detailComponent: { control: false},
-  },
+    summaryStyle: { control: false },
+    detailStyle: { control: false },
+    colorTheme: { control: false },
+    detailComponent: { control: false }
+  }
 } satisfies Meta<typeof Accordion>
 
 export default meta
@@ -30,7 +29,7 @@ type Story = StoryObj<typeof Accordion>
 
 const TemplateStory: Story = {
   render: (args: AccordionProps) => (
-    <div style={{width: '100%', height: 100, justifyContent: 'center', alignItems: 'center'}}>
+    <div style={{ width: '100%', height: 100, justifyContent: 'center', alignItems: 'center' }}>
       <Accordion {...args} />
     </div>
   )
@@ -40,13 +39,13 @@ export const Light: Story = {
   ...TemplateStory,
   args: {
     summary: 'sample summary',
-    detailTextList: ['TEXTTEXTTEXTTEXTTEXTTEXT', 'TEXTTEXTTEXTTEXTTEXTTEXT'],
+    detailTextList: ['TEXTTEXTTEXTTEXTTEXTTEXT', 'TEXTTEXTTEXTTEXTTEXTTEXT']
   },
   parameters: {
     backgrounds: {
       default: 'light'
-    },
-  },
+    }
+  }
 }
 
 export const Dark: Story = {
@@ -54,11 +53,11 @@ export const Dark: Story = {
   args: {
     colorTheme: 'dark',
     summary: 'sample summary',
-    detailTextList: ['TEXTTEXTTEXTTEXTTEXTTEXT', 'TEXTTEXTTEXTTEXTTEXTTEXT'],
+    detailTextList: ['TEXTTEXTTEXTTEXTTEXTTEXT', 'TEXTTEXTTEXTTEXTTEXTTEXT']
   },
   parameters: {
     backgrounds: {
       default: 'dark'
-    },
-  },
+    }
+  }
 }
