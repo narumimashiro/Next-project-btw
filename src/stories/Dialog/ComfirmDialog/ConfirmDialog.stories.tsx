@@ -17,13 +17,13 @@ const meta = {
   },
   args: {
     open: true,
-    children: <></>,
+    children: <></>
   },
   argTypes: {
     colorTheme: { control: false },
-    children: { table: { disable: true }},
-    onConfirm: { control: false },
-  },
+    children: { table: { disable: true } },
+    onConfirm: { control: false }
+  }
 } satisfies Meta<typeof ConfirmDialog>
 
 export default meta
@@ -44,10 +44,9 @@ export const Light: Story = {
         <ConfirmDialog
           open={isOpen}
           title={args.title}
-          colorTheme='light'
+          colorTheme="light"
           buttonString={args.buttonString}
-          onConfirm={() => setIsOpen(false)}
-        >
+          onConfirm={() => setIsOpen(false)}>
           <span>This is a dialog</span>
           <span>Click the button below to close.</span>
         </ConfirmDialog>
@@ -59,13 +58,13 @@ export const Light: Story = {
     colorTheme: 'light',
     title: 'Confirm Dialog',
     buttonString: 'OK',
-    ariaLabel: 'Confirm OK',
+    ariaLabel: 'Confirm OK'
   },
   parameters: {
     backgrounds: {
       default: 'light'
-    },
-  },
+    }
+  }
 }
 
 export const Dark: Story = {
@@ -79,10 +78,9 @@ export const Dark: Story = {
         <ConfirmDialog
           open={isOpen}
           title={args.title}
-          colorTheme='dark'
+          colorTheme="dark"
           buttonString={args.buttonString}
-          onConfirm={() => setIsOpen(false)}
-        >
+          onConfirm={() => setIsOpen(false)}>
           <span>This is a dialog</span>
           <span>Click the button below to close.</span>
         </ConfirmDialog>
@@ -94,11 +92,11 @@ export const Dark: Story = {
     colorTheme: 'dark',
     title: 'Confirm Dialog',
     buttonString: 'OK',
-    ariaLabel: 'Confirm OK',
+    ariaLabel: 'Confirm OK'
   },
   parameters: {
     backgrounds: {
       default: 'dark'
-    },
-  },
+    }
+  }
 }

@@ -25,12 +25,12 @@ const meta = {
     colorTheme: { control: false },
     resetApiState: { control: false },
     bodySuccess: {
-      onClick: { control: false },
+      onClick: { control: false }
     },
     bodyFailed: {
-      onClick: { control: false },
+      onClick: { control: false }
     }
-  },
+  }
 } satisfies Meta<typeof ApiFetchDialog>
 
 export default meta
@@ -38,7 +38,6 @@ export default meta
 type Story = StoryObj<typeof ApiFetchDialog>
 
 const SampleApi = () => {
-
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [status, setStatus] = useState<AptStatusType>(API_STATUS.IDLE)
 
@@ -46,7 +45,7 @@ const SampleApi = () => {
     setStatus(API_STATUS.LOADING)
 
     setTimeout(() => {
-      if(result) {
+      if (result) {
         setStatus(API_STATUS.SUCCESS)
       } else {
         setStatus(API_STATUS.FAILED)
@@ -63,17 +62,12 @@ const SampleApi = () => {
 
 const TemplateSuccessStory: Story = {
   render: (args: ApiFetchDialogProps) => {
-
     const { status: sampleApiFetchState, sampleApi, resetApi } = SampleApi()
 
     return (
       <>
         <button onClick={() => sampleApi(true)}>Call Sample API</button>
-        <ApiFetchDialog
-        {...args}
-        apiStatus={sampleApiFetchState}
-        resetApiState={resetApi}
-      />
+        <ApiFetchDialog {...args} apiStatus={sampleApiFetchState} resetApiState={resetApi} />
       </>
     )
   }
@@ -81,17 +75,12 @@ const TemplateSuccessStory: Story = {
 
 const TemplateFailedStory: Story = {
   render: (args: ApiFetchDialogProps) => {
-
     const { status: sampleApiFetchState, sampleApi, resetApi } = SampleApi()
 
     return (
       <>
         <button onClick={() => sampleApi(false)}>Call Sample API</button>
-        <ApiFetchDialog
-        {...args}
-        apiStatus={sampleApiFetchState}
-        resetApiState={resetApi}
-      />
+        <ApiFetchDialog {...args} apiStatus={sampleApiFetchState} resetApiState={resetApi} />
       </>
     )
   }
@@ -107,13 +96,13 @@ export const SuccessLight: Story = {
     },
     bodySuccess: {
       title: 'Success API',
-      bodyText: ['成功しました', 'OKでダイアログが閉じます'],
+      bodyText: ['成功しました', 'OKでダイアログが閉じます']
     },
     bodyFailed: {
       title: 'Failed API',
-      bodyText: ['失敗しました'],
-    },
-  },
+      bodyText: ['失敗しました']
+    }
+  }
 }
 
 export const SuccessDark: Story = {
@@ -126,19 +115,19 @@ export const SuccessDark: Story = {
     },
     bodySuccess: {
       title: 'Success API',
-      bodyText: ['成功しました'],
+      bodyText: ['成功しました']
     },
     bodyFailed: {
       title: 'Failed API',
-      bodyText: ['失敗しました'],
-    },
+      bodyText: ['失敗しました']
+    }
   },
   parameters: {
     backgrounds: {
       default: 'dark'
     },
     theme: 'dark'
-  },
+  }
 }
 
 export const FailedLight: Story = {
@@ -151,13 +140,13 @@ export const FailedLight: Story = {
     },
     bodySuccess: {
       title: 'Success API',
-      bodyText: ['成功しました'],
+      bodyText: ['成功しました']
     },
     bodyFailed: {
       title: 'Failed API',
-      bodyText: ['失敗しました'],
-    },
-  },
+      bodyText: ['失敗しました']
+    }
+  }
 }
 
 export const FailedDark: Story = {
@@ -170,17 +159,17 @@ export const FailedDark: Story = {
     },
     bodySuccess: {
       title: 'Success API',
-      bodyText: ['成功しました'],
+      bodyText: ['成功しました']
     },
     bodyFailed: {
       title: 'Failed API',
-      bodyText: ['失敗しました'],
-    },
+      bodyText: ['失敗しました']
+    }
   },
   parameters: {
     backgrounds: {
       default: 'dark'
     },
     theme: 'dark'
-  },
+  }
 }

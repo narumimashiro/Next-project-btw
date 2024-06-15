@@ -8,22 +8,22 @@ export type ApiFetchDialogProps = {
   apiStatus: AptStatusType
   colorTheme?: 'light' | 'dark'
   bodyLoading: {
-    title?: string,
+    title?: string
     bodyText: string[]
   }
   bodySuccess: {
-    title?: string,
-    bodyText: string[],
+    title?: string
+    bodyText: string[]
     buttonString?: string
     onClick?: () => void
   }
   bodyFailed: {
-    title?: string,
-    bodyText: string[],
+    title?: string
+    bodyText: string[]
     buttonString?: string
     onClick?: () => void
   }
-  resetApiState: () => void,
+  resetApiState: () => void
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 export const ApiFetchDialog = ({
@@ -35,10 +35,9 @@ export const ApiFetchDialog = ({
   resetApiState,
   ...buttonProps
 }: ApiFetchDialogProps) => {
-
   useEffect(() => {
     return () => resetApiState()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const { t } = useTranslation()
@@ -52,11 +51,11 @@ export const ApiFetchDialog = ({
   const failedBtnStr = bodyFailed.buttonString ?? 'STRID_cmn_ok'
 
   const handlerConform = () => {
-    if(apiStatus === API_STATUS.SUCCESS) {
-      if(bodySuccess.onClick) bodySuccess.onClick()
+    if (apiStatus === API_STATUS.SUCCESS) {
+      if (bodySuccess.onClick) bodySuccess.onClick()
     } else {
       // apiStatus === API_STATUS.FAILED
-      if(bodyFailed.onClick) bodyFailed.onClick()
+      if (bodyFailed.onClick) bodyFailed.onClick()
     }
     // Fetch reset function to close a dialog
     resetApiState()
@@ -67,44 +66,47 @@ export const ApiFetchDialog = ({
       <div className={styles[`overlay-${colorTheme}`]}>
         <div className={`absolute-center ${styles[`dialog-${colorTheme}`]}`}>
           <div className={styles.containerWrap}>
-            {
-              apiStatus === API_STATUS.SUCCESS || apiStatus === API_STATUS.FAILED ? (
-                <>
-                  <div className={styles.contentsWrap}>
-                    <h2 className={`text-xl-bold ${styles.title}`}>
-                      {apiStatus === API_STATUS.SUCCESS ? bodySuccess.title : bodyFailed.title}
-                    </h2>
-                    {
-                      apiStatus === API_STATUS.SUCCESS ? (
-                        bodySuccess.bodyText.map((sentence, index) => <p key={`{body-text-${index}}`}>{sentence}</p>)
-                      ) : (
-                        bodyFailed.bodyText.map((sentence, index) => <p key={`{body-text-${index}}`}>{sentence}</p>)
-                      )
-                    }
-                  </div>
-                  <div className={styles.bottomButton}>
-                    <div className={styles[`horizon-${colorTheme}`]}></div>
-                    <button
-                      className={`text-xl-bold button-active-${colorTheme}`}
-                      aria-label={apiStatus === API_STATUS.SUCCESS ? ariaLabelSuccess : ariaLabelFailed}
-                      onClick={handlerConform}
-                      {...buttonProps}
-                    >
-                      {apiStatus === API_STATUS.SUCCESS ? t(`${successBtnStr}`) : t(`${failedBtnStr}`)}
-                    </button>
-                  </div>
-                </>
-              ) : (
-                // apiStatus === API_STATUS.LOADING
+            {apiStatus === API_STATUS.SUCCESS || apiStatus === API_STATUS.FAILED ? (
+              <>
                 <div className={styles.contentsWrap}>
-                  <h2 className={`text-2xl-bold ${styles.title}`}>{bodyLoading.title}</h2>
-                  {bodyLoading.bodyText.map((sentence, index) => <p key={`{body-text-${index}}`}>{sentence}</p>)}
-                  <div className={styles.loading}>
-                    <Loading />
-                  </div>
+                  <h2 className={`text-xl-bold ${styles.title}`}>
+                    {apiStatus === API_STATUS.SUCCESS ? bodySuccess.title : bodyFailed.title}
+                  </h2>
+                  {apiStatus === API_STATUS.SUCCESS
+                    ? bodySuccess.bodyText.map((sentence, index) => (
+                        <p key={`{body-text-${index}}`}>{sentence}</p>
+                      ))
+                    : bodyFailed.bodyText.map((sentence, index) => (
+                        <p key={`{body-text-${index}}`}>{sentence}</p>
+                      ))}
                 </div>
-              )
-            }
+                <div className={styles.bottomButton}>
+                  <div className={styles[`horizon-${colorTheme}`]}></div>
+                  <button
+                    className={`text-xl-bold button-active-${colorTheme}`}
+                    aria-label={
+                      apiStatus === API_STATUS.SUCCESS ? ariaLabelSuccess : ariaLabelFailed
+                    }
+                    onClick={handlerConform}
+                    {...buttonProps}>
+                    {apiStatus === API_STATUS.SUCCESS
+                      ? t(`${successBtnStr}`)
+                      : t(`${failedBtnStr}`)}
+                  </button>
+                </div>
+              </>
+            ) : (
+              // apiStatus === API_STATUS.LOADING
+              <div className={styles.contentsWrap}>
+                <h2 className={`text-2xl-bold ${styles.title}`}>{bodyLoading.title}</h2>
+                {bodyLoading.bodyText.map((sentence, index) => (
+                  <p key={`{body-text-${index}}`}>{sentence}</p>
+                ))}
+                <div className={styles.loading}>
+                  <Loading />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

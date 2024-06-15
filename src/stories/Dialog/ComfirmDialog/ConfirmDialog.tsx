@@ -20,9 +20,8 @@ export const ConfirmDialog = ({
   ariaLabel = 'Confirm_OK',
   onConfirm
 }: ConfirmDialogProps) => {
-
   const { t } = useTranslation()
-  
+
   const displayDialog = open ? 'dialog-visible' : 'dialog-hidden'
   const btnString = buttonString ? buttonString : t('STRID_cmn_ok')
 
@@ -32,15 +31,14 @@ export const ConfirmDialog = ({
         <div className={`absolute-center ${styles[`dialog-${colorTheme}`]}`}>
           <div className={styles.contentsWrap}>
             <h2 className={`text-xl-bold ${styles.title}`}>{title}</h2>
-            { children }
+            {children}
           </div>
           <div className={styles[`horizon-${colorTheme}`]}></div>
           <button
             className={`${`button-active-${colorTheme}`} ${styles.confirmButton}`}
             aria-label={ariaLabel}
-            onClick={onConfirm}
-          >
-            { btnString }
+            onClick={onConfirm}>
+            {btnString}
           </button>
         </div>
       </div>

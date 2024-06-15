@@ -1,19 +1,18 @@
 import { createContext, useContext, useState } from 'react'
 
 export type Breadcrumptype = {
-  path: string,
+  path: string
   label: string
 }
 
 export type BreadcrumbContextType = {
-  breadcrumbs: Breadcrumptype[],
+  breadcrumbs: Breadcrumptype[]
   updateBreadcrumbs: (newBreadcrumbs: Breadcrumptype[]) => void
 }
 
 const BreadcrumbContext = createContext<BreadcrumbContextType | null>(null)
 
 export const BreadcrumbProvider = ({ children }: { children: React.ReactNode }) => {
-
   const [breadcrumbs, setBreadcrumbs] = useState<Breadcrumptype[]>([])
 
   const updateBreadcrumbs = (newBreadcrumbs: Breadcrumptype[]) => {

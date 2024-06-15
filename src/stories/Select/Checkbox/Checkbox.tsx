@@ -18,27 +18,25 @@ export const Checkbox = ({
   filling,
   ...inputProps
 }: CheckboxProps) => {
-
   return (
-    <label 
+    <label
       className={styles[`checkbox-wrap-${colorTheme}`]}
       tabIndex={0}
       onKeyDown={(e) => {
-        if(e.key === 'Enter') {
+        if (e.key === 'Enter') {
           onChange(!isChecked)
           e.preventDefault()
         }
-      }}
-    >
-      <label className={`
+      }}>
+      <label
+        className={`
         ${styles[`checkbox-${colorTheme}`]}
         ${filling ? styles.filling : ''}
         ${isChecked ? styles.checked : ''}
         ${disabled ? styles.disabled : ''}
-        ${className ? className : ''}`}
-      >
+        ${className ? className : ''}`}>
         <input
-          type='checkbox'
+          type="checkbox"
           role="checkbox"
           checked={isChecked}
           disabled={disabled}

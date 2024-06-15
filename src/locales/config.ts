@@ -18,16 +18,14 @@ const resources = {
   }
 }
 
-i18n
-  .use(initReactI18next)
-  .init({
-    resources,
-    lng: 'ja',
-    interpolation: {
-      escpeValue: false
-    }
-  })
-
-  module.exports = {
-    language
+i18n.use(initReactI18next).init({
+  resources,
+  lng: 'ja',
+  interpolation: {
+    escpeValue: false
   }
+})
+
+module.exports = {
+  language
+}
