@@ -1,8 +1,8 @@
 import styles from './RadioGroup.module.scss'
 
 type RadioOptions = {
-  label: string,
-  value: string 
+  label: string
+  value: string
 }
 
 export type RadioGroupProps = {
@@ -24,24 +24,20 @@ export const RadioGroup = ({
   currentValue,
   onChange
 }: RadioGroupProps) => {
-
   return (
-    <div className={styles['radio-wrap']} style={{flexDirection: radioType}}>
-      {optionList.map(radioEl => {
+    <div className={styles['radio-wrap']} style={{ flexDirection: radioType }}>
+      {optionList.map((radioEl) => {
         return (
-          <label
-            key={radioEl.value}
-            className={`${styles['radio-items']} ${radioProps}`}
-          >
+          <label key={radioEl.value} className={`${styles['radio-items']} ${radioProps}`}>
             <input
-              type='radio'
+              type="radio"
               name={name}
               value={radioEl.value}
               checked={radioEl.value === currentValue}
               onChange={() => onChange(radioEl.value)}
             />
             <span className={styles[`checkmark-${colorTheme}`]}></span>
-            <span className={styles[`radio-label-${colorTheme}`]}>{ radioEl.label }</span>
+            <span className={styles[`radio-label-${colorTheme}`]}>{radioEl.label}</span>
           </label>
         )
       })}

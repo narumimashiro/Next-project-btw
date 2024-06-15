@@ -5,7 +5,7 @@
 
 $radio-item-height: 24px;
 
-.radio-items input[type="radio"] {
+.radio-items input[type='radio'] {
   visibility: hidden;
   position: absolute;
 }
@@ -26,7 +26,7 @@ $radio-item-height: 24px;
 
   .radio-label-dark {
     height: $radio-item-height;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .checkmark-light {

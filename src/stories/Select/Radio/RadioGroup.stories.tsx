@@ -15,13 +15,12 @@ const meta = {
       ]
     }
   },
-  args: {
-  },
+  args: {},
   argTypes: {
-    colorTheme: { control: false},
-    radioProps: { control: false},
-    onChange: { control: false},
-  },
+    colorTheme: { control: false },
+    radioProps: { control: false },
+    onChange: { control: false }
+  }
 } satisfies Meta<typeof RadioGroup>
 
 export default meta
@@ -30,16 +29,11 @@ type Story = StoryObj<typeof RadioGroup>
 
 const TemplateStory: Story = {
   render: (args: RadioGroupProps) => {
-
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [current, setCurrent] = useState(args.currentValue)
 
     return (
-      <RadioGroup
-        {...args}
-        currentValue={current}
-        onChange={(value) => setCurrent(value)}
-      />
+      <RadioGroup {...args} currentValue={current} onChange={(value) => setCurrent(value)} />
     )
   }
 }
@@ -53,14 +47,14 @@ export const LightRow: Story = {
       { label: 'Option1', value: 'Option1' },
       { label: 'Option2', value: 'Option2' },
       { label: 'Option3', value: 'Option3' },
-      { label: 'Option4', value: 'Option4' },
-    ],
+      { label: 'Option4', value: 'Option4' }
+    ]
   },
   parameters: {
     backgrounds: {
       default: 'light'
-    },
-  },
+    }
+  }
 }
 
 export const DarkRow: Story = {
@@ -73,14 +67,14 @@ export const DarkRow: Story = {
       { label: 'Option1', value: 'Option1' },
       { label: 'Option2', value: 'Option2' },
       { label: 'Option3', value: 'Option3' },
-      { label: 'Option4', value: 'Option4' },
+      { label: 'Option4', value: 'Option4' }
     ]
   },
   parameters: {
     backgrounds: {
       default: 'dark'
-    },
-  },
+    }
+  }
 }
 
 export const LightColumn: Story = {
@@ -92,15 +86,15 @@ export const LightColumn: Story = {
       { label: 'Option1', value: 'Option1' },
       { label: 'Option2', value: 'Option2' },
       { label: 'Option3', value: 'Option3' },
-      { label: 'Option4', value: 'Option4' },
+      { label: 'Option4', value: 'Option4' }
     ],
     radioType: 'column'
   },
   parameters: {
     backgrounds: {
       default: 'light'
-    },
-  },
+    }
+  }
 }
 
 export const DarkColumn: Story = {
@@ -113,13 +107,13 @@ export const DarkColumn: Story = {
       { label: 'Option1', value: 'Option1' },
       { label: 'Option2', value: 'Option2' },
       { label: 'Option3', value: 'Option3' },
-      { label: 'Option4', value: 'Option4' },
+      { label: 'Option4', value: 'Option4' }
     ],
     radioType: 'column'
   },
   parameters: {
     backgrounds: {
       default: 'dark'
-    },
-  },
+    }
+  }
 }
