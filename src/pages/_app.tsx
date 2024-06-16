@@ -4,9 +4,6 @@ import { RecoilRoot } from 'recoil'
 import { appWithTranslation, useTranslation } from 'next-i18next'
 import '@/locales/config'
 
-import { ThemeProvider, createTheme } from '@mui/material/styles'
-import CssBaseline from '@mui/material/CssBaseline'
-
 import '@/styles/globals.scss'
 
 import React from 'react'
@@ -14,23 +11,8 @@ import { AdoLayout } from '@/components/layout'
 import { CustomProvider } from '@/components/customProvider'
 
 import { useLocaleSlug, I18NEXT_LOCALE } from '@/hooks/useLocaleSlug'
-import { useThemeStyle } from '@/hooks/useThemeStyle'
-
-const lightTheme = createTheme({
-  palette: {
-    mode: 'light'
-  }
-})
-
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark'
-  }
-})
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const theme = useThemeStyle()
-  const selectedTheme = theme ? darkTheme : lightTheme
   const locale = useLocaleSlug()
   const { i18n } = useTranslation()
 
@@ -43,12 +25,9 @@ const App = ({ Component, pageProps }: AppProps) => {
     <RecoilRoot>
       <React.StrictMode>
         <CustomProvider>
-          <ThemeProvider theme={selectedTheme}>
-            <CssBaseline />
-            <AdoLayout>
-              <Component {...pageProps} />
-            </AdoLayout>
-          </ThemeProvider>
+          <AdoLayout>
+            <Component {...pageProps} />
+          </AdoLayout>
         </CustomProvider>
       </React.StrictMode>
     </RecoilRoot>

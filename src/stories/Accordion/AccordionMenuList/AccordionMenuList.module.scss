@@ -84,7 +84,7 @@ $icon-position-right: 10px;
     margin: 0;
     list-style: none;
     overflow: hidden;
-    padding: 0 15px;
+    padding: 0 10px;
 
     &.light,
     &.light * {
@@ -113,6 +113,7 @@ $icon-position-right: 10px;
 
       a {
         text-decoration: none;
+        padding: 0 5px;
       }
 
       .link {

@@ -1,7 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 
+import { ThemeProvider, createTheme } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
 import { ORIENTATION, useInnerSize, useOrientation, useTabletSize } from '@/hooks/useWindowSize'
+import { DARK_MODE, LIGHT_MODE, useUserColorTheme } from '@/hooks/useThemeStyle'
 
 export type CustomContextType = {
   isPortrait: boolean
@@ -31,7 +34,11 @@ export const CustomProvider = ({ children }: { children: React.ReactNode }) => {
     isTabletSize
   }
 
-  return <CustomContext.Provider value={providerValue}>{children}</CustomContext.Provider>
+  return (
+    <CustomContext.Provider value={providerValue}>
+      <MuiThemeProvider>{children}</MuiThemeProvider>
+    </CustomContext.Provider>
+  )
 }
 
 export const useCustomContext = (): CustomContextType => {
@@ -40,4 +47,28 @@ export const useCustomContext = (): CustomContextType => {
     throw new Error('useCustomContext must be used within a CustomProvider')
   }
   return context
+}
+
+const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
+  const lightTheme = createTheme({
+    palette: {
+      mode: LIGHT_MODE
+    }
+  })
+
+  const darkTheme = createTheme({
+    palette: {
+      mode: DARK_MODE
+    }
+  })
+
+  const { userColorTheme } = useUserColorTheme()
+  const selectedTheme = userColorTheme === DARK_MODE ? darkTheme : lightTheme
+
+  return (
+    <ThemeProvider theme={selectedTheme}>
+      <CssBaseline />
+      {children}
+    </ThemeProvider>
+  )
 }
