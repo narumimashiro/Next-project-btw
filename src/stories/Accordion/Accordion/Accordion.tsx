@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, CSSProperties } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 import { useTheme } from '@mui/material'
 import ArrowDownLight from '@/img/light/arrow_down_light.svg'
