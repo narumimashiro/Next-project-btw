@@ -1,0 +1,27 @@
+.fap-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 16px 64px;
+  gap: 5px;
+
+  &.tablet * {
+    max-width: var(--page-max-width-tablet);
+  }
+
+  * {
+    max-width: var(--page-max-width-pc);
+  }
+}
+.fap-wrapper-light {
+  @extend .fap-wrapper;
+  color: #000000;
+  background-color: var(--light-hover-color);
+}
+
+.fap-wrapper-dark {
+  @extend .fap-wrapper;
+  color: #ffffff;
+  background-color: var(--dark-hover-color);
+}

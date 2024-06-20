@@ -5,13 +5,13 @@ $summary-height: 30px;
 
   &.light,
   &.light button {
-    color: #000000;
-    background-color: var(--light-background-color);
+    color: inherit;
+    background-color: inherit;
   }
   &.dark,
-  &.dark button {
-    color: #ffffff;
-    background-color: var(--dark-background-color);
+  &.dark .default {
+    color: inherit;
+    background-color: inherit;
   }
 
   .summary {
@@ -41,11 +41,11 @@ $summary-height: 30px;
   }
 
   .details {
-    margin: 5px 10px;
+    padding: 0 10px;
     overflow: hidden;
 
     .detailText {
-      margin: 5px 0;
+      margin: 10px 0;
     }
   }
 }

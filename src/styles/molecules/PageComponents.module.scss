@@ -6,12 +6,17 @@
 
 .page-contents-wrap-portrait {
   @extend .page-contents-wrap;
-  width: 100%;
   padding: 10px;
+}
+
+.page-contents-wrap-tablet {
+  @extend .page-contents-wrap;
+  max-width: var(--page-max-width-tablet);
+  margin: auto;
 }
 
 .page-contents-wrap-landscape {
   @extend .page-contents-wrap;
-  max-width: 720px;
+  max-width: var(--page-max-width-pc);
   margin: auto;
 }

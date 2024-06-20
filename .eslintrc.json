@@ -12,7 +12,7 @@
     "no-console": "error",
     "no-debugger": "error",
     "no-alert": "error",
-    "no-unused-vars": "warn",
+    "no-unused-vars": ["warn", { "args": "none" }],
     "no-multiple-empty-lines": ["error", { "max": 1 }],
     "@next/next/no-img-element": "off",
     "unused-imports/no-unused-imports": "error",

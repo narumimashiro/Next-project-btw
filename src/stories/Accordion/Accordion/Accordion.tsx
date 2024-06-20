@@ -1,5 +1,6 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, CSSProperties } from 'react'
 
+import { useTheme } from '@mui/material'
 import ArrowDownLight from '@/img/light/arrow_down_light.svg'
 import ArrowDownDark from '@/img/dark/arrow_down_dark.svg'
 
@@ -15,13 +16,16 @@ export type AccordionProps = {
 }
 
 export const Accordion = ({
-  colorTheme = 'light',
+  colorTheme,
   summary,
   summaryStyle,
   detailTextList,
   detailComponent,
   detailStyle
 }: AccordionProps) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const color = colorTheme ? colorTheme : useTheme().palette.mode
+
   const [detailsOpen, setDetailsOpen] = useState(false)
   const accordionDetailRef = useRef<HTMLDivElement>(null)
   const [detailHeight, setDetailHeight] = useState(0)
@@ -39,24 +43,24 @@ export const Accordion = ({
   }
 
   return (
-    <div className={`${styles.accordionWrap} ${styles[colorTheme]}`}>
+    <div className={`${styles.accordionWrap} ${styles[color]}`}>
       <button
-        className={`text-xl ${styles.summary} ${summaryStyle}`}
+        className={`${styles.summary} ${summaryStyle ? summaryStyle : styles.default}`}
         onClick={() => setDetailsOpen(!detailsOpen)}>
         {summary}
         <img
           className={`${styles.arrowIcon} ${
             detailsOpen ? styles.clockwise : styles.counterclockwise
           }`}
-          src={colorTheme === 'light' ? ArrowDownLight.src : ArrowDownDark.src}
+          src={color === 'light' ? ArrowDownLight.src : ArrowDownDark.src}
           alt=""
         />
       </button>
-      <div className={styles[`horizon-${colorTheme}`]}></div>
+      <div className={styles[`horizon-${color}`]}></div>
       <div
         ref={accordionDetailRef}
         style={accordionDetailStyle}
-        className={`${styles.details} ${detailStyle}`}>
+        className={`${styles.details} ${detailStyle ? detailStyle : ''}`}>
         {detailTextList?.map((detail, index) => (
           <p key={`detail-text-${index}`} className={styles.detailText}>
             {detail}
