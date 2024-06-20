@@ -5,11 +5,8 @@ type PageTemplateProps = {
   children: React.ReactNode
 }
 export const PageTemplate = ({ children }: PageTemplateProps) => {
-  const { isPortrait } = useCustomContext()
+  const { isPortrait, isTabletSize } = useCustomContext()
+  const pageSize = isTabletSize ? 'tablet' : isPortrait ? 'portrait' : 'landscape'
 
-  return (
-    <div className={styles[`page-contents-wrap-${isPortrait ? 'portrait' : 'landscape'}`]}>
-      {children}
-    </div>
-  )
+  return <div className={styles[`page-contents-wrap-${pageSize}`]}>{children}</div>
 }
