@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'next-i18next'
 
-import { ConfirmDialog } from '@/stories/Dialog/ComfirmDialog/ConfirmDialog'
-import { Checkbox } from '@/stories/Select/Checkbox/Checkbox'
+import { ConfirmDialog } from '@/stories/Dialog/ConfirmDialog'
+import { Checkbox } from '@/stories/Select/Checkbox'
 
 export type ReDisplayOptionDialogProps = {
   open: boolean

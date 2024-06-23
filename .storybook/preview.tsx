@@ -8,14 +8,14 @@ import { useTranslation } from 'next-i18next'
 
 const darkTheme = createTheme({
   palette: {
-    mode: 'dark',
-  },
+    mode: 'dark'
+  }
 })
 
 const lightTheme = createTheme({
   palette: {
-    mode: 'light',
-  },
+    mode: 'light'
+  }
 })
 
 const preview: Preview = {
@@ -26,34 +26,33 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i
       }
-    },
+    }
   },
   decorators: [
     (Story, context) => {
-      
       const theme = context.parameters.theme === 'dark' ? darkTheme : lightTheme
       const { i18n } = useTranslation()
 
       return (
         <I18nextProvider i18n={i18n}>
           <ThemeProvider theme={theme}>
-            <div style={{
-              minWidth: '390px',
-              width: '50vw',
-              minHeight: '250px',
-              height: '39svh',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center'
-            }}
-            >
+            <div
+              style={{
+                minWidth: '390px',
+                width: '50vw',
+                minHeight: '250px',
+                height: '39svh',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}>
               <Story />
             </div>
           </ThemeProvider>
         </I18nextProvider>
       )
-    },
-  ],
+    }
+  ]
 }
 
 export default preview

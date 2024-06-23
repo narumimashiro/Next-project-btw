@@ -1,0 +1,117 @@
+$max-wrap-width: 390px;
+$max-wrap-height: 900px;
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.39s ease-out;
+
+  &.open {
+    opacity: 1;
+  }
+}
+
+.overlay-light {
+  @extend .overlay;
+  background-color: rgba(0, 0, 0, 0.39);
+}
+
+.overlay-dark {
+  @extend .overlay;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.fullscreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  transition: z-index 0.39s ease-out;
+
+  &.open {
+    z-index: 0;
+  }
+}
+
+.wrap-drawer-right,
+.wrap-drawer-left {
+  position: absolute;
+  top: 0;
+  z-index: 39 !important;
+  width: 80%;
+  height: 100%;
+  max-width: $max-wrap-width;
+
+  &.light {
+    color: #000000;
+    background-color: var(--light-background-color);
+  }
+
+  &.dark {
+    color: #ffffff;
+    background-color: var(--dark-background-color);
+  }
+}
+
+.wrap-drawer-top,
+.wrap-drawer-bottom {
+  position: absolute;
+  z-index: 39 !important;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  max-height: $max-wrap-height;
+
+  &.light {
+    color: #000000;
+    background-color: var(--light-background-color);
+  }
+
+  &.dark {
+    color: #ffffff;
+    background-color: var(--dark-background-color);
+  }
+}
+
+.wrap-drawer-right {
+  right: calc(-1 * $max-wrap-width);
+  transition: right 0.39s ease-out;
+
+  &.open {
+    right: 0;
+  }
+}
+
+.wrap-drawer-left {
+  left: calc(-1 * $max-wrap-width);
+  transition: left 0.39s ease-out;
+
+  &.open {
+    left: 0;
+  }
+}
+
+.wrap-drawer-top {
+  top: calc(-1 * $max-wrap-height);
+  transition: top 0.39s ease-out;
+
+  &.open {
+    top: 0;
+  }
+}
+
+.wrap-drawer-bottom {
+  bottom: calc(-1 * $max-wrap-height);
+  transition: bottom 0.39s ease-out;
+
+  &.open {
+    bottom: 0;
+  }
+}

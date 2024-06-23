@@ -5,7 +5,7 @@ import { API_STATUS, AptStatusType } from '@/hooks/useApiStatus'
 import { ApiFetchDialog, ApiFetchDialogProps } from './ApiFetchDialog'
 
 const meta = {
-  title: 'BTW-Custom/Dialog/ApiFetchDialog',
+  title: 'BTW-Custom/ApiFetchDialog',
   component: ApiFetchDialog,
   parameters: {
     layout: 'centered',

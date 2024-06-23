@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { RadioGroup, RadioGroupProps } from './RadioGroup'
 
 const meta = {
-  title: 'BTW-Custom/Select/RadioGroup',
+  title: 'BTW-Custom/RadioGroup',
   component: RadioGroup,
   parameters: {
     layout: 'centered',

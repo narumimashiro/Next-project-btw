@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { MarqueeText, MarqueeTextProps } from './MarqueeText'
 
 const meta = {
-  title: 'BTW-Custom/Text/MarqueeText',
+  title: 'BTW-Custom/MarqueeText',
   component: MarqueeText,
   parameters: {
     layout: 'centered',
