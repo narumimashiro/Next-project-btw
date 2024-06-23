@@ -17,6 +17,7 @@ $summary-height: 30px;
   .summary {
     position: relative;
     width: 100%;
+    font-weight: bold;
     padding-left: 10px;
     min-height: $summary-height;
     height: auto;
