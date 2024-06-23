@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { ReDisplayOptionDialog, ReDisplayOptionDialogProps } from './ReDisplayOptionDialog'
 
 const meta = {
-  title: 'BTW-Custom/Dialog/ReDisplayOptionDialog',
+  title: 'BTW-Custom/ReDisplayOptionDialog',
   component: ReDisplayOptionDialog,
   parameters: {
     layout: 'centered',

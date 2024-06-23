@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Checkbox, CheckboxProps } from './Checkbox'
 
 const meta = {
-  title: 'BTW-Custom/Select/Checkbox',
+  title: 'BTW-Custom/Checkbox',
   component: Checkbox,
   parameters: {
     layout: 'centered',

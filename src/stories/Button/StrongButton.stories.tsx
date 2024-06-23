@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { BasicButton, BasicButtonProps } from './BasicButton'
+import { StrongButton, StrongButtonProps } from './StrongButton'
 
 const meta = {
-  title: 'BTW-Custom/Button/BasicButton',
-  component: BasicButton,
+  title: 'BTW-Custom/StrongButton',
+  component: StrongButton,
   parameters: {
     layout: 'centered',
     backgrounds: {
@@ -23,15 +23,15 @@ const meta = {
     colorTheme: { control: false },
     className: { control: false }
   }
-} satisfies Meta<typeof BasicButton>
+} satisfies Meta<typeof StrongButton>
 
 export default meta
 
-type Story = StoryObj<typeof BasicButton>
+type Story = StoryObj<typeof StrongButton>
 
 const TemplateStory: Story = {
-  render: (args: BasicButtonProps) => {
-    return <BasicButton {...args}>{args.children}</BasicButton>
+  render: (args: StrongButtonProps) => {
+    return <StrongButton {...args}>{args.children}</StrongButton>
   }
 }
 

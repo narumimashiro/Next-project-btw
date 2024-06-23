@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { ConfirmDialog } from './ConfirmDialog'
 
 const meta = {
-  title: 'BTW-Custom/Dialog/ConfirmDialog',
+  title: 'BTW-Custom/ConfirmDialog',
   component: ConfirmDialog,
   parameters: {
     layout: 'centered',

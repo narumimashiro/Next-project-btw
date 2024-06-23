@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Slider, SliderProps } from './Slider'
 
 const meta = {
-  title: 'BTW-Custom/Slider/Slider',
+  title: 'BTW-Custom/Slider',
   component: Slider,
   parameters: {
     layout: 'centered',

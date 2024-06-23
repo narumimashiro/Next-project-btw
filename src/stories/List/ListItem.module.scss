@@ -1,0 +1,54 @@
+.list-item {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  line-height: 2rem;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+  transition: transform 0.5s ease-out;
+
+  span {
+    margin-top: 3px;
+  }
+}
+
+.list-item-light {
+  @extend .list-item;
+  color: #000000;
+
+  &:hover {
+    background-color: var(--light-hover-color);
+  }
+}
+
+.list-item-dark {
+  @extend .list-item;
+  color: #ffffff;
+
+  &:hover {
+    background-color: var(--dark-hover-color);
+  }
+}
+
+.listIcon {
+  display: flex;
+  justify-content: center;
+  max-height: 24px;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 39%;
+  transform: scale(0);
+  animation: ripple 0.39s linear;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}

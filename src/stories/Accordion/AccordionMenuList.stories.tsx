@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { AccordionMenuList, AccordionMenuListProps } from './AccordionMenuList'
 
 const meta = {
-  title: 'BTW-Custom/Accordion/AccordionMenuList',
+  title: 'BTW-Custom/AccordionMenuList',
   component: AccordionMenuList,
   parameters: {
     layout: 'centered',
