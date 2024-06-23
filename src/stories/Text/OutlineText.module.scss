@@ -1,0 +1,41 @@
+@mixin text-shadow($shadow-color) {
+  text-shadow:
+    0.75px 0.75px 0 $shadow-color,
+    -0.75px 0.75px 0 $shadow-color,
+    0.75px -0.75px 0 $shadow-color,
+    -0.75px -0.75px 0 $shadow-color,
+    0.75px 0 0 $shadow-color,
+    -0.75px 0 0 $shadow-color,
+    0 0.75px 0 $shadow-color,
+    0 -0.75px 0 $shadow-color;
+}
+
+.outline-light {
+  color: var(--light-background-color);
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include text-shadow(var(--shadow-color));
+  }
+}
+
+.outline-dark {
+  color: var(--dark-background-color);
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include text-shadow(var(--shadow-color));
+  }
+}
