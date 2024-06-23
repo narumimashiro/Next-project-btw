@@ -20,7 +20,8 @@ const meta = {
   args: {},
   argTypes: {
     colorTheme: { control: false },
-    icon: { control: false }
+    icon: { control: false },
+    onClick: { control: false }
   }
 } satisfies Meta<typeof ListItem>
 
