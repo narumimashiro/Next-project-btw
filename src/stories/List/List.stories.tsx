@@ -58,6 +58,28 @@ const TemplateStory: Story = {
 
 export const Light: Story = {
   ...TemplateStory,
+  args: {},
+  parameters: {
+    backgrounds: {
+      default: 'light'
+    }
+  }
+}
+
+export const Dark: Story = {
+  ...TemplateStory,
+  args: {
+    colorTheme: 'dark'
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
+  }
+}
+
+export const GroupNameLight: Story = {
+  ...TemplateStory,
   args: {
     groupName: 'Smart Phone'
   },
@@ -68,7 +90,7 @@ export const Light: Story = {
   }
 }
 
-export const Dark: Story = {
+export const GroupNameDark: Story = {
   ...TemplateStory,
   args: {
     groupName: 'Smart Phone',
