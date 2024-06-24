@@ -1,13 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { ListItem, ListItemProps } from './ListItem'
+import { List, ListProps } from './List'
 
 import AppleIcon from '@mui/icons-material/Apple'
 import AndroidIcon from '@mui/icons-material/Android'
+import { ListItem } from './ListItem'
 
 const meta = {
-  title: 'BTW-Custom/ListItem',
-  component: ListItem,
+  title: 'BTW-Custom/List',
+  component: List,
   parameters: {
     layout: 'centered',
     backgrounds: {
@@ -20,26 +21,45 @@ const meta = {
   args: {},
   argTypes: {
     colorTheme: { control: false },
-    icon: { control: false },
-    onClick: { control: false }
+    className: { control: false }
   }
-} satisfies Meta<typeof ListItem>
+} satisfies Meta<typeof List>
 
 export default meta
 
-type Story = StoryObj<typeof ListItem>
+type Story = StoryObj<typeof List>
 
 const TemplateStory: Story = {
-  render: (args: ListItemProps) => {
-    return <ListItem {...args} />
+  render: (args: ListProps) => {
+    const sampleList = [
+      {
+        text: 'Apple',
+        icon: <AppleIcon />
+      },
+      {
+        text: 'Androild',
+        icon: <AndroidIcon />
+      }
+    ]
+
+    return (
+      <List {...args}>
+        {sampleList.map((item) => (
+          <ListItem
+            colorTheme={args.colorTheme}
+            text={item.text}
+            icon={item.icon}
+            onClick={() => {}}
+          />
+        ))}
+      </List>
+    )
   }
 }
 
 export const Light: Story = {
   ...TemplateStory,
-  args: {
-    text: 'Text List Item'
-  },
+  args: {},
   parameters: {
     backgrounds: {
       default: 'light'
@@ -50,7 +70,6 @@ export const Light: Story = {
 export const Dark: Story = {
   ...TemplateStory,
   args: {
-    text: 'Text List Item',
     colorTheme: 'dark'
   },
   parameters: {
@@ -60,11 +79,10 @@ export const Dark: Story = {
   }
 }
 
-export const IconLight: Story = {
+export const GroupNameLight: Story = {
   ...TemplateStory,
   args: {
-    text: 'Text List Item',
-    icon: <AppleIcon />
+    groupName: 'Smart Phone'
   },
   parameters: {
     backgrounds: {
@@ -73,11 +91,10 @@ export const IconLight: Story = {
   }
 }
 
-export const IconDark: Story = {
+export const GroupNameDark: Story = {
   ...TemplateStory,
   args: {
-    text: 'Text List Item',
-    icon: <AndroidIcon />,
+    groupName: 'Smart Phone',
     colorTheme: 'dark'
   },
   parameters: {

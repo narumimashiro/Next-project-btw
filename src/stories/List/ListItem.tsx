@@ -6,9 +6,10 @@ export type ListItemProps = {
   colorTheme?: 'light' | 'dark'
   text: string
   icon?: React.ReactNode
+  onClick: () => void
 }
 
-export const ListItem = ({ colorTheme, text, icon }: ListItemProps) => {
+export const ListItem = ({ colorTheme, text, icon, onClick }: ListItemProps) => {
   const color = colorTheme ? colorTheme : useTheme().palette.mode
   const listItemButtonRef = useRef<HTMLDivElement | null>(null)
 
@@ -51,6 +52,7 @@ export const ListItem = ({ colorTheme, text, icon }: ListItemProps) => {
     <div
       ref={listItemButtonRef}
       className={styles[`list-item-${color}`]}
+      onClick={onClick}
       onMouseDown={createRipple}
       onTouchStart={createRipple}
       tabIndex={0}

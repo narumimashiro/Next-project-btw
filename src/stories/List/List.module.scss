@@ -1,0 +1,51 @@
+.list {
+  display: flex;
+  flex-direction: column;
+
+  .groupName {
+    position: relative;
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 8px 12px 0;
+    margin-right: 16px;
+    border-bottom: 1px;
+    margin-bottom: 4px;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      width: calc(100% + 26px);
+      height: 1px;
+      left: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    &::before {
+      bottom: 2px;
+    }
+  }
+}
+
+.list-light {
+  @extend .list;
+  color: #000000;
+
+  .groupName::after,
+  .groupName::before {
+    background-color: var(--dark-disabled-text-color);
+  }
+}
+
+.list-dark {
+  @extend .list;
+  color: #ffffff;
+
+  .groupName::after,
+  .groupName::before {
+    background-color: var(--light-disabled-text-color);
+  }
+}
