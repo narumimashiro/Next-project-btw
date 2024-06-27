@@ -8,11 +8,17 @@
   "STRID_meta_top": "Bocchi the work",
   "STRID_meta_about": "このサイトについて",
   "STRID_faq_title": "よくある質問",
-  "STRID_faq_question_1": "どんなサイト？",
-  "STRID_faq_answer_1_1": "主が勉強兼ポートフォリオのために作成しているサイト",
+  "STRID_faq_question_1": "このサイトは何？どんなサイト？",
+  "STRID_faq_answer_1_1": "主がお勉強のために作成しているサイト。あわよくばポートフォリオになればいいなと企んでる。",
   "STRID_faq_answer_1_2": "趣味マシマシ、こだわりマシマシ、バグ少なめ(知らんけど)",
-  "STRID_faq_question_2": "",
-  "STRID_faq_answer_2": "",
-  "STRID_faq_question_3": "",
-  "STRID_faq_answer_3": ""
+  "STRID_faq_question_2": "技術スタックは何ですか？",
+  "STRID_faq_answer_2_1": "フロントエンドには NextJs / React + TypeScript、状態管理に Recoil、勉強がメインなので基本自作だが一部 MUI を用いている。",
+  "STRID_faq_answer_2_2": "バックエンドには AWS 、言語は Python。ただ、用意はあるがこのサイトではまだ使っていない。",
+  "STRID_faq_question_3": "普段何しているの？何のために勉強を？",
+  "STRID_faq_answer_3_1": "普段もWebフロントエンジニア。元々 C/C++ の組み込み系開発を行っていたが、C/C++ だけじゃ今後まずいのではと独学で勉強を始めた。",
+  "STRID_faq_answer_3_2": "ChatGPT API を用いたサービス開発したり、Kotlin で Android アプリ作ったりと色々手を出して遊んでいる。",
+  "STRID_faq_question_4": "趣味、好きなもの、あれこれ。自語りして!!",
+  "STRID_faq_answer_4_1": "ゲームは好きで、プロセカ、原神、アークナイツ、VALORANT、鳴潮やってる。(フレンドになってください!!!)",
+  "STRID_faq_answer_4_2": "ラーメン、温泉、旅行。対馬は人生で一番良かった癒された場所。冬の銀山温泉に行きたいって1億年言ってる。二郎でしか得られない栄養素は存在します。",
+  "STRID_faq_answer_4_3": "イラストも好きで三嶋くろね先生を一生推している。版画も数枚購入して家に飾っている。"
 }
