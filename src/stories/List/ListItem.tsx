@@ -10,7 +10,8 @@ export type ListItemProps = {
 }
 
 export const ListItem = ({ colorTheme, text, icon, onClick }: ListItemProps) => {
-  const color = colorTheme ? colorTheme : useTheme().palette.mode
+  const theme = useTheme().palette.mode
+  const color = colorTheme ? colorTheme : theme
   const listItemButtonRef = useRef<HTMLDivElement | null>(null)
 
   const createRipple = (

@@ -1,5 +1,6 @@
-import styles from './Drawer.module.scss'
 import { useTheme } from '@mui/material'
+
+import styles from './Drawer.module.scss'
 
 export type DrawerProps = {
   open: boolean
@@ -10,7 +11,8 @@ export type DrawerProps = {
 }
 
 export const Drawer = ({ open, children, colorTheme, pos = 'right', onClose }: DrawerProps) => {
-  const color = colorTheme ? colorTheme : useTheme().palette.mode
+  const theme = useTheme().palette.mode
+  const color = colorTheme ? colorTheme : theme
 
   return (
     <>
