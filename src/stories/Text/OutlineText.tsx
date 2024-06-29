@@ -19,7 +19,8 @@ export type OutlineTextProps = {
 }
 
 export const OutlineText = ({ className, colorTheme, text, customColor }: OutlineTextProps) => {
-  const color = colorTheme ? colorTheme : useTheme().palette.mode
+  const theme = useTheme().palette.mode
+  const color = colorTheme ? colorTheme : theme
 
   const customize = customColor
     ? {
