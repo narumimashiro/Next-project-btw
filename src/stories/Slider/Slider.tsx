@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useTheme, Slider as MuiSlider } from '@mui/material'
-import { ConsoleLog } from '@/lib/logging'
 
 export type SliderProps = {
   colorTheme?: 'light' | 'dark'
@@ -23,8 +22,8 @@ export const Slider = ({
   onChange,
   ariaLable
 }: SliderProps) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const color = colorTheme ? colorTheme : useTheme().palette.mode
+  const theme = useTheme().palette.mode
+  const color = colorTheme ? colorTheme : theme
   const isDark = color === 'dark'
   const customTheme = {
     color: isDark ? '#ffffff' : '#000000',

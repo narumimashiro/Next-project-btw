@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { List, ListProps } from './List'
-
 import AppleIcon from '@mui/icons-material/Apple'
 import AndroidIcon from '@mui/icons-material/Android'
+
+import { List, ListProps } from './List'
 import { ListItem } from './ListItem'
 
 const meta = {
@@ -46,6 +46,7 @@ const TemplateStory: Story = {
       <List {...args}>
         {sampleList.map((item) => (
           <ListItem
+            key={item.text}
             colorTheme={args.colorTheme}
             text={item.text}
             icon={item.icon}

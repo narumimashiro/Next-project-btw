@@ -8,8 +8,10 @@ export type ListProps = {
   children: React.ReactNode
 }
 
-export const List = ({ colorTheme, className, groupName, children }: ListProps) => {
-  const color = colorTheme ? colorTheme : useTheme().palette.mode
+export const List = ({ colorTheme = 'light', className, groupName, children }: ListProps) => {
+  const theme = useTheme().palette.mode
+  const color = colorTheme ? colorTheme : theme
+
   return (
     <div className={`${styles[`list-${color}`]} ${className ? className : ''}`}>
       {groupName && <span className={styles.groupName}>{groupName}</span>}

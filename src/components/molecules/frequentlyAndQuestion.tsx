@@ -1,6 +1,6 @@
 import { useTheme } from '@mui/material'
-import { Accordion } from '@/stories/Accordion/Accordion'
 import { useTranslation } from 'next-i18next'
+import { Accordion } from '@/stories/Accordion/Accordion'
 
 import styles from '@/styles/molecules/FrequentlyAndQuestion.module.scss'
 import { useCustomContext } from '../customProvider'

@@ -63,6 +63,7 @@ export const useUserColorTheme = () => {
     } else {
       setUserColorTheme(isCustomColorModeDark ? DARK_MODE : LIGHT_MODE)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isCustomColorModeDark])
 
   const setColorTheme = (color: ColorTheme) => {
