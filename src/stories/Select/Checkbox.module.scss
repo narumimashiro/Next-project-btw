@@ -4,16 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.checkbox-wrap-light {
-  @extend .checkbox-wrap;
-  background-color: var(--light-background-color);
-}
-
-.checkbox-wrap-dark {
-  @extend .checkbox-wrap;
-  background-color: var(--dark-background-color);
+  background-color: inherit;
 }
 
 .checkbox {
@@ -38,7 +29,7 @@
 
 .checkbox-light {
   @extend .checkbox;
-  background-color: var(--light-background-color);
+  background-color: inherit;
   border: 2px solid #000000;
   &::after {
     @extend .checkmark;
@@ -50,6 +41,10 @@
   }
   &.filling.checked {
     background-color: var(--dark-background-color);
+
+    &.disabled {
+      background-color: var(--light-disabled-text-color);
+    }
   }
   &.filling.checked::after {
     border-color: #ffffff;
@@ -64,7 +59,7 @@
 
 .checkbox-dark {
   @extend .checkbox;
-  background-color: var(--dark-background-color);
+  background-color: inherit;
   border: 2px solid #ffffff;
   &::after {
     @extend .checkmark;
@@ -76,6 +71,10 @@
   }
   &.filling.checked {
     background-color: var(--light-background-color);
+
+    &.disabled {
+      background-color: var(--dark-disabled-text-color);
+    }
   }
   &.filling.checked::after {
     border-color: #000000;

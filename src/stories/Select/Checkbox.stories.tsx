@@ -71,7 +71,7 @@ export const Dark: Story = {
   }
 }
 
-export const LightFilling: Story = {
+export const FillingLight: Story = {
   ...TemplateStory,
   args: {
     isChecked: false,
@@ -85,7 +85,7 @@ export const LightFilling: Story = {
   }
 }
 
-export const DarkFilling: Story = {
+export const FillingDark: Story = {
   ...TemplateStory,
   args: {
     colorTheme: 'dark',
@@ -100,7 +100,7 @@ export const DarkFilling: Story = {
   }
 }
 
-export const LightChecked: Story = {
+export const CheckedLight: Story = {
   ...TemplateStory,
   args: {
     isChecked: true,
@@ -114,7 +114,7 @@ export const LightChecked: Story = {
   }
 }
 
-export const DarkChecked: Story = {
+export const CheckedDark: Story = {
   ...TemplateStory,
   args: {
     colorTheme: 'dark',
@@ -129,7 +129,7 @@ export const DarkChecked: Story = {
   }
 }
 
-export const LightDisabled: Story = {
+export const DisabledLight: Story = {
   ...TemplateStory,
   args: {
     isChecked: false,
@@ -143,7 +143,7 @@ export const LightDisabled: Story = {
   }
 }
 
-export const DarkDisabled: Story = {
+export const DisabledDark: Story = {
   ...TemplateStory,
   args: {
     colorTheme: 'dark',
