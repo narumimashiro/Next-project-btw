@@ -20,7 +20,7 @@ export const Checkbox = ({
 }: CheckboxProps) => {
   return (
     <label
-      className={styles[`checkbox-wrap-${colorTheme}`]}
+      className={styles['checkbox-wrap']}
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === 'Enter') {
