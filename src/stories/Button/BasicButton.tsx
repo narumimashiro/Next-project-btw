@@ -10,7 +10,7 @@ export type BasicButtonProps = {
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 export const BasicButton = ({
-  className,
+  className = '',
   colorTheme = 'light',
   children,
   disabled,

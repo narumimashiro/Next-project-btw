@@ -10,7 +10,7 @@ export type StrongButtonProps = {
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 export const StrongButton = ({
-  className,
+  className = '',
   colorTheme = 'light',
   children,
   disabled,
@@ -19,7 +19,7 @@ export const StrongButton = ({
 }: StrongButtonProps) => {
   return (
     <button
-      className={`${styles[`strongButton-${colorTheme}`]}${className}`}
+      className={`${styles[`strongButton-${colorTheme}`]} ${className}`}
       disabled={disabled}
       onClick={onClick}
       {...buttonProps}>

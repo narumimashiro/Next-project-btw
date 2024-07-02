@@ -11,7 +11,7 @@ export type CheckboxProps = {
 
 export const Checkbox = ({
   colorTheme = 'light',
-  className,
+  className = '',
   isChecked,
   onChange,
   disabled,
@@ -34,7 +34,7 @@ export const Checkbox = ({
         ${filling ? styles.filling : ''}
         ${isChecked ? styles.checked : ''}
         ${disabled ? styles.disabled : ''}
-        ${className ? className : ''}`}>
+        ${className}`}>
         <input
           type="checkbox"
           role="checkbox"
