@@ -21,7 +21,7 @@ export const FrequentlyAndQuestion = ({
   return (
     <div
       className={`${styles[`fap-wrapper-${color}`]} ${isTabletSize ? styles.tablet : ''} ${className}`}>
-      <p className="text-2xl-bold">{t('STRID_faq_title')}</p>
+      <p className="text-2xl-bold mb-24">{t('STRID_faq_title')}</p>
       {faqList.map((faq) => (
         <Accordion key={faq.summary} summary={faq.summary} detailTextList={faq.details} />
       ))}
