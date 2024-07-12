@@ -10,7 +10,10 @@ type FrequentlyAndQuestionProps = {
   className?: string
   faqList: FaqType[]
 }
-export const FrequentlyAndQuestion = ({ className, faqList }: FrequentlyAndQuestionProps) => {
+export const FrequentlyAndQuestion = ({
+  className = '',
+  faqList
+}: FrequentlyAndQuestionProps) => {
   const color = useTheme().palette.mode
   const { t } = useTranslation()
   const { isTabletSize } = useCustomContext()
