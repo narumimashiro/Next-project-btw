@@ -10,15 +10,18 @@ type FrequentlyAndQuestionProps = {
   className?: string
   faqList: FaqType[]
 }
-export const FrequentlyAndQuestion = ({ className, faqList }: FrequentlyAndQuestionProps) => {
+export const FrequentlyAndQuestion = ({
+  className = '',
+  faqList
+}: FrequentlyAndQuestionProps) => {
   const color = useTheme().palette.mode
   const { t } = useTranslation()
   const { isTabletSize } = useCustomContext()
 
   return (
     <div
-      className={`${styles[`fap-wrapper-${color}`]} ${isTabletSize ? styles.tablet : ''} ${className ? className : ''}`}>
-      <p className="text-2xl-bold">{t('STRID_faq_title')}</p>
+      className={`${styles[`fap-wrapper-${color}`]} ${isTabletSize ? styles.tablet : ''} ${className}`}>
+      <p className="text-2xl-bold mb-24">{t('STRID_faq_title')}</p>
       {faqList.map((faq) => (
         <Accordion key={faq.summary} summary={faq.summary} detailTextList={faq.details} />
       ))}
