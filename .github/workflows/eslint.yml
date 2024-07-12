@@ -19,8 +19,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Verify next.config.js
-        run: cat next.config.js
-
       - name: Run ESLint
         run: npm run lint
