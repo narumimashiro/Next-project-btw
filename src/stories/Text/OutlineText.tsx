@@ -18,7 +18,12 @@ export type OutlineTextProps = {
   customColor?: CustomOutline
 }
 
-export const OutlineText = ({ className, colorTheme, text, customColor }: OutlineTextProps) => {
+export const OutlineText = ({
+  className = '',
+  colorTheme,
+  text,
+  customColor
+}: OutlineTextProps) => {
   const theme = useTheme().palette.mode
   const color = colorTheme ? colorTheme : theme
 
@@ -33,7 +38,7 @@ export const OutlineText = ({ className, colorTheme, text, customColor }: Outlin
 
   return (
     <span
-      className={`${styles[`outline-${color}`]} ${className ? className : ''}`}
+      className={`${styles[`outline-${color}`]} ${className}`}
       style={customize}
       data-text={text}>
       {text}

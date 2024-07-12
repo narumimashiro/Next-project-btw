@@ -19,12 +19,12 @@ type ImageHeaderProps = {
   subTitle?: string
 }
 export const ImageHeader = (props: ImageHeaderProps) => {
-  const { className, imgSrc, title, subTitle } = props
+  const { className = '', imgSrc, title, subTitle } = props
   const { isPortrait } = useCustomContext()
 
   return (
     <div
-      className={`${styles['image-header']} ${isPortrait ? styles.portrait : styles.landscape} ${className ? className : ''}`}>
+      className={`${styles['image-header']} ${isPortrait ? styles.portrait : styles.landscape} ${className}`}>
       <img src={imgSrc} alt="" />
       <div
         className={`absolute-center ${styles.description} ${isPortrait ? styles.portrait : ''}`}>
