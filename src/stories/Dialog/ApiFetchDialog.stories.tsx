@@ -12,7 +12,7 @@ const meta = {
     backgrounds: {
       values: [
         { name: 'light', value: '#FFFFFF' },
-        { name: 'dark', value: '#333333' }
+        { name: 'dark', value: '#121212' }
       ]
     }
   },

@@ -15,14 +15,12 @@ const meta = {
     backgrounds: {
       values: [
         { name: 'light', value: '#FFFFFF' },
-        { name: 'dark', value: '#333333' }
+        { name: 'dark', value: '#121212' }
       ]
     }
   },
-  args: {
-  },
-  argTypes: {
-  },
+  args: {},
+  argTypes: {}
 } satisfies Meta<typeof BasicButton>
 
 export default meta
@@ -35,9 +33,6 @@ const TemplateStory: Story = {
 
 export const Light: Story = {
   ...TemplateStory,
-  args: {
-
-  }
+  args: {}
 }
-
 ```
