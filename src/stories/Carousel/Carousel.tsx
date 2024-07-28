@@ -1,12 +1,13 @@
 import { useState, useRef, useEffect } from 'react'
 
-import styles from './Carousel.module.scss'
 import { useTheme } from '@mui/material'
 
 import prevLight from '@/img/light/arrow_preview.svg'
 import nextLight from '@/img/light/arrow_next.svg'
 import prevDark from '@/img/dark/arrow_preview.svg'
 import nextDark from '@/img/dark/arrow_next.svg'
+
+import styles from './Carousel.module.scss'
 
 export type CarouselProps = {
   colorTheme?: 'light' | 'dark'
@@ -41,6 +42,7 @@ export const Carousel = ({
         listRef.current.style.transform = `translate3d(-${(currentIndex + 1) * (listWidth + MARGIN_ITEM) + (listWidth + MARGIN_ITEM) / 2}px, 0, 0)`
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex, isTransition])
 
   const next = () => {
@@ -71,7 +73,7 @@ export const Carousel = ({
       <button
         className={`${styles.carouselButton} ${styles.prev} ${styles[color]}`}
         onClick={prev}>
-        <img src={color === 'light' ? prevLight.src : prevDark.src} />
+        <img src={color === 'light' ? prevLight.src : prevDark.src} alt="prev_button" />
       </button>
       <div
         className={`${decorateFeedInOut ? styles.carouselTrackContainer : ''} ${styles[color]}`}>
@@ -90,7 +92,7 @@ export const Carousel = ({
       <button
         className={`${styles.carouselButton} ${styles.next} ${styles[color]}`}
         onClick={next}>
-        <img src={color === 'light' ? nextLight.src : nextDark.src} />
+        <img src={color === 'light' ? nextLight.src : nextDark.src} alt="next_button" />
       </button>
     </div>
   )

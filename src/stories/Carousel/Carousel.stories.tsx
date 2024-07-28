@@ -25,12 +25,16 @@ export default meta
 type Story = StoryObj<typeof Carousel>
 
 const sampleItemList = [
-  <iframe src="https://pjsekai.sega.jp/" />,
-  <iframe src="https://wutheringwaves.kurogames.com/en/?gad_source=1&gclid=CjwKCAjwtNi0BhA1EiwAWZaANBMVh0zzUDVZ5i669InT9Kx_H9Mi25ltO79AGIJv4aresPtqdPvU3RoC5NYQAvD_BwE" />,
-  <iframe src="https://genshin.hoyoverse.com/ja" />,
-  <iframe src="https://www.arknights.jp/" />,
-  <iframe src="https://hsr.hoyoverse.com/ja-jp/home" />,
-  <iframe src="https://endfield.gryphline.com/ja-jp#home" />
+  <iframe key="prsk" src="https://pjsekai.sega.jp/" />,
+  <iframe key="mygo" src="https://bang-dream.com/mygo" />,
+  <iframe
+    key="wutheringwaves"
+    src="https://wutheringwaves.kurogames.com/en/?gad_source=1&gclid=CjwKCAjwtNi0BhA1EiwAWZaANBMVh0zzUDVZ5i669InT9Kx_H9Mi25ltO79AGIJv4aresPtqdPvU3RoC5NYQAvD_BwE"
+  />,
+  <iframe key="genshin" src="https://genshin.hoyoverse.com/ja" />,
+  <iframe key="arknights" src="https://www.arknights.jp/" />,
+  <iframe key="hsr" src="https://hsr.hoyoverse.com/ja-jp/home" />,
+  <iframe key="endfield" src="https://endfield.gryphline.com/ja-jp#home" />
 ]
 
 const TemplateStory: Story = {
