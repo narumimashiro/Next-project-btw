@@ -26,6 +26,7 @@ type Story = StoryObj<typeof QuizQuickBuzzerText>
 
 const TemplateStory: Story = {
   render: (args: QuizQuickBuzzerTextProps) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [pause, setPause] = useState(args.pause)
 
     return (
