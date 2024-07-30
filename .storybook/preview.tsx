@@ -8,13 +8,19 @@ import { useTranslation } from 'next-i18next'
 
 const darkTheme = createTheme({
   palette: {
-    mode: 'dark'
+    mode: 'dark',
+    text: {
+      primary: '#FFFFFF'
+    }
   }
 })
 
 const lightTheme = createTheme({
   palette: {
-    mode: 'light'
+    mode: 'light',
+    text: {
+      primary: '#000000'
+    }
   }
 })
 
@@ -30,7 +36,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story, context) => {
-      const theme = context.parameters.theme === 'dark' ? darkTheme : lightTheme
+      const theme = context.parameters.backgrounds.default === 'dark' ? darkTheme : lightTheme
       const { i18n } = useTranslation()
 
       return (
@@ -44,7 +50,8 @@ const preview: Preview = {
                 height: '39svh',
                 display: 'flex',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
+                color: theme.palette.text.primary
               }}>
               <Story />
             </div>
