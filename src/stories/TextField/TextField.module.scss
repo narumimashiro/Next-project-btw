@@ -1,0 +1,83 @@
+.textfield {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .inputContainer {
+    position: relative;
+  }
+
+  .clearBtn {
+    position: absolute;
+    width: 30px;
+    height: 24px;
+    border: none;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+
+    &.light {
+      background-color: var(--light-background-color);
+    }
+
+    &.dark {
+      background-color: var(--dark-background-color);
+    }
+
+    img {
+      width: 12px;
+      height: 100%;
+    }
+  }
+}
+
+.input {
+  width: 100%;
+  outline: none;
+  border: 1px solid;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  border-radius: 3.9px;
+
+  &:focus-visible {
+    border: 2px solid;
+    padding: 4px 9px;
+  }
+}
+
+.input-light {
+  @extend .input;
+  border-color: #000000;
+
+  &:focus-visible {
+    border-color: #000000;
+  }
+}
+
+.input-dark {
+  @extend .input;
+  color: #ffffff;
+  background-color: inherit;
+  border-color: #ffffff;
+
+  &:focus-visible {
+    border-color: #ffffff;
+  }
+}
+
+.inputError {
+  @extend .input;
+  border-color: var(--mygo-anon-color);
+
+  &:focus-visible {
+    border-color: var(--mygo-anon-color);
+  }
+}
+
+.errorText {
+  color: var(--mygo-anon-color);
+  font-size: 12px;
+  font-weight: bold;
+  padding-left: 8px;
+}
