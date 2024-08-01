@@ -1,5 +1,6 @@
-import { useCustomContext } from '@/components/customProvider'
 import { useTheme } from '@mui/material'
+
+import { useCustomContext } from '@/components/customProvider'
 
 import styles from '@/styles/atom/ComponentsTemplate.module.scss'
 
