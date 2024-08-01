@@ -1,0 +1,179 @@
+import { useState } from 'react'
+import type { Meta, StoryObj } from '@storybook/react'
+
+import UmbrellaIcon from '@mui/icons-material/Umbrella'
+import PianoIcon from '@mui/icons-material/Piano'
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
+
+import { Tabs, TabsProps, TabPanel } from './Tab'
+
+const meta = {
+  title: 'BTW-Custom/Tab',
+  component: Tabs,
+  parameters: {
+    layout: 'centered',
+    backgrounds: {
+      values: [
+        { name: 'light', value: '#FFFFFF' },
+        { name: 'dark', value: '#121212' }
+      ]
+    }
+  },
+  args: {},
+  argTypes: {
+    className: { control: false }
+  }
+} satisfies Meta<typeof Tabs>
+
+export default meta
+
+type Story = StoryObj<typeof Tabs>
+
+const TemplateStory: Story = {
+  render: (args: TabsProps) => {
+    const [selectTab, setSelectTab] = useState(args.value)
+
+    return (
+      <>
+        <Tabs {...args} onChange={setSelectTab} value={selectTab} />
+        <TabPanel value={selectTab} tabIndex={0}>
+          <div style={{ textAlign: 'center' }}>Tab1</div>
+        </TabPanel>
+        <TabPanel value={selectTab} tabIndex={1}>
+          <div style={{ textAlign: 'center' }}>Tab2</div>
+        </TabPanel>
+        <TabPanel value={selectTab} tabIndex={2}>
+          <div style={{ textAlign: 'center' }}>Tab3</div>
+        </TabPanel>
+      </>
+    )
+  }
+}
+
+export const UnderlineLight: Story = {
+  ...TemplateStory,
+  args: {
+    tabList: [{ label: 'MyGO!!!!!' }, { label: 'Roselia' }, { label: 'Liella' }],
+    value: 0,
+    variant: 'underline'
+  },
+  parameters: {
+    backgrounds: {
+      default: 'light'
+    }
+  }
+}
+
+export const UnderlineDark: Story = {
+  ...TemplateStory,
+  args: {
+    tabList: [{ label: 'MyGO!!!!!' }, { label: 'Roselia' }, { label: 'Liella' }],
+    value: 0,
+    variant: 'underline'
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
+  }
+}
+
+export const IconUnderlineLight: Story = {
+  ...TemplateStory,
+  args: {
+    tabList: [
+      { label: 'MyGO!!!!!', icon: <UmbrellaIcon /> },
+      { label: 'Roselia', icon: <PianoIcon /> },
+      { label: 'Liella', icon: <AutoAwesomeIcon /> }
+    ],
+    value: 0,
+    variant: 'underline'
+  },
+  parameters: {
+    backgrounds: {
+      default: 'light'
+    }
+  }
+}
+
+export const IconUnderlineDark: Story = {
+  ...TemplateStory,
+  args: {
+    tabList: [
+      { label: 'MyGO!!!!!', icon: <UmbrellaIcon /> },
+      { label: 'Roselia', icon: <PianoIcon /> },
+      { label: 'Liella', icon: <AutoAwesomeIcon /> }
+    ],
+    value: 0,
+    variant: 'underline'
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
+  }
+}
+
+export const StickyNoteLight: Story = {
+  ...TemplateStory,
+  args: {
+    tabList: [{ label: 'MyGO!!!!!' }, { label: 'Roselia' }, { label: 'Liella!' }],
+    value: 0,
+    variant: 'sticky_note'
+  },
+  parameters: {
+    backgrounds: {
+      default: 'light'
+    }
+  }
+}
+
+export const StickyNoteDark: Story = {
+  ...TemplateStory,
+  args: {
+    tabList: [{ label: 'MyGO!!!!!' }, { label: 'Roselia' }, { label: 'Liella!' }],
+    value: 0,
+    variant: 'sticky_note'
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
+  }
+}
+
+export const IconStickyNoteLight: Story = {
+  ...TemplateStory,
+  args: {
+    tabList: [
+      { label: 'MyGO!!!!!', icon: <UmbrellaIcon /> },
+      { label: 'Roselia', icon: <PianoIcon /> },
+      { label: 'Liella', icon: <AutoAwesomeIcon /> }
+    ],
+    value: 0,
+    variant: 'sticky_note'
+  },
+  parameters: {
+    backgrounds: {
+      default: 'light'
+    }
+  }
+}
+
+export const IconStickyNoteDark: Story = {
+  ...TemplateStory,
+  args: {
+    tabList: [
+      { label: 'MyGO!!!!!', icon: <UmbrellaIcon /> },
+      { label: 'Roselia', icon: <PianoIcon /> },
+      { label: 'Liella', icon: <AutoAwesomeIcon /> }
+    ],
+    value: 0,
+    variant: 'sticky_note'
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
+  }
+}
