@@ -19,12 +19,14 @@ export const TypewriterText = ({ text, speedSeconds = 0.1 }: TypewriterTextProps
     }, speedSeconds * 1000)
 
     return () => clearInterval(typeInterval)
+    // eslint-disable-next-line react-hooks/rules-of-hooks
   }, [text])
 
   useEffect(() => {
     setDisplayText((pre) => {
       return pre + text[currentIndex]
     })
+    // eslint-disable-next-line react-hooks/rules-of-hooks
   }, [currentIndex])
 
   return <div>{displayText}</div>

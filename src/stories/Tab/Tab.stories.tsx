@@ -31,6 +31,7 @@ type Story = StoryObj<typeof Tabs>
 
 const TemplateStory: Story = {
   render: (args: TabsProps) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [selectTab, setSelectTab] = useState(args.value)
 
     return (
