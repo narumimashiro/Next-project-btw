@@ -6,6 +6,8 @@
   --dark-hover-color: #444444;
   --light-disabled-text-color: #c0c0c0;
   --dark-disabled-text-color: #555555;
+  --annotation-text-light: #0000008f;
+  --annotation-text-dark: #ffffff8f;
 
   --page-max-width-pc: 1200px;
   --page-max-width-tablet: 720px;
@@ -115,6 +117,10 @@
 }
 
 // Styles for text font
+.text-xs {
+  font-size: 12px;
+}
+
 .text-sm {
   font-size: 14px;
 }
