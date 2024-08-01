@@ -47,7 +47,7 @@ export const Light: Story = {
   ...TemplateStory,
   args: {
     itemList: sampleItemList,
-    itemWidth: 300,
+    itemWidth: '100%',
     itemHeight: 200,
     decorateFeedInOut: false
   },
@@ -63,7 +63,7 @@ export const Dark: Story = {
   args: {
     colorTheme: 'dark',
     itemList: sampleItemList,
-    itemWidth: 300,
+    itemWidth: '100%',
     itemHeight: 200,
     decorateFeedInOut: true
   },

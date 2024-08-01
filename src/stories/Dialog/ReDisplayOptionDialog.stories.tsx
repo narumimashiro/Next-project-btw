@@ -40,7 +40,7 @@ const TemplateStory: Story = {
       <>
         <button onClick={() => setIsOpen(true)}>Open Dialog</button>
         <ReDisplayOptionDialog {...args} open={isOpen} onConfirm={() => setIsOpen(false)}>
-          <p style={{ margin: 0 }}>ここから先は外部サイトとなります。XXXに委託しています。</p>
+          <p style={{ margin: 0 }}>ここから先は外部サイトとなります。</p>
         </ReDisplayOptionDialog>
       </>
     )

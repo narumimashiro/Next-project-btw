@@ -31,7 +31,7 @@ const TemplateStory: Story = {
 export const Light: Story = {
   ...TemplateStory,
   args: {
-    text: '2024年07月27日,28日に開催された6th LIVE「見つけた景色、たずさえて」で初披露した5thSingleの表題楽曲である「端程山」の読み方は？',
+    text: '2024年07月27日,28日に開催された6th LIVE「見つけた景色、たずさえて」で初披露された5thSingleの表題楽曲である「端程山」の読み方は？',
     speedSeconds: 0.1
   },
   parameters: {
