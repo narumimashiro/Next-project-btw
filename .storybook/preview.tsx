@@ -51,6 +51,7 @@ const preview: Preview = {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
+                flexDirection: 'column',
                 color: theme.palette.text.primary
               }}>
               <Story />

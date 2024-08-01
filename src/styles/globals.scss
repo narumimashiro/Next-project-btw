@@ -20,6 +20,8 @@
   --mygo-taki-color: #7777aa;
 
   --hatsune-miku-color: #039393;
+
+  --apple-site-light-gray: #f5f5f7;
 }
 
 * {
@@ -172,7 +174,7 @@
 // Styles for button
 .button-light {
   color: #000000;
-  background-color: #ffffff;
+  background-color: inherit;
   border: none;
 }
 
@@ -184,13 +186,13 @@
   }
   &:disabled {
     color: var(--light-disabled-text-color);
-    background-color: #ffffff;
+    background-color: inherit;
   }
 }
 
 .button-dark {
   color: #ffffff;
-  background-color: #000000;
+  background-color: inherit;
   border: none;
 }
 
@@ -202,6 +204,6 @@
   }
   &:disabled {
     color: var(--dark-disabled-text-color);
-    background-color: #000000;
+    background-color: inherit;
   }
 }
