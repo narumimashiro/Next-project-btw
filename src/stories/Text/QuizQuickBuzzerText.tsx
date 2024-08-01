@@ -38,14 +38,14 @@ export const QuizQuickBuzzerText = ({
         clearInterval(typeInterval.current)
       }
     }
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pause])
 
   useEffect(() => {
     setDisplayText((pre) => {
       return pre + text[currentIndex]
     })
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex])
 
   useEffect(() => {
