@@ -207,3 +207,17 @@
     background-color: inherit;
   }
 }
+
+// Styles for link
+.link-light {
+  color: #000000;
+  &:hover {
+    background-color: var(--light-hover-color);
+  }
+}
+.link-dark {
+  color: #ffffff;
+  &:hover {
+    background-color: var(--dark-hover-color);
+  }
+}

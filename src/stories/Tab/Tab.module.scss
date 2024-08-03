@@ -10,6 +10,7 @@
   gap: 8px;
   width: 100%;
   position: relative;
+  font-weight: bold;
 
   &::before {
     position: absolute;
@@ -21,7 +22,8 @@
   }
 
   &.not-selected {
-    opacity: 0.39;
+    opacity: 0.6;
+    font-weight: normal;
   }
 }
 
