@@ -19,7 +19,9 @@ $summary-height: 30px;
     width: 100%;
     font-weight: bold;
     padding-left: 10px;
+    padding-right: $summary-height;
     min-height: $summary-height;
+    margin: 3.9px 0;
     height: auto;
     border: none;
     text-align: left;
@@ -44,6 +46,7 @@ $summary-height: 30px;
   .details {
     padding: 0 10px;
     overflow: hidden;
+    margin-bottom: 12px;
 
     .detailText {
       margin: 10px 0;

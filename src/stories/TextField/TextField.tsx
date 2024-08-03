@@ -56,7 +56,11 @@ export const TextField = ({
           value={inputValue}
         />
         {clearButton && (
-          <button className={`${styles.clearBtn} ${styles[color]}`} onClick={clearInputText}>
+          <button
+            className={`${styles.clearBtn} ${styles[color]}`}
+            onClick={clearInputText}
+            aria-label="clear_text"
+            aria-labelledby="clear_text">
             <img src={color === 'light' ? clearLight.src : clearDark.src} alt="" />
           </button>
         )}
