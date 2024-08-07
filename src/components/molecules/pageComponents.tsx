@@ -37,15 +37,16 @@ export const ImageHeader = (props: ImageHeaderProps) => {
 
 type PageTemplateWithHeaderProp = {
   children: React.ReactNode
+  className?: string
 } & ImageHeaderProps
 
 export const PageTemplateWithHeader = (props: PageTemplateWithHeaderProp) => {
-  const { children } = props
+  const { children, className = '' } = props
 
   return (
     <>
       <ImageHeader
-        className="mb-16"
+        className={className}
         imgSrc={props.imgSrc}
         title={props.title}
         subTitle={props.subTitle}
