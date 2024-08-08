@@ -1,0 +1,250 @@
+$answer-height: 40px;
+
+.slash {
+  margin: 0 5px;
+}
+
+.mygo-quiz-card {
+  margin: 16px;
+  height: auto;
+  position: relative;
+  opacity: 0;
+  border: 1px solid #ffffff;
+
+  &.visible {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+  }
+
+  .quiz-healine {
+    position: relative;
+    margin-bottom: 5px;
+    padding-left: 5px;
+
+    &::before {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      right: 30%;
+      height: 1px;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: 2px;
+      left: 0;
+      right: 30%;
+      height: 1px;
+    }
+  }
+
+  .quiz-healine-light {
+    @extend .quiz-healine;
+    text-shadow: 2px 2px 1.5px rgba(0, 0, 0, 0.5);
+
+    &::before,
+    &::after {
+      background-color: #000000;
+    }
+  }
+
+  .quiz-healine-dark {
+    @extend .quiz-healine;
+    text-shadow: 2px 2px 1.5px rgba(255, 255, 255, 0.5);
+
+    &::before,
+    &::after {
+      background-color: #ffffff;
+    }
+  }
+
+  .quiz-area {
+    padding: 16px;
+    height: auto;
+    margin-bottom: $answer-height;
+  }
+
+  .answer-box {
+    position: absolute;
+    padding: 5px 16px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $answer-height;
+
+    .answer {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .answer::before {
+      position: absolute;
+      content: '';
+      height: 1px;
+      left: 0;
+      right: 0;
+      top: 0;
+    }
+
+    .answer-0 {
+      @extend .answer;
+      &::before {
+        background-color: var(--mygo-tomori-color);
+      }
+    }
+    .answer-1 {
+      @extend .answer;
+      &::before {
+        background-color: var(--mygo-anon-color);
+      }
+    }
+    .answer-2 {
+      @extend .answer;
+      &::before {
+        background-color: var(--mygo-rana-color);
+      }
+    }
+    .answer-3 {
+      @extend .answer;
+      &::before {
+        background-color: var(--mygo-soyo-color);
+      }
+    }
+    .answer-4 {
+      @extend .answer;
+      &::before {
+        background-color: var(--mygo-taki-color);
+      }
+    }
+
+    .answer-button {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+      border: none;
+      transition:
+        opacity 0.39s ease-out,
+        transform 2s ease-out;
+
+      &.visible {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+    }
+
+    .answer-button-0 {
+      @extend .answer-button;
+      background-color: var(--mygo-tomori-color);
+    }
+    .answer-button-1 {
+      @extend .answer-button;
+      background-color: var(--mygo-anon-color);
+    }
+    .answer-button-2 {
+      @extend .answer-button;
+      background-color: var(--mygo-rana-color);
+    }
+    .answer-button-3 {
+      @extend .answer-button;
+      background-color: var(--mygo-soyo-color);
+    }
+    .answer-button-4 {
+      @extend .answer-button;
+      background-color: var(--mygo-taki-color);
+    }
+  }
+}
+
+.gallery-1 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.gallery-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(3);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+
+.countdown {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  .countdownView {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .scaleUp {
+      transform: scale(3);
+      animation: scaleUp 1s linear 4;
+    }
+  }
+}
+
+// quiz mygo
+.quiz-area {
+  display: flex;
+  flex-direction: column;
+
+  .quiz-count {
+    text-align: center;
+  }
+
+  .quiz-count-landscape {
+    @extend .quiz-count;
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+
+  .quiz-count-portrait {
+    @extend .quiz-count;
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .view-question {
+    padding: 16px;
+    height: 200px;
+  }
+
+  .quick-press-btn {
+    width: 120px;
+    height: 100px;
+    border: none;
+    margin: auto;
+    background-color: inherit;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,164 @@
+[
+  {
+    "quiz": "2024年07月27日,28日に開催された6th LIVE「見つけた景色、たずさえて」で初披露された5thSingleの表題楽曲である「端程山」の読み方は？",
+    "answer": ["パノラマ", "ぱのらま"],
+    "judge_point": {
+      "additional_point": 46,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "「影色舞」、「処救生」、「詩超絆」50音順に並べたときに一番最後になる曲はどれ？",
+    "answer": ["影色舞", "シルエットダンス", "しるえっとだんす"],
+    "judge_point": {
+      "additional_point": 20,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "歌いだしが燈の詩から始まる楽曲はいくつかありますが、「春日影」、「詩超絆」、「音一会」のうち該当しないのはどれ？",
+    "answer": ["春日影", "はるひかげ"],
+    "judge_point": {
+      "additional_point": 31,
+      "is_haruhikage": true
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "雨の中傘を差しているジャケット写真のアニメOPにもなった楽曲名を漢字で答えよ。",
+    "answer": ["壱雫空"],
+    "judge_point": {
+      "additional_point": 12,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "抹茶～な、まちゃり、まちゃたき、まちゃのんとあとは誰？",
+    "answer": ["抹茶よ(まさよ)", "抹茶よ", "まさよ"],
+    "judge_point": {
+      "additional_point": 6,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "愛音ちゃんに地雷系メイクが似合うかもと言われた燈は朝起きてすぐ何ができるようになっておいた方が良いと考えた？",
+    "answer": ["爆発"],
+    "judge_point": {
+      "additional_point": 24,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "MyGO楽曲しりとり「処救生」→「〇〇〇」→「詩超絆」が成立する曲名は2024年8月1日現在ではどの楽曲？",
+    "answer": ["歌いましょう鳴らしましょう"],
+    "judge_point": {
+      "additional_point": 24,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "ランダムでパーソナリティを務めるMyGO!!!!!の初めてのYouTubeラジオ番組名はMyGO!!!!!の何？",
+    "answer": ["迷子集会(マイゴセンター)", "迷子集会", "マイゴセンター"],
+    "judge_point": {
+      "additional_point": 27,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "MyGO!!!!!のギター担当、千早愛音の誕生日は9月8日ですが、ドラム担当の椎名立希の誕生日は？",
+    "answer": ["8月9日", "8/9"],
+    "judge_point": {
+      "additional_point": 24,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "武蔵野の森総合スポーツプラザで開催された6th LIVEのタイトルは「見つけた〇〇、たずさえて」〇〇に入るのは何？",
+    "answer": ["景色", "見つけた景色、たずさえて", "見つけた景色たずさえて"],
+    "judge_point": {
+      "additional_point": 33,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "難読楽曲が多いMyGO!!!!!ですが、みんなノリノリで盛り上がる軽快なステップダンスが特徴的な楽曲「影色舞」の読み方は何？",
+    "answer": ["シルエットダンス"],
+    "judge_point": {
+      "additional_point": 43,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "3rd Single「壱雫空」に収録されている楽曲は「壱雫空」、「栞」とあとは何？",
+    "answer": ["焚音打(たねび)", "焚音打", "たねび"],
+    "judge_point": {
+      "additional_point": 23,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "MyGO!!!!!活動開始1周年記念のオリジナル楽曲を漢字で答えよ",
+    "answer": ["無路矢"],
+    "judge_point": {
+      "additional_point": 28,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "ライブハウス「RiNG」にて、「ステージで時々弾いているよね？」とそよさんに問われた立希は楽奈のことを「RiNGの〇〇」何と言った？",
+    "answer": ["野良猫", "のらねこ"],
+    "judge_point": {
+      "additional_point": 57,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "燈たちとバンドやる理由として楽奈は「つまんねー女ばっかだった、けど...」のあと燈の方を見て何と言った？",
+    "answer": ["おもしれー女", "おもしれぇおんな", "おもしれーおんな"],
+    "judge_point": {
+      "additional_point": 43,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "抹茶大好き要楽奈はオッドアイですが、右目が黄色で左目が青色である。〇か✕か？",
+    "answer": ["〇"],
+    "judge_point": {
+      "additional_point": 43,
+      "is_haruhikage": false
+    },
+    "format": "select"
+  },
+  {
+    "quiz": "「何が僕にできるか、わからないけれど」という歌詞から始まる楽曲名は何？",
+    "answer": ["名無声(なもなき)", "名無声", "なもなき"],
+    "judge_point": {
+      "additional_point": 15,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "",
+    "answer": [""],
+    "judge_point": {
+      "additional_point": 43,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  }
+]
