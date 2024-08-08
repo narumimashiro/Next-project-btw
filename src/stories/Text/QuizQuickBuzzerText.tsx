@@ -12,8 +12,13 @@ export const QuizQuickBuzzerText = ({
   pause
 }: QuizQuickBuzzerTextProps) => {
   const [displayText, setDisplayText] = useState('')
-  const [currentIndex, setCurrentIndex] = useState(-1)
+  const [currentIndex, setCurrentIndex] = useState(0)
   const typeInterval = useRef<NodeJS.Timeout | null>(null)
+
+  useEffect(() => {
+    setCurrentIndex(0)
+    setDisplayText('')
+  }, [text])
 
   useEffect(() => {
     if (pause) {
@@ -22,11 +27,14 @@ export const QuizQuickBuzzerText = ({
         typeInterval.current = null
       }
     } else {
-      if (text.length - 1 <= currentIndex) return
+      if (text.length <= currentIndex) return
       typeInterval.current = setInterval(() => {
         setCurrentIndex((pre) => {
-          if (typeInterval.current) {
-            if (text.length - 1 <= pre + 1) clearInterval(typeInterval.current)
+          if (pre + 1 >= text.length) {
+            if (typeInterval.current) {
+              clearInterval(typeInterval.current)
+            }
+            return pre
           }
           return pre + 1
         })
@@ -39,18 +47,14 @@ export const QuizQuickBuzzerText = ({
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pause])
+  }, [text, pause, currentIndex])
 
   useEffect(() => {
-    setDisplayText((pre) => {
-      return pre + text[currentIndex]
-    })
+    if (currentIndex < text.length) {
+      setDisplayText((pre) => pre + text[currentIndex])
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex])
-
-  useEffect(() => {
-    setDisplayText('')
-  }, [text])
 
   return <div>{displayText}</div>
 }

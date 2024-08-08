@@ -52,13 +52,25 @@ export const useCustomContext = (): CustomContextType => {
 const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const lightTheme = createTheme({
     palette: {
-      mode: LIGHT_MODE
+      mode: LIGHT_MODE,
+      background: {
+        default: '#ffffff'
+      },
+      text: {
+        primary: '#000000'
+      }
     }
   })
 
   const darkTheme = createTheme({
     palette: {
-      mode: DARK_MODE
+      mode: DARK_MODE,
+      background: {
+        default: '#000000'
+      },
+      text: {
+        primary: '#ffffff'
+      }
     }
   })
 
