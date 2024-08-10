@@ -210,7 +210,7 @@ export const QuizMygo = ({ quizList, start }: QuizMygoProps) => {
                 <AnswerBoard userInputText={userInputText} onInputText={setUserInputText} />
                 <StrongButton
                   colorTheme={colorTheme}
-                  className={styles['answer-button']}
+                  className={styles['answer-submit-button']}
                   onClick={handleCheckAnswer}>
                   {t('STRID_mygo_answer_the_question')}
                 </StrongButton>
