@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import { Card, useTheme } from '@mui/material'
 import { useTranslation } from 'next-i18next'
@@ -7,6 +8,9 @@ import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 import { MygoQuizListType } from '@/recoil/services/getMygoQuizList'
 import { QuizQuickBuzzerText } from '@/stories/Text/QuizQuickBuzzerText'
 import { StrongButton } from '@/stories/Button/StrongButton'
+import { TextField } from '@/stories/TextField/TextField'
+import Correct from '@/img/correct.svg'
+import Incorrect from '@/img/incorrect.svg'
 import { HeadlineText } from '../atom/componentsTemplate'
 import { useCustomContext } from '../customProvider'
 
@@ -64,7 +68,7 @@ export const MygoQuizCard = ({ quizText, answer, variant }: MygoQuizCardProps) =
     <Card
       className={`${styles['mygo-quiz-card']} ${cardVisible ? styles.visible : ''}`}
       ref={mygoCardRef}>
-      <div className={styles['quiz-area']}>
+      <div className={styles['quiz-area-body']}>
         <HeadlineText className={styles[`quiz-healine-${colorTheme}`]}>
           {quizText.slice(0, 5)}
         </HeadlineText>
@@ -147,41 +151,145 @@ type QuizMygoProps = {
 export const QuizMygo = ({ quizList, start }: QuizMygoProps) => {
   const { isPortrait } = useCustomContext()
   const { t } = useTranslation()
+  const theme = useTheme()
+  const colorTheme = theme.palette.mode
 
+  const READING_QUIZ = 'reading_quiz'
+  const ANSWER_QUESTION = 'answer_quiestion'
+  const JUDGE_CORRECT = 'correct_answer_judge'
+  const RESULT_ANNOUNCE = 'user_result_announce'
+  const [phase, setPhase] = useState(READING_QUIZ)
   const [quizCount, setQuizCount] = useState(0)
   const [quizText, setQuizText] = useState(quizList[0].quiz)
   const [pushAnswerButton, setPushAnswerButton] = useState(false)
+  const [userInputText, setUserInputText] = useState('')
   const [quizResult, setQuizResult] = useState<QuizRersultType[]>(() => {
     return Array(quizList.length).fill({ isCorrect: false, additional: false })
   })
 
+  const handlePushQuickButton = () => {
+    setPushAnswerButton(true)
+    setPhase(ANSWER_QUESTION)
+  }
+
   const handleCheckAnswer = () => {
+    setPhase(JUDGE_CORRECT)
+  }
+
+  const handleNextQuiz = () => {
     setQuizCount((pre) => {
+      if (quizList.length - 1 === pre) {
+        setPhase(RESULT_ANNOUNCE)
+        return pre
+      }
       setQuizText(quizList[pre + 1].quiz)
       return pre + 1
     })
-    setTimeout(() => {
-      setPushAnswerButton(false)
-    }, 1000 * 0.1)
+    setUserInputText('')
+    setPushAnswerButton(false)
+    setPhase(READING_QUIZ)
   }
 
   return (
     start && (
       <div className={styles['quiz-area']}>
-        <p className={styles[`quiz-count-${isPortrait ? 'portrait' : 'landscape'}`]}>
-          {t('STRID_mygo_quiz_question').replace('{0}', `${quizCount + 1}`)}
-        </p>
-        <div className={styles['view-question']}>
-          <QuizQuickBuzzerText text={quizText} pause={pushAnswerButton} />
-        </div>
-        <button
-          className={styles['quick-press-btn']}
-          onClick={() => setPushAnswerButton(true)}
-          aria-labelledby={t('STRID_mygo_push_answer_button')}>
-          <img src="/images/quickpress.png" alt="" />
-        </button>
-        {pushAnswerButton && <StrongButton onClick={handleCheckAnswer}>解答する</StrongButton>}
+        {READING_QUIZ === phase || ANSWER_QUESTION === phase ? (
+          <>
+            <p
+              className={`font-bold ${styles[`quiz-count-${isPortrait ? 'portrait' : 'landscape'}`]}`}>
+              {t('STRID_mygo_quiz_question').replace('{0}', `${quizCount + 1}`)}
+            </p>
+            <div className={styles['view-question']}>
+              <QuizQuickBuzzerText text={quizText} pause={pushAnswerButton} />
+            </div>
+            {READING_QUIZ === phase ? (
+              <QuickPressButton onClick={handlePushQuickButton} />
+            ) : (
+              // ANSWER_QUESTION === phase
+              <>
+                <AnswerBoard userInputText={userInputText} onInputText={setUserInputText} />
+                <StrongButton
+                  colorTheme={colorTheme}
+                  className={styles['answer-button']}
+                  onClick={handleCheckAnswer}>
+                  {t('STRID_mygo_answer_the_question')}
+                </StrongButton>
+              </>
+            )}
+          </>
+        ) : JUDGE_CORRECT === phase ? (
+          <JudgeQuizAnswer
+            onNextQuiz={handleNextQuiz}
+            userInput={userInputText}
+            answerList={quizList[quizCount].answer}
+          />
+        ) : (
+          <>結果画面。To be continue...</>
+        )}
       </div>
     )
+  )
+}
+
+const QuickPressButton = ({ onClick }: { onClick: () => void }) => {
+  const { t } = useTranslation()
+  return (
+    <button
+      className={styles['quick-press-btn']}
+      onClick={onClick}
+      aria-labelledby={t('STRID_mygo_push_answer_button')}>
+      <Image src="/images/quickpress.png" alt="" width={120} height={100} />
+    </button>
+  )
+}
+
+type AnswerBoardProps = {
+  userInputText: string
+  onInputText: (input: string) => void
+}
+const AnswerBoard = ({ userInputText, onInputText }: AnswerBoardProps) => {
+  const { t } = useTranslation()
+  const theme = useTheme()
+  const colorTheme = theme.palette.mode
+
+  return (
+    <div className={styles['answer-board']}>
+      <div className={styles['input-viewer']}>
+        <span className={styles[colorTheme]}>{userInputText}</span>
+      </div>
+      <TextField
+        placeholder={t('STRID_mygo_input_answer_placeholder')}
+        aria-labelledby={t('STRID_mygo_input_answer_placeholder')}
+        onChangeInput={onInputText}
+        clearButton
+      />
+    </div>
+  )
+}
+
+type JudgeQuizAnswerProps = {
+  onNextQuiz: () => void
+  userInput: string
+  answerList: string[]
+}
+const JudgeQuizAnswer = ({ onNextQuiz, userInput, answerList }: JudgeQuizAnswerProps) => {
+  const { isPortrait } = useCustomContext()
+  const { t } = useTranslation()
+  const theme = useTheme()
+  const colorTheme = theme.palette.mode
+
+  const isCorrect = answerList.includes(userInput)
+
+  return (
+    <div className={styles['judge-answer']}>
+      <p
+        className={`font-bold ${styles[`result-disp-${isPortrait ? 'portrait' : 'landscape'}`]}`}>
+        {isCorrect ? t('STRID_mygo_correct_answer') : t('STRID_mygo_incorrect_answer')}
+      </p>
+      <Image width={200} height={200} src={isCorrect ? Correct.src : Incorrect.src} alt="" />
+      <StrongButton colorTheme={colorTheme} onClick={onNextQuiz}>
+        {t('STRID_mygo_next_quiz')}
+      </StrongButton>
+    </div>
   )
 }

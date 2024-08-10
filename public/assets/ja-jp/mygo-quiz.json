@@ -73,7 +73,7 @@
   },
   {
     "quiz": "MyGO!!!!!のギター担当、千早愛音の誕生日は9月8日ですが、ドラム担当の椎名立希の誕生日は？",
-    "answer": ["8月9日", "8/9"],
+    "answer": ["8月9日", "8/9", "８月９日"],
     "judge_point": {
       "additional_point": 24,
       "is_haruhikage": false
@@ -90,10 +90,10 @@
     "format": "text"
   },
   {
-    "quiz": "難読楽曲が多いMyGO!!!!!ですが、みんなノリノリで盛り上がる軽快なステップダンスが特徴的な楽曲「影色舞」の読み方は何？",
+    "quiz": "難読楽曲が多いMyGO!!!!!、みんなノリノリで盛り上がる軽快なステップダンスが特徴的な楽曲「影色舞」の読み方は何？",
     "answer": ["シルエットダンス"],
     "judge_point": {
-      "additional_point": 43,
+      "additional_point": 40,
       "is_haruhikage": false
     },
     "format": "text"
@@ -153,10 +153,19 @@
     "format": "text"
   },
   {
-    "quiz": "",
-    "answer": [""],
+    "quiz": "5th Single「端程山」の3曲目に収録されている楽曲タイトルの読み方は何？",
+    "answer": ["こころ", "ココロ"],
     "judge_point": {
-      "additional_point": 43,
+      "additional_point": 35,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "難読楽曲が多いMyGO!!!!!、ラジオ番組「迷子集会」のタイトルコール後にも流れる「迷星叫」の読み方は何？",
+    "answer": ["まよいうた"],
+    "judge_point": {
+      "additional_point": 37,
       "is_haruhikage": false
     },
     "format": "text"
