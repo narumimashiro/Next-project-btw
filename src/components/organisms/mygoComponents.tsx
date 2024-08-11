@@ -160,7 +160,6 @@ export const QuizMygo = ({ quizList, start }: QuizMygoProps) => {
   const RESULT_ANNOUNCE = 'user_result_announce'
   const [phase, setPhase] = useState(READING_QUIZ)
   const [quizCount, setQuizCount] = useState(0)
-  const [quizText, setQuizText] = useState(quizList[0].quiz)
   const [pushAnswerButton, setPushAnswerButton] = useState(false)
   const [userInputText, setUserInputText] = useState('')
   const [quizResult, setQuizResult] = useState<QuizRersultType[]>(() => {
@@ -182,7 +181,6 @@ export const QuizMygo = ({ quizList, start }: QuizMygoProps) => {
         setPhase(RESULT_ANNOUNCE)
         return pre
       }
-      setQuizText(quizList[pre + 1].quiz)
       return pre + 1
     })
     setUserInputText('')
@@ -200,7 +198,7 @@ export const QuizMygo = ({ quizList, start }: QuizMygoProps) => {
               {t('STRID_mygo_quiz_question').replace('{0}', `${quizCount + 1}`)}
             </p>
             <div className={styles['view-question']}>
-              <QuizQuickBuzzerText text={quizText} pause={pushAnswerButton} />
+              <QuizQuickBuzzerText text={quizList[quizCount].quiz} pause={pushAnswerButton} />
             </div>
             {READING_QUIZ === phase ? (
               <QuickPressButton onClick={handlePushQuickButton} />
