@@ -17,7 +17,9 @@ const meta = {
     }
   },
   args: {},
-  argTypes: {}
+  argTypes: {
+    setPushPoint: { control: false }
+  }
 } satisfies Meta<typeof QuizQuickBuzzerText>
 
 export default meta

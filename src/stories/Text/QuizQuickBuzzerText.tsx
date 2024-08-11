@@ -4,12 +4,14 @@ export type QuizQuickBuzzerTextProps = {
   text: string
   speedSeconds?: number
   pause: boolean
+  setPushPoint?: (textCount: number) => void
 }
 
 export const QuizQuickBuzzerText = ({
   text,
   speedSeconds = 0.1,
-  pause
+  pause,
+  setPushPoint
 }: QuizQuickBuzzerTextProps) => {
   const [displayText, setDisplayText] = useState('')
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -53,6 +55,8 @@ export const QuizQuickBuzzerText = ({
     if (currentIndex < text.length) {
       setDisplayText((pre) => pre + text[currentIndex])
     }
+
+    if (setPushPoint) setPushPoint(currentIndex + 1)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex])
 
