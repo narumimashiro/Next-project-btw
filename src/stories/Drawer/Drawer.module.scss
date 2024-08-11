@@ -33,10 +33,9 @@ $max-wrap-height: 900px;
   height: 100%;
   overflow: hidden;
   z-index: -1;
-  transition: z-index 0.39s ease-out;
 
   &.open {
-    z-index: 0;
+    z-index: 1;
   }
 }
 
