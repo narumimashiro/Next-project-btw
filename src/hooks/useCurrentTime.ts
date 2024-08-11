@@ -49,7 +49,7 @@ export const useCurrentTimeWithDate = (locale: string) => {
     }, 1 * 1000)
 
     return () => clearInterval(timer)
-  }, [])
+  }, [locale])
 
   return currentTime
 }
