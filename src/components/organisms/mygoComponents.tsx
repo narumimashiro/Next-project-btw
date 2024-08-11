@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { Card, useTheme } from '@mui/material'
 import { useTranslation } from 'next-i18next'
 
@@ -11,8 +11,8 @@ import { StrongButton } from '@/stories/Button/StrongButton'
 import { TextField } from '@/stories/TextField/TextField'
 import Correct from '@/img/correct.svg'
 import Incorrect from '@/img/incorrect.svg'
-import { HeadlineText } from '../atom/componentsTemplate'
-import { useCustomContext } from '../customProvider'
+import { HeadlineText } from '@/components/atom/componentsTemplate'
+import { useCustomContext } from '@/components/customProvider'
 
 export const MygoLinksInfo = ({
   officialLink,
@@ -140,15 +140,17 @@ export const CountdownQuizStart = ({ start, onClose }: CountdownQuizStartProps) 
   )
 }
 
-type QuizRersultType = {
+type QuizResultType = {
   isCorrect: boolean
   additional: boolean
+  isHaruhikage: boolean
 }
 type QuizMygoProps = {
   quizList: MygoQuizListType[]
   start: boolean
+  onFinishQuiz: () => void
 }
-export const QuizMygo = ({ quizList, start }: QuizMygoProps) => {
+export const QuizMygo = ({ quizList, start, onFinishQuiz }: QuizMygoProps) => {
   const { isPortrait } = useCustomContext()
   const { t } = useTranslation()
   const theme = useTheme()
@@ -162,8 +164,13 @@ export const QuizMygo = ({ quizList, start }: QuizMygoProps) => {
   const [quizCount, setQuizCount] = useState(0)
   const [pushAnswerButton, setPushAnswerButton] = useState(false)
   const [userInputText, setUserInputText] = useState('')
-  const [quizResult, setQuizResult] = useState<QuizRersultType[]>(() => {
-    return Array(quizList.length).fill({ isCorrect: false, additional: false })
+  const [userPushPoint, setUserPushPoint] = useState(0)
+  const [quizResult, setQuizResult] = useState<QuizResultType[]>(() => {
+    return Array(quizList.length).fill({
+      isCorrect: false,
+      additional: false,
+      isHaruhikage: false
+    })
   })
 
   const handlePushQuickButton = () => {
@@ -179,7 +186,7 @@ export const QuizMygo = ({ quizList, start }: QuizMygoProps) => {
     setQuizCount((pre) => {
       if (quizList.length - 1 === pre) {
         setPhase(RESULT_ANNOUNCE)
-        return pre
+        return 0
       }
       return pre + 1
     })
@@ -198,7 +205,11 @@ export const QuizMygo = ({ quizList, start }: QuizMygoProps) => {
               {t('STRID_mygo_quiz_question').replace('{0}', `${quizCount + 1}`)}
             </p>
             <div className={styles['view-question']}>
-              <QuizQuickBuzzerText text={quizList[quizCount].quiz} pause={pushAnswerButton} />
+              <QuizQuickBuzzerText
+                setPushPoint={setUserPushPoint}
+                text={quizList[quizCount].quiz}
+                pause={pushAnswerButton}
+              />
             </div>
             {READING_QUIZ === phase ? (
               <QuickPressButton onClick={handlePushQuickButton} />
@@ -219,10 +230,13 @@ export const QuizMygo = ({ quizList, start }: QuizMygoProps) => {
           <JudgeQuizAnswer
             onNextQuiz={handleNextQuiz}
             userInput={userInputText}
-            answerList={quizList[quizCount].answer}
+            currentCount={quizCount}
+            quizList={quizList}
+            userPushPoint={userPushPoint}
+            setQuizResult={setQuizResult}
           />
         ) : (
-          <>結果画面。To be continue...</>
+          <ResultScreen quizResult={quizResult} onClickToTop={onFinishQuiz} />
         )}
       </div>
     )
@@ -268,15 +282,49 @@ const AnswerBoard = ({ userInputText, onInputText }: AnswerBoardProps) => {
 type JudgeQuizAnswerProps = {
   onNextQuiz: () => void
   userInput: string
-  answerList: string[]
+  currentCount: number
+  quizList: MygoQuizListType[]
+  userPushPoint: number
+  setQuizResult: React.Dispatch<React.SetStateAction<QuizResultType[]>>
 }
-const JudgeQuizAnswer = ({ onNextQuiz, userInput, answerList }: JudgeQuizAnswerProps) => {
+const JudgeQuizAnswer = ({
+  onNextQuiz,
+  userInput,
+  currentCount,
+  quizList,
+  userPushPoint,
+  setQuizResult
+}: JudgeQuizAnswerProps) => {
   const { isPortrait } = useCustomContext()
   const { t } = useTranslation()
   const theme = useTheme()
   const colorTheme = theme.palette.mode
 
-  const isCorrect = answerList.includes(userInput)
+  const isCorrect = useMemo(() => {
+    return quizList[currentCount].answer.includes(userInput)
+  }, [currentCount, quizList, userInput])
+
+  const isGetAdditionalPoint = useMemo(() => {
+    return quizList[currentCount].judge_point.additional_point >= userPushPoint
+  }, [currentCount, quizList, userPushPoint])
+
+  const handleNextQuiz = () => {
+    setQuizResult((pre) => {
+      return pre.map((result, index) => {
+        if (index === currentCount) {
+          return {
+            ...result,
+            isCorrect: isCorrect,
+            additional: isGetAdditionalPoint,
+            isHaruhikage: quizList[currentCount].judge_point.is_haruhikage
+          }
+        } else {
+          return result
+        }
+      })
+    })
+    onNextQuiz()
+  }
 
   return (
     <div className={styles['judge-answer']}>
@@ -285,9 +333,99 @@ const JudgeQuizAnswer = ({ onNextQuiz, userInput, answerList }: JudgeQuizAnswerP
         {isCorrect ? t('STRID_mygo_correct_answer') : t('STRID_mygo_incorrect_answer')}
       </p>
       <Image width={200} height={200} src={isCorrect ? Correct.src : Incorrect.src} alt="" />
-      <StrongButton colorTheme={colorTheme} onClick={onNextQuiz}>
+      <StrongButton colorTheme={colorTheme} onClick={handleNextQuiz}>
         {t('STRID_mygo_next_quiz')}
       </StrongButton>
+    </div>
+  )
+}
+
+type ResultScreenProps = {
+  quizResult: QuizResultType[]
+  onClickToTop: () => void
+}
+const ResultScreen = ({ quizResult, onClickToTop }: ResultScreenProps) => {
+  const { isPortrait, isTabletSize } = useCustomContext()
+  const { t } = useTranslation()
+  const theme = useTheme()
+  const colorTheme = theme.palette.mode
+  const orientation = isPortrait ? 'portrait' : isTabletSize ? 'tablet' : 'landscape'
+
+  const TOMORI = 'tomori',
+    ANON = 'anon',
+    RANA = 'rana',
+    SOYO = 'soyo',
+    TAKI = 'taki'
+  const [mygoMember, setMygoMember] = useState('')
+
+  const incorrectHaruhikage = useMemo(() => {
+    return quizResult.some((result) => !result.isCorrect && result.isHaruhikage)
+  }, [quizResult])
+
+  const calculationScore = useMemo(() => {
+    let score = 0
+    for (const result of quizResult) {
+      if (result.isCorrect) {
+        score += 10
+        if (result.additional) score += 5
+      }
+    }
+    return score
+  }, [quizResult])
+
+  useEffect(() => {
+    if (incorrectHaruhikage) {
+      setMygoMember(SOYO)
+      return
+    }
+    const score = calculationScore
+    if (80 <= score) {
+      setMygoMember(ANON)
+    } else if (50 <= score && 80 > score) {
+      setMygoMember(RANA)
+    } else if (25 <= score && 50 > score) {
+      setMygoMember(TOMORI)
+    } else {
+      setMygoMember(TAKI)
+    }
+  }, [calculationScore, incorrectHaruhikage])
+
+  const getResultText = (score: number) => {
+    if (incorrectHaruhikage) {
+      return t('TEMP_なんで春日影の問題間違えたの!?そよさんからのお怒りメッセージ')
+    }
+
+    if (80 <= score) {
+      return t('TEMP_すごいすごい。愛音ちゃんに褒めてもらえるとにかく褒めてもらえる。')
+    } else if (50 <= score && 80 > score) {
+      return t('TEMP_そこそこすごい。楽奈が興味なさそうにテキトーなセリフでほめてくれる')
+    } else if (25 <= score && 50 > score) {
+      return t('TEMP_うーん。。。燈が元気づけようと慰めてくれるようなセリフを表示する')
+    } else {
+      return t('TEMP_？？？、不甲斐ない結果に立希が罵倒してくる')
+    }
+  }
+
+  return (
+    <div className={styles['result-screen']}>
+      <p
+        className={`font-bold ${styles[`result-disp-${isPortrait ? 'portrait' : 'landscape'}`]}`}>
+        {t('STRID_mygo_quiz_result')}
+      </p>
+      <div className={`${styles['result-board']} ${styles[colorTheme]}`}>
+        <p className={styles.score}>
+          {t('STRID_mygo_score').replace('{0}', `${calculationScore}`)}
+        </p>
+        <p>{getResultText(calculationScore)}</p>
+      </div>
+      <StrongButton colorTheme={colorTheme} onClick={onClickToTop}>
+        {t('STRID_mygo_quiz_to_top')}
+      </StrongButton>
+      <img
+        className={`${styles[`img-${mygoMember}`]} ${styles[orientation]}`}
+        src={`/images/mygo_${mygoMember}.png`}
+        alt=""
+      />
     </div>
   )
 }

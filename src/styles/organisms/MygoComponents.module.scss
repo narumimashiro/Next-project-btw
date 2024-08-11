@@ -256,10 +256,14 @@ $answer-height: 40px;
   margin-bottom: 16px;
 
   .input-viewer {
-    position: relative;
     margin-bottom: 16px;
     min-height: 24px;
     max-width: 250px;
+    text-align: center;
+  }
+
+  span {
+    position: relative;
   }
 
   span::before {
@@ -285,7 +289,8 @@ $answer-height: 40px;
   width: auto;
 }
 
-.judge-answer {
+.judge-answer,
+.result-screen {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -302,5 +307,93 @@ $answer-height: 40px;
 
   button {
     margin: auto;
+  }
+
+  .result-board {
+    width: 75%;
+    margin: 16px 0;
+    padding: 16px;
+    max-width: 540px;
+    border: 1px solid var(--mygo-color);
+
+    &.light {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    &.dark {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .score {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+  }
+
+  .mygoMember {
+    position: fixed;
+    z-index: -1;
+    bottom: 0;
+    object-fit: cover;
+    overflow: hidden;
+    height: 70%;
+    &.tablet {
+      height: 60%;
+    }
+
+    &.portrait {
+      height: 50%;
+    }
+  }
+
+  .img-anon {
+    @extend .mygoMember;
+    left: 0%;
+  }
+
+  .img-tomori {
+    @extend .mygoMember;
+    right: -10%;
+
+    &.portrait {
+      right: -25%;
+    }
+  }
+
+  .img-rana {
+    @extend .mygoMember;
+    right: 0;
+  }
+
+  .img-soyo {
+    @extend .mygoMember;
+    bottom: -10%;
+
+    &.landscape {
+      bottom: -20%;
+      left: 0;
+    }
+
+    &.tablet {
+      bottom: -15%;
+      left: 0;
+    }
+  }
+
+  .img-taki {
+    @extend .mygoMember;
+    bottom: -10%;
+
+    &.landscape {
+      bottom: -20%;
+      right: 0;
+    }
+
+    &.tablet {
+      bottom: -15%;
+      right: 0;
+    }
   }
 }
