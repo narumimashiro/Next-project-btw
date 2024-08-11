@@ -163,6 +163,11 @@ const MygoQuiz = () => {
     setStartPlayingQuiz(true)
   }
 
+  const finishQuiz = () => {
+    setStartPlayingQuiz(false)
+    setReadyQuiz(false)
+  }
+
   const locale_slug = useLocaleSlug()
   const mygoQuizList = useRecoilValue(MygoQuizListState)
   const { getMygoMusicInformation, mygoMusicInfoFetchState } = GetMygoMusicInformationApi()
@@ -211,7 +216,11 @@ const MygoQuiz = () => {
           ) : (
             <div className={styles['margion-top-24']}>
               <CountdownQuizStart start={countdown} onClose={startQuiz} />
-              <QuizMygo quizList={shuffleList(mygoQuizList, 10)} start={startPlayingQuiz} />
+              <QuizMygo
+                quizList={shuffleList(mygoQuizList, 10)}
+                start={startPlayingQuiz}
+                onFinishQuiz={finishQuiz}
+              />
             </div>
           )}
         </>
