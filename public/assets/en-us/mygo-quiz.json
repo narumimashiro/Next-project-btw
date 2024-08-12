@@ -10,7 +10,7 @@
   },
   {
     "quiz": "「影色舞」、「処救生」、「詩超絆」50音順に並べたときに一番最後になる曲はどれ？",
-    "answer": ["影色舞", "シルエットダンス", "しるえっとだんす"],
+    "answer": ["影色舞(シルエットダンス)", "影色舞"],
     "judge_point": {
       "additional_point": 20,
       "is_haruhikage": false
@@ -19,7 +19,7 @@
   },
   {
     "quiz": "歌いだしが燈の詩から始まる楽曲はいくつかありますが、「春日影」、「詩超絆」、「音一会」のうち該当しないのはどれ？",
-    "answer": ["春日影", "はるひかげ"],
+    "answer": ["春日影"],
     "judge_point": {
       "additional_point": 31,
       "is_haruhikage": true
@@ -91,7 +91,7 @@
   },
   {
     "quiz": "難読楽曲が多いMyGO!!!!!、みんなノリノリで盛り上がる軽快なステップダンスが特徴的な楽曲「影色舞」の読み方は何？",
-    "answer": ["シルエットダンス"],
+    "answer": ["シルエットダンス", "しるえっとだんす"],
     "judge_point": {
       "additional_point": 40,
       "is_haruhikage": false
@@ -99,8 +99,8 @@
     "format": "text"
   },
   {
-    "quiz": "3rd Single「壱雫空」に収録されている楽曲は「壱雫空」、「栞」とあとは何？",
-    "answer": ["焚音打(たねび)", "焚音打", "たねび"],
+    "quiz": "3rd Single『壱雫空』に収録されている楽曲は「壱雫空」、「栞」とあとは何？",
+    "answer": ["焚音打(たねび)", "焚音打"],
     "judge_point": {
       "additional_point": 23,
       "is_haruhikage": false
@@ -108,10 +108,10 @@
     "format": "text"
   },
   {
-    "quiz": "MyGO!!!!!活動開始1周年記念のオリジナル楽曲を漢字で答えよ",
+    "quiz": "MyGO!!!!!活動開始1周年記念のオリジナル楽曲名は何？",
     "answer": ["無路矢"],
     "judge_point": {
-      "additional_point": 28,
+      "additional_point": 18,
       "is_haruhikage": false
     },
     "format": "text"
@@ -127,7 +127,7 @@
   },
   {
     "quiz": "燈たちとバンドやる理由として楽奈は「つまんねー女ばっかだった、けど...」のあと燈の方を見て何と言った？",
-    "answer": ["おもしれー女", "おもしれぇおんな", "おもしれーおんな"],
+    "answer": ["おもしれー女"],
     "judge_point": {
       "additional_point": 43,
       "is_haruhikage": false
@@ -145,7 +145,7 @@
   },
   {
     "quiz": "「何が僕にできるか、わからないけれど」という歌詞から始まる楽曲名は何？",
-    "answer": ["名無声(なもなき)", "名無声", "なもなき"],
+    "answer": ["名無声(なもなき)", "名無声"],
     "judge_point": {
       "additional_point": 15,
       "is_haruhikage": false
@@ -153,8 +153,8 @@
     "format": "text"
   },
   {
-    "quiz": "5th Single「端程山」の3曲目に収録されている楽曲タイトルの読み方は何？",
-    "answer": ["こころ", "ココロ"],
+    "quiz": "5th Single『端程山』の3曲目に収録されている楽曲タイトルの読み方は何？",
+    "answer": ["こころ"],
     "judge_point": {
       "additional_point": 35,
       "is_haruhikage": false
@@ -166,6 +166,213 @@
     "answer": ["まよいうた"],
     "judge_point": {
       "additional_point": 37,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "難読楽曲が多いMyGO!!!!!、初の両A面Singleのうち1曲目に収録されている曲「砂寸奏」の読み方は何？",
+    "answer": ["さすらい"],
+    "judge_point": {
+      "additional_point": 34,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "難読楽曲が多いMyGO!!!!!、初の両A面Singleのうち2曲目に収録されている曲「回層浮」の読み方は何？",
+    "answer": ["かいそう"],
+    "judge_point": {
+      "additional_point": 34,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "燈たちがかつて組んでいたバンドの楽曲名は「春日陰」である。〇か✕か",
+    "answer": ["✕"],
+    "judge_point": {
+      "additional_point": 30,
+      "is_haruhikage": true
+    },
+    "format": "select"
+  },
+  {
+    "quiz": "歌詞の中にMyGO!!!!!メンバー全員が含まれており、「迷うことに もう迷わない」で曲が終わる楽曲名は何？",
+    "answer": ["焚音打(たねび)", "焚音打"],
+    "judge_point": {
+      "additional_point": 25,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "デジタルコミック版「ゴールド・ボーイ」テーマ曲にもなった、5th Single『端程山』の3曲目に収録されている曲は何？",
+    "answer": ["孤壊牢"],
+    "judge_point": {
+      "additional_point": 23,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "道に落ちた石や葉っぱを収集することが趣味のMyGO!!!!!のボーカル担当のフルネームは何？",
+    "answer": ["高松 燈", "高松燈"],
+    "judge_point": {
+      "additional_point": 37,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "明るく社交性の高い、MyGO!!!!!結成のキーパーソンでもあるギター担当のフルネームは何？",
+    "answer": ["千早 愛音", "千早愛音"],
+    "judge_point": {
+      "additional_point": 27,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "気が強くメンバーとぶつかることが多々あり、一匹狼なMyGO!!!!!のドラム担当のフルネームは何？",
+    "answer": ["椎名 立希", "椎名立希"],
+    "judge_point": {
+      "additional_point": 25,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "マイペース。自由人。演奏の腕前はプロ並みのMyGO!!!!!ギター担当のフルネームは何？",
+    "answer": ["要 楽奈", "要楽奈"],
+    "judge_point": {
+      "additional_point": 10,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "おっとりした雰囲気で、みんなの相談にのるママ属性のMyGO!!!!!のベース担当のフルネームは何？",
+    "answer": ["長崎 そよ", "長崎そよ"],
+    "judge_point": {
+      "additional_point": 22,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "楽奈と実は同じ学校だったMyGO!!!!!メンバーは立希である？〇か✕か",
+    "answer": ["〇"],
+    "judge_point": {
+      "additional_point": 31,
+      "is_haruhikage": false
+    },
+    "format": "select"
+  },
+  {
+    "quiz": "MyGO!!!!!舞台である池袋で2024年8月に行われたコラボイベントでの燈のコラボフードは何丼？",
+    "answer": ["燈のツナマヨ丼", "ツナマヨ"],
+    "judge_point": {
+      "additional_point": 44,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "MyGO!!!!!舞台である池袋で2024年8月に行われたコラボイベントでのそよさんのコラボドリンクは何？",
+    "answer": ["そよのフルーツティー", "フルーツティー"],
+    "judge_point": {
+      "additional_point": 47,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "フルーツサンド、ハンバーガー、スモークサーモン、愛音の好きな食べ物としてプロフィールに記載の無い食べ物はどれ？",
+    "answer": ["ハンバーガー"],
+    "judge_point": {
+      "additional_point": 23,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "猫が好きな楽奈の誕生日はにゃんにゃんにゃんの2月22日である？〇か✕か",
+    "answer": ["〇"],
+    "judge_point": {
+      "additional_point": 30,
+      "is_haruhikage": false
+    },
+    "format": "select"
+  },
+  {
+    "quiz": "練習楽曲として、そよさんも思うところがありながらも承諾した曲名は何？",
+    "answer": ["春日影"],
+    "judge_point": {
+      "additional_point": 18,
+      "is_haruhikage": true
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "人間が酸素を取り込むために行う行為と同じ読み方のMyGO!!!!!楽曲名は何？",
+    "answer": ["処救生(こきゅう)", "処救生"],
+    "judge_point": {
+      "additional_point": 23,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "「名無声」、「無路矢」、「迷星叫」50音順に並べたときに一番最後になる曲はどれ？",
+    "answer": ["迷星叫"],
+    "judge_point": {
+      "additional_point": 21,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "イントロギターがかっこよい『端程山』の2曲目に収録されている楽曲名は何？",
+    "answer": ["輪符雨"],
+    "judge_point": {
+      "additional_point": 23,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "しりとりで負けになってしまう曲の読み方を次の中から選んで答えよ。「端程山」、「輪符雨」、「碧天伴走」",
+    "answer": ["リフレイン", "りふれいん"],
+    "judge_point": {
+      "additional_point": 41,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "Uh Wow wow!! コールで盛り上がる、初の両A面Singleの1曲目タイトルは何？",
+    "answer": ["砂寸奏"],
+    "judge_point": {
+      "additional_point": 22,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "実は難読ではない曲名もあるMyGO!!!!！楽曲。『音一会』に収録されている漢字4文字の楽曲名の読み方は？",
+    "answer": ["潜在表明(せんざいひょうめい)", "せんざいひょうめい"],
+    "judge_point": {
+      "additional_point": 33,
+      "is_haruhikage": false
+    },
+    "format": "text"
+  },
+  {
+    "quiz": "こころ、うたことば、メロディ、ひとしずく、漢字表記にすると他と字数が異なるのはどれ？",
+    "answer": ["メロディ"],
+    "judge_point": {
+      "additional_point": 34,
       "is_haruhikage": false
     },
     "format": "text"

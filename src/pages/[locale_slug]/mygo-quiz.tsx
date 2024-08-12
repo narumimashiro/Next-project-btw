@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 import { useTheme } from '@mui/material'
 import { useRecoilValue } from 'recoil'
@@ -82,10 +82,14 @@ const QuizListContents = () => {
   const breakPoint = isTabletSize ? 2 : isPortrait ? 1 : 3
 
   const mygoQuizList = useRecoilValue(MygoQuizListState)
+  const viewMygoQuizList = useMemo(
+    () => shuffleList(mygoQuizList, mygoQuizList.length),
+    [mygoQuizList]
+  )
 
   return (
     <MygoQuizCardGallery breakPoint={breakPoint}>
-      {mygoQuizList.map((el, index) => (
+      {viewMygoQuizList.map((el, index) => (
         <MygoQuizCard key={index} quizText={el.quiz} answer={el.answer} variant={index % 5} />
       ))}
     </MygoQuizCardGallery>
@@ -98,11 +102,15 @@ const MygoDictionaryContents = () => {
   const colorTheme = theme.palette.mode
 
   const mygoMusicInfo = useRecoilValue(MygoMusicInformationState)
+  const viewMygoMusicInfo = useMemo(
+    () => [...mygoMusicInfo].sort((a, b) => (a.unique_id < b.unique_id ? -1 : 1)),
+    [mygoMusicInfo]
+  )
   const [displayInfo, setDisplayInfo] = useState<MygoMusicInformationType[]>(mygoMusicInfo)
   const [userSearchInput, setUserSearchInput] = useState('')
   useEffect(() => {
     setDisplayInfo(() => {
-      return mygoMusicInfo.filter((info) => {
+      return viewMygoMusicInfo.filter((info) => {
         const { title, how_to_read, description } = info.music_info
         const isSeachHit =
           title.includes(userSearchInput) ||
@@ -111,7 +119,7 @@ const MygoDictionaryContents = () => {
         return isSeachHit
       })
     })
-  }, [mygoMusicInfo, userSearchInput])
+  }, [viewMygoMusicInfo, userSearchInput])
 
   return (
     <div className={styles.mygoDictContents}>
@@ -170,6 +178,11 @@ const MygoQuiz = () => {
 
   const locale_slug = useLocaleSlug()
   const mygoQuizList = useRecoilValue(MygoQuizListState)
+  const shuffleMygoQuiz = useMemo(
+    () => shuffleList(mygoQuizList, 10),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [mygoQuizList, startPlayingQuiz]
+  )
   const { getMygoMusicInformation, mygoMusicInfoFetchState } = GetMygoMusicInformationApi()
   const { getMygoQuizList, mygoQuizListFetchState } = GetMygoQuizListApi()
   useEffect(() => {
@@ -217,7 +230,7 @@ const MygoQuiz = () => {
             <div className={styles['margion-top-24']}>
               <CountdownQuizStart start={countdown} onClose={startQuiz} />
               <QuizMygo
-                quizList={shuffleList(mygoQuizList, 10)}
+                quizList={shuffleMygoQuiz}
                 start={startPlayingQuiz}
                 onFinishQuiz={finishQuiz}
               />

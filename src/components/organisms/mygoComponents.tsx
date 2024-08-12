@@ -392,17 +392,17 @@ const ResultScreen = ({ quizResult, onClickToTop }: ResultScreenProps) => {
 
   const getResultText = (score: number) => {
     if (incorrectHaruhikage) {
-      return t('TEMP_なんで春日影の問題間違えたの!?そよさんからのお怒りメッセージ')
+      return t('STRID_mygo_quiz_soyo_result')
     }
 
     if (80 <= score) {
-      return t('TEMP_すごいすごい。愛音ちゃんに褒めてもらえるとにかく褒めてもらえる。')
+      return t('STRID_mygo_quiz_anon_result')
     } else if (50 <= score && 80 > score) {
-      return t('TEMP_そこそこすごい。楽奈が興味なさそうにテキトーなセリフでほめてくれる')
+      return t('STRID_mygo_quiz_rana_result')
     } else if (25 <= score && 50 > score) {
-      return t('TEMP_うーん。。。燈が元気づけようと慰めてくれるようなセリフを表示する')
+      return t('STRID_mygo_quiz_tomori_result')
     } else {
-      return t('TEMP_？？？、不甲斐ない結果に立希が罵倒してくる')
+      return t('STRID_mygo_quiz_taki_result')
     }
   }
 
