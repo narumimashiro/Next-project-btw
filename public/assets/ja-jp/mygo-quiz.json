@@ -136,7 +136,7 @@
   },
   {
     "quiz": "抹茶大好き要楽奈はオッドアイですが、右目が黄色で左目が青色である。〇か✕か？",
-    "answer": ["〇"],
+    "answer": ["〇", "まる"],
     "judge_point": {
       "additional_point": 43,
       "is_haruhikage": false
@@ -190,7 +190,7 @@
   },
   {
     "quiz": "燈たちがかつて組んでいたバンドの楽曲名は「春日陰」である。〇か✕か",
-    "answer": ["✕"],
+    "answer": ["✕", "ばつ"],
     "judge_point": {
       "additional_point": 30,
       "is_haruhikage": true
@@ -262,7 +262,7 @@
   },
   {
     "quiz": "楽奈と実は同じ学校だったMyGO!!!!!メンバーは立希である？〇か✕か",
-    "answer": ["〇"],
+    "answer": ["〇", "まる"],
     "judge_point": {
       "additional_point": 31,
       "is_haruhikage": false
@@ -298,7 +298,7 @@
   },
   {
     "quiz": "猫が好きな楽奈の誕生日はにゃんにゃんにゃんの2月22日である？〇か✕か",
-    "answer": ["〇"],
+    "answer": ["〇", "まる"],
     "judge_point": {
       "additional_point": 30,
       "is_haruhikage": false
@@ -306,10 +306,10 @@
     "format": "select"
   },
   {
-    "quiz": "練習楽曲として、そよさんも思うところがありながらも承諾した曲名は何？",
+    "quiz": "アニメ作中でバンド練習楽曲として、立希が提案した楽曲名は何？",
     "answer": ["春日影"],
     "judge_point": {
-      "additional_point": 18,
+      "additional_point": 21,
       "is_haruhikage": true
     },
     "format": "text"
