@@ -53,5 +53,8 @@
   "STRID_mygo_dict": "MyGO!!!!!楽曲のタイトルと読み方、楽曲情報。",
   "STRID_mygo_dict_officiallink": "公式サイトへ",
   "STRID_mygo_dict_youtubelink": "YouTubeで聴く",
-  "STRID_mygo_view_answer": "解答を見る"
+  "STRID_mygo_view_answer": "解答を見る",
+  "STRID_prsk_slider_label_original": "オリジナル",
+  "STRID_prsk_slider_label_3d": "3DMV",
+  "STRID_prsk_slider_label_2d": "2DMV"
 }

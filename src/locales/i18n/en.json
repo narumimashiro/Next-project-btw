@@ -53,5 +53,8 @@
   "STRID_mygo_dict": "Title of MyGO song and its pronunciation, song information",
   "STRID_mygo_dict_officiallink": "official website",
   "STRID_mygo_dict_youtubelink": "YouTube",
-  "STRID_mygo_view_answer": "View the answer"
+  "STRID_mygo_view_answer": "View the answer",
+  "STRID_prsk_slider_label_original": "Original",
+  "STRID_prsk_slider_label_3d": "3DMV",
+  "STRID_prsk_slider_label_2d": "2DMV"
 }

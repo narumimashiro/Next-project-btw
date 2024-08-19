@@ -1,0 +1,124 @@
+$prsk-footer-height: 50px;
+
+// include margin under header image 16px
+$header-image-height-portrait: 216px;
+$header-image-height-landscape: 266px;
+
+.unitSortMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: $prsk-footer-height;
+
+  &.portrait {
+    overflow-y: auto;
+    max-height: calc(100vh - $header-image-height-portrait - $prsk-footer-height);
+  }
+}
+
+.unitButton {
+  background-color: rgba(255, 255, 255, 0.39);
+  border: none;
+  padding: 5px;
+
+  &:hover,
+  &.selected {
+    background-color: var(--light-hover-color);
+  }
+
+  img {
+    object-fit: contain;
+  }
+
+  p {
+    width: 80px;
+    line-height: 60px;
+  }
+}
+
+.songList {
+  overflow-y: auto;
+  padding: 0 10px;
+  min-height: 630px;
+
+  &.portrait {
+    max-height: calc(100dvh - $header-image-height-portrait - $prsk-footer-height);
+  }
+
+  &.landscape {
+    max-height: calc(100vh - $header-image-height-landscape - $prsk-footer-height);
+  }
+}
+
+.musicCard {
+  width: 100%;
+
+  .title {
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 3.9px;
+
+    &::before {
+      position: absolute;
+      content: '';
+      height: 0.5px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #86cecb;
+    }
+  }
+
+  .detailInfo {
+    font-size: 12px;
+    padding-left: 12px;
+  }
+}
+
+.prskFooter {
+  width: 100%;
+  background-color: #86cecb;
+  position: fixed;
+  bottom: 0px;
+  box-sizing: border-box;
+
+  .linkWrap {
+    height: $prsk-footer-height;
+    padding: 5px 10px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    max-width: var(--page-max-width-tablet);
+
+    a {
+      width: 30%;
+
+      &:nth-child(1),
+      &:nth-child(3) {
+        transform: scale(0.6);
+      }
+
+      &:nth-child(2) {
+        transform: scale(1);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.select-mv-container {
+  width: 80%;
+
+  .mv-label {
+    margin: 16px 0;
+
+    .mv-label-item {
+      text-align: center;
+    }
+  }
+}
