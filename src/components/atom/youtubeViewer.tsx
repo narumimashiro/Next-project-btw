@@ -1,6 +1,7 @@
 export type YoutubeViewerProps = {
-  width?: number
-  height?: number
+  className?: string
+  width?: number | string
+  height?: number | string
   srcId: string
   autoPlay?: boolean
   mute?: boolean
@@ -8,6 +9,7 @@ export type YoutubeViewerProps = {
 }
 
 export const YoutubeViewer = ({
+  className = '',
   width,
   height,
   srcId,
@@ -21,6 +23,7 @@ export const YoutubeViewer = ({
 
   return (
     <iframe
+      className={className}
       width={width}
       height={height}
       src={`https://www.youtube.com/embed/${srcId}${autoPlayPath}${mutePath}${noControlPath}`}
