@@ -4,12 +4,13 @@ import styles from './ListItem.module.scss'
 
 export type ListItemProps = {
   colorTheme?: 'light' | 'dark'
-  text: string
+  children?: React.ReactNode
+  text?: string
   icon?: React.ReactNode
   onClick: () => void
 }
 
-export const ListItem = ({ colorTheme, text, icon, onClick }: ListItemProps) => {
+export const ListItem = ({ colorTheme, children, text, icon, onClick }: ListItemProps) => {
   const theme = useTheme().palette.mode
   const color = colorTheme ? colorTheme : theme
   const listItemButtonRef = useRef<HTMLDivElement | null>(null)
@@ -59,7 +60,8 @@ export const ListItem = ({ colorTheme, text, icon, onClick }: ListItemProps) => 
       tabIndex={0}
       role="button">
       {icon && <div className={styles.listIcon}>{icon}</div>}
-      <span>{text}</span>
+      {text && <span>{text}</span>}
+      {children}
     </div>
   )
 }
