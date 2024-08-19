@@ -1,0 +1,50 @@
+.musicplayer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 16px;
+  gap: 8px;
+
+  .movieScreen {
+    margin: 8px 0;
+    pointer-events: none;
+  }
+
+  .music-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .musicTitle {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+  }
+
+  .playbuttons {
+    margin: 16px 0;
+  }
+}
+
+.topInfo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .iconGroup {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 8px;
+  }
+
+  .batteryIcon {
+    transform: rotate(90deg);
+  }
+}
