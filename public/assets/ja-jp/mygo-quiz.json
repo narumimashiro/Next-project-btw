@@ -271,7 +271,7 @@
   },
   {
     "quiz": "MyGO!!!!!舞台である池袋で2024年8月に行われたコラボイベントでの燈のコラボフードは何丼？",
-    "answer": ["燈のツナマヨ丼", "ツナマヨ"],
+    "answer": ["燈のツナマヨ丼", "ツナマヨ", "ツナマヨ丼"],
     "judge_point": {
       "additional_point": 44,
       "is_haruhikage": false
