@@ -1,9 +1,9 @@
-.tabs {
+.BTW_tabs {
   min-width: 60%;
   margin-bottom: 24px;
 }
 
-.underline {
+.BTW_underline {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,27 +21,27 @@
     height: 1px;
   }
 
-  &.not-selected {
+  &.BTW_not-selected {
     opacity: 0.6;
     font-weight: normal;
   }
 }
 
-.underline-light {
-  @extend .underline;
+.BTW_underline-light {
+  @extend .BTW_underline;
   &::before {
     background-color: #000000;
   }
 }
 
-.underline-dark {
-  @extend .underline;
+.BTW_underline-dark {
+  @extend .BTW_underline;
   &::before {
     background-color: #ffffff;
   }
 }
 
-.stickynote {
+.BTW_stickynote {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,20 +60,20 @@
     height: 1px;
   }
 
-  &.selected {
+  &.BTW_selected {
     border-left: 1px solid;
     border-right: 1px solid;
   }
 
-  &.selected::before {
+  &.BTW_selected::before {
     left: calc(-4% - 3px);
   }
 
-  &.first-sticky::before {
+  &.BTW_first-sticky::before {
     left: -20%;
   }
 
-  &.last-sticky::after {
+  &.BTW_last-sticky::after {
     position: absolute;
     content: '';
     bottom: 0;
@@ -83,41 +83,41 @@
   }
 }
 
-.stickynote-light {
-  @extend .stickynote;
+.BTW_stickynote-light {
+  @extend .BTW_stickynote;
   &::before,
   &::after {
     background-color: var(--apple-site-light-gray);
   }
-  &.selected {
+  &.BTW_selected {
     box-shadow: 0 -1px 0 0 var(--apple-site-light-gray);
     border-color: var(--apple-site-light-gray);
   }
-  &.not-selected {
+  &.BTW_not-selected {
     background-color: var(--apple-site-light-gray);
   }
 }
 
-.stickynote-dark {
-  @extend .stickynote;
+.BTW_stickynote-dark {
+  @extend .BTW_stickynote;
   &::before,
   &::after {
     background-color: var(--dark-hover-color);
   }
-  &.selected {
+  &.BTW_selected {
     box-shadow: 0 -1px 0 0 var(--dark-hover-color);
     border-color: var(--dark-hover-color);
   }
-  &.not-selected {
+  &.BTW_not-selected {
     background-color: var(--dark-hover-color);
   }
 }
 
 // TabPanel Style
-.tabpanel-visible {
+.BTW_tabpanel-visible {
   display: block;
 }
 
-.tabpanel-hidden {
+.BTW_tabpanel-hidden {
   display: none;
 }

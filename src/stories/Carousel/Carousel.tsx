@@ -66,31 +66,31 @@ export const Carousel = ({
 
   return (
     <div
-      className={styles.carousel}
+      className={styles.BTW_carousel}
       style={{
         maxWidth: typeof itemWidth === 'number' ? itemWidth * 2 : `calc(${itemWidth} * 2)`
       }}>
       <button
-        className={`${styles.carouselButton} ${styles.prev} ${styles[color]}`}
+        className={`${styles.BTW_carouselButton} ${styles.BTW_prev} ${styles[color]}`}
         onClick={prev}>
         <img src={color === 'light' ? prevLight.src : prevDark.src} alt="prev_button" />
       </button>
       <div
-        className={`${decorateFeedInOut ? styles.carouselTrackContainer : ''} ${styles[color]}`}>
+        className={`${decorateFeedInOut ? styles.BTW_carouselTrackContainer : ''} ${styles[color]}`}>
         <ul
           ref={listRef}
-          className={styles.carouselItems}
+          className={styles.BTW_carouselItems}
           style={{ height: itemHeight }}
           onTransitionEnd={handleTransitionEnd}>
           {allItems.map((item, index) => (
-            <li key={index} className={styles.carouselItem}>
+            <li key={index} className={styles.BTW_carouselItem}>
               {item}
             </li>
           ))}
         </ul>
       </div>
       <button
-        className={`${styles.carouselButton} ${styles.next} ${styles[color]}`}
+        className={`${styles.BTW_carouselButton} ${styles.BTW_next} ${styles[color]}`}
         onClick={next}>
         <img src={color === 'light' ? nextLight.src : nextDark.src} alt="next_button" />
       </button>

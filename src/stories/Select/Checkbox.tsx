@@ -20,7 +20,7 @@ export const Checkbox = ({
 }: CheckboxProps) => {
   return (
     <label
-      className={styles['checkbox-wrap']}
+      className={styles['BTW_checkbox-wrap']}
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === 'Enter') {
@@ -30,10 +30,10 @@ export const Checkbox = ({
       }}>
       <label
         className={`
-        ${styles[`checkbox-${colorTheme}`]}
-        ${filling ? styles.filling : ''}
-        ${isChecked ? styles.checked : ''}
-        ${disabled ? styles.disabled : ''}
+        ${styles[`BTW_checkbox-${colorTheme}`]}
+        ${filling ? styles.BTW_filling : ''}
+        ${isChecked ? styles.BTW_checked : ''}
+        ${disabled ? styles.BTW_disabled : ''}
         ${className}`}>
         <input
           type="checkbox"

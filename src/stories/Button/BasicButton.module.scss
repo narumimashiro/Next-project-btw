@@ -1,13 +1,13 @@
-.basic-button {
+.BTW_basic-button {
   padding: 5px 10px;
   border-radius: 3px;
 }
 
-.basicButton-light {
+.BTW_basicButton-light {
   color: #000000;
   background-color: #ffffff;
   border: 2px solid #000000;
-  @extend .basic-button;
+  @extend .BTW_basic-button;
   &:hover {
     background-color: var(--light-hover-color);
   }
@@ -18,11 +18,11 @@
   }
 }
 
-.basicButton-dark {
+.BTW_basicButton-dark {
   color: #ffffff;
   background-color: #000000;
   border: 2px solid #ffffff;
-  @extend .basic-button;
+  @extend .BTW_basic-button;
   &:hover {
     background-color: var(--dark-hover-color);
   }

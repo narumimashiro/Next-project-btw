@@ -1,13 +1,13 @@
-.textfield {
+.BTW_textfield {
   display: flex;
   flex-direction: column;
   gap: 4px;
 
-  .inputContainer {
+  .BTW_inputContainer {
     position: relative;
   }
 
-  .clearBtn {
+  .BTW_clearBtn {
     position: absolute;
     width: 30px;
     height: 24px;
@@ -32,7 +32,7 @@
   }
 }
 
-.input {
+.BTW_input {
   width: 100%;
   outline: none;
   border: 1px solid;
@@ -46,8 +46,8 @@
   }
 }
 
-.input-light {
-  @extend .input;
+.BTW_input-light {
+  @extend .BTW_input;
   border-color: #000000;
 
   &:focus-visible {
@@ -55,8 +55,8 @@
   }
 }
 
-.input-dark {
-  @extend .input;
+.BTW_input-dark {
+  @extend .BTW_input;
   color: #ffffff;
   background-color: inherit;
   border-color: #ffffff;
@@ -66,8 +66,8 @@
   }
 }
 
-.inputError {
-  @extend .input;
+.BTW_inputError {
+  @extend .BTW_input;
   border-color: var(--mygo-anon-color);
 
   &:focus-visible {
@@ -75,7 +75,7 @@
   }
 }
 
-.errorText {
+.BTW_errorText {
   color: var(--mygo-anon-color);
   font-size: 12px;
   font-weight: bold;

@@ -19,7 +19,7 @@ export const StrongButton = ({
 }: StrongButtonProps) => {
   return (
     <button
-      className={`${styles[`strongButton-${colorTheme}`]} ${className}`}
+      className={`${styles[`BTW_strongButton-${colorTheme}`]} ${className}`}
       disabled={disabled}
       onClick={onClick}
       {...buttonProps}>

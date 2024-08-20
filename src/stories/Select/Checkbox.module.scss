@@ -1,4 +1,4 @@
-.checkbox-wrap {
+.BTW_checkbox-wrap {
   width: 30px;
   height: 30px;
   display: flex;
@@ -7,49 +7,49 @@
   background-color: inherit;
 }
 
-.checkbox {
-  width: 12px;
-  height: 12px;
+.BTW_checkbox {
+  width: 15px;
+  height: 15px;
   position: relative;
   display: inline-block;
   cursor: pointer;
 }
 
-.checkmark {
+.BTW_checkmark {
   content: '';
   position: absolute;
   left: 3px;
   top: 0px;
-  width: 4px;
-  height: 8px;
+  width: 5px;
+  height: 9px;
   border: solid;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
 
-.checkbox-light {
-  @extend .checkbox;
+.BTW_checkbox-light {
+  @extend .BTW_checkbox;
   background-color: inherit;
   border: 2px solid #000000;
   &::after {
-    @extend .checkmark;
+    @extend .BTW_checkmark;
     border-color: #000000;
     display: none;
   }
-  &.checked::after {
+  &.BTW_checked::after {
     display: block;
   }
-  &.filling.checked {
+  &.BTW_filling.BTW_checked {
     background-color: var(--dark-background-color);
 
-    &.disabled {
+    &.BTW_disabled {
       background-color: var(--light-disabled-text-color);
     }
   }
-  &.filling.checked::after {
+  &.BTW_filling.BTW_checked::after {
     border-color: #ffffff;
   }
-  &.disabled {
+  &.BTW_disabled {
     border: 2px solid var(--light-disabled-text-color);
   }
   input[type='checkbox'] {
@@ -57,29 +57,29 @@
   }
 }
 
-.checkbox-dark {
-  @extend .checkbox;
+.BTW_checkbox-dark {
+  @extend .BTW_checkbox;
   background-color: inherit;
   border: 2px solid #ffffff;
   &::after {
-    @extend .checkmark;
+    @extend .BTW_checkmark;
     border-color: #ffffff;
     display: none;
   }
-  &.checked::after {
+  &.BTW_checked::after {
     display: block;
   }
-  &.filling.checked {
+  &.BTW_filling.BTW_checked {
     background-color: var(--light-background-color);
 
-    &.disabled {
+    &.BTW_disabled {
       background-color: var(--dark-disabled-text-color);
     }
   }
-  &.filling.checked::after {
+  &.BTW_filling.BTW_checked::after {
     border-color: #000000;
   }
-  &.disabled {
+  &.BTW_disabled {
     border: 2px solid var(--dark-disabled-text-color);
   }
   input[type='checkbox'] {

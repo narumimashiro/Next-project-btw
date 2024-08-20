@@ -22,20 +22,20 @@ export const ConfirmDialog = ({
 }: ConfirmDialogProps) => {
   const { t } = useTranslation()
 
-  const displayDialog = open ? 'dialog-visible' : 'dialog-hidden'
+  const displayDialog = open ? 'BTW_dialog-visible' : 'BTW_dialog-hidden'
   const btnString = buttonString ? buttonString : t('STRID_cmn_ok')
 
   return (
     <div className={styles[displayDialog]}>
-      <div className={styles[`overlay-${colorTheme}`]}>
-        <div className={`absolute-center ${styles[`dialog-${colorTheme}`]}`}>
-          <div className={styles.contentsWrap}>
-            <h2 className={`text-xl-bold ${styles.title}`}>{title}</h2>
+      <div className={styles[`BTW_overlay-${colorTheme}`]}>
+        <div className={`absolute-center ${styles[`BTW_dialog-${colorTheme}`]}`}>
+          <div className={styles.BTW_contentsWrap}>
+            <h2 className={`text-xl-bold ${styles.BTW_title}`}>{title}</h2>
             {children}
           </div>
-          <div className={styles[`horizon-${colorTheme}`]}></div>
+          <div className={styles[`BTW_horizon-${colorTheme}`]}></div>
           <button
-            className={`${`button-active-${colorTheme}`} ${styles.confirmButton}`}
+            className={`${`button-active-${colorTheme}`} ${styles.BTW_confirmButton}`}
             aria-label={ariaLabel}
             onClick={onConfirm}>
             {btnString}
