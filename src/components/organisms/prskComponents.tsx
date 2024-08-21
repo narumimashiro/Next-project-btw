@@ -348,8 +348,6 @@ export const PrskMusicPlayer = ({
   const [mvSelectSlider, setMvSelectSlider] = useState(50)
   const [viewMvLink, setViewMvLink] = useState('')
   useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log(viewMvLink)
     if (!prskMusicInfo) return
 
     if (mvSelectSlider <= MAX_SLIDER / selectTypeSliderInfo.length) {

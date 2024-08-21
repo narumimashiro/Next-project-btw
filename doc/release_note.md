@@ -21,3 +21,9 @@ MyGO!!!!!のクイズ正式版をリリース。
 - 2024/08/19
 
 ProjectSEKAIのMusicPlayerページの作成のプロトデプロイ
+
+- 2024/08/21
+
+ProjectSEKAIのMusicPlayerページのデプロイ
+
+GithubからJson取得だと制限がかかることがあるので、ローカルにAssetの用意を行った。
