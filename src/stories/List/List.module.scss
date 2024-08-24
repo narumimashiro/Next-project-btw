@@ -1,8 +1,8 @@
-.list {
+.BTW_list {
   display: flex;
   flex-direction: column;
 
-  .groupName {
+  .BTW_groupName {
     position: relative;
     font-size: 1.25em;
     font-weight: bold;
@@ -30,22 +30,22 @@
   }
 }
 
-.list-light {
-  @extend .list;
+.BTW_list-light {
+  @extend .BTW_list;
   color: #000000;
 
-  .groupName::after,
-  .groupName::before {
+  .BTW_groupName::after,
+  .BTW_groupName::before {
     background-color: var(--dark-disabled-text-color);
   }
 }
 
-.list-dark {
-  @extend .list;
+.BTW_list-dark {
+  @extend .BTW_list;
   color: #ffffff;
 
-  .groupName::after,
-  .groupName::before {
+  .BTW_groupName::after,
+  .BTW_groupName::before {
     background-color: var(--light-disabled-text-color);
   }
 }

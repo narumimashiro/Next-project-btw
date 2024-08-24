@@ -1,13 +1,13 @@
-.strong-button {
+.BTW_strong-button {
   padding: 5px 10px;
   border-radius: 3px;
 }
 
-.strongButton-light {
+.BTW_strongButton-light {
   color: #ffffff;
   background-color: #000000;
   border: 2px solid #000000;
-  @extend .strong-button;
+  @extend .BTW_strong-button;
   &:hover {
     background-color: var(--dark-hover-color);
   }
@@ -17,11 +17,11 @@
   }
 }
 
-.strongButton-dark {
+.BTW_strongButton-dark {
   color: #000000;
   background-color: #ffffff;
   border: 2px solid #ffffff;
-  @extend .strong-button;
+  @extend .BTW_strong-button;
   &:hover {
     background-color: var(--light-hover-color);
   }

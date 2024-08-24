@@ -1,16 +1,16 @@
-.radio-wrap {
+.BTW_radio-wrap {
   display: flex;
   flex-wrap: wrap;
 }
 
 $radio-item-height: 24px;
 
-.radio-items input[type='radio'] {
+.BTW_radio-items input[type='radio'] {
   visibility: hidden;
   position: absolute;
 }
 
-.radio-items {
+.BTW_radio-items {
   display: flex;
   gap: 5px;
   padding: 3px 6px;
@@ -19,46 +19,46 @@ $radio-item-height: 24px;
     caret-color: transparent;
   }
 
-  .radio-label-light {
+  .BTW_radio-label-light {
     height: $radio-item-height;
     color: #000000;
   }
 
-  .radio-label-dark {
+  .BTW_radio-label-dark {
     height: $radio-item-height;
     color: #ffffff;
   }
 
-  .checkmark-light {
-    @extend .checkmark;
+  .BTW_checkmark-light {
+    @extend .BTW_checkmark;
     border: 1px solid var(--dark-background-color);
   }
-  input[type='radio']:checked:checked + .checkmark-light {
+  input[type='radio']:checked:checked + .BTW_checkmark-light {
     background-color: var(--light-background-color);
   }
-  .checkmark-light:after {
+  .BTW_checkmark-light:after {
     background: var(--dark-background-color);
   }
-  input[type='radio']:checked + .checkmark-light:after {
+  input[type='radio']:checked + .BTW_checkmark-light:after {
     display: block;
   }
 
-  .checkmark-dark {
-    @extend .checkmark;
+  .BTW_checkmark-dark {
+    @extend .BTW_checkmark;
     border: 1px solid var(--light-background-color);
   }
-  input[type='radio']:checked:checked + .checkmark-dark {
+  input[type='radio']:checked:checked + .BTW_checkmark-dark {
     background-color: var(--dark-background-color);
   }
-  .checkmark-dark:after {
+  .BTW_checkmark-dark:after {
     background: var(--light-background-color);
   }
-  input[type='radio']:checked + .checkmark-dark:after {
+  input[type='radio']:checked + .BTW_checkmark-dark:after {
     display: block;
   }
 }
 
-.checkmark {
+.BTW_checkmark {
   display: inline-block;
   position: relative;
   width: $radio-item-height / 2;

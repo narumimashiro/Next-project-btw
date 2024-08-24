@@ -1,6 +1,6 @@
 $summary-height: 30px;
 
-.accordionWrap {
+.BTW_accordionWrap {
   width: 100%;
 
   &.light,
@@ -14,7 +14,7 @@ $summary-height: 30px;
     background-color: inherit;
   }
 
-  .summary {
+  .BTW_summary {
     position: relative;
     width: 100%;
     font-weight: bold;
@@ -27,40 +27,40 @@ $summary-height: 30px;
     text-align: left;
     z-index: 2;
 
-    .arrowIcon {
+    .BTW_arrowIcon {
       position: absolute;
       bottom: 0;
       right: 10px;
       width: $summary-height * 0.7;
       height: $summary-height;
       transition: transform 0.3s ease-out;
-      &.clockwise {
+      &.BTW_clockwise {
         transform: rotate(180deg);
       }
-      &.counterclockwise {
+      &.BTW_counterclockwise {
         transform: rotate(0);
       }
     }
   }
 
-  .details {
+  .BTW_details {
     padding: 0 10px;
     overflow: hidden;
     margin-bottom: 12px;
 
-    .detailText {
+    .BTW_detailText {
       margin: 10px 0;
     }
   }
 }
 
-.horizon-light {
+.BTW_horizon-light {
   border-top: 1px solid rgba(0, 0, 0, 0.5);
   width: 100%;
   margin: 0;
 }
 
-.horizon-dark {
+.BTW_horizon-dark {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   width: 100%;
   margin: 0;
