@@ -53,13 +53,13 @@ export const ListItem = ({ colorTheme, children, text, icon, onClick }: ListItem
   return (
     <div
       ref={listItemButtonRef}
-      className={styles[`list-item-${color}`]}
+      className={styles[`BTW_list-item-${color}`]}
       onClick={onClick}
       onMouseDown={createRipple}
       onTouchStart={createRipple}
       tabIndex={0}
       role="button">
-      {icon && <div className={styles.listIcon}>{icon}</div>}
+      {icon && <div className={styles.BTW_listIcon}>{icon}</div>}
       {text && <span>{text}</span>}
       {children}
     </div>

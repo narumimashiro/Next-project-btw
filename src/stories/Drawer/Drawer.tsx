@@ -16,13 +16,13 @@ export const Drawer = ({ open, children, colorTheme, pos = 'right', onClose }: D
 
   return (
     <>
-      <div className={`${styles.fullscreen} ${open ? styles.open : ''}`}>
+      <div className={`${styles.BTW_fullscreen} ${open ? styles.BTW_open : ''}`}>
         <div
-          className={`${styles[`overlay-${color}`]} ${open ? styles.open : ''}`}
+          className={`${styles[`BTW_overlay-${color}`]} ${open ? styles.BTW_open : ''}`}
           onClick={onClose}
         />
         <div
-          className={`${styles[`wrap-drawer-${pos}`]} ${styles[color]} ${open ? styles.open : ''}`}>
+          className={`${styles[`BTW_wrap-drawer-${pos}`]} ${styles[color]} ${open ? styles.BTW_open : ''}`}>
           {children}
         </div>
       </div>

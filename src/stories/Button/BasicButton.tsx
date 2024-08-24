@@ -19,7 +19,7 @@ export const BasicButton = ({
 }: BasicButtonProps) => {
   return (
     <button
-      className={`${styles[`basicButton-${colorTheme}`]} ${className}`}
+      className={`${styles[`BTW_basicButton-${colorTheme}`]} ${className}`}
       disabled={disabled}
       onClick={onClick}
       {...buttonProps}>
