@@ -38,7 +38,7 @@ export const OutlineText = ({
 
   return (
     <span
-      className={`${styles[`outline-${color}`]} ${className}`}
+      className={`${styles[`BTW_outline-${color}`]} ${className}`}
       style={customize}
       data-text={text}>
       {text}

@@ -43,26 +43,26 @@ export const Accordion = ({
   }
 
   return (
-    <div className={`${styles.accordionWrap} ${styles[color]}`}>
+    <div className={`${styles.BTW_accordionWrap} ${styles[color]}`}>
       <button
-        className={`${styles.summary} ${summaryStyle ? summaryStyle : styles.default}`}
+        className={`${styles.BTW_summary} ${summaryStyle ? summaryStyle : styles.default}`}
         onClick={() => setDetailsOpen(!detailsOpen)}>
         {summary}
         <img
-          className={`${styles.arrowIcon} ${
-            detailsOpen ? styles.clockwise : styles.counterclockwise
+          className={`${styles.BTW_arrowIcon} ${
+            detailsOpen ? styles.BTW_clockwise : styles.BTW_counterclockwise
           }`}
           src={color === 'light' ? ArrowDownLight.src : ArrowDownDark.src}
           alt=""
         />
       </button>
-      <div className={styles[`horizon-${color}`]}></div>
+      <div className={styles[`BTW_horizon-${color}`]}></div>
       <div
         ref={accordionDetailRef}
         style={accordionDetailStyle}
-        className={`${styles.details} ${detailStyle ? detailStyle : ''}`}>
+        className={`${styles.BTW_details} ${detailStyle ? detailStyle : ''}`}>
         {detailTextList?.map((detail, index) => (
-          <p key={`detail-text-${index}`} className={styles.detailText}>
+          <p key={`detail-text-${index}`} className={styles.BTW_detailText}>
             {detail}
           </p>
         ))}

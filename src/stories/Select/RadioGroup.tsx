@@ -25,10 +25,10 @@ export const RadioGroup = ({
   onChange
 }: RadioGroupProps) => {
   return (
-    <div className={styles['radio-wrap']} style={{ flexDirection: radioType }}>
+    <div className={styles['BTW_radio-wrap']} style={{ flexDirection: radioType }}>
       {optionList.map((radioEl) => {
         return (
-          <label key={radioEl.value} className={`${styles['radio-items']} ${radioProps}`}>
+          <label key={radioEl.value} className={`${styles['BTW_radio-items']} ${radioProps}`}>
             <input
               type="radio"
               name={name}
@@ -36,8 +36,8 @@ export const RadioGroup = ({
               checked={radioEl.value === currentValue}
               onChange={() => onChange(radioEl.value)}
             />
-            <span className={styles[`checkmark-${colorTheme}`]}></span>
-            <span className={styles[`radio-label-${colorTheme}`]}>{radioEl.label}</span>
+            <span className={styles[`BTW_checkmark-${colorTheme}`]}></span>
+            <span className={styles[`BTW_radio-label-${colorTheme}`]}>{radioEl.label}</span>
           </label>
         )
       })}

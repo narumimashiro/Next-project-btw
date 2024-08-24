@@ -44,12 +44,12 @@ export const TextField = ({
   }
 
   return (
-    <div className={`${styles.textfield} ${className}`}>
-      <div className={styles.inputContainer}>
+    <div className={`${styles.BTW_textfield} ${className}`}>
+      <div className={styles.BTW_inputContainer}>
         <input
           type="text"
           {...inputProps}
-          className={`${styles[`input-${color}`]} ${isError ? styles.inputError : ''}`}
+          className={`${styles[`BTW_input-${color}`]} ${isError ? styles.BTW_inputError : ''}`}
           placeholder={placeholder}
           maxLength={maxLength}
           onChange={handleInputChange}
@@ -57,7 +57,7 @@ export const TextField = ({
         />
         {clearButton && (
           <button
-            className={`${styles.clearBtn} ${styles[color]}`}
+            className={`${styles.BTW_clearBtn} ${styles[color]}`}
             onClick={clearInputText}
             aria-label="clear_text"
             aria-labelledby="clear_text">
@@ -65,7 +65,7 @@ export const TextField = ({
           </button>
         )}
       </div>
-      {isError && <p className={styles.errorText}>{errorString}</p>}
+      {isError && <p className={styles.BTW_errorText}>{errorString}</p>}
     </div>
   )
 }

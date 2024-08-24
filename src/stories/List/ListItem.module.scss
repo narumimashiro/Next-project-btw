@@ -1,4 +1,4 @@
-.list-item {
+.BTW_list-item {
   display: flex;
   position: relative;
   overflow: hidden;
@@ -13,8 +13,8 @@
   }
 }
 
-.list-item-light {
-  @extend .list-item;
+.BTW_list-item-light {
+  @extend .BTW_list-item;
   color: #000000;
 
   &:hover {
@@ -22,8 +22,8 @@
   }
 }
 
-.list-item-dark {
-  @extend .list-item;
+.BTW_list-item-dark {
+  @extend .BTW_list-item;
   color: #ffffff;
 
   &:hover {
@@ -31,7 +31,7 @@
   }
 }
 
-.listIcon {
+.BTW_listIcon {
   display: flex;
   justify-content: center;
   max-height: 24px;

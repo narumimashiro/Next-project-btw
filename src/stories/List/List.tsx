@@ -18,8 +18,8 @@ export const List = ({
   const color = colorTheme ? colorTheme : theme
 
   return (
-    <div className={`${styles[`list-${color}`]} ${className}`}>
-      {groupName && <span className={styles.groupName}>{groupName}</span>}
+    <div className={`${styles[`BTW_list-${color}`]} ${className}`}>
+      {groupName && <span className={styles.BTW_groupName}>{groupName}</span>}
       {children}
     </div>
   )

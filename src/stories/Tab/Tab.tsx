@@ -28,7 +28,7 @@ export const Tabs = ({
   const tabLength = tabList.length
 
   return (
-    <div className={`${styles.tabs} ${className}`}>
+    <div className={`${styles.BTW_tabs} ${className}`}>
       <Grid container>
         {tabList.map((tab, index) => (
           <Grid item key={tab.label} xs={12 / tabLength}>
@@ -80,7 +80,7 @@ const UnderlineTabItem = ({
 }: TabItemProps) => {
   return (
     <button
-      className={`button-${colorTheme} ${styles[`underline-${colorTheme}`]} ${selected ? '' : styles['not-selected']} `}
+      className={`button-${colorTheme} ${styles[`BTW_underline-${colorTheme}`]} ${selected ? '' : styles['BTW_not-selected']} `}
       onClick={onClick}
       id={buttonProps.id}
       aria-controls={buttonProps['aria-controls']}>
@@ -105,11 +105,11 @@ const StickyNoteTabItem = ({
   onClick,
   ...buttonProps
 }: StickyNoteTabItemProps) => {
-  const specStyle = isFirstEl ? 'first-sticky' : isLastEl ? 'last-sticky' : ''
+  const specStyle = isFirstEl ? 'BTW_first-sticky' : isLastEl ? 'BTW_last-sticky' : ''
 
   return (
     <button
-      className={`button-${colorTheme} ${styles[`stickynote-${colorTheme}`]} ${styles[specStyle]} ${selected ? styles.selected : styles['not-selected']}`}
+      className={`button-${colorTheme} ${styles[`BTW_stickynote-${colorTheme}`]} ${styles[specStyle]} ${selected ? styles.BTW_selected : styles['not-selected']}`}
       onClick={onClick}
       id={buttonProps.id}
       aria-controls={buttonProps['aria-controls']}>
@@ -127,7 +127,7 @@ export type TabPanelProps = {
 
 export const TabPanel = ({ children, tabIndex, value }: TabPanelProps) => {
   const isVisible = value === tabIndex
-  const display = isVisible ? 'tabpanel-visible' : 'tabpanel-hidden'
+  const display = isVisible ? 'BTW_tabpanel-visible' : 'BTW_tabpanel-hidden'
 
   return (
     <div

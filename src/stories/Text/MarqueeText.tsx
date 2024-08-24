@@ -36,7 +36,7 @@ export const MarqueeText = ({ text }: MarqueeTextProps) => {
   return (
     <div
       ref={containerRef}
-      className={`${styles.container} ${excessiveLength ? styles.scrollText : ''}`}>
+      className={`${styles.BTW_container} ${excessiveLength ? styles.BTW_scrollText : ''}`}>
       <span ref={textRef}>{text}</span>
     </div>
   )
