@@ -8,6 +8,7 @@ export type TextAreaProps = {
   width?: number | string
   height?: number | string
   colorTheme?: 'light' | 'dark'
+  disabled?: boolean
   placeholder?: string
   onSetContext?: (context: string) => void
 }
@@ -17,6 +18,7 @@ export const TextArea = ({
   width,
   height,
   colorTheme,
+  disabled = false,
   placeholder = '',
   onSetContext
 }: TextAreaProps) => {
@@ -39,6 +41,7 @@ export const TextArea = ({
     <textarea
       className={`invisible-scroll ${styles[`BTW_text-area-${color}`]} ${className}`}
       style={textAreaStyle}
+      disabled={disabled}
       placeholder={placeholder}
       onChange={handleInputValue}>
       {context}
