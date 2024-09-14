@@ -25,7 +25,7 @@ export const TextArea = ({
   const [context, setContext] = useState('')
 
   const handleInputValue = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const newValue = e.currentTarget.textContent || ''
+    const newValue = e.currentTarget.value || ''
     setContext(newValue)
     if (onSetContext) onSetContext(newValue)
   }
