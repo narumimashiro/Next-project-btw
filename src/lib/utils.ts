@@ -37,3 +37,18 @@ export const createUUID = () => {
     ).toString(16)
   )
 }
+
+/**
+ * @param text
+ * @returns boolean supported speach synthesis
+ */
+export const textToSpeech = (text: string, lang: string) => {
+  if ('speechSynthesis' in window) {
+    const context = new SpeechSynthesisUtterance(text)
+    context.lang = lang
+    window.speechSynthesis.speak(context)
+    return true
+  } else {
+    return false
+  }
+}

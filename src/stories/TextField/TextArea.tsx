@@ -27,7 +27,7 @@ export const TextArea = ({
   const [context, setContext] = useState('')
 
   const handleInputValue = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const newValue = e.currentTarget.value || ''
+    const newValue = e.currentTarget.value
     setContext(newValue)
     if (onSetContext) onSetContext(newValue)
   }
@@ -43,8 +43,8 @@ export const TextArea = ({
       style={textAreaStyle}
       disabled={disabled}
       placeholder={placeholder}
-      onChange={handleInputValue}>
-      {context}
-    </textarea>
+      onChange={handleInputValue}
+      value={context}
+    />
   )
 }
