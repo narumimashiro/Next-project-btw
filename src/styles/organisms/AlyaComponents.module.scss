@@ -1,0 +1,56 @@
+.textAreaContainer {
+  position: relative;
+
+  .textArea {
+    min-height: 150px;
+  }
+}
+
+$mic-icon-height: 30px;
+
+.translationCard {
+  display: flex;
+  padding: 8px;
+  gap: 8px;
+  width: 100%;
+  height: 150px;
+
+  .translationContainer {
+    width: 100%;
+    height: 100%;
+
+    .textArea {
+      height: calc(100% - $mic-icon-height);
+      padding: 8px;
+    }
+  }
+
+  .underContents {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .readingText {
+      display: flex;
+      align-items: center;
+      height: $mic-icon-height;
+
+      .micbutton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: $mic-icon-height;
+        height: $mic-icon-height;
+
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .unsupport {
+        color: var(--mygo-anon-color);
+      }
+    }
+  }
+}

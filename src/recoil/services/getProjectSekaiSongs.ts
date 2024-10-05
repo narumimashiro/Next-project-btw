@@ -1,6 +1,7 @@
-import { atom, useSetRecoilState } from 'recoil'
+import { atom, useResetRecoilState, useSetRecoilState } from 'recoil'
+import { useEffect } from 'react'
 
-import { useApiStatus } from '@/hooks/useApiStatus'
+import { API_STATUS, ApiStatusType, useApiStatus } from '@/hooks/useApiStatus'
 
 // const BASEURL = 'https://narumimashiro.github.io/ProgramMiku39/Asset/prsk/'
 // const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
@@ -34,9 +35,17 @@ export type ProjectSekaiSongsInfo = {
   }
 }
 
-export const ProjectSekaiSongsState = atom<ProjectSekaiSongsInfo[]>({
+export type ProjectSekaiSongsStateType = {
+  fetchState: ApiStatusType
+  response: ProjectSekaiSongsInfo[]
+}
+
+export const ProjectSekaiSongsState = atom<ProjectSekaiSongsStateType>({
   key: 'Project SEKAI Songs',
-  default: []
+  default: {
+    fetchState: API_STATUS.IDLE,
+    response: []
+  }
 })
 
 export const CurrentSongsInfoState = atom<{
@@ -53,6 +62,7 @@ export const CurrentSongsInfoState = atom<{
 export const GetProjectSekaiSongsApi = () => {
   const { status, startLoading, setSuccess, setFailed, resetStatus } = useApiStatus()
   const setProjectSekaiSongs = useSetRecoilState(ProjectSekaiSongsState)
+  const init = useResetRecoilState(ProjectSekaiSongsState)
 
   const getProjectSekaiSongs = async () => {
     startLoading()
@@ -74,10 +84,15 @@ export const GetProjectSekaiSongsApi = () => {
         const result = response.default as ProjectSekaiSongsInfo[]
 
         setProjectSekaiSongs((pre) => {
-          const titleList = new Set(pre.map((el) => el.song_title))
+          const titleList = new Set(pre.response.map((el) => el.song_title))
           const addList = result.filter((el) => !titleList.has(el.song_title))
 
-          return [...pre, ...addList].sort((a, b) => (a.song_title < b.song_title ? -1 : 1))
+          return {
+            ...pre,
+            response: [...pre.response, ...addList].sort((a, b) =>
+              a.song_title < b.song_title ? -1 : 1
+            )
+          }
         })
       }
       // for make it like API
@@ -89,9 +104,23 @@ export const GetProjectSekaiSongsApi = () => {
     }
   }
 
+  useEffect(() => {
+    setProjectSekaiSongs((pre) => {
+      return {
+        ...pre,
+        fetchState: status
+      }
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status])
+
+  const resetprskSongsFetchState = () => {
+    resetStatus()
+    init()
+  }
+
   return {
-    prskSongsFetchState: status,
     getProjectSekaiSongs,
-    resetprskSongsFetchState: resetStatus
+    resetprskSongsFetchState
   }
 }
