@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import React, { useState } from 'react'
 
-import { API_STATUS, AptStatusType } from '@/hooks/useApiStatus'
+import { API_STATUS, ApiStatusType } from '@/hooks/useApiStatus'
 import { ApiFetchDialog, ApiFetchDialogProps } from './ApiFetchDialog'
 
 const meta = {
@@ -39,7 +39,7 @@ type Story = StoryObj<typeof ApiFetchDialog>
 
 const SampleApi = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [status, setStatus] = useState<AptStatusType>(API_STATUS.IDLE)
+  const [status, setStatus] = useState<ApiStatusType>(API_STATUS.IDLE)
 
   const sampleApi = async (result: boolean) => {
     setStatus(API_STATUS.LOADING)
