@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
 import { useTranslation } from 'next-i18next'
 import Loading from '@/components/atom/loading'
-import { API_STATUS, AptStatusType } from '@/hooks/useApiStatus'
+import { API_STATUS, ApiStatusType } from '@/hooks/useApiStatus'
 
 import styles from './ApiFetchDialog.module.scss'
 
 export type ApiFetchDialogProps = {
-  apiStatus: AptStatusType
+  apiStatus: ApiStatusType
   colorTheme?: 'light' | 'dark'
   bodyLoading: {
     title?: string
