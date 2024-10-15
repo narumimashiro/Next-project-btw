@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
-import { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 
 import { useTheme } from '@mui/material'
 import { useRecoilValue } from 'recoil'
@@ -81,7 +81,7 @@ const QuizListContents = () => {
   const { isPortrait, isTabletSize } = useCustomContext()
   const breakPoint = isTabletSize ? 2 : isPortrait ? 1 : 3
 
-  const mygoQuizList = useRecoilValue(MygoQuizListState)
+  const mygoQuizList = useRecoilValue(MygoQuizListState).response
   const viewMygoQuizList = useMemo(
     () => shuffleList(mygoQuizList, mygoQuizList.length),
     [mygoQuizList]
@@ -101,7 +101,7 @@ const MygoDictionaryContents = () => {
   const theme = useTheme()
   const colorTheme = theme.palette.mode
 
-  const mygoMusicInfo = useRecoilValue(MygoMusicInformationState)
+  const mygoMusicInfo = useRecoilValue(MygoMusicInformationState).response
   const viewMygoMusicInfo = useMemo(
     () => [...mygoMusicInfo].sort((a, b) => (a.unique_id < b.unique_id ? -1 : 1)),
     [mygoMusicInfo]
@@ -177,14 +177,16 @@ const MygoQuiz = () => {
   }
 
   const locale_slug = useLocaleSlug()
-  const mygoQuizList = useRecoilValue(MygoQuizListState)
+  const mygoQuizList = useRecoilValue(MygoQuizListState).response
+  const mygoQuizListFetchState = useRecoilValue(MygoQuizListState).fetchState
+  const mygoMusicInfoFetchState = useRecoilValue(MygoMusicInformationState).fetchState
   const shuffleMygoQuiz = useMemo(
     () => shuffleList(mygoQuizList, 10),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [mygoQuizList, startPlayingQuiz]
   )
-  const { getMygoMusicInformation, mygoMusicInfoFetchState } = GetMygoMusicInformationApi()
-  const { getMygoQuizList, mygoQuizListFetchState } = GetMygoQuizListApi()
+  const { getMygoMusicInformation } = GetMygoMusicInformationApi()
+  const { getMygoQuizList } = GetMygoQuizListApi()
   useEffect(() => {
     if (API_STATUS.IDLE === mygoMusicInfoFetchState) {
       getMygoMusicInformation({
@@ -200,7 +202,7 @@ const MygoQuiz = () => {
     <>
       <Meta pageTitle={t('STRID_cmn_pagetitle').replace('{var}', t('STRID_meta_mygo_quiz'))} />
       <PageTemplateWithHeader
-        className={styles['margin-bottom-24']}
+        className="mb-24"
         imgSrc={'/images/mygo.png'}
         title={t('STRID_meta_mygo_quiz')}>
         <>

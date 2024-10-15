@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRecoilValue } from 'recoil'
 
 import { Grid, useTheme } from '@mui/material'
@@ -86,8 +86,9 @@ const PrskMusic = () => {
   const { isPortrait } = useCustomContext()
   const theme = useTheme()
   const colorTheme = theme.palette.mode
-  const { getProjectSekaiSongs, prskSongsFetchState } = GetProjectSekaiSongsApi()
-  const projectSekaiSongs = useRecoilValue(ProjectSekaiSongsState)
+  const { getProjectSekaiSongs } = GetProjectSekaiSongsApi()
+  const projectSekaiSongs = useRecoilValue(ProjectSekaiSongsState).response
+  const prskSongsFetchState = useRecoilValue(ProjectSekaiSongsState).fetchState
 
   const [openSmartphone, setOpenSmartphone] = useState(false)
   const [openViewModal, setOpenViewModal] = useState(false)

@@ -1,5 +1,7 @@
-import { atom, useSetRecoilState } from 'recoil'
-import { useApiStatus } from '@/hooks/useApiStatus'
+import { atom, useResetRecoilState, useSetRecoilState } from 'recoil'
+import { useEffect } from 'react'
+
+import { API_STATUS, ApiStatusType, useApiStatus } from '@/hooks/useApiStatus'
 
 export type JudgePoint = {
   additional_point: number
@@ -12,14 +14,23 @@ export type MygoQuizListType = {
   judge_point: JudgePoint
 }
 
-export const MygoQuizListState = atom<MygoQuizListType[]>({
+export type MygoQuizListStateType = {
+  fetchState: ApiStatusType
+  response: MygoQuizListType[]
+}
+
+export const MygoQuizListState = atom<MygoQuizListStateType>({
   key: 'MyGO Quiz List',
-  default: []
+  default: {
+    fetchState: API_STATUS.IDLE,
+    response: []
+  }
 })
 
 export const GetMygoQuizListApi = () => {
   const { status, startLoading, setSuccess, setFailed, resetStatus } = useApiStatus()
   const setMygoQuizList = useSetRecoilState(MygoQuizListState)
+  const init = useResetRecoilState(MygoQuizListState)
 
   const getMygoQuizList = async () => {
     startLoading()
@@ -30,7 +41,12 @@ export const GetMygoQuizListApi = () => {
       // if (!response.ok) throw new Error()
       // const result: MygoMusicInformationType[] = await response.json()
 
-      setMygoQuizList(response.default as MygoQuizListType[])
+      setMygoQuizList((pre) => {
+        return {
+          ...pre,
+          response: response.default
+        }
+      })
 
       setSuccess()
     } catch {
@@ -38,9 +54,23 @@ export const GetMygoQuizListApi = () => {
     }
   }
 
+  useEffect(() => {
+    setMygoQuizList((pre) => {
+      return {
+        ...pre,
+        fetchState: status
+      }
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status])
+
+  const resetGetMygoQuizList = () => {
+    resetStatus()
+    init()
+  }
+
   return {
-    mygoQuizListFetchState: status,
     getMygoQuizList,
-    resetGetMygoQuizList: resetStatus
+    resetGetMygoQuizList
   }
 }

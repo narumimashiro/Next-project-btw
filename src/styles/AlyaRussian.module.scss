@@ -1,0 +1,25 @@
+.alyaTabs {
+  width: 70%;
+  margin: auto;
+
+  &.portrait {
+    width: 100%;
+  }
+}
+
+.teach-me-alya {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+  gap: 16px;
+}
+
+.execButton {
+  min-width: 50%;
+  margin: auto;
+}
+
+.loading {
+  width: 100%;
+  margin-top: 100px;
+}

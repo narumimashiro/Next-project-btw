@@ -1,5 +1,7 @@
-import { atom, useSetRecoilState } from 'recoil'
-import { useApiStatus } from '@/hooks/useApiStatus'
+import { atom, useResetRecoilState, useSetRecoilState } from 'recoil'
+import { useEffect } from 'react'
+
+import { API_STATUS, ApiStatusType, useApiStatus } from '@/hooks/useApiStatus'
 
 export type MusicInfo = {
   title: string
@@ -14,14 +16,23 @@ export type MygoMusicInformationType = {
   youtube_link: string
 }
 
-export const MygoMusicInformationState = atom<MygoMusicInformationType[]>({
+export type MygoMusicInformationStateType = {
+  fetchState: ApiStatusType
+  response: MygoMusicInformationType[]
+}
+
+export const MygoMusicInformationState = atom<MygoMusicInformationStateType>({
   key: 'MyGO Music Information',
-  default: []
+  default: {
+    fetchState: API_STATUS.IDLE,
+    response: []
+  }
 })
 
 export const GetMygoMusicInformationApi = () => {
   const { status, startLoading, setSuccess, setFailed, resetStatus } = useApiStatus()
   const setMygoMusicInformation = useSetRecoilState(MygoMusicInformationState)
+  const init = useResetRecoilState(MygoMusicInformationState)
 
   const getMygoMusicInformation = async ({
     lang,
@@ -42,7 +53,12 @@ export const GetMygoMusicInformationApi = () => {
       // if (!response.ok) throw new Error()
       // const result: MygoMusicInformationType[] = await response.json()
 
-      setMygoMusicInformation(response.default as MygoMusicInformationType[])
+      setMygoMusicInformation((pre) => {
+        return {
+          ...pre,
+          response: response.default
+        }
+      })
 
       setSuccess()
     } catch {
@@ -50,9 +66,23 @@ export const GetMygoMusicInformationApi = () => {
     }
   }
 
+  useEffect(() => {
+    setMygoMusicInformation((pre) => {
+      return {
+        ...pre,
+        fetchState: status
+      }
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status])
+
+  const resetGetMygoMusicInfo = () => {
+    resetStatus()
+    init()
+  }
+
   return {
-    mygoMusicInfoFetchState: status,
     getMygoMusicInformation,
-    resetGetMygoMusicInfo: resetStatus
+    resetGetMygoMusicInfo
   }
 }

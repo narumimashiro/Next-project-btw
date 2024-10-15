@@ -2,6 +2,7 @@
   "STRID_cmn_pagetitle": "{var} | B.T.W",
   "STRID_not_found": "NotFound",
   "STRID_cmn_ok": "OK",
+  "STRID_cmn_unsupport": "It is not supported.",
   "STRID_dont_ask_again": "Don't ask again",
   "STRID_tap_to_top": "Tap to top",
   "STRID_click_to_top": "Click to top",
@@ -9,6 +10,7 @@
   "STRID_meta_top": "Bocchi the work",
   "STRID_meta_prsk_music": "Project SEKAI Music",
   "STRID_meta_mygo_quiz": "Quiz MyGO!!!!!",
+  "STRID_meta_alya": "Teach Me Alya",
   "STRID_meta_about": "About This Site",
   "STRID_faq_title": "FAQ",
   "STRID_faq_question_1": "What kind of site is it?",
@@ -56,5 +58,12 @@
   "STRID_mygo_view_answer": "View the answer",
   "STRID_prsk_slider_label_original": "Original",
   "STRID_prsk_slider_label_3d": "3DMV",
-  "STRID_prsk_slider_label_2d": "2DMV"
+  "STRID_prsk_slider_label_2d": "2DMV",
+  "STRID_alya_tab_translation_alya": "Alya translate",
+  "STRID_alya_tab_wordlist": "Word List",
+  "STRID_alya_acq_write_word": "Write down the words or phrases you want Alya to teach you!!!!!",
+  "STRID_alya_teach_me_alya": "Teach Me Alya",
+  "STRID_alya_register_word_list": "Save to the word list",
+  "STRID_alya_textarea_placeholder": "Please enter the text you want to translate.",
+  "STRID_alya_change_language": "Change language"
 }
