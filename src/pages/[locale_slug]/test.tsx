@@ -2,8 +2,6 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import React, { useRef, useState, useEffect } from 'react'
 import { useTranslation } from 'next-i18next'
 
-// import styles from '@/styles/Test.module.scss'
-
 import Meta from '@/components/meta'
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -33,7 +31,6 @@ const Test = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const [imageSrc, setImageSrc] = useState<string | null>(null)
-  const [downloadLink, setDownloadLink] = useState<string | null>(null)
 
   useEffect(() => {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -79,10 +76,27 @@ const Test = () => {
     }
   }
 
+  // Blobを使用してJPEG画像をダウンロード
   const handleDownloadJPEG = () => {
     if (canvasRef.current) {
-      const dataURL = canvasRef.current.toDataURL('image/jpeg', 1.0)
-      setDownloadLink(dataURL)
+      canvasRef.current.toBlob(
+        (blob) => {
+          if (blob) {
+            const url = URL.createObjectURL(blob)
+
+            // ダウンロードリンクをクリックして自動ダウンロードを開始
+            const link = document.createElement('a')
+            link.href = url
+            link.download = 'captured_image.jpg'
+            link.click()
+
+            // ダウンロード後にBlob URLを解放してメモリを解放
+            URL.revokeObjectURL(url)
+          }
+        },
+        'image/jpeg',
+        1.0
+      )
     }
   }
 
@@ -112,12 +126,12 @@ const Test = () => {
             <img src={imageSrc} alt="Captured" />
           </div>
         )}
-        <button onClick={handleDownloadJPEG}>Change</button>
-        <a href={downloadLink || '#'} download="captured_image.jpg">
-          <button>JPEGでダウンロード</button>
-        </a>
+
+        {/* JPEGでダウンロードボタン */}
+        <button onClick={handleDownloadJPEG}>JPEGでダウンロード</button>
       </div>
     </>
   )
 }
+
 export default Test
