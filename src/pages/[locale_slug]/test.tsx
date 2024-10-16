@@ -64,7 +64,7 @@ const Test = () => {
       const context = canvas.getContext('2d')
       if (context) {
         context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height)
-        const dataURL = canvas.toDataURL('image/jpeg', 0.8) // JPEG形式で画像を取得
+        const dataURL = canvas.toDataURL('image/jpeg', 1.0) // JPEG形式で画像を取得
         setImageSrc(dataURL) // 取得した画像データURLを状態に保存
         setDownloadLink(dataURL) // ダウンロードリンク用のデータURLも設定
       }
@@ -95,7 +95,7 @@ const Test = () => {
         <button onClick={handleCapture}>撮影</button>
 
         {/* 隠れたキャンバス要素 */}
-        <canvas ref={canvasRef} style={{ display: 'none' }} width="400" height="300"></canvas>
+        <canvas ref={canvasRef} style={{ display: 'none' }}></canvas>
 
         {/* 取得した画像のプレビュー */}
         {imageSrc && (
