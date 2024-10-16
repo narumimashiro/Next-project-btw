@@ -94,7 +94,7 @@ const Test = () => {
         {/* 取得した画像のプレビュー */}
         {imageSrc && (
           <div>
-            <h2>撮影した画像</h2>
+            <h2>撮影した写真</h2>
             <img src={imageSrc} alt="Captured" />
           </div>
         )}
