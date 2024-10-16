@@ -41,8 +41,8 @@ const Test = () => {
         .getUserMedia({
           video: {
             facingMode: 'environment', // 背面カメラを使用する
-            width: { ideal: 1920 }, // 理想の幅（高解像度設定）
-            height: { ideal: 1080 }, // 理想の高さ（高解像度設定）
+            width: { ideal: 1080 }, // 理想の幅（高解像度設定）
+            height: { ideal: 1920 }, // 理想の高さ（高解像度設定）
             frameRate: { ideal: 30 } // フレームレートを30fpsに設定
           }
         })
@@ -61,12 +61,20 @@ const Test = () => {
   const handleCapture = () => {
     if (canvasRef.current && videoRef.current) {
       const canvas = canvasRef.current
+      const video = videoRef.current
+
+      // Canvasの解像度をビデオの解像度に合わせる
+      canvas.width = video.videoWidth
+      canvas.height = video.videoHeight
+
       const context = canvas.getContext('2d')
       if (context) {
-        context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height)
-        const dataURL = canvas.toDataURL('image/jpeg', 1.0) // JPEG形式で画像を取得
+        // ビデオからフレームをCanvasに描画
+        context.drawImage(video, 0, 0, canvas.width, canvas.height)
+
+        // 高品質でJPEG画像を取得
+        const dataURL = canvas.toDataURL('image/jpeg', 1.0) // 1.0は最高品質
         setImageSrc(dataURL) // 取得した画像データURLを状態に保存
-        setDownloadLink(dataURL) // ダウンロードリンク用のデータURLも設定
       }
     }
   }
