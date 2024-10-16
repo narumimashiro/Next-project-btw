@@ -41,8 +41,8 @@ const Test = () => {
         .getUserMedia({
           video: {
             facingMode: 'environment', // 背面カメラを使用する
-            width: { ideal: 1080 }, // 理想の幅（高解像度設定）
-            height: { ideal: 1920 }, // 理想の高さ（高解像度設定）
+            width: { ideal: 1920 }, // 理想の幅（高解像度設定）
+            height: { ideal: 1080 }, // 理想の高さ（高解像度設定）
             frameRate: { ideal: 30 } // フレームレートを30fpsに設定
           }
         })
