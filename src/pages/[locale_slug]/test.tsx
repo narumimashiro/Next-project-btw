@@ -41,8 +41,9 @@ const Test = () => {
         .getUserMedia({
           video: {
             facingMode: 'environment', // 背面カメラを使用する
-            width: { ideal: 1280 }, // 理想的な幅の指定（デバイスに依存）
-            height: { ideal: 720 } // 理想的な高さの指定（デバイスに依存）
+            width: { ideal: 1920 }, // 理想の幅（高解像度設定）
+            height: { ideal: 1080 }, // 理想の高さ（高解像度設定）
+            frameRate: { ideal: 30 } // フレームレートを30fpsに設定
           }
         })
         .then((stream) => {
@@ -83,7 +84,12 @@ const Test = () => {
       <div>
         <h1>カメラ画面</h1>
         {/* カメラ映像を表示 */}
-        <video ref={videoRef} style={{ width: '100%', maxWidth: '400px' }} />
+        <video
+          ref={videoRef}
+          style={{ width: '100%', maxWidth: '400px' }}
+          autoPlay
+          playsInline
+        />
 
         {/* 撮影ボタン */}
         <button onClick={handleCapture}>撮影</button>
