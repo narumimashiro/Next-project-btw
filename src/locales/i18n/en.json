@@ -65,5 +65,8 @@
   "STRID_alya_teach_me_alya": "Teach Me Alya",
   "STRID_alya_register_word_list": "Save to the word list",
   "STRID_alya_textarea_placeholder": "Please enter the text you want to translate.",
-  "STRID_alya_change_language": "Change language"
+  "STRID_alya_change_language": "Change language",
+  "STRID_alya_confirmation_in_wordlist": "You can check the word or sentences you registered from the vocabulary tab.",
+  "STRID_alya_toast_complete_registration": "Successfully added to wordlist.",
+  "STRID_alya_toast_error_registration": "Failed to add to wordlist."
 }

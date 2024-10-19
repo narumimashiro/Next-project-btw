@@ -65,5 +65,8 @@
   "STRID_alya_teach_me_alya": "教えてアーリャさん",
   "STRID_alya_register_word_list": "単語帳に登録する",
   "STRID_alya_textarea_placeholder": "訳したいテキストを入力してね",
-  "STRID_alya_change_language": "言語切替"
+  "STRID_alya_change_language": "言語切替",
+  "STRID_alya_confirmation_in_wordlist": "登録したものは単語帳タブから確認できます。",
+  "STRID_alya_toast_complete_registration": "単語帳に登録できました。",
+  "STRID_alya_toast_error_registration": "単語帳に登録できせんでした。"
 }
