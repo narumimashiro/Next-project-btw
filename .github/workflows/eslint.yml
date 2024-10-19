@@ -3,6 +3,7 @@ on:
   pull_request:
     branches:
       - main
+      - release_bocchi_the_work_1
 
 jobs:
   eslint:
