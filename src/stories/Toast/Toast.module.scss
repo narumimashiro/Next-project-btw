@@ -1,0 +1,59 @@
+$toast-height: 40px;
+
+.BTW_toast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  z-index: 39 !important;
+  width: 100%;
+  height: $toast-height;
+  padding: 2px 8px;
+
+  &.light {
+    color: #fff;
+    background-color: var(--dark-background-color);
+  }
+
+  &.dark {
+    color: #000;
+    background-color: var(--light-background-color);
+  }
+}
+
+.BTW_toast-top {
+  @extend .BTW_toast;
+  top: calc(-1 * $toast-height);
+  transition: top 0.39s ease-out;
+
+  &.BTW_open {
+    top: 0;
+  }
+}
+
+.BTW_toast-bottom {
+  @extend .BTW_toast;
+  bottom: calc(-1 * $toast-height);
+  transition: bottom 0.39s ease-out;
+
+  &.BTW_open {
+    bottom: 0;
+  }
+}
+
+.BTW_close-button {
+  width: $toast-height / 1.5;
+  height: $toast-height / 1.5;
+  padding: 5px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.BTW_error {
+  color: var(--mygo-anon-color);
+  font-weight: bold;
+}
