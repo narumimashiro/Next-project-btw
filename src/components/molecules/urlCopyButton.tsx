@@ -6,10 +6,14 @@ import { StrongButton } from '@/stories/Button/StrongButton'
 import { Toast } from '@/stories/Toast/Toast'
 
 export type UrlCopyButtonProps = {
-  buttonType?: 'strong' | 'basic'
+  buttonClass?: string
+  buttonType?: 'basic' | 'strong'
 }
 
-export const UrlCopyButton = ({ buttonType = 'strong' }: UrlCopyButtonProps) => {
+export const UrlCopyButton = ({
+  buttonClass = '',
+  buttonType = 'basic'
+}: UrlCopyButtonProps) => {
   const { t } = useTranslation()
   const strongButton = 'strong' === buttonType
 
@@ -29,9 +33,13 @@ export const UrlCopyButton = ({ buttonType = 'strong' }: UrlCopyButtonProps) => 
   return (
     <>
       {strongButton ? (
-        <StrongButton onClick={copyUrl}>{t('STRID_url_copy_button')}</StrongButton>
+        <StrongButton className={buttonClass} onClick={copyUrl}>
+          {t('STRID_url_copy_button')}
+        </StrongButton>
       ) : (
-        <BasicButton onClick={copyUrl}>{t('STRID_url_copy_button')}</BasicButton>
+        <BasicButton className={buttonClass} onClick={copyUrl}>
+          {t('STRID_url_copy_button')}
+        </BasicButton>
       )}
       <Toast
         open={openToast}
