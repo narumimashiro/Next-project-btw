@@ -5,5 +5,8 @@
   "STRID_dont_ask_again": "Don't ask again",
   "STRID_tap_to_top": "Tap to top",
   "STRID_click_to_top": "Click to top",
-  "STRID_faq_title": "FAQ"
+  "STRID_faq_title": "FAQ",
+  "STRID_url_copy_button": "Copy URL",
+  "STRID_url_copy_success": "URL copied successfully.",
+  "STRID_url_copy_failed": "Failed to copy URL."
 }

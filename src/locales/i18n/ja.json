@@ -5,5 +5,8 @@
   "STRID_dont_ask_again": "次回から表示しない。",
   "STRID_tap_to_top": "タップして進む",
   "STRID_click_to_top": "クリックして進む",
-  "STRID_faq_title": "よくある質問"
+  "STRID_faq_title": "よくある質問",
+  "STRID_url_copy_button": "URLコピー",
+  "STRID_url_copy_success": "URLコピーしました。",
+  "STRID_url_copy_failed": "URLコピーできませんでした。"
 }
