@@ -16,7 +16,10 @@ import {
   TranslationDataState
 } from '@/recoil/services/postGoogleTranslate'
 import { AlyaWordListState, GetAlyaWordListApi } from '@/recoil/services/getAlyaWordList'
-import { PostWordRegistrationApi } from '@/recoil/services/postWordRegistration'
+import {
+  PostWordRegistrationApi,
+  RegistrationDataState
+} from '@/recoil/services/postWordRegistration'
 import { StrongButton } from '@/stories/Button/StrongButton'
 import { BasicButton } from '@/stories/Button/BasicButton'
 import {
@@ -26,6 +29,7 @@ import {
 } from '@/components/organisms/alyaComponents'
 import { API_STATUS } from '@/hooks/useApiStatus'
 import Loading from '@/components/atom/loading'
+import { Toast } from '@/stories/Toast/Toast'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { language }: { language: string[] } = require('@/locales/config')
@@ -55,7 +59,19 @@ const TeachMeAlya = () => {
 
   const { postGoogleTranslation } = PostGoogleTranslateApi()
   const translateAlya = useRecoilValue(TranslationDataState).response
-  const { postWordRegistration } = PostWordRegistrationApi()
+  const { postWordRegistration, resetWordRegistrationFetchState } = PostWordRegistrationApi()
+  const wordRegistrationFetchState = useRecoilValue(RegistrationDataState).fetchState
+
+  const [toastMessage, setToastMessage] = useState('TEMP_登録できませんでした。')
+  useEffect(() => {
+    if (API_STATUS.SUCCESS === wordRegistrationFetchState) {
+      setToastMessage(t('STRID_alya_toast_complete_registration'))
+    }
+    if (API_STATUS.FAILED === wordRegistrationFetchState) {
+      setToastMessage(t('STRID_alya_toast_error_registration'))
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [wordRegistrationFetchState])
 
   const onClickTranslate = () => {
     postGoogleTranslation({
@@ -84,10 +100,25 @@ const TeachMeAlya = () => {
       </div>
       <div className={styles['teach-me-alya']}>
         <AlyaTranslationCard />
-        <BasicButton onClick={handleRegisterWord} className={styles.execButton}>
+        <BasicButton
+          onClick={handleRegisterWord}
+          className={styles.execButton}
+          disabled={
+            !Boolean(translateAlya.translated_text) ||
+            API_STATUS.LOADING === wordRegistrationFetchState
+          }>
           {t('STRID_alya_register_word_list')}
         </BasicButton>
+        <BodyText>{t('STRID_alya_confirmation_in_wordlist')}</BodyText>
       </div>
+      <Toast
+        message={toastMessage}
+        open={
+          API_STATUS.SUCCESS === wordRegistrationFetchState ||
+          API_STATUS.FAILED === wordRegistrationFetchState
+        }
+        onClose={resetWordRegistrationFetchState}
+      />
     </>
   )
 }
