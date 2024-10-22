@@ -29,6 +29,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 const Test = () => {
   const { t } = useTranslation()
   const videoRef = useRef<HTMLVideoElement | null>(null)
+  const imgRef = useRef<HTMLImageElement | null>(null)
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const [imageSrc, setImageSrc] = useState<string | null>(null)
 
@@ -56,9 +57,10 @@ const Test = () => {
   }, [])
 
   const handleCapture = () => {
-    if (canvasRef.current && videoRef.current) {
+    if (canvasRef.current && videoRef.current && imgRef.current) {
       const canvas = canvasRef.current
       const video = videoRef.current
+      const img = imgRef.current
 
       // Canvasの解像度をビデオの解像度に合わせる
       canvas.width = video.videoWidth
@@ -68,6 +70,7 @@ const Test = () => {
       if (context) {
         // ビデオからフレームをCanvasに描画
         context.drawImage(video, 0, 0, canvas.width, canvas.height)
+        context.drawImage(img, 0, 0, canvas.width, canvas.height)
 
         // 高品質でJPEG画像を取得
         const dataURL = canvas.toDataURL('image/jpeg', 1.0) // 1.0は最高品質
@@ -106,12 +109,20 @@ const Test = () => {
       <div>
         <h1>カメラ画面</h1>
         {/* カメラ映像を表示 */}
-        <video
-          ref={videoRef}
-          style={{ width: '100%', maxWidth: '400px' }}
-          autoPlay
-          playsInline
-        />
+        <div style={{ position: 'relative' }}>
+          <video
+            ref={videoRef}
+            style={{ width: '100%', maxWidth: '400px' }}
+            autoPlay
+            playsInline
+          />
+          <img
+            ref={imgRef}
+            alt=""
+            src={'/images/alya_icon2.png'}
+            style={{ width: '20%', maxWidth: '400px', position: 'absolute', left: 0 }}
+          />
+        </div>
 
         {/* 撮影ボタン */}
         <button onClick={handleCapture}>撮影</button>
