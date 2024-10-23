@@ -70,7 +70,7 @@ const Test = () => {
       if (context) {
         // ビデオからフレームをCanvasに描画
         context.drawImage(video, 0, 0, canvas.width, canvas.height)
-        context.drawImage(img, 0, 0, img.width, img.height)
+        context.drawImage(img, 0, 0, canvas.width / 2, canvas.height / 2)
 
         // 高品質でJPEG画像を取得
         const dataURL = canvas.toDataURL('image/jpeg', 1.0) // 1.0は最高品質
