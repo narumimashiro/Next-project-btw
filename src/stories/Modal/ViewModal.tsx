@@ -1,5 +1,3 @@
-import { useTheme } from '@mui/material'
-
 import clearLight from '@/img/light/clear.svg'
 import clearDark from '@/img/dark/clear.svg'
 
@@ -13,20 +11,23 @@ export type ViewModalProps = {
   onClose: () => void
 }
 
-export const ViewModal = ({ open, children, colorTheme, onClose }: ViewModalProps) => {
-  const theme = useTheme().palette.mode
-  const color = colorTheme ? colorTheme : theme
+export const ViewModal = ({
+  open,
+  children,
+  colorTheme = 'light',
+  onClose
+}: ViewModalProps) => {
   const { isPortrait } = useCustomContext()
 
   const displayDialog = open ? 'BTW_modal-visible' : 'BTW_modal-hidden'
 
   return (
     <div className={styles[displayDialog]}>
-      <div className={styles[`BTW_overlay-${color}`]}>
+      <div className={styles[`BTW_overlay-${colorTheme}`]}>
         <div
-          className={`absolute-center ${styles[`BTW_modal-${color}`]} ${isPortrait ? styles.portrait : ''}`}>
+          className={`absolute-center ${styles[`BTW_modal-${colorTheme}`]} ${isPortrait ? styles.portrait : ''}`}>
           <button className={styles.BTW_closebutton} onClick={onClose}>
-            <img src={color === 'light' ? clearLight.src : clearDark.src} alt="" />
+            <img src={colorTheme === 'light' ? clearLight.src : clearDark.src} alt="" />
           </button>
           {children}
         </div>
