@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTheme } from '@mui/material'
 import { useTranslation } from 'next-i18next'
 
@@ -11,6 +11,7 @@ import { SelectAnimeDrawerMenu } from '@/components/organisms/webCameraComponent
 
 import styles from '@/styles/WebCamera.module.scss'
 import { ViewModal } from '@/stories/Modal/ViewModal'
+import { Toast } from '@/stories/Toast/Toast'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { language }: { language: string[] } = require('@/locales/config')
@@ -43,8 +44,32 @@ const WebCamera = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const imgRef = useRef<HTMLImageElement | null>(null)
 
+  const [openToast, setOpenToast] = useState(false)
   const [dataUrl, setDataUrl] = useState('')
   const [openViewer, setOpenViewer] = useState(false)
+
+  useEffect(() => {
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices
+        .getUserMedia({
+          video: {
+            facingMode: 'environment',
+            width: { ideal: 1920 },
+            height: { ideal: 1080 },
+            frameRate: { ideal: 30 }
+          }
+        })
+        .then((stream) => {
+          if (videoRef.current) {
+            videoRef.current.srcObject = stream
+            videoRef.current.play()
+          }
+        })
+        .catch((err) => {
+          setOpenToast(true)
+        })
+    }
+  }, [])
 
   const handleCapture = () => {
     if (canvasRef.current && videoRef.current && imgRef.current) {
@@ -109,6 +134,11 @@ const WebCamera = () => {
         <img src={dataUrl} alt="" />
         <button onClick={handleDownloadJpeg}>{t('TEMP_ダウンロード')}</button>
       </ViewModal>
+      <Toast
+        open={openToast}
+        onClose={() => setOpenToast(false)}
+        message={t('TEMP_カメラにアクセスできませんでした。')}
+      />
     </>
   )
 }
