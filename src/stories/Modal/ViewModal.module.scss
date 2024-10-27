@@ -37,7 +37,9 @@
   max-height: 100%;
 
   &.portrait {
-    height: 40vh;
+    height: auto;
+    min-height: 40vh;
+    max-height: 100%;
   }
 }
 
