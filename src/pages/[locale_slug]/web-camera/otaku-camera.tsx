@@ -56,8 +56,8 @@ const WebCamera = () => {
         .getUserMedia({
           video: {
             facingMode: 'environment',
-            width: { ideal: localhost ? 390 : 1080 },
-            height: { ideal: localhost ? 650 : 1920 },
+            width: { ideal: localhost ? 390 : 1920 },
+            height: { ideal: localhost ? 650 : 1080 },
             frameRate: { ideal: 30 }
           }
         })
