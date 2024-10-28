@@ -37,7 +37,9 @@
   max-height: 100%;
 
   &.portrait {
-    height: 40vh;
+    height: auto;
+    min-height: 40vh;
+    max-height: 90%;
   }
 }
 
@@ -59,6 +61,7 @@
   justify-content: center;
   align-items: center;
   border: none;
+  padding: 5px;
   background-color: inherit;
   width: 24px;
   height: 24px;
