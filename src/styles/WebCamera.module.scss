@@ -65,3 +65,18 @@
     display: none;
   }
 }
+
+.viewer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  img {
+    width: 100%;
+  }
+
+  .downloadbutton {
+    width: 50%;
+  }
+}

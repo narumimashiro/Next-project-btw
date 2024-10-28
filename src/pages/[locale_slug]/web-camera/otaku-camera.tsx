@@ -12,6 +12,7 @@ import { SelectAnimeDrawerMenu } from '@/components/organisms/webCameraComponent
 import styles from '@/styles/WebCamera.module.scss'
 import { ViewModal } from '@/stories/Modal/ViewModal'
 import { Toast } from '@/stories/Toast/Toast'
+import { StrongButton } from '@/stories/Button/StrongButton'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { language }: { language: string[] } = require('@/locales/config')
@@ -49,13 +50,14 @@ const WebCamera = () => {
   const [openViewer, setOpenViewer] = useState(false)
 
   useEffect(() => {
+    const localhost = process.env.NODE_ENV === 'development'
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       navigator.mediaDevices
         .getUserMedia({
           video: {
             facingMode: 'environment',
-            width: { ideal: 1920 },
-            height: { ideal: 1080 },
+            width: { ideal: localhost ? 390 : 1080 },
+            height: { ideal: localhost ? 650 : 1920 },
             frameRate: { ideal: 30 }
           }
         })
@@ -83,12 +85,25 @@ const WebCamera = () => {
       const context = canvas.getContext('2d')
       if (context) {
         context.drawImage(video, 0, 0, canvas.width, canvas.height)
+
+        const targetWidth = canvas.width * 0.5
+        const targetHeight = canvas.height * 0.5
+        const imgAspectRatio = img.naturalWidth / img.naturalHeight
+        let drawWidth, drawHeight
+        if (imgAspectRatio > 1) {
+          drawWidth = targetWidth
+          drawHeight = targetWidth / imgAspectRatio
+        } else {
+          drawWidth = targetHeight * imgAspectRatio
+          drawHeight = targetHeight
+        }
+
         context.drawImage(
           img,
-          canvas.width - canvas.width / 2,
-          canvas.height - canvas.height / 2 - 16,
-          canvas.width / 2,
-          canvas.height / 2
+          canvas.width - drawWidth,
+          canvas.height - drawHeight - 16,
+          drawWidth,
+          drawHeight
         )
         const dataURL = canvas.toDataURL('image/jpeg', 1.0)
         setDataUrl(dataURL)
@@ -131,8 +146,12 @@ const WebCamera = () => {
         <canvas ref={canvasRef} className={styles.canvas} />
       </div>
       <ViewModal open={openViewer} colorTheme={colorTheme} onClose={() => setOpenViewer(false)}>
-        <img src={dataUrl} alt="" />
-        <button onClick={handleDownloadJpeg}>{t('TEMP_ダウンロード')}</button>
+        <div className={styles.viewer}>
+          <img src={dataUrl} alt="" />
+          <StrongButton className={styles.downloadbutton} onClick={handleDownloadJpeg}>
+            {t('TEMP_ダウンロード')}
+          </StrongButton>
+        </div>
       </ViewModal>
       <Toast
         open={openToast}
