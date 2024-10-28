@@ -1,3 +1,5 @@
+import { useMemo } from 'react'
+
 import clearLight from '@/img/light/clear.svg'
 import clearDark from '@/img/dark/clear.svg'
 
@@ -20,6 +22,10 @@ export const ViewModal = ({
   const { isPortrait } = useCustomContext()
 
   const displayDialog = open ? 'BTW_modal-visible' : 'BTW_modal-hidden'
+  const clearImg = useMemo(
+    () => (colorTheme === 'light' ? clearLight.src : clearDark.src),
+    [colorTheme]
+  )
 
   return (
     <div className={styles[displayDialog]}>
@@ -27,7 +33,7 @@ export const ViewModal = ({
         <div
           className={`absolute-center ${styles[`BTW_modal-${colorTheme}`]} ${isPortrait ? styles.portrait : ''}`}>
           <button className={styles.BTW_closebutton} onClick={onClose}>
-            <img src={colorTheme === 'light' ? clearLight.src : clearDark.src} alt="" />
+            <img src={clearImg} alt="" />
           </button>
           {children}
         </div>
