@@ -71,12 +71,16 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  width: 100%;
+  height: 100%;
 
   img {
-    width: 100%;
+    max-width: 100%;
+    max-height: calc(100% - 52px);
   }
 
   .downloadbutton {
+    height: 36px;
     width: 50%;
   }
 }
