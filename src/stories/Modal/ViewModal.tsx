@@ -31,11 +31,11 @@ export const ViewModal = ({
     <div className={styles[displayDialog]}>
       <div className={styles[`BTW_overlay-${colorTheme}`]}>
         <div
-          className={`absolute-center ${styles[`BTW_modal-${colorTheme}`]} ${isPortrait ? styles.portrait : ''}`}>
+          className={`absolute-center ${styles[`BTW_modal-${colorTheme}`]} ${isPortrait ? styles.BTW_portrait : ''}`}>
           <button className={styles.BTW_closebutton} onClick={onClose}>
             <img src={clearImg} alt="" />
           </button>
-          {children}
+          <div className={styles.BTW_contentViewer}>{children}</div>
         </div>
       </div>
     </div>
