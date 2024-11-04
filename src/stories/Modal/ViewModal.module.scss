@@ -30,17 +30,18 @@
   display: flex;
   justify-content: center;
   position: relative;
+  width: 100vw;
   height: 80vh;
-  padding: 56px 16px 16px;
   overflow: hidden;
-  // max-width: 100%;
-  // max-height: 100%;
 
   .BTW_contentViewer {
-    height: 100%;
+    margin: 56px 8px 16px;
+    width: 100%;
+    height: auto;
   }
 
   &.BTW_portrait {
+    width: 100%;
     // min-height: 40vh;
     height: auto;
     max-height: 90vh;
