@@ -188,8 +188,8 @@ const OtakuCamera = () => {
         <>
           <div className={styles['otaku-camera']}>
             <WebCamera />
+            <SelectAnimeDrawerMenu onSelect={setSelectedAnime} />
           </div>
-          <SelectAnimeDrawerMenu onSelect={setSelectedAnime} />
         </>
       )}
     </>
