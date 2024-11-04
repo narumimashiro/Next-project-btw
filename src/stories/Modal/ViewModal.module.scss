@@ -37,14 +37,13 @@
   .BTW_contentViewer {
     margin: 56px 8px 16px;
     width: 100%;
-    height: auto;
+    max-height: calc(80vh - 72px);
   }
 
   &.BTW_portrait {
     width: 100%;
-    // min-height: 40vh;
     height: auto;
-    max-height: 90vh;
+    max-height: 80vh;
   }
 }
 
