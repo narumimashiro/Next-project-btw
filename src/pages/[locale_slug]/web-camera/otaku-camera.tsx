@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useTheme } from '@mui/material'
 import { useTranslation } from 'next-i18next'
 
@@ -7,7 +7,12 @@ import Meta from '@/components/meta'
 import { isMobileDevice } from '@/lib/isMobileDevice'
 import { BodyText } from '@/components/atom/componentsTemplate'
 import { UrlCopyButton } from '@/components/molecules/urlCopyButton'
-import { SelectAnimeDrawerMenu } from '@/components/organisms/webCameraComponents'
+import {
+  CharacterList,
+  convertStridToImgfilename,
+  SelectAnimeDrawerMenu,
+  SelectorCharacter
+} from '@/components/organisms/webCameraComponents'
 
 import styles from '@/styles/WebCamera.module.scss'
 import { ViewModal } from '@/stories/Modal/ViewModal'
@@ -36,10 +41,24 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 }
 
-const WebCamera = () => {
+type WebcameraProps = {
+  characterGroup: string
+}
+const WebCamera = ({ characterGroup }: WebcameraProps) => {
   const { t } = useTranslation()
   const theme = useTheme()
   const colorTheme = theme.palette.mode
+
+  const characterList = useMemo(
+    () => CharacterList.find((el) => characterGroup === el.group)?.members || [],
+    [characterGroup]
+  )
+  const [selectedChara, setSelectedChara] = useState('')
+  const charaImage = useMemo(
+    () =>
+      selectedChara ? `/images/webcamera/${convertStridToImgfilename(selectedChara)}` : '',
+    [selectedChara]
+  )
 
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
@@ -136,13 +155,14 @@ const WebCamera = () => {
     <>
       <div className={styles.container}>
         <video ref={videoRef} className={styles.camera} autoPlay playsInline />
-        <img
-          ref={imgRef}
-          className={styles.image}
-          src={'/images/webcamera/mortis.png'}
-          alt=""
-        />
-        <button className={styles.shutter} onClick={handleCapture} />
+        <img ref={imgRef} className={styles.image} src={charaImage} alt="" />
+        <div className={styles.camerafunction}>
+          <SelectorCharacter characterList={characterList} selectChara={setSelectedChara} />
+          <button
+            className={`${styles.shutter} ${styles[colorTheme]}`}
+            onClick={handleCapture}
+          />
+        </div>
         <canvas ref={canvasRef} className={styles.canvas} />
       </div>
       <ViewModal open={openViewer} colorTheme={colorTheme} onClose={() => setOpenViewer(false)}>
@@ -166,7 +186,7 @@ const OtakuCamera = () => {
   const { t } = useTranslation()
   const isMobile = isMobileDevice()
 
-  const [selectedAnime, setSelectedAnime] = useState('')
+  const [selectedGroup, setSelectedGroup] = useState(CharacterList[0].group)
 
   return (
     <>
@@ -187,8 +207,8 @@ const OtakuCamera = () => {
       ) : (
         <>
           <div className={styles['otaku-camera']}>
-            <WebCamera />
-            <SelectAnimeDrawerMenu onSelect={setSelectedAnime} />
+            <WebCamera characterGroup={selectedGroup} />
+            <SelectAnimeDrawerMenu onSelect={setSelectedGroup} />
           </div>
         </>
       )}

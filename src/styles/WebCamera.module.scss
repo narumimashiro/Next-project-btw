@@ -45,20 +45,35 @@
     height: 50%;
     right: 0;
     bottom: 16px;
-    object-fit: cover;
+    object-fit: contain;
+  }
+
+  .camerafunction {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    bottom: 64px;
+    left: 50%;
+    gap: 16px;
+    transform: translateX(-50%);
   }
 
   .shutter {
-    position: absolute;
     width: 48px;
     height: 48px;
     bottom: 64px;
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 2;
     border-radius: 50%;
     background-color: var(--apple-site-light-gray);
-    border: 1px solid #000;
+
+    &.light {
+      border: 1px solid #000;
+    }
+    &.dark {
+      border: 1px solid #fff;
+    }
   }
 
   .canvas {
