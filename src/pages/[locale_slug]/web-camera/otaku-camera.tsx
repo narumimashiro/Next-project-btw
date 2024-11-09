@@ -169,14 +169,14 @@ const WebCamera = ({ characterGroup }: WebcameraProps) => {
         <div className={styles.viewer}>
           <img src={dataUrl} alt="" />
           <StrongButton className={styles.downloadbutton} onClick={handleDownloadJpeg}>
-            {t('TEMP_ダウンロード')}
+            {t('STRID_cmn_download')}
           </StrongButton>
         </div>
       </ViewModal>
       <Toast
         open={openToast}
         onClose={() => setOpenToast(false)}
-        message={t('TEMP_カメラにアクセスできませんでした。')}
+        message={t('STRID_webcamera_cannnot_access_camera')}
       />
     </>
   )
@@ -190,18 +190,14 @@ const OtakuCamera = () => {
 
   return (
     <>
-      <Meta pageTitle={t('STRID_cmn_pagetitle').replace('{var}', t('TEMP_オタクカメラ'))} />
+      <Meta pageTitle={t('STRID_cmn_pagetitle').replace('{var}', t('STRID_meta_webcamera'))} />
       {!isMobile ? (
         <div className={styles['acquisition-mobile-annotation-container']}>
           <BodyText className={styles.annotation}>
-            {t('TEMP_*オタクカメラはPCでは利用できません。')}
+            {t('STRID_webcamera_disable_camera')}
           </BodyText>
-          <BodyText>
-            {t('TEMP_スマホやタブレットなどモバイル端末からこのページを開いてください。')}
-          </BodyText>
-          <BodyText className="mb-24">
-            {t('TEMP_URLコピーボタンからこのページのURLをコピーできます。')}
-          </BodyText>
+          <BodyText>{t('STRID_webcamera_open_page_by_mobile')}</BodyText>
+          <BodyText className="mb-24">{t('STRID_webcamera_be_able_to_copy_link')}</BodyText>
           <UrlCopyButton buttonClass={styles.execButton} buttonType="strong" />
         </div>
       ) : (

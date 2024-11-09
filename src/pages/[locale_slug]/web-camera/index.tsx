@@ -45,48 +45,34 @@ const WebCamera = () => {
 
   return (
     <>
-      <Meta pageTitle={t('STRID_cmn_pagetitle').replace('{var}', t('TEMP_オタクカメラ'))} />
+      <Meta pageTitle={t('STRID_cmn_pagetitle').replace('{var}', t('STRID_meta_webcamera'))} />
       <PageTemplateWithHeader
         imgSrc={'/images/webcamera_header.png'}
-        title={t('TEMP_Web Camera')}
+        title={t('STRID_meta_webcamera')}
         className={styles['page-container']}>
         <div className={styles.description}>
-          <HeadlineText className="mb-8">{t('TEMP_推しと一緒に写真を撮ろう。')}</HeadlineText>
-          <BodyText>{t('TEMP_あなたの推しがフレーム内に!?')}</BodyText>
-          <BodyText>{t('TEMP_カメラフレーム内に推しキャラが遊びに来るよ!!')}</BodyText>
+          <HeadlineText className="mb-8">{t('STRID_webcamera_take_picture')}</HeadlineText>
+          <BodyText>{t('STRID_webcamera_description1')}</BodyText>
+          <BodyText>{t('STRID_webcamera_description2')}</BodyText>
         </div>
 
         {isMobile ? (
           <>
-            <HeadlineText className="mb-8">{t('TEMP_始め方')}</HeadlineText>
-            <BodyText>
-              {t('TEMP_カメラ起動ボタンを押下するとカメラページに遷移します。')}
-            </BodyText>
-            <BodyText>
-              {t(
-                'TEMP_ページ遷移後、カメラアクセス許可を確認するポップが出てきますが、許可をタップすることでカメラページで撮影が可能となります。'
-              )}
-            </BodyText>
-            <BodyText className="mb-24">
-              {t(
-                'TEMP_画面右上のメニューや撮影ボタン上部からキャラクターの切り替えができます。'
-              )}
-            </BodyText>
+            <HeadlineText className="mb-8">{t('STRID_webcamera_how_to_start')}</HeadlineText>
+            <BodyText>{t('STRID_webcamera_use_description1')}</BodyText>
+            <BodyText>{t('STRID_webcamera_use_description2')}</BodyText>
+            <BodyText className="mb-24">{t('STRID_webcamera_use_description3')}</BodyText>
             <StrongButton className={styles.execButton} onClick={handleBootOtakuCamera}>
-              {t('TEMP_オタクカメラ起動')}
+              {t('STRID_webcamera_launch_camera')}
             </StrongButton>
           </>
         ) : (
           <>
             <BodyText className={styles.annotation}>
-              {t('TEMP_*オタクカメラはPCでは利用できません。')}
+              {t('STRID_webcamera_disable_camera')}
             </BodyText>
-            <BodyText>
-              {t('TEMP_スマホやタブレットなどモバイル端末からこのページを開いてください。')}
-            </BodyText>
-            <BodyText className="mb-24">
-              {t('TEMP_URLコピーボタンからこのページのURLをコピーできます。')}
-            </BodyText>
+            <BodyText>{t('STRID_webcamera_open_page_by_mobile')}</BodyText>
+            <BodyText className="mb-24">{t('STRID_webcamera_be_able_to_copy_link')}</BodyText>
             <UrlCopyButton buttonClass={styles.execButton} buttonType="strong" />
           </>
         )}
