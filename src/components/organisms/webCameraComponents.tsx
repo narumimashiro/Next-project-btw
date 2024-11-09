@@ -10,7 +10,7 @@ import styles from '@/styles/organisms/WebCameraComponents.module.scss'
 // static variable list
 export const CharacterList: { group: string; members: string[] }[] = [
   {
-    group: 'TEMP_MyGO!!!!!',
+    group: 'STRID_webcamera_group_mygo',
     members: [
       'STRID_img_anon',
       'STRID_img_soyo',
@@ -20,7 +20,7 @@ export const CharacterList: { group: string; members: string[] }[] = [
     ]
   },
   {
-    group: 'TEMP_Ave Mujica',
+    group: 'STRID_webcamera_group_ave_mujica',
     members: [
       'STRID_img_doloris',
       'STRID_img_mortis',
@@ -30,19 +30,19 @@ export const CharacterList: { group: string; members: string[] }[] = [
     ]
   },
   {
-    group: 'TEMP_25時、ナイトコードで。',
+    group: 'STRID_webcamera_group_nightcode',
     members: ['STRID_img_mizuki', 'STRID_img_ena', 'STRID_img_kanade', 'STRID_img_mafuyu']
   },
   {
-    group: 'TEMP_Leo/need',
+    group: 'STRID_webcamera_group_leoneed',
     members: ['STRID_img_saki', 'STRID_img_shiho', 'STRID_img_ichika', 'STRID_img_honami']
   },
   {
-    group: 'TEMP_MORE MORE JUMP！',
+    group: 'STRID_webcamera_group_more_more_jump',
     members: ['STRID_img_shizuku', 'STRID_img_minori', 'STRID_img_haruka', 'STRID_img_airi']
   },
   {
-    group: 'TEMP_アークナイツ',
+    group: 'STRID_webcamera_group_arknights',
     members: [
       'STRID_img_amiya_mage',
       'STRID_img_amiya_guard',
