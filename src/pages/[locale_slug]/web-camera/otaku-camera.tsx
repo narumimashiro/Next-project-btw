@@ -92,6 +92,21 @@ const WebCamera = ({ characterGroup }: WebcameraProps) => {
     }
   }, [])
 
+  useEffect(() => {
+    const canvas = canvasRef.current
+    const saveImage = () => {
+      if (canvas) {
+        const dataURL = canvas.toDataURL('image/jpeg', 1.0)
+        canvas.setAttribute('data-url', dataURL)
+      }
+    }
+    canvas?.addEventListener('touchend', saveImage)
+
+    return () => {
+      canvas?.removeEventListener('touchend', saveImage)
+    }
+  }, [])
+
   const handleCapture = () => {
     if (canvasRef.current && videoRef.current && imgRef.current) {
       const canvas = canvasRef.current

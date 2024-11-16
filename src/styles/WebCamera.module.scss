@@ -99,3 +99,11 @@
     width: auto;
   }
 }
+
+.temp {
+  background-color: blue;
+
+  &:focus {
+    background-color: red;
+  }
+}

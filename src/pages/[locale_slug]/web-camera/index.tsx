@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 
+import { useState } from 'react'
 import Meta from '@/components/meta'
 import { PageTemplateWithHeader } from '@/components/molecules/pageComponents'
 import { isMobileDevice } from '@/lib/isMobileDevice'
@@ -43,6 +44,8 @@ const WebCamera = () => {
     router.push(`${currentPath}/otaku-camera`)
   }
 
+  const [temp, settemp] = useState('before')
+
   return (
     <>
       <Meta pageTitle={t('STRID_cmn_pagetitle').replace('{var}', t('STRID_meta_webcamera'))} />
@@ -65,6 +68,8 @@ const WebCamera = () => {
             <StrongButton className={styles.execButton} onClick={handleBootOtakuCamera}>
               {t('STRID_webcamera_launch_camera')}
             </StrongButton>
+            <p>{temp}</p>
+            <input className={styles.temp} onBlur={() => settemp('after')}></input>
           </>
         ) : (
           <>
