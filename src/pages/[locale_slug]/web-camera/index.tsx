@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Meta from '@/components/meta'
 import { PageTemplateWithHeader } from '@/components/molecules/pageComponents'
 import { isMobileDevice } from '@/lib/isMobileDevice'
@@ -45,6 +45,22 @@ const WebCamera = () => {
   }
 
   const [temp, settemp] = useState('before')
+  const inputRefs = useRef<(HTMLInputElement | null)[]>([])
+  useEffect(() => {
+    inputRefs.current.forEach((input, index) => {
+      if (!input) return
+
+      const handleBlur = () => {
+        settemp('test' + index)
+      }
+
+      input.addEventListener('blur', handleBlur)
+
+      return () => {
+        input.removeEventListener('blur', handleBlur)
+      }
+    })
+  }, [])
 
   return (
     <>
@@ -69,7 +85,17 @@ const WebCamera = () => {
               {t('STRID_webcamera_launch_camera')}
             </StrongButton>
             <p>{temp}</p>
-            <input className={styles.temp} onBlur={() => settemp('after')}></input>
+            {[...Array(3)].map((_, index) => (
+              <input
+                key={index}
+                type="text"
+                placeholder={`Input ${index + 1}`}
+                ref={(el) => {
+                  inputRefs.current[index] = el as HTMLInputElement
+                }}
+                onBlur={() => settemp(`${index}`)}
+              />
+            ))}
           </>
         ) : (
           <>
