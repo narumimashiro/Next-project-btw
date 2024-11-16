@@ -51,7 +51,7 @@ const WebCamera = () => {
       if (!input) return
 
       const handleBlur = () => {
-        settemp('test' + index)
+        settemp('test' + index + input.value)
       }
 
       input.addEventListener('blur', handleBlur)
