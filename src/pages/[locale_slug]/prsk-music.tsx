@@ -153,10 +153,10 @@ const PrskMusic = () => {
           </Drawer>
         </>
       )}
-      <ViewModal open={openViewModal} onClose={closeYoutubeModal}>
+      <ViewModal open={openViewModal} onClose={closeYoutubeModal} colorTheme={colorTheme}>
         <YoutubeViewer
           width={'100%'}
-          height={'auto'}
+          height={'100%'}
           srcId={selectYoutubeSrc}
           autoPlay={true}
           mute={false}
