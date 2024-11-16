@@ -1,0 +1,54 @@
+$hamberger-line-height: 4px;
+
+.hamburgerButton {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  margin: 10px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  z-index: 39;
+
+  span {
+    position: absolute;
+    display: block;
+    background-color: #446;
+    height: $hamberger-line-height;
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition:
+      transform 0.2s ease-in-out,
+      top 0.2s ease-in-out,
+      opacity 0.2s ease-in-out;
+  }
+  span:nth-child(1) {
+    top: calc(33% - $hamberger-line-height / 2);
+    transform-origin: center;
+    &.open {
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+  span:nth-child(2) {
+    top: calc(50% - $hamberger-line-height / 2);
+    &.open {
+      opacity: 0;
+    }
+  }
+  span:nth-child(3) {
+    top: calc(66% - $hamberger-line-height / 2);
+    transform-origin: center;
+    &.open {
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
+
+.menuContainer {
+  margin: 70px 16px 16px;
+}
