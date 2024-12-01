@@ -4,28 +4,25 @@
 
   .BTW_groupName {
     position: relative;
-    font-size: 1.25em;
-    font-weight: bold;
     padding: 8px 12px 0;
-    margin-right: 16px;
     border-bottom: 1px;
-    margin-bottom: 4px;
+    margin-bottom: 12px;
 
     &::after,
     &::before {
       content: '';
       position: absolute;
-      width: calc(100% + 26px);
+      width: 100%;
       height: 1px;
       left: 0;
     }
 
     &::after {
-      bottom: 0;
+      bottom: -4px;
     }
 
     &::before {
-      bottom: 2px;
+      bottom: -2px;
     }
   }
 }
