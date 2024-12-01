@@ -17,7 +17,7 @@ const meta = {
   },
   args: {},
   argTypes: {
-    // colorTheme: { control: false }
+    colorTheme: { control: false }
   }
 } satisfies Meta<typeof Menu>
 
