@@ -54,7 +54,7 @@ export const Menu = ({ children, colorTheme, anchorEl, handleReleaseAnchor }: Me
         className={`${styles.BTW_fullScreen} ${anchorEl ? styles.BTW_visible : styles.BTW_hidden}`}
         onClick={onCloseMenu}>
         <div
-          className={`${styles.BTW_container} ${styles[color]}`}
+          className={`invisible-scroll ${styles.BTW_container} ${styles[color]}`}
           style={containerPos}
           onClick={(e) => e.stopPropagation()}>
           {children}

@@ -49,11 +49,13 @@
 
 .BTW_modal-light {
   @extend .BTW_modal;
+  color: #000000;
   background-color: var(--light-background-color);
 }
 
 .BTW_modal-dark {
   @extend .BTW_modal;
+  color: #ffffff;
   background-color: var(--dark-background-color);
 }
 
