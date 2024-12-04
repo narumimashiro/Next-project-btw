@@ -19,6 +19,10 @@ export const HeadlineText = ({ children, className = '' }: TextProps) => {
   )
 }
 
+export const SubTitleText = ({ children, className = '' }: TextProps) => {
+  return <BodyText className={`${className} font-bold`}>{children}</BodyText>
+}
+
 export const BodyText = ({ children, className = '' }: TextProps) => {
   const { isPortrait } = useCustomContext()
 
@@ -32,4 +36,11 @@ export const AnnotationText = ({ children, className = '' }: TextProps) => {
   return (
     <p className={`text-xs ${styles[`annotation-${colorTheme}`]} ${className}`}>{children}</p>
   )
+}
+
+export const WebHorizon = ({ className = '' }: { className?: string }) => {
+  const theme = useTheme()
+  const colorTheme = theme.palette.mode
+
+  return <hr className={`web-horizon-${colorTheme} ${className}`} />
 }

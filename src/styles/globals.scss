@@ -34,6 +34,10 @@ p {
   margin: 0;
 }
 
+button {
+  padding: 0;
+}
+
 * {
   caret-color: transparent;
 }
@@ -207,4 +211,17 @@ p {
   &:hover {
     background-color: var(--dark-hover-color);
   }
+}
+
+// web common conponents styles
+.web-horizon-light {
+  background-color: var(--light-disabled-text-color);
+  border: none;
+  height: 1px;
+}
+
+.web-horizon-dark {
+  background-color: var(--dark-disabled-text-color);
+  border: none;
+  height: 1px;
 }
