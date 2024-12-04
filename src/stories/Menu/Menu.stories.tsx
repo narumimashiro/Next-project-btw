@@ -16,9 +16,7 @@ const meta = {
     }
   },
   args: {},
-  argTypes: {
-    colorTheme: { control: false }
-  }
+  argTypes: {}
 } satisfies Meta<typeof Menu>
 
 export default meta

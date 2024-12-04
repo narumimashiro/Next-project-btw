@@ -25,6 +25,7 @@ $menu-margin: 10px;
   height: auto;
   max-height: 90vh;
   box-shadow: 3px 3px 6px rgb(0, 0, 0, 0.5);
+  overflow: scroll;
 
   &.light {
     color: #000000;
