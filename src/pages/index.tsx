@@ -3,12 +3,13 @@ import { useTranslation } from 'next-i18next'
 
 import styles from '@/styles/Home.module.scss'
 import Meta from '@/components/meta'
-import { redirectUrl } from '@/hooks/redirectUrl'
+import { useRedirectUrl } from '@/hooks/redirectUrl'
 import { useCustomContext } from '@/components/customProvider'
 
 const Home = () => {
   const { t } = useTranslation()
   const { isPortrait } = useCustomContext()
+  const { redirectUrl } = useRedirectUrl()
 
   useEffect(() => {
     // If u want to transition directly to the locale URL on the first access, leave it as is
