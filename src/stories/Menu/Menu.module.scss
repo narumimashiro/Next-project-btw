@@ -25,12 +25,15 @@ $menu-margin: 10px;
   height: auto;
   max-height: 90vh;
   box-shadow: 3px 3px 6px rgb(0, 0, 0, 0.5);
+  overflow: scroll;
 
   &.light {
+    color: #000000;
     background-color: var(--light-background-color);
   }
 
   &.dark {
+    color: #ffffff;
     border: 1px solid var(--light-background-color);
     background-color: var(--dark-background-color);
   }
