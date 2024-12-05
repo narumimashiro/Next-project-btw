@@ -1,6 +1,11 @@
+import { useMemo } from 'react'
 import { useTheme } from '@mui/material'
 
 import { useCustomContext } from '@/components/customProvider'
+import { ListItem } from '@/stories/List/ListItem'
+
+import CheckMarkLight from '@/img/light/checkmark.svg'
+import CheckMarkDark from '@/img/dark/checkmark.svg'
 
 import styles from '@/styles/atom/ComponentsTemplate.module.scss'
 
@@ -43,4 +48,33 @@ export const WebHorizon = ({ className = '' }: { className?: string }) => {
   const colorTheme = theme.palette.mode
 
   return <hr className={`web-horizon-${colorTheme} ${className}`} />
+}
+
+export const CheckListItem = ({
+  text,
+  onClick,
+  isChecked
+}: {
+  text: string
+  onClick: () => void
+  isChecked: boolean
+}) => {
+  const theme = useTheme()
+  const colorTheme = theme.palette.mode
+
+  const checkMark = useMemo(
+    () => (colorTheme === 'light' ? CheckMarkLight.src : CheckMarkDark.src),
+    [colorTheme]
+  )
+
+  return (
+    <ListItem onClick={onClick}>
+      <div className={styles.checklist}>
+        <div className={styles.oneline}>
+          {isChecked ? <img src={checkMark} alt="" /> : null}
+        </div>
+        <BodyText>{text}</BodyText>
+      </div>
+    </ListItem>
+  )
 }
