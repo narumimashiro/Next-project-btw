@@ -7,7 +7,7 @@ import '@/locales/config'
 import '@/styles/globals.scss'
 
 import React from 'react'
-import { AdoLayout } from '@/components/layout'
+import { LayoutWithMenu } from '@/components/layout'
 import { CustomProvider } from '@/components/customProvider'
 
 import { useLocaleSlug, I18NEXT_LOCALE } from '@/hooks/useLocaleSlug'
@@ -25,9 +25,9 @@ const App = ({ Component, pageProps }: AppProps) => {
     <RecoilRoot>
       <React.StrictMode>
         <CustomProvider>
-          <AdoLayout>
+          <LayoutWithMenu>
             <Component {...pageProps} />
-          </AdoLayout>
+          </LayoutWithMenu>
         </CustomProvider>
       </React.StrictMode>
     </RecoilRoot>

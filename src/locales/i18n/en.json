@@ -5,8 +5,20 @@
   "STRID_dont_ask_again": "Don't ask again",
   "STRID_tap_to_top": "Tap to top",
   "STRID_click_to_top": "Click to top",
-  "STRID_faq_title": "FAQ",
   "STRID_url_copy_button": "Copy URL",
   "STRID_url_copy_success": "URL copied successfully.",
-  "STRID_url_copy_failed": "Failed to copy URL."
+  "STRID_url_copy_failed": "Failed to copy URL.",
+  "STRID_menu_environment_setting": "Environment Settings",
+  "STRID_menu_other_setting": "Other",
+  "STRID_menu_language_change": "Switch Language",
+  "STRID_menu_mode_change": "Light/Dark Mode",
+  "STRID_menu_japanese": "Japanese",
+  "STRID_menu_english": "English",
+  "STRID_menu_light_mode": "Light Mode",
+  "STRID_menu_dark_mode": "Dark Mode",
+  "STRID_menu_custom_mode": "Use device theme",
+  "STRID_menu_annotation_mode_change": "Setting applies to this browser only",
+  "STRID_menu_sitemap": "Sitemap",
+  "STRID_meta_top": "Bocchi the work",
+  "STRID_faq_title": "FAQ"
 }
