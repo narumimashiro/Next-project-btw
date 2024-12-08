@@ -200,14 +200,14 @@ button {
 // Styles for link
 .link-light {
   color: #000000;
-  padding: 2px 5px;
+  padding: 4px 8px;
   &:hover {
     background-color: var(--light-hover-color);
   }
 }
 .link-dark {
   color: #ffffff;
-  padding: 2px 5px;
+  padding: 4px 8px;
   &:hover {
     background-color: var(--dark-hover-color);
   }
