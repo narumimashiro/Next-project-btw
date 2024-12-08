@@ -1,0 +1,15 @@
+.BTW_textlink-light {
+  color: #000000;
+  padding: 4px 8px;
+  &:hover {
+    background-color: var(--light-hover-color);
+  }
+}
+
+.BTW_textlink-dark {
+  color: #ffffff;
+  padding: 4px 8px;
+  &:hover {
+    background-color: var(--dark-hover-color);
+  }
+}
