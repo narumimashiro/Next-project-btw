@@ -45,10 +45,12 @@ const WebCamera = () => {
 
   return (
     <>
-      <Meta pageTitle={t('STRID_cmn_pagetitle').replace('{var}', t('STRID_meta_webcamera'))} />
+      <Meta
+        pageTitle={t('STRID_cmn_pagetitle').replace('{var}', t('STRID_meta_otaku_webcamera'))}
+      />
       <PageTemplateWithHeader
         imgSrc={'/images/webcamera_header.png'}
-        title={t('STRID_meta_webcamera')}
+        title={t('STRID_meta_otaku_webcamera')}
         className={styles['page-container']}>
         <div className={styles.description}>
           <HeadlineText className="mb-8">{t('STRID_webcamera_take_picture')}</HeadlineText>

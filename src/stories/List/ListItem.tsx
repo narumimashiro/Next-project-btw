@@ -1,5 +1,8 @@
 import { useRef } from 'react'
 import { useTheme } from '@mui/material'
+
+import { BodyText } from '@/components/atom/componentsTemplate'
+
 import styles from './ListItem.module.scss'
 
 export type ListItemProps = {
@@ -60,7 +63,7 @@ export const ListItem = ({ colorTheme, children, text, icon, onClick }: ListItem
       tabIndex={0}
       role="button">
       {icon && <div className={styles.BTW_listIcon}>{icon}</div>}
-      {text && <span>{text}</span>}
+      {text && <BodyText>{text}</BodyText>}
       {children}
     </div>
   )

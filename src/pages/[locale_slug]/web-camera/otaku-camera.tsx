@@ -206,7 +206,9 @@ const OtakuCamera = () => {
 
   return (
     <>
-      <Meta pageTitle={t('STRID_cmn_pagetitle').replace('{var}', t('STRID_meta_webcamera'))} />
+      <Meta
+        pageTitle={t('STRID_cmn_pagetitle').replace('{var}', t('STRID_meta_otaku_webcamera'))}
+      />
       {!isMobile ? (
         <div className={styles['acquisition-mobile-annotation-container']}>
           <BodyText className={styles.annotation}>

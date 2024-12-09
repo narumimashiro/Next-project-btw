@@ -4,7 +4,13 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { ORIENTATION, useInnerSize, useOrientation, useTabletSize } from '@/hooks/useWindowSize'
-import { DARK_MODE, LIGHT_MODE, useUserColorTheme } from '@/hooks/useThemeStyle'
+import {
+  CUSTOM_MODE,
+  DARK_MODE,
+  LIGHT_MODE,
+  useThemeStyle,
+  useUserColorTheme
+} from '@/hooks/useThemeStyle'
 
 export type CustomContextType = {
   isPortrait: boolean
@@ -75,7 +81,16 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
   })
 
   const { userColorTheme } = useUserColorTheme()
-  const selectedTheme = userColorTheme === DARK_MODE ? darkTheme : lightTheme
+  const isCustomColorModeDark = useThemeStyle()
+  const selectedTheme = useMemo(() => {
+    if (CUSTOM_MODE === userColorTheme) {
+      return isCustomColorModeDark ? darkTheme : lightTheme
+    } else if (LIGHT_MODE === userColorTheme) {
+      return lightTheme
+    } else {
+      return darkTheme
+    }
+  }, [darkTheme, isCustomColorModeDark, lightTheme, userColorTheme])
 
   return (
     <ThemeProvider theme={selectedTheme}>

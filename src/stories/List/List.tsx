@@ -1,4 +1,7 @@
 import { useTheme } from '@mui/material'
+
+import { SubTitleText } from '@/components/atom/componentsTemplate'
+
 import styles from './List.module.scss'
 
 export type ListProps = {
@@ -19,7 +22,7 @@ export const List = ({
 
   return (
     <div className={`${styles[`BTW_list-${color}`]} ${className}`}>
-      {groupName && <span className={styles.BTW_groupName}>{groupName}</span>}
+      {groupName && <SubTitleText className={styles.BTW_groupName}>{groupName}</SubTitleText>}
       {children}
     </div>
   )

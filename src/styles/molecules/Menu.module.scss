@@ -1,0 +1,67 @@
+$top-index: 9696;
+$menu-margin: 10px;
+$menu-icon-size: 40px;
+
+.menuIcon {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: $menu-icon-size;
+  height: $menu-icon-size;
+  margin: $menu-margin;
+  // padding: 0;
+  z-index: $top-index;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 2px 2px 4px rgb(125, 125, 125);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+}
+
+.menuContainer {
+  margin: 10px;
+  list-style-type: none;
+  padding: 0;
+
+  .menuTop {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .topIcon {
+    width: $menu-icon-size;
+    height: $menu-icon-size;
+    background-color: inherit;
+    border: none;
+    border-radius: 50%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  .topBack {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $menu-icon-size;
+    height: $menu-icon-size;
+    background-color: inherit;
+
+    img {
+      width: 80%;
+      height: 80%;
+      object-fit: cover;
+      transform: rotate(90deg);
+    }
+  }
+}

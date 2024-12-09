@@ -8,11 +8,11 @@ $header-image-height-landscape: 266px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: $prsk-footer-height;
+  // padding-bottom: $prsk-footer-height;
 
   &.portrait {
     overflow-y: auto;
-    max-height: calc(100vh - $header-image-height-portrait - $prsk-footer-height);
+    max-height: calc(100dvh - $header-image-height-portrait - $prsk-footer-height);
   }
 }
 
@@ -37,9 +37,9 @@ $header-image-height-landscape: 266px;
 }
 
 .songList {
-  overflow-y: auto;
+  // overflow-y: auto;
   padding: 0 10px;
-  min-height: 630px;
+  // min-height: 630px;
 
   &.portrait {
     max-height: calc(100dvh - $header-image-height-portrait - $prsk-footer-height);

@@ -54,10 +54,7 @@ const About = () => {
   return (
     <>
       <Meta pageTitle={t('STRID_cmn_pagetitle').replace('{var}', t('STRID_meta_about'))} />
-      <PageTemplateWithHeader
-        imgSrc={'/images/sakura.jpg'}
-        title={t('TEMP_このサイトについて')}
-        subTitle={t('TEMP_subtitle')}>
+      <PageTemplateWithHeader imgSrc={'/images/sakura.jpg'} title={t('STRID_meta_about')}>
         <p>すぐにプロジェクトを開始できます！</p>
       </PageTemplateWithHeader>
       <FrequentlyAndQuestion faqList={faqList} className={styles.faq} />

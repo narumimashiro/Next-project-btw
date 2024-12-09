@@ -2,11 +2,6 @@
   filter: blur(3px);
 }
 
-.page-contents {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-}
-
 .display {
   opacity: 1;
   transition: opacity 0.39s ease-out;

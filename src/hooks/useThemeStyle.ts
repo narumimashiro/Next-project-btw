@@ -61,7 +61,7 @@ export const useUserColorTheme = () => {
     if (storageValue !== null) {
       setUserColorTheme(storageValue as ColorTheme)
     } else {
-      setUserColorTheme(isCustomColorModeDark ? DARK_MODE : LIGHT_MODE)
+      setUserColorTheme(CUSTOM_MODE)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isCustomColorModeDark])
@@ -78,7 +78,7 @@ export const useUserColorTheme = () => {
         break
       case CUSTOM_MODE: // FALL THROUGH
       default:
-        setUserColorTheme(isCustomColorModeDark ? DARK_MODE : LIGHT_MODE)
+        setUserColorTheme(CUSTOM_MODE)
         localStorage.removeItem(LOCALSTORAGE_COLOR_THEME)
         break
     }
