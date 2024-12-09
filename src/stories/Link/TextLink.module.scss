@@ -1,4 +1,5 @@
 .BTW_textlink-light {
+  width: fit-content;
   color: #000000;
   padding: 4px 8px;
   &:hover {
@@ -7,6 +8,7 @@
 }
 
 .BTW_textlink-dark {
+  width: fit-content;
   color: #ffffff;
   padding: 4px 8px;
   &:hover {

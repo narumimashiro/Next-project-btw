@@ -26,7 +26,7 @@
   "STRID_meta_prsk_music": "Project SEKAI Music",
   "STRID_meta_mygo_quiz": "Quiz MyGO!!!!!",
   "STRID_meta_alya": "Teach Me Alya",
-  "STRID_meta_webcamera": "Web Camera",
+  "STRID_meta_otaku_webcamera": "Otaku Web Camera",
   "STRID_meta_about": "About This Site",
   "STRID_faq_title": "FAQ",
   "STRID_faq_question_1": "What kind of site is it?",
@@ -134,5 +134,8 @@
   "STRID_webcamera_cannnot_access_camera": "Could not access the camera.",
   "STRID_webcamera_disable_camera": "*The webcam is not available for use on a PC.",
   "STRID_webcamera_open_page_by_mobile": "Please open this page on a mobile device, such as a smartphone or tablet.",
-  "STRID_webcamera_be_able_to_copy_link": "You can copy the URL of this page using the URL Copy button."
+  "STRID_webcamera_be_able_to_copy_link": "You can copy the URL of this page using the URL Copy button.",
+  "STRID_sitemap_top": "Top",
+  "STRID_sitemap_hobby": "Hobby",
+  "STRID_sitemap_other": "Other"
 }

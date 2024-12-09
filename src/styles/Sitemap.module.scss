@@ -1,0 +1,35 @@
+.page-container {
+  height: auto;
+  max-width: 720px;
+  margin: auto;
+  padding: 48px 0;
+
+  &.portrait {
+    padding: 24px 10px;
+  }
+}
+
+.contents-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.linkGroup {
+  gap: 0;
+
+  .grid-tabel {
+    display: grid;
+    gap: 8px;
+  }
+
+  .grid-portrait {
+    @extend .grid-tabel;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-landscape {
+    @extend .grid-tabel;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

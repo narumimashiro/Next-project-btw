@@ -62,7 +62,7 @@ const TeachMeAlya = () => {
   const { postWordRegistration, resetWordRegistrationFetchState } = PostWordRegistrationApi()
   const wordRegistrationFetchState = useRecoilValue(RegistrationDataState).fetchState
 
-  const [toastMessage, setToastMessage] = useState('TEMP_登録できませんでした。')
+  const [toastMessage, setToastMessage] = useState('')
   useEffect(() => {
     if (API_STATUS.SUCCESS === wordRegistrationFetchState) {
       setToastMessage(t('STRID_alya_toast_complete_registration'))
