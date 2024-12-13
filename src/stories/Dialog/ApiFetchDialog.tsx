@@ -4,6 +4,7 @@ import Loading from '@/components/atom/loading'
 import { API_STATUS, ApiStatusType } from '@/hooks/useApiStatus'
 
 import styles from './ApiFetchDialog.module.scss'
+import { ConfirmDialog } from './ConfirmDialog'
 
 export type ApiFetchDialogProps = {
   apiStatus: ApiStatusType
@@ -111,11 +112,19 @@ const FetchResult = ({
   }
 
   return (
-    <>
-      <div className={styles.BTW_contentsWrap}>
-        <h2 className={`text-xl-bold ${styles.BTW_title}`}>
-          {apiStatus === API_STATUS.SUCCESS ? bodySuccess.title : bodyFailed.title}
-        </h2>
+    <ConfirmDialog
+      open={apiStatus === API_STATUS.SUCCESS || apiStatus === API_STATUS.FAILED}
+      title={
+        apiStatus === API_STATUS.SUCCESS
+          ? (bodySuccess.title as string)
+          : (bodyFailed.title as string)
+      }
+      ariaLabel={apiStatus === API_STATUS.SUCCESS ? ariaLabelSuccess : ariaLabelFailed}
+      buttonString={
+        apiStatus === API_STATUS.SUCCESS ? t(`${successBtnStr}`) : t(`${failedBtnStr}`)
+      }
+      onConfirm={handlerConform}>
+      <>
         {apiStatus === API_STATUS.SUCCESS
           ? bodySuccess.bodyText.map((sentence, index) => (
               <p key={`body-text-${index}`}>{sentence}</p>
@@ -123,17 +132,7 @@ const FetchResult = ({
           : bodyFailed.bodyText.map((sentence, index) => (
               <p key={`body-text-${index}`}>{sentence}</p>
             ))}
-      </div>
-      <div className={styles.BTW_bottomButton}>
-        <div className={styles[`BTW_horizon-${colorTheme}`]}></div>
-        <button
-          className={`text-xl-bold button-active-${colorTheme}`}
-          aria-label={apiStatus === API_STATUS.SUCCESS ? ariaLabelSuccess : ariaLabelFailed}
-          onClick={handlerConform}
-          {...buttonProps}>
-          {apiStatus === API_STATUS.SUCCESS ? t(`${successBtnStr}`) : t(`${failedBtnStr}`)}
-        </button>
-      </div>
-    </>
+      </>
+    </ConfirmDialog>
   )
 }

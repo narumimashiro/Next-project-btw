@@ -109,7 +109,7 @@ const StickyNoteTabItem = ({
 
   return (
     <button
-      className={`button-${colorTheme} ${styles[`BTW_stickynote-${colorTheme}`]} ${styles[specStyle]} ${selected ? styles.BTW_selected : styles['not-selected']}`}
+      className={`button-${colorTheme} ${styles[`BTW_stickynote-${colorTheme}`]} ${styles[specStyle]} ${selected ? styles.BTW_selected : styles['BTW_not-selected']}`}
       onClick={onClick}
       id={buttonProps.id}
       aria-controls={buttonProps['aria-controls']}>
