@@ -17,12 +17,12 @@
 
 .BTW_overlay-light {
   @extend .BTW_overlay;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--light-overlay-color);
 }
 
 .BTW_overlay-dark {
   @extend .BTW_overlay;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--dark-overlay-color);
 }
 
 .BTW_modal {
