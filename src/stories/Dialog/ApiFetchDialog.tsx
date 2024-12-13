@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
+import { useTheme } from '@mui/material'
 import { useTranslation } from 'next-i18next'
 import Loading from '@/components/atom/loading'
 import { API_STATUS, ApiStatusType } from '@/hooks/useApiStatus'
+import { ConfirmDialog } from './ConfirmDialog'
 
 import styles from './ApiFetchDialog.module.scss'
-import { ConfirmDialog } from './ConfirmDialog'
 
 export type ApiFetchDialogProps = {
   apiStatus: ApiStatusType
@@ -29,7 +30,7 @@ export type ApiFetchDialogProps = {
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 export const ApiFetchDialog = ({
-  colorTheme = 'light',
+  colorTheme,
   apiStatus,
   bodyLoading,
   bodySuccess,
@@ -37,6 +38,9 @@ export const ApiFetchDialog = ({
   resetApiState,
   ...buttonProps
 }: ApiFetchDialogProps) => {
+  const theme = useTheme()
+  const color = colorTheme ? colorTheme : theme.palette.mode
+
   useEffect(() => {
     return () => resetApiState()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -47,12 +51,12 @@ export const ApiFetchDialog = ({
 
   return (
     <div className={styles[displayDialog]}>
-      <div className={styles[`BTW_overlay-${colorTheme}`]}>
-        <div className={`absolute-center ${styles[`BTW_dialog-${colorTheme}`]}`}>
+      <div className={styles[`BTW_overlay-${color}`]}>
+        <div className={`absolute-center ${styles[`BTW_dialog-${color}`]}`}>
           <div className={styles.BTW_containerWrap}>
             {apiStatus === API_STATUS.SUCCESS || apiStatus === API_STATUS.FAILED ? (
               <FetchResult
-                colorTheme={colorTheme}
+                colorTheme={color}
                 apiStatus={apiStatus}
                 bodySuccess={bodySuccess}
                 bodyFailed={bodyFailed}
@@ -89,8 +93,7 @@ const FetchResult = ({
   apiStatus,
   bodySuccess,
   bodyFailed,
-  resetApiState,
-  ...buttonProps
+  resetApiState
 }: FetchResultProps) => {
   const { t } = useTranslation()
 
@@ -114,6 +117,7 @@ const FetchResult = ({
   return (
     <ConfirmDialog
       open={apiStatus === API_STATUS.SUCCESS || apiStatus === API_STATUS.FAILED}
+      colorTheme={colorTheme}
       title={
         apiStatus === API_STATUS.SUCCESS
           ? (bodySuccess.title as string)

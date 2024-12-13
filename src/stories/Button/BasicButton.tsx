@@ -1,4 +1,6 @@
 import React from 'react'
+import { useTheme } from '@mui/material'
+
 import styles from './BasicButton.module.scss'
 
 export type BasicButtonProps = {
@@ -11,15 +13,18 @@ export type BasicButtonProps = {
 
 export const BasicButton = ({
   className = '',
-  colorTheme = 'light',
+  colorTheme,
   children,
   disabled,
   onClick,
   ...buttonProps
 }: BasicButtonProps) => {
+  const theme = useTheme()
+  const color = colorTheme ? colorTheme : theme.palette.mode
+
   return (
     <button
-      className={`${styles[`BTW_basicButton-${colorTheme}`]} ${className}`}
+      className={`${styles[`BTW_basicButton-${color}`]} ${className}`}
       disabled={disabled}
       onClick={onClick}
       {...buttonProps}>

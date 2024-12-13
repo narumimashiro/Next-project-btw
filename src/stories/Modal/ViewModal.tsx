@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { useTheme } from '@mui/material'
 
 import clearLight from '@/img/light/clear.svg'
 import clearDark from '@/img/dark/clear.svg'
@@ -13,13 +14,10 @@ export type ViewModalProps = {
   onClose: () => void
 }
 
-export const ViewModal = ({
-  open,
-  children,
-  colorTheme = 'light',
-  onClose
-}: ViewModalProps) => {
+export const ViewModal = ({ open, children, colorTheme, onClose }: ViewModalProps) => {
   const { isPortrait } = useCustomContext()
+  const theme = useTheme()
+  const color = colorTheme ? colorTheme : theme.palette.mode
 
   const displayDialog = open ? 'BTW_modal-visible' : 'BTW_modal-hidden'
   const clearImg = useMemo(
@@ -29,9 +27,9 @@ export const ViewModal = ({
 
   return (
     <div className={styles[displayDialog]}>
-      <div className={styles[`BTW_overlay-${colorTheme}`]}>
+      <div className={styles[`BTW_overlay-${color}`]}>
         <div
-          className={`absolute-center ${styles[`BTW_modal-${colorTheme}`]} ${isPortrait ? styles.BTW_portrait : ''}`}>
+          className={`absolute-center ${styles[`BTW_modal-${color}`]} ${isPortrait ? styles.BTW_portrait : ''}`}>
           <button className={styles.BTW_closebutton} onClick={onClose}>
             <img src={clearImg} alt="" />
           </button>

@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
+import { useTheme } from '@mui/material'
 
 import PlusIconLight from '@/img/light/plus_icon.svg'
 import MinusIconLight from '@/img/light/minus_icon.svg'
@@ -23,12 +24,15 @@ export type AccordionMenuListProps = {
 }
 
 export const AccordionMenuList = ({
-  colorTheme = 'light',
+  colorTheme,
   summary,
   summaryStyle,
   menuList,
   listType = 'left'
 }: AccordionMenuListProps) => {
+  const theme = useTheme()
+  const color = colorTheme ? colorTheme : theme.palette.mode
+
   const [openMenuList, setOpenMenuList] = useState(false)
   const openMenuStyle = openMenuList ? 'BTW_open-menu' : ''
   const menuListRef = useRef<HTMLUListElement>(null)
@@ -47,8 +51,8 @@ export const AccordionMenuList = ({
   }
 
   return (
-    <div className={`${styles.BTW_accordionMenuListWrap} ${styles[colorTheme]}`}>
-      <div className={styles[`BTW_horizon-${colorTheme}`]}></div>
+    <div className={`${styles.BTW_accordionMenuListWrap} ${styles[color]}`}>
+      <div className={styles[`BTW_horizon-${color}`]}></div>
       <button
         className={`text-xl ${styles[`BTW_summary-${listType}`]} ${
           summaryStyle ? summaryStyle : ''
@@ -57,19 +61,19 @@ export const AccordionMenuList = ({
         {summary}
         <img
           className={`${styles.BTW_plusIcon} ${styles[openMenuStyle]}`}
-          src={colorTheme === 'light' ? PlusIconLight.src : PlusIconDark.src}
+          src={color === 'light' ? PlusIconLight.src : PlusIconDark.src}
           alt=""
         />
         <img
           className={`${styles.BTW_minusIcon} ${styles[openMenuStyle]}`}
-          src={colorTheme === 'light' ? MinusIconLight.src : MinusIconDark.src}
+          src={color === 'light' ? MinusIconLight.src : MinusIconDark.src}
           alt=""
         />
       </button>
-      <div className={styles[`BTW_horizon-${colorTheme}`]}></div>
+      <div className={styles[`BTW_horizon-${color}`]}></div>
       <ul
         ref={menuListRef}
-        className={`${styles[`BTW_menu-list-wrap-${listType}`]} ${styles[colorTheme]}`}
+        className={`${styles[`BTW_menu-list-wrap-${listType}`]} ${styles[color]}`}
         style={menuListStyle}>
         {menuList.map((el) => (
           <MenuItem
@@ -77,7 +81,7 @@ export const AccordionMenuList = ({
             isInternalLink={el.isInternalLink}
             displayText={el.displayText}
             link={el.link}
-            colorTheme={colorTheme}
+            colorTheme={color}
           />
         ))}
       </ul>

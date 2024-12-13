@@ -1,3 +1,5 @@
+import { useTheme } from '@mui/material'
+
 import styles from './RadioGroup.module.scss'
 
 type RadioOptions = {
@@ -16,7 +18,7 @@ export type RadioGroupProps = {
 }
 
 export const RadioGroup = ({
-  colorTheme = 'light',
+  colorTheme,
   radioType = 'row',
   radioProps,
   name,
@@ -24,6 +26,9 @@ export const RadioGroup = ({
   currentValue,
   onChange
 }: RadioGroupProps) => {
+  const theme = useTheme()
+  const color = colorTheme ? colorTheme : theme.palette.mode
+
   return (
     <div className={styles['BTW_radio-wrap']} style={{ flexDirection: radioType }}>
       {optionList.map((radioEl) => {
@@ -36,8 +41,8 @@ export const RadioGroup = ({
               checked={radioEl.value === currentValue}
               onChange={() => onChange(radioEl.value)}
             />
-            <span className={styles[`BTW_checkmark-${colorTheme}`]}></span>
-            <span className={styles[`BTW_radio-label-${colorTheme}`]}>{radioEl.label}</span>
+            <span className={styles[`BTW_checkmark-${color}`]}></span>
+            <span className={styles[`BTW_radio-label-${color}`]}>{radioEl.label}</span>
           </label>
         )
       })}

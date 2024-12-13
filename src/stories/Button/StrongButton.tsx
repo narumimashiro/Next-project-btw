@@ -1,4 +1,6 @@
 import React from 'react'
+import { useTheme } from '@mui/material'
+
 import styles from './StrongButton.module.scss'
 
 export type StrongButtonProps = {
@@ -11,15 +13,18 @@ export type StrongButtonProps = {
 
 export const StrongButton = ({
   className = '',
-  colorTheme = 'light',
+  colorTheme,
   children,
   disabled,
   onClick,
   ...buttonProps
 }: StrongButtonProps) => {
+  const theme = useTheme()
+  const color = colorTheme ? colorTheme : theme.palette.mode
+
   return (
     <button
-      className={`${styles[`BTW_strongButton-${colorTheme}`]} ${className}`}
+      className={`${styles[`BTW_strongButton-${color}`]} ${className}`}
       disabled={disabled}
       onClick={onClick}
       {...buttonProps}>
