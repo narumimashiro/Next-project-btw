@@ -5,3 +5,21 @@
 .annotation-dark {
   color: var(--annotation-text-dark);
 }
+
+.checklist {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 16px;
+  align-items: center;
+  height: 36px;
+
+  .oneline {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
