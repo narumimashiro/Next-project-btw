@@ -1,3 +1,5 @@
+import { useTheme } from '@mui/material'
+
 import styles from './Checkbox.module.scss'
 
 export type CheckboxProps = {
@@ -10,7 +12,7 @@ export type CheckboxProps = {
 } & React.InputHTMLAttributes<HTMLInputElement>
 
 export const Checkbox = ({
-  colorTheme = 'light',
+  colorTheme,
   className = '',
   isChecked,
   onChange,
@@ -18,6 +20,9 @@ export const Checkbox = ({
   filling,
   ...inputProps
 }: CheckboxProps) => {
+  const theme = useTheme()
+  const color = colorTheme ? colorTheme : theme.palette.mode
+
   return (
     <label
       className={styles['BTW_checkbox-wrap']}
@@ -30,7 +35,7 @@ export const Checkbox = ({
       }}>
       <label
         className={`
-        ${styles[`BTW_checkbox-${colorTheme}`]}
+        ${styles[`BTW_checkbox-${color}`]}
         ${filling ? styles.BTW_filling : ''}
         ${isChecked ? styles.BTW_checked : ''}
         ${disabled ? styles.BTW_disabled : ''}

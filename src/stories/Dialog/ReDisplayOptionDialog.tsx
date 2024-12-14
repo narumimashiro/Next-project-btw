@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useTheme } from '@mui/material'
 import { useTranslation } from 'next-i18next'
 
 import { ConfirmDialog } from '@/stories/Dialog/ConfirmDialog'
@@ -18,7 +19,7 @@ export type ReDisplayOptionDialogProps = {
 export const ReDisplayOptionDialog = ({
   open,
   localStorageKey,
-  colorTheme = 'light',
+  colorTheme,
   title,
   children,
   buttonString,
@@ -26,6 +27,8 @@ export const ReDisplayOptionDialog = ({
   onConfirm
 }: ReDisplayOptionDialogProps) => {
   const { t } = useTranslation()
+  const theme = useTheme()
+  const color = colorTheme ? colorTheme : theme.palette.mode
 
   const NOT_SHOW_AGAIN = 'do_not_show_again'
   const btnString = buttonString ? buttonString : t('STRID_cmn_ok')
@@ -53,6 +56,7 @@ export const ReDisplayOptionDialog = ({
     <ConfirmDialog
       open={openDialog}
       title={title}
+      colorTheme={color}
       buttonString={btnString}
       ariaLabel={ariaLabel}
       onConfirm={handleClick}>
@@ -60,7 +64,7 @@ export const ReDisplayOptionDialog = ({
         {children}
         <div className="flex-center text-sm">
           <Checkbox
-            colorTheme={colorTheme}
+            colorTheme={color}
             isChecked={isChecked}
             onChange={(value) => setIsChecked(value as boolean)}
             filling
