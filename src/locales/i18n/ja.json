@@ -26,7 +26,7 @@
   "STRID_meta_prsk_music": "プロセカ ミュージック",
   "STRID_meta_mygo_quiz": "Quiz MyGO!!!!!",
   "STRID_meta_alya": "教えてアーリャさん",
-  "STRID_meta_webcamera": "Web Camera",
+  "STRID_meta_otaku_webcamera": "オタク ウェブカメラ",
   "STRID_meta_about": "このサイトについて",
   "STRID_faq_title": "よくある質問",
   "STRID_faq_question_1": "このサイトは何？どんなサイト？",
@@ -134,5 +134,8 @@
   "STRID_webcamera_cannnot_access_camera": "カメラにアクセスできませんでした。",
   "STRID_webcamera_disable_camera": "*ウェブカメラはPCでは利用できません。",
   "STRID_webcamera_open_page_by_mobile": "スマホやタブレットなどモバイル端末からこのページを開いてください。",
-  "STRID_webcamera_be_able_to_copy_link": "URLコピーボタンからこのページのURLをコピーできます。"
+  "STRID_webcamera_be_able_to_copy_link": "URLコピーボタンからこのページのURLをコピーできます。",
+  "STRID_sitemap_top": "トップ",
+  "STRID_sitemap_hobby": "趣味",
+  "STRID_sitemap_other": "その他"
 }
