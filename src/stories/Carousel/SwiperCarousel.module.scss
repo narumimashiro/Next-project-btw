@@ -1,0 +1,34 @@
+.BTW_swiper_carousel {
+  width: 100%;
+
+  :global(.swiper-slide) {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  :global(.swiper-pagination-bullet) {
+    opacity: 0.3;
+    transition: background-color 0.3s ease;
+    margin: auto;
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    margin: auto;
+    opacity: 1;
+  }
+}
+
+.BTW_swiper_carousel_light {
+  @extend .BTW_swiper_carousel;
+  :global(.swiper-pagination-bullet) {
+    background-color: black;
+  }
+}
+
+.BTW_swiper_carousel_dark {
+  @extend .BTW_swiper_carousel;
+  :global(.swiper-pagination-bullet) {
+    background-color: white;
+  }
+}
