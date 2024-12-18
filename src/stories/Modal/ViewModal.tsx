@@ -20,10 +20,7 @@ export const ViewModal = ({ open, children, colorTheme, onClose }: ViewModalProp
   const color = colorTheme ? colorTheme : theme.palette.mode
 
   const displayDialog = open ? 'BTW_modal-visible' : 'BTW_modal-hidden'
-  const clearImg = useMemo(
-    () => (colorTheme === 'light' ? clearLight.src : clearDark.src),
-    [colorTheme]
-  )
+  const clearImg = useMemo(() => (color === 'light' ? clearLight.src : clearDark.src), [color])
 
   return (
     <div className={styles[displayDialog]}>
