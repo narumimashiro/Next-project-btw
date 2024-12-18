@@ -17,12 +17,12 @@ $max-wrap-height: 900px;
 
 .BTW_overlay-light {
   @extend .BTW_overlay;
-  background-color: rgba(0, 0, 0, 0.39);
+  background: var(--light-overlay-color);
 }
 
 .BTW_overlay-dark {
   @extend .BTW_overlay;
-  background-color: rgba(255, 255, 255, 0.25);
+  background: var(--dark-overlay-color);
 }
 
 .BTW_fullscreen {

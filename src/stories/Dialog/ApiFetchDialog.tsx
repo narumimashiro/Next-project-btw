@@ -1,7 +1,9 @@
 import { useEffect } from 'react'
+import { useTheme } from '@mui/material'
 import { useTranslation } from 'next-i18next'
 import Loading from '@/components/atom/loading'
 import { API_STATUS, ApiStatusType } from '@/hooks/useApiStatus'
+import { ConfirmDialog } from './ConfirmDialog'
 
 import styles from './ApiFetchDialog.module.scss'
 
@@ -28,7 +30,7 @@ export type ApiFetchDialogProps = {
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 export const ApiFetchDialog = ({
-  colorTheme = 'light',
+  colorTheme,
   apiStatus,
   bodyLoading,
   bodySuccess,
@@ -36,6 +38,9 @@ export const ApiFetchDialog = ({
   resetApiState,
   ...buttonProps
 }: ApiFetchDialogProps) => {
+  const theme = useTheme()
+  const color = colorTheme ? colorTheme : theme.palette.mode
+
   useEffect(() => {
     return () => resetApiState()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -46,12 +51,12 @@ export const ApiFetchDialog = ({
 
   return (
     <div className={styles[displayDialog]}>
-      <div className={styles[`BTW_overlay-${colorTheme}`]}>
-        <div className={`absolute-center ${styles[`BTW_dialog-${colorTheme}`]}`}>
+      <div className={styles[`BTW_overlay-${color}`]}>
+        <div className={`absolute-center ${styles[`BTW_dialog-${color}`]}`}>
           <div className={styles.BTW_containerWrap}>
             {apiStatus === API_STATUS.SUCCESS || apiStatus === API_STATUS.FAILED ? (
               <FetchResult
-                colorTheme={colorTheme}
+                colorTheme={color}
                 apiStatus={apiStatus}
                 bodySuccess={bodySuccess}
                 bodyFailed={bodyFailed}
@@ -88,8 +93,7 @@ const FetchResult = ({
   apiStatus,
   bodySuccess,
   bodyFailed,
-  resetApiState,
-  ...buttonProps
+  resetApiState
 }: FetchResultProps) => {
   const { t } = useTranslation()
 
@@ -111,11 +115,20 @@ const FetchResult = ({
   }
 
   return (
-    <>
-      <div className={styles.BTW_contentsWrap}>
-        <h2 className={`text-xl-bold ${styles.BTW_title}`}>
-          {apiStatus === API_STATUS.SUCCESS ? bodySuccess.title : bodyFailed.title}
-        </h2>
+    <ConfirmDialog
+      open={apiStatus === API_STATUS.SUCCESS || apiStatus === API_STATUS.FAILED}
+      colorTheme={colorTheme}
+      title={
+        apiStatus === API_STATUS.SUCCESS
+          ? (bodySuccess.title as string)
+          : (bodyFailed.title as string)
+      }
+      ariaLabel={apiStatus === API_STATUS.SUCCESS ? ariaLabelSuccess : ariaLabelFailed}
+      buttonString={
+        apiStatus === API_STATUS.SUCCESS ? t(`${successBtnStr}`) : t(`${failedBtnStr}`)
+      }
+      onConfirm={handlerConform}>
+      <>
         {apiStatus === API_STATUS.SUCCESS
           ? bodySuccess.bodyText.map((sentence, index) => (
               <p key={`body-text-${index}`}>{sentence}</p>
@@ -123,17 +136,7 @@ const FetchResult = ({
           : bodyFailed.bodyText.map((sentence, index) => (
               <p key={`body-text-${index}`}>{sentence}</p>
             ))}
-      </div>
-      <div className={styles.BTW_bottomButton}>
-        <div className={styles[`BTW_horizon-${colorTheme}`]}></div>
-        <button
-          className={`text-xl-bold button-active-${colorTheme}`}
-          aria-label={apiStatus === API_STATUS.SUCCESS ? ariaLabelSuccess : ariaLabelFailed}
-          onClick={handlerConform}
-          {...buttonProps}>
-          {apiStatus === API_STATUS.SUCCESS ? t(`${successBtnStr}`) : t(`${failedBtnStr}`)}
-        </button>
-      </div>
-    </>
+      </>
+    </ConfirmDialog>
   )
 }
