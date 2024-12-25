@@ -1,4 +1,5 @@
 import { useTheme } from '@mui/material'
+
 import styles from '@/styles/atom/Loading.module.scss'
 
 const Loading = () => {

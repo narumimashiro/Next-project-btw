@@ -1,13 +1,15 @@
 import { useMemo } from 'react'
+
 import { useTheme } from '@mui/material'
 
+import styles from '@/styles/atom/ComponentsTemplate.module.scss'
+
 import { useCustomContext } from '@/components/customProvider'
+
 import { ListItem } from '@/stories/List/ListItem'
 
-import CheckMarkLight from '@/img/light/checkmark.svg'
 import CheckMarkDark from '@/img/dark/checkmark.svg'
-
-import styles from '@/styles/atom/ComponentsTemplate.module.scss'
+import CheckMarkLight from '@/img/light/checkmark.svg'
 
 type TextProps = {
   children: React.ReactNode

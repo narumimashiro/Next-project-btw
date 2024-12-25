@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
+
 import { useTranslation } from 'next-i18next'
 
 import styles from '@/styles/Home.module.scss'
+
+import { useCustomContext } from '@/components/customProvider'
 import Meta from '@/components/meta'
 import { useRedirectUrl } from '@/hooks/redirectUrl'
-import { useCustomContext } from '@/components/customProvider'
 
 const Home = () => {
   const { t } = useTranslation()

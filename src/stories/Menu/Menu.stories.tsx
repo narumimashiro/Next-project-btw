@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { useState } from 'react'
 
 import { Menu, MenuProps } from './Menu'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'BTW-Custom/Menu',

@@ -1,8 +1,8 @@
 import React from 'react'
-import { useTheme } from '@mui/material'
 
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { useTheme } from '@mui/material'
 import { Pagination, Autoplay } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { SwiperModule } from 'swiper/types'
 import 'swiper/css'
 import 'swiper/css/pagination'

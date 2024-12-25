@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 
-import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
-import { ORIENTATION, useInnerSize, useOrientation, useTabletSize } from '@/hooks/useWindowSize'
+import { ThemeProvider, createTheme } from '@mui/material/styles'
+
 import {
   CUSTOM_MODE,
   DARK_MODE,
@@ -11,6 +11,7 @@ import {
   useThemeStyle,
   useUserColorTheme
 } from '@/hooks/useThemeStyle'
+import { ORIENTATION, useInnerSize, useOrientation, useTabletSize } from '@/hooks/useWindowSize'
 
 export type CustomContextType = {
   isPortrait: boolean

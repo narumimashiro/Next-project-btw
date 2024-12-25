@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
 
 import { Checkbox, CheckboxProps } from './Checkbox'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'BTW-Custom/Checkbox',

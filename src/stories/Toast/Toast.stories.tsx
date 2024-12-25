@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { useEffect, useState } from 'react'
 
 import { Toast, ToastProps } from './Toast'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'BTW-Custom/Toast',

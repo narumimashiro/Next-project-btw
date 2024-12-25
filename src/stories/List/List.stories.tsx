@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react'
-
-import AppleIcon from '@mui/icons-material/Apple'
 import AndroidIcon from '@mui/icons-material/Android'
+import AppleIcon from '@mui/icons-material/Apple'
 
 import { List, ListProps } from './List'
 import { ListItem } from './ListItem'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'BTW-Custom/List',

@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
 import { SwiperCarousel, SwiperCarouselProps } from './SwiperCarousel'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'BTW-Custom/SwiperCarousel',

@@ -9,7 +9,7 @@ const Meta = (props: { pageTitle: string }) => {
       {/* TODO change content description to suit your project */}
       <meta name="description" content="change description" />
       <meta charSet="UTF-8" />
-      <meta http-equiv="Content-Language" content="ja" />
+      <meta httpEquiv="Content-Language" content="ja" />
       {/* TODO change title to suit your project */}
       <meta property="og:title" content="change title" />
       {/* TODO change description to suit your project*/}

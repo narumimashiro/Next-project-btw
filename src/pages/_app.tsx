@@ -1,11 +1,12 @@
 import type { AppProps } from 'next/app'
 import React, { useEffect } from 'react'
 import { RecoilRoot } from 'recoil'
+
 import { appWithTranslation, useTranslation } from 'next-i18next'
 import '@/locales/config'
 
-import { LayoutWithMenu } from '@/components/layout'
 import { CustomProvider } from '@/components/customProvider'
+import { LayoutWithMenu } from '@/components/layout'
 import { useLocaleSlug, I18NEXT_LOCALE } from '@/hooks/useLocaleSlug'
 
 import '@/styles/globals.scss'

@@ -1,10 +1,10 @@
-import { useRecoilValue } from 'recoil'
 import { Inter } from 'next/font/google'
+import { useRecoilValue } from 'recoil'
+
+import styles from '@/styles/Layout.module.scss'
 
 import { UserMenu } from '@/components/molecules/menu'
 import { isVisibleMenuState } from '@/recoil/manageMenu'
-
-import styles from '@/styles/Layout.module.scss'
 
 const inter = Inter({ subsets: ['latin'] })
 

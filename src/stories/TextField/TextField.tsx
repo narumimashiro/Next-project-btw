@@ -2,8 +2,8 @@ import { useState } from 'react'
 
 import { useTheme } from '@mui/material'
 
-import clearLight from '@/img/light/clear.svg'
 import clearDark from '@/img/dark/clear.svg'
+import clearLight from '@/img/light/clear.svg'
 
 import styles from './TextField.module.scss'
 
