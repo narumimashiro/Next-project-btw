@@ -41,10 +41,10 @@ const TemplateStory: Story = {
         <TabPanel value={selectTab} tabIndex={0}>
           <div style={{ textAlign: 'center' }}>Tab1</div>
         </TabPanel>
-        <TabPanel value={selectTab} tabIndex={1}>
+        <TabPanel value={selectTab} tabIndex={0}>
           <div style={{ textAlign: 'center' }}>Tab2</div>
         </TabPanel>
-        <TabPanel value={selectTab} tabIndex={2}>
+        <TabPanel value={selectTab} tabIndex={0}>
           <div style={{ textAlign: 'center' }}>Tab3</div>
         </TabPanel>
       </>

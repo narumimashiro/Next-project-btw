@@ -34,6 +34,7 @@
     "no-multiple-empty-lines": ["error", { "max": 1 }],
     "@next/next/no-img-element": "off",
     "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-require-imports": "off",
     "unused-imports/no-unused-imports": "error",
     "import/order": [
       "error",
@@ -60,7 +61,7 @@
             "position": "before"
           },
           {
-            "pattern": "{i18next,@mui/**,material-ui}",
+            "pattern": "{next-i18next,@mui/**,material-ui}",
             "group": "external"
           },
           {
@@ -69,12 +70,7 @@
             "position": "before"
           },
           {
-            "pattern": "@/stories/**",
-            "group": "internal",
-            "position": "after"
-          },
-          {
-            "pattern": "@/img/**",
+            "pattern": "{@/stories/**,@/img/**}",
             "group": "internal",
             "position": "after"
           },

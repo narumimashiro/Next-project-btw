@@ -24,12 +24,11 @@ import {
   useUserColorTheme
 } from '@/hooks/useThemeStyle'
 
+import ArrowPrevDark from '@/img/dark/arrow_down_dark.svg'
+import ArrowPrevLight from '@/img/light/arrow_down_light.svg'
 import { List } from '@/stories/List/List'
 import { ListItem } from '@/stories/List/ListItem'
 import { Menu, MenuContext } from '@/stories/Menu/Menu'
-
-import ArrowPrevDark from '@/img/dark/arrow_down_dark.svg'
-import ArrowPrevLight from '@/img/light/arrow_down_light.svg'
 
 export const UserMenu = () => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
@@ -248,7 +247,7 @@ const LightDarkModeChange = () => {
   )
 }
 
-const OthersContents = ({ openContent, setOpenContent, setTopTitleText }: SettingContent) => {
+const OthersContents = ({ openContent }: SettingContent) => {
   const { t } = useTranslation()
   const theme = useTheme()
   const colorTheme = theme.palette.mode

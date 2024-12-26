@@ -1,5 +1,7 @@
 import { useTheme } from '@mui/material'
 
+import { fireOnEnterKey } from '@/lib/utils'
+
 import styles from './Checkbox.module.scss'
 
 export type CheckboxProps = {
@@ -23,16 +25,18 @@ export const Checkbox = ({
   const theme = useTheme()
   const color = colorTheme ? colorTheme : theme.palette.mode
 
+  const handleChange = () => {
+    onChange(!isChecked)
+  }
+
   return (
-    <label
+    <div
       className={styles['BTW_checkbox-wrap']}
+      role="checkbox"
       tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter') {
-          onChange(!isChecked)
-          e.preventDefault()
-        }
-      }}>
+      aria-label="checkbox"
+      aria-checked={isChecked}
+      onKeyDown={fireOnEnterKey(handleChange)}>
       <label
         className={`
         ${styles[`BTW_checkbox-${color}`]}
@@ -42,14 +46,14 @@ export const Checkbox = ({
         ${className}`}>
         <input
           type="checkbox"
-          role="checkbox"
           checked={isChecked}
           disabled={disabled}
+          onKeyDown={fireOnEnterKey(handleChange)}
           onChange={() => onChange(!isChecked)}
           aria-checked={isChecked}
           {...inputProps}
         />
       </label>
-    </label>
+    </div>
   )
 }

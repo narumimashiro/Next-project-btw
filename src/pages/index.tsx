@@ -7,6 +7,7 @@ import styles from '@/styles/Home.module.scss'
 import { useCustomContext } from '@/components/customProvider'
 import Meta from '@/components/meta'
 import { useRedirectUrl } from '@/hooks/redirectUrl'
+import { fireOnEnterKey } from '@/lib/utils'
 
 const Home = () => {
   const { t } = useTranslation()
@@ -39,7 +40,12 @@ const Home = () => {
       {
         // tap to top
         dispToTop && (
-          <div className={styles.tapToTop} onClick={redirectToTop}>
+          <div
+            className={styles.tapToTop}
+            onClick={redirectToTop}
+            onKeyDown={fireOnEnterKey(redirectToTop)}
+            role="button"
+            tabIndex={0}>
             <p className={`absolute-center ${isPortrait ? 'text-sm' : 'text-base'}`}>
               {isPortrait ? t('STRID_tap_to_top') : t('STRID_click_to_top')}
             </p>

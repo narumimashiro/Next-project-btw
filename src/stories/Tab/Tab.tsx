@@ -2,8 +2,8 @@ import { Grid, useTheme } from '@mui/material'
 
 import styles from './Tab.module.scss'
 
-const UNDERLINE = 'underline'
-const STICKY_NOTE = 'sticky_note'
+export const UNDERLINE = 'underline'
+export const STICKY_NOTE = 'sticky_note'
 export type TabVariant = typeof UNDERLINE | typeof STICKY_NOTE
 
 export type TabsProps = {
