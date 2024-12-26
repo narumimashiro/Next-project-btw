@@ -69,7 +69,7 @@
         "pathGroupsExcludedImportTypes": ["builtin"],
         "pathGroups": [
           {
-            "pattern": "{react,recoil,next/**}",
+            "pattern": "{react,recoil,next,next/**}",
             "group": "external",
             "position": "before"
           },
