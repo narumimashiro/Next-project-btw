@@ -1,5 +1,6 @@
-import { TypewriterText, TypewriterTextProps } from './TypewriterText'
+import { TypewriterText } from './TypewriterText'
 
+import type { TypewriterTextProps } from './TypewriterText'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {

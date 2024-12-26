@@ -1,5 +1,6 @@
-import { MarqueeText, MarqueeTextProps } from './MarqueeText'
+import { MarqueeText } from './MarqueeText'
 
+import type { MarqueeTextProps } from './MarqueeText'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {

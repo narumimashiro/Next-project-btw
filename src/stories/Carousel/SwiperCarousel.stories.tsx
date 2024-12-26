@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { SwiperCarousel, SwiperCarouselProps } from './SwiperCarousel'
+import { SwiperCarousel } from './SwiperCarousel'
 
+import type { SwiperCarouselProps } from './SwiperCarousel'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {

@@ -1,7 +1,8 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
 
 import Meta from '@/components/meta'
+
+import type { GetStaticPaths, GetStaticProps } from 'next'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { language }: { language: string[] } = require('@/locales/config')

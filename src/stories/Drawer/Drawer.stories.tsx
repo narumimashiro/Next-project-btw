@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 
-import { Drawer, DrawerProps } from './Drawer'
+import { Drawer } from './Drawer'
 
+import type { DrawerProps } from './Drawer'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {

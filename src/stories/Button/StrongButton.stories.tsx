@@ -1,5 +1,6 @@
-import { StrongButton, StrongButtonProps } from './StrongButton'
+import { StrongButton } from './StrongButton'
 
+import type { StrongButtonProps } from './StrongButton'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {

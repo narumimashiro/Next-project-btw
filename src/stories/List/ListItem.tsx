@@ -65,8 +65,8 @@ export const ListItem = ({ colorTheme, children, text, icon, onClick }: ListItem
       tabIndex={0}
       onKeyDown={fireOnEnterKey(onClick)}
       role="button">
-      {icon && <div className={styles.BTW_listIcon}>{icon}</div>}
-      {text && <BodyText>{text}</BodyText>}
+      {icon ? <div className={styles.BTW_listIcon}>{icon}</div> : null}
+      {text ? <BodyText>{text}</BodyText> : null}
       {children}
     </div>
   )

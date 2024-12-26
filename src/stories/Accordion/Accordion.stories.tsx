@@ -1,5 +1,6 @@
-import { Accordion, AccordionProps } from './Accordion'
+import { Accordion } from './Accordion'
 
+import type { AccordionProps } from './Accordion'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {

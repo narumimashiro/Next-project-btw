@@ -1,5 +1,6 @@
-import { AccordionMenuList, AccordionMenuListProps } from './AccordionMenuList'
+import { AccordionMenuList } from './AccordionMenuList'
 
+import type { AccordionMenuListProps } from './AccordionMenuList'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {

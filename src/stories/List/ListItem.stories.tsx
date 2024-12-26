@@ -1,8 +1,9 @@
 import AndroidIcon from '@mui/icons-material/Android'
 import AppleIcon from '@mui/icons-material/Apple'
 
-import { ListItem, ListItemProps } from './ListItem'
+import { ListItem } from './ListItem'
 
+import type { ListItemProps } from './ListItem'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {

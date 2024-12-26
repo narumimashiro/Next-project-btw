@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 
-import { API_STATUS, ApiStatusType } from '@/hooks/useApiStatus'
+import type { ApiStatusType } from '@/hooks/useApiStatus'
+import { API_STATUS } from '@/hooks/useApiStatus'
 
-import { ApiFetchDialog, ApiFetchDialogProps } from './ApiFetchDialog'
+import { ApiFetchDialog } from './ApiFetchDialog'
 
+import type { ApiFetchDialogProps } from './ApiFetchDialog'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {

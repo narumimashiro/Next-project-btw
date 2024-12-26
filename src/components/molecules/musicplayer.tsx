@@ -11,7 +11,8 @@ import { Box, IconButton } from '@mui/material'
 
 import styles from '@/styles/molecules/MusicPlayer.module.scss'
 
-import { YoutubeViewer, YoutubeViewerProps } from '@/components/atom/youtubeViewer'
+import type { YoutubeViewerProps } from '@/components/atom/youtubeViewer'
+import { YoutubeViewer } from '@/components/atom/youtubeViewer'
 import { useCurrentTime } from '@/hooks/useCurrentTime'
 
 type MusicPlayerProps = {

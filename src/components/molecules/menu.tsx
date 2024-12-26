@@ -16,13 +16,8 @@ import {
   WebHorizon
 } from '@/components/atom/componentsTemplate'
 import { useLocaleSlug, useRouterLocale } from '@/hooks/useLocaleSlug'
-import {
-  ColorTheme,
-  CUSTOM_MODE,
-  DARK_MODE,
-  LIGHT_MODE,
-  useUserColorTheme
-} from '@/hooks/useThemeStyle'
+import type { ColorTheme } from '@/hooks/useThemeStyle'
+import { CUSTOM_MODE, DARK_MODE, LIGHT_MODE, useUserColorTheme } from '@/hooks/useThemeStyle'
 
 import ArrowPrevDark from '@/img/dark/arrow_down_dark.svg'
 import ArrowPrevLight from '@/img/light/arrow_down_light.svg'

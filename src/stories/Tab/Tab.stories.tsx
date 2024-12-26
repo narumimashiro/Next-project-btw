@@ -4,8 +4,9 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import PianoIcon from '@mui/icons-material/Piano'
 import UmbrellaIcon from '@mui/icons-material/Umbrella'
 
-import { Tabs, TabsProps, TabPanel } from './Tab'
+import { Tabs, TabPanel } from './Tab'
 
+import type { TabsProps } from './Tab'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {

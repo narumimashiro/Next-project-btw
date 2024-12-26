@@ -55,7 +55,7 @@ export const TextField = ({
           onChange={handleInputChange}
           value={inputValue}
         />
-        {clearButton && (
+        {clearButton ? (
           <button
             className={`${styles.BTW_clearBtn} ${styles[color]}`}
             onClick={clearInputText}
@@ -63,9 +63,9 @@ export const TextField = ({
             aria-labelledby="clear_text">
             <img src={color === 'light' ? clearLight.src : clearDark.src} alt="" />
           </button>
-        )}
+        ) : null}
       </div>
-      {isError && <p className={styles.BTW_errorText}>{errorString}</p>}
+      {isError ? <p className={styles.BTW_errorText}>{errorString}</p> : null}
     </div>
   )
 }

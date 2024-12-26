@@ -1,5 +1,6 @@
-import { OutlineText, OutlineTextProps } from './OutlineText'
+import { OutlineText } from './OutlineText'
 
+import type { OutlineTextProps } from './OutlineText'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {

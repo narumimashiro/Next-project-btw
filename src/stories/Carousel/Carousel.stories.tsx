@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { Carousel, CarouselProps } from './Carousel'
+import { Carousel } from './Carousel'
 
+import type { CarouselProps } from './Carousel'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {

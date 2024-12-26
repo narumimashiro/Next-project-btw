@@ -39,7 +39,7 @@ const Home = () => {
       <p>すぐにプロジェクトを開始できます！</p>
       {
         // tap to top
-        dispToTop && (
+        dispToTop ? (
           <div
             className={styles.tapToTop}
             onClick={redirectToTop}
@@ -50,7 +50,7 @@ const Home = () => {
               {isPortrait ? t('STRID_tap_to_top') : t('STRID_click_to_top')}
             </p>
           </div>
-        )
+        ) : null
       }
     </>
   )

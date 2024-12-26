@@ -1,5 +1,6 @@
-import { TextField, TextFieldProps } from './TextField'
+import { TextField } from './TextField'
 
+import type { TextFieldProps } from './TextField'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {

@@ -1,5 +1,6 @@
-import { TextLink, TextLinkProps } from './TextLink'
+import { TextLink } from './TextLink'
 
+import type { TextLinkProps } from './TextLink'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {

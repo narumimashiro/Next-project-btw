@@ -1,5 +1,6 @@
-import { BasicButton, BasicButtonProps } from './BasicButton'
+import { BasicButton } from './BasicButton'
 
+import type { BasicButtonProps } from './BasicButton'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {

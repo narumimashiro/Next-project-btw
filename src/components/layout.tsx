@@ -21,7 +21,7 @@ export const LayoutWithMenu = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <AdoLayout>
-      {isMenuVisible && <UserMenu />}
+      {isMenuVisible ? <UserMenu /> : null}
       {children}
     </AdoLayout>
   )

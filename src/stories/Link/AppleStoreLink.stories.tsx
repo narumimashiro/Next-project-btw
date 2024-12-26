@@ -1,5 +1,6 @@
-import { AppleStoreLink, AppleStoreLinkProps } from './AppleStoreLink'
+import { AppleStoreLink } from './AppleStoreLink'
 
+import type { AppleStoreLinkProps } from './AppleStoreLink'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
