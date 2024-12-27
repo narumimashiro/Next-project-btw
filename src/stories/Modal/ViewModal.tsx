@@ -1,10 +1,12 @@
 import { useMemo } from 'react'
+
 import { useTheme } from '@mui/material'
 
-import clearLight from '@/img/light/clear.svg'
-import clearDark from '@/img/dark/clear.svg'
-
 import { useCustomContext } from '@/components/customProvider'
+
+import clearDark from '@/img/dark/clear.svg'
+import clearLight from '@/img/light/clear.svg'
+
 import styles from './ViewModal.module.scss'
 
 export type ViewModalProps = {

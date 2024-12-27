@@ -1,8 +1,9 @@
 const i18n = require('i18next')
 const { initReactI18next } = require('react-i18next')
+
 // import language json files
-const t_ja = require('./i18n/ja.json')
 const t_en = require('./i18n/en.json')
+const t_ja = require('./i18n/ja.json')
 
 const language = [
   'ja-jp', // default

@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import { TextLink } from './TextLink'
 
-import { TextLink, TextLinkProps } from './TextLink'
+import type { TextLinkProps } from './TextLink'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'BTW-Custom/TextLink',

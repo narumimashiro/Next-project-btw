@@ -1,11 +1,13 @@
 import { useState } from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
 
-import UmbrellaIcon from '@mui/icons-material/Umbrella'
-import PianoIcon from '@mui/icons-material/Piano'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
+import PianoIcon from '@mui/icons-material/Piano'
+import UmbrellaIcon from '@mui/icons-material/Umbrella'
 
-import { Tabs, TabsProps, TabPanel } from './Tab'
+import { Tabs, TabPanel } from './Tab'
+
+import type { TabsProps } from './Tab'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'BTW-Custom/Tab',
@@ -40,10 +42,10 @@ const TemplateStory: Story = {
         <TabPanel value={selectTab} tabIndex={0}>
           <div style={{ textAlign: 'center' }}>Tab1</div>
         </TabPanel>
-        <TabPanel value={selectTab} tabIndex={1}>
+        <TabPanel value={selectTab} tabIndex={0}>
           <div style={{ textAlign: 'center' }}>Tab2</div>
         </TabPanel>
-        <TabPanel value={selectTab} tabIndex={2}>
+        <TabPanel value={selectTab} tabIndex={0}>
           <div style={{ textAlign: 'center' }}>Tab3</div>
         </TabPanel>
       </>

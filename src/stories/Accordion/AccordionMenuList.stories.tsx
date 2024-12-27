@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import { AccordionMenuList } from './AccordionMenuList'
 
-import { AccordionMenuList, AccordionMenuListProps } from './AccordionMenuList'
+import type { AccordionMenuListProps } from './AccordionMenuList'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'BTW-Custom/AccordionMenuList',

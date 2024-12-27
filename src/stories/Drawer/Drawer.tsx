@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+
 import { useTheme } from '@mui/material'
 
 import styles from './Drawer.module.scss'
@@ -32,6 +33,7 @@ export const Drawer = ({ open, children, colorTheme, pos = 'right', onClose }: D
         <div
           className={`${styles[`BTW_overlay-${color}`]} ${open ? styles.BTW_open : ''}`}
           onClick={onClose}
+          aria-hidden="true"
         />
         <div
           className={`${styles[`BTW_wrap-drawer-${pos}`]} ${styles[color]} ${open ? styles.BTW_open : ''}`}>

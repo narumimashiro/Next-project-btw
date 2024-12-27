@@ -1,8 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { useState } from 'react'
 
-import { QuizQuickBuzzerText, QuizQuickBuzzerTextProps } from './QuizQuickBuzzerText'
+import { QuizQuickBuzzerText } from './QuizQuickBuzzerText'
 import { BasicButton } from '../Button/BasicButton'
+
+import type { QuizQuickBuzzerTextProps } from './QuizQuickBuzzerText'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'BTW-Custom/QuizQuickBuzzerText',

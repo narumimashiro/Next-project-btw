@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react'
+
 import { useTheme } from '@mui/material'
 
 import { useInnerSize } from '@/hooks/useWindowSize'
@@ -52,11 +53,13 @@ export const Menu = ({ children, colorTheme, anchorEl, handleReleaseAnchor }: Me
     <MenuContext.Provider value={propsValue}>
       <div
         className={`${styles.BTW_fullScreen} ${anchorEl ? styles.BTW_visible : styles.BTW_hidden}`}
-        onClick={onCloseMenu}>
+        onClick={onCloseMenu}
+        aria-hidden="true">
         <div
           className={`invisible-scroll ${styles.BTW_container} ${styles[color]}`}
           style={containerPos}
-          onClick={(e) => e.stopPropagation()}>
+          onClick={(e) => e.stopPropagation()}
+          aria-hidden="true">
           {children}
         </div>
       </div>

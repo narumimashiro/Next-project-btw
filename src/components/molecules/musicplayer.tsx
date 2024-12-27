@@ -1,17 +1,19 @@
 import { useEffect, useState } from 'react'
 
-import PlayArrowIcon from '@mui/icons-material/PlayArrow'
-import SkipPreviousIcon from '@mui/icons-material/SkipPrevious'
-import SkipNextIcon from '@mui/icons-material/SkipNext'
-import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt'
-import BatteryFullIcon from '@mui/icons-material/BatteryFull'
 import Battery4BarIcon from '@mui/icons-material/Battery4Bar'
 import BatteryCharging20Icon from '@mui/icons-material/BatteryCharging20'
+import BatteryFullIcon from '@mui/icons-material/BatteryFull'
+import PlayArrowIcon from '@mui/icons-material/PlayArrow'
+import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt'
+import SkipNextIcon from '@mui/icons-material/SkipNext'
+import SkipPreviousIcon from '@mui/icons-material/SkipPrevious'
 import { Box, IconButton } from '@mui/material'
-import { useCurrentTime } from '@/hooks/useCurrentTime'
-import { YoutubeViewer, YoutubeViewerProps } from '@/components/atom/youtubeViewer'
 
 import styles from '@/styles/molecules/MusicPlayer.module.scss'
+
+import type { YoutubeViewerProps } from '@/components/atom/youtubeViewer'
+import { YoutubeViewer } from '@/components/atom/youtubeViewer'
+import { useCurrentTime } from '@/hooks/useCurrentTime'
 
 type MusicPlayerProps = {
   children: React.ReactNode

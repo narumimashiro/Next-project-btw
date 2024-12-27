@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import { Slider } from './Slider'
 
-import { Slider, SliderProps } from './Slider'
+import type { SliderProps } from './Slider'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'BTW-Custom/Slider',

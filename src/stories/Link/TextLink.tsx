@@ -1,4 +1,5 @@
 import Link from 'next/link'
+
 import { useTheme } from '@mui/material'
 
 import styles from './TextLink.module.scss'

@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import { TextArea } from './TextArea'
 
-import { TextArea, TextAreaProps } from './TextArea'
+import type { TextAreaProps } from './TextArea'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'BTW-Custom/TextArea',

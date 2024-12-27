@@ -1,7 +1,9 @@
 import { useRef } from 'react'
+
 import { useTheme } from '@mui/material'
 
 import { BodyText } from '@/components/atom/componentsTemplate'
+import { fireOnEnterKey } from '@/lib/utils'
 
 import styles from './ListItem.module.scss'
 
@@ -30,8 +32,8 @@ export const ListItem = ({ colorTheme, children, text, icon, onClick }: ListItem
       listItemButton?.clientHeight as number
     )
 
-    const clientX = 'clientX' in event ? event.clientX : event.touches[0].clientX
-    const clientY = 'clientY' in event ? event.clientY : event.touches[0].clientY
+    const clientX = 'clientX' in event ? event.clientX : event.touches[0]?.clientX
+    const clientY = 'clientY' in event ? event.clientY : event.touches[0]?.clientY
     const x = clientX - rect.left - size / 2
     const y = clientY - rect.top - size / 2
 
@@ -61,9 +63,10 @@ export const ListItem = ({ colorTheme, children, text, icon, onClick }: ListItem
       onMouseDown={createRipple}
       onTouchStart={createRipple}
       tabIndex={0}
+      onKeyDown={fireOnEnterKey(onClick)}
       role="button">
-      {icon && <div className={styles.BTW_listIcon}>{icon}</div>}
-      {text && <BodyText>{text}</BodyText>}
+      {icon ? <div className={styles.BTW_listIcon}>{icon}</div> : null}
+      {text ? <BodyText>{text}</BodyText> : null}
       {children}
     </div>
   )

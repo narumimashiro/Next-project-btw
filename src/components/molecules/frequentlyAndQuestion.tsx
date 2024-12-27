@@ -1,8 +1,10 @@
 import { useTheme } from '@mui/material'
 import { useTranslation } from 'next-i18next'
-import { Accordion } from '@/stories/Accordion/Accordion'
 
 import styles from '@/styles/molecules/FrequentlyAndQuestion.module.scss'
+
+import { Accordion } from '@/stories/Accordion/Accordion'
+
 import { useCustomContext } from '../customProvider'
 
 type FaqType = { summary: string; details: string[] }

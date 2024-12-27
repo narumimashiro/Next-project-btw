@@ -1,14 +1,15 @@
 import React from 'react'
-import { useTheme } from '@mui/material'
 
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { useTheme } from '@mui/material'
 import { Pagination, Autoplay } from 'swiper/modules'
-import { SwiperModule } from 'swiper/types'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+import styles from './SwiperCarousel.module.scss'
+
+import type { SwiperModule } from 'swiper/types'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
-
-import styles from './SwiperCarousel.module.scss'
 
 export type CarouselSize = 'wide' | 'normal' | 'single'
 

@@ -1,4 +1,5 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
+import type { GetStaticPaths, GetStaticProps } from 'next'
+
 import { useTranslation } from 'next-i18next'
 
 // MyComponents
@@ -6,7 +7,7 @@ import Meta from '@/components/meta'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { language }: { language: string[] } = require('@/locales/config')
-  const paths = language.map(locale => ({
+  const paths = language.map((locale) => ({
     params: { locale_slug: locale }
   }))
 
@@ -27,7 +28,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 const MainPage = () => {
-
   const { t } = useTranslation()
 
   return (

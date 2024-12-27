@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import { useTheme, Slider as MuiSlider } from '@mui/material'
 
 export type SliderProps = {
@@ -26,7 +27,7 @@ export const Slider = ({
   const color = colorTheme ? colorTheme : theme
   const isDark = color === 'dark'
   const customTheme = {
-    color: isDark ? '#ffffff' : '#000000',
+    'color': isDark ? '#ffffff' : '#000000',
     '& .MuiSlider-thumb': {
       '&:hover, &.Mui-focusVisible': {
         boxShadow: `0px 0px 0px 6px ${isDark ? 'rgba(255, 255, 255, 0.39)' : 'rgba(0, 0, 0, 0.25)'}`
