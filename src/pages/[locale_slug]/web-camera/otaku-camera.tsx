@@ -1,11 +1,13 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
+import type { GetStaticPaths, GetStaticProps } from 'next'
 import { useEffect, useMemo, useRef, useState } from 'react'
+
 import { useTheme } from '@mui/material'
 import { useTranslation } from 'next-i18next'
 
-import Meta from '@/components/meta'
-import { isMobileDevice } from '@/lib/isMobileDevice'
+import styles from '@/styles/WebCamera.module.scss'
+
 import { BodyText } from '@/components/atom/componentsTemplate'
+import Meta from '@/components/meta'
 import { UrlCopyButton } from '@/components/molecules/urlCopyButton'
 import {
   CharacterList,
@@ -13,11 +15,11 @@ import {
   SelectAnimeDrawerMenu,
   SelectorCharacter
 } from '@/components/organisms/webCameraComponents'
+import { isMobileDevice } from '@/lib/isMobileDevice'
 
-import styles from '@/styles/WebCamera.module.scss'
+import { StrongButton } from '@/stories/Button/StrongButton'
 import { ViewModal } from '@/stories/Modal/ViewModal'
 import { Toast } from '@/stories/Toast/Toast'
-import { StrongButton } from '@/stories/Button/StrongButton'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { language }: { language: string[] } = require('@/locales/config')
@@ -86,7 +88,7 @@ const WebCamera = ({ characterGroup }: WebcameraProps) => {
             videoRef.current.play()
           }
         })
-        .catch((err) => {
+        .catch(() => {
           setOpenToast(true)
         })
     }
@@ -170,6 +172,7 @@ const WebCamera = ({ characterGroup }: WebcameraProps) => {
   return (
     <>
       <div className={styles.container}>
+        {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
         <video ref={videoRef} className={styles.camera} autoPlay playsInline />
         <img ref={imgRef} className={styles.image} src={charaImage} alt="" />
         <div className={styles.camerafunction}>

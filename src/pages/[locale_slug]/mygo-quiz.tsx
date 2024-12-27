@@ -1,26 +1,16 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
-import { useTranslation } from 'next-i18next'
+import type { GetStaticPaths, GetStaticProps } from 'next'
 import React, { useEffect, useMemo, useState } from 'react'
+import { useRecoilValue } from 'recoil'
 
 import { useTheme } from '@mui/material'
-import { useRecoilValue } from 'recoil'
+import { useTranslation } from 'next-i18next'
+
 import styles from '@/styles/MygoQuiz.module.scss'
 
+import { AnnotationText, BodyText, HeadlineText } from '@/components/atom/componentsTemplate'
+import { useCustomContext } from '@/components/customProvider'
 import Meta from '@/components/meta'
 import { PageTemplateWithHeader } from '@/components/molecules/pageComponents'
-import { TabPanel, Tabs } from '@/stories/Tab/Tab'
-import { AnnotationText, BodyText, HeadlineText } from '@/components/atom/componentsTemplate'
-import { StrongButton } from '@/stories/Button/StrongButton'
-import { useCustomContext } from '@/components/customProvider'
-import {
-  GetMygoMusicInformationApi,
-  MygoMusicInformationState,
-  MygoMusicInformationType
-} from '@/recoil/services/getMygoMusicInformation'
-import { useLocaleSlug } from '@/hooks/useLocaleSlug'
-import { API_STATUS } from '@/hooks/useApiStatus'
-import { TextField } from '@/stories/TextField/TextField'
-import { Accordion } from '@/stories/Accordion/Accordion'
 import {
   CountdownQuizStart,
   MygoLinksInfo,
@@ -28,8 +18,20 @@ import {
   MygoQuizCardGallery,
   QuizMygo
 } from '@/components/organisms/mygoComponents'
-import { GetMygoQuizListApi, MygoQuizListState } from '@/recoil/services/getMygoQuizList'
+import { API_STATUS } from '@/hooks/useApiStatus'
+import { useLocaleSlug } from '@/hooks/useLocaleSlug'
 import { shuffleList } from '@/lib/utils'
+import {
+  GetMygoMusicInformationApi,
+  MygoMusicInformationState
+} from '@/recoil/services/getMygoMusicInformation'
+import type { MygoMusicInformationType } from '@/recoil/services/getMygoMusicInformation'
+import { GetMygoQuizListApi, MygoQuizListState } from '@/recoil/services/getMygoQuizList'
+
+import { Accordion } from '@/stories/Accordion/Accordion'
+import { StrongButton } from '@/stories/Button/StrongButton'
+import { TabPanel, Tabs } from '@/stories/Tab/Tab'
+import { TextField } from '@/stories/TextField/TextField'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { language }: { language: string[] } = require('@/locales/config')

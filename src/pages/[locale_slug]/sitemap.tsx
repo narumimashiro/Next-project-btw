@@ -2,14 +2,15 @@ import type { GetStaticPaths, GetStaticProps } from 'next'
 
 import { useTranslation } from 'next-i18next'
 
-import Meta from '@/components/meta'
-import { useCustomContext } from '@/components/customProvider'
+import styles from '@/styles/Sitemap.module.scss'
+
 import { HeadlineText, SubTitleText } from '@/components/atom/componentsTemplate'
+import { useCustomContext } from '@/components/customProvider'
+import Meta from '@/components/meta'
 import { useLocaleSlug } from '@/hooks/useLocaleSlug'
 import { useManageMenuHidden } from '@/recoil/manageMenu'
-import { TextLink } from '@/stories/Link/TextLink'
 
-import styles from '@/styles/Sitemap.module.scss'
+import { TextLink } from '@/stories/Link/TextLink'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { language }: { language: string[] } = require('@/locales/config')

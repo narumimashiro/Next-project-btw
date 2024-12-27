@@ -1,7 +1,8 @@
-import { atom, useResetRecoilState, useSetRecoilState } from 'recoil'
 import { useEffect } from 'react'
+import { atom, useResetRecoilState, useSetRecoilState } from 'recoil'
 
-import { API_STATUS, ApiStatusType, useApiStatus } from '@/hooks/useApiStatus'
+import type { ApiStatusType } from '@/hooks/useApiStatus'
+import { API_STATUS, useApiStatus } from '@/hooks/useApiStatus'
 
 export type JudgePoint = {
   additional_point: number

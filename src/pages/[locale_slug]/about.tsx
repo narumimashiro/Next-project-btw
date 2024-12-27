@@ -1,11 +1,12 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
+import type { GetStaticPaths, GetStaticProps } from 'next'
+
 import { useTranslation } from 'next-i18next'
 
 import styles from '@/styles/About.module.scss'
 
 import Meta from '@/components/meta'
-import { PageTemplateWithHeader } from '@/components/molecules/pageComponents'
 import { FrequentlyAndQuestion } from '@/components/molecules/frequentlyAndQuestion'
+import { PageTemplateWithHeader } from '@/components/molecules/pageComponents'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { language }: { language: string[] } = require('@/locales/config')

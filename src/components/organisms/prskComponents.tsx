@@ -3,19 +3,18 @@ import { useState, useEffect, useMemo } from 'react'
 import { useRecoilState, useSetRecoilState } from 'recoil'
 
 import { Grid, useTheme } from '@mui/material'
-
 import { useTranslation } from 'next-i18next'
+
 import styles from '@/styles/organisms/PrskComponents.module.scss'
 
-import {
-  CurrentSongsInfoState,
-  ProjectSekaiSongsInfo
-} from '@/recoil/services/getProjectSekaiSongs'
-import { Slider } from '@/stories/Slider/Slider'
 import { BodyText } from '@/components/atom/componentsTemplate'
 import { useCustomContext } from '@/components/customProvider'
 import { MusicPlayer } from '@/components/molecules/musicplayer'
+import { CurrentSongsInfoState } from '@/recoil/services/getProjectSekaiSongs'
+import type { ProjectSekaiSongsInfo } from '@/recoil/services/getProjectSekaiSongs'
+
 import { ListItem } from '@/stories/List/ListItem'
+import { Slider } from '@/stories/Slider/Slider'
 
 const ALL = 'All'
 const VIRTUALSINGER = 'VirtualSinger'
@@ -43,7 +42,7 @@ export const PrskMusicList = ({ musicList, onOpenSmartphone }: PrskMusicListProp
     setSelectedUnit(unit)
 
     if (ALL === unit) {
-      setCurrentMusicList((pre) => {
+      setCurrentMusicList(() => {
         return {
           currenSongIndex: 0,
           currentList: musicList
@@ -51,7 +50,7 @@ export const PrskMusicList = ({ musicList, onOpenSmartphone }: PrskMusicListProp
       })
     } else {
       const currentList = musicList.filter((music) => music.id === unit)
-      setCurrentMusicList((pre) => {
+      setCurrentMusicList(() => {
         return {
           currenSongIndex: 0,
           currentList: currentList
@@ -320,7 +319,7 @@ export const PrskMusicPlayer = ({
   const vocalPName = useMemo(() => prskMusicInfo?.artist_name || '', [prskMusicInfo])
 
   const selectTypeSliderInfo = useMemo(() => {
-    let resLabelList: { label: string; ytSrc: string }[] = []
+    const resLabelList: { label: string; ytSrc: string }[] = []
     if (prskMusicInfo?.youtube_src.original !== '') {
       resLabelList.push({
         label: t('STRID_prsk_slider_label_original'),

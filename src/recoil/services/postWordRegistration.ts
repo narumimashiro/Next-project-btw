@@ -1,7 +1,8 @@
-import { atom, useResetRecoilState, useSetRecoilState } from 'recoil'
 import { useEffect } from 'react'
+import { atom, useResetRecoilState, useSetRecoilState } from 'recoil'
 
-import { API_STATUS, ApiStatusType, useApiStatus } from '@/hooks/useApiStatus'
+import type { ApiStatusType } from '@/hooks/useApiStatus'
+import { API_STATUS, useApiStatus } from '@/hooks/useApiStatus'
 import { GetAlyaWordListApi } from '@/recoil/services/getAlyaWordList'
 
 const WORDLIST_API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/wordRegistration/`

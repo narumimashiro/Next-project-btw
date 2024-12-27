@@ -1,18 +1,21 @@
 import Image from 'next/image'
 import React, { useEffect, useMemo, useRef, useState } from 'react'
+
 import { Card, useTheme } from '@mui/material'
 import { useTranslation } from 'next-i18next'
 
 import styles from '@/styles/organisms/MygoComponents.module.scss'
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
-import { MygoQuizListType } from '@/recoil/services/getMygoQuizList'
-import { QuizQuickBuzzerText } from '@/stories/Text/QuizQuickBuzzerText'
-import { StrongButton } from '@/stories/Button/StrongButton'
-import { TextField } from '@/stories/TextField/TextField'
-import Correct from '@/img/correct.svg'
-import Incorrect from '@/img/incorrect.svg'
+
 import { HeadlineText } from '@/components/atom/componentsTemplate'
 import { useCustomContext } from '@/components/customProvider'
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
+import type { MygoQuizListType } from '@/recoil/services/getMygoQuizList'
+
+import Correct from '@/img/correct.svg'
+import Incorrect from '@/img/incorrect.svg'
+import { StrongButton } from '@/stories/Button/StrongButton'
+import { QuizQuickBuzzerText } from '@/stories/Text/QuizQuickBuzzerText'
+import { TextField } from '@/stories/TextField/TextField'
 
 export const MygoLinksInfo = ({
   officialLink,

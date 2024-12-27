@@ -1,15 +1,17 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
+import type { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
+
 import { useTranslation } from 'next-i18next'
 
+import styles from '@/styles/WebCamera.module.scss'
+
+import { BodyText, HeadlineText } from '@/components/atom/componentsTemplate'
 import Meta from '@/components/meta'
 import { PageTemplateWithHeader } from '@/components/molecules/pageComponents'
-import { isMobileDevice } from '@/lib/isMobileDevice'
-import { BodyText, HeadlineText } from '@/components/atom/componentsTemplate'
-import { StrongButton } from '@/stories/Button/StrongButton'
 import { UrlCopyButton } from '@/components/molecules/urlCopyButton'
+import { isMobileDevice } from '@/lib/isMobileDevice'
 
-import styles from '@/styles/WebCamera.module.scss'
+import { StrongButton } from '@/stories/Button/StrongButton'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { language }: { language: string[] } = require('@/locales/config')

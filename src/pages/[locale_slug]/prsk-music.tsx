@@ -1,11 +1,15 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
-import { useTranslation } from 'next-i18next'
+import type { GetStaticPaths, GetStaticProps } from 'next'
 import React, { useEffect, useState } from 'react'
 import { useRecoilValue } from 'recoil'
 
 import { Grid, useTheme } from '@mui/material'
+import { useTranslation } from 'next-i18next'
+
 import styles from '@/styles/PrskMusic.module.scss'
 
+import Loading from '@/components/atom/loading'
+import { YoutubeViewer } from '@/components/atom/youtubeViewer'
+import { useCustomContext } from '@/components/customProvider'
 import Meta from '@/components/meta'
 import { PageTemplateWithHeader } from '@/components/molecules/pageComponents'
 import {
@@ -13,17 +17,15 @@ import {
   PrskMusicList,
   PrskMusicPlayer
 } from '@/components/organisms/prskComponents'
+import { API_STATUS } from '@/hooks/useApiStatus'
 import {
   GetProjectSekaiSongsApi,
   ProjectSekaiSongsState
 } from '@/recoil/services/getProjectSekaiSongs'
-import { API_STATUS } from '@/hooks/useApiStatus'
-import Loading from '@/components/atom/loading'
-import { useCustomContext } from '@/components/customProvider'
+
 import { Drawer } from '@/stories/Drawer/Drawer'
-import { OutlineText } from '@/stories/Text/OutlineText'
 import { ViewModal } from '@/stories/Modal/ViewModal'
-import { YoutubeViewer } from '@/components/atom/youtubeViewer'
+import { OutlineText } from '@/stories/Text/OutlineText'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { language }: { language: string[] } = require('@/locales/config')
@@ -142,7 +144,7 @@ const PrskMusic = () => {
           )}
         </>
       </PageTemplateWithHeader>
-      {isPortrait && (
+      {isPortrait ? (
         <>
           <TextDecoration openSmartphone={openSmartphone} />
           <Drawer open={openSmartphone} pos="bottom" onClose={() => setOpenSmartphone(false)}>
@@ -152,7 +154,7 @@ const PrskMusic = () => {
             />
           </Drawer>
         </>
-      )}
+      ) : null}
       <ViewModal open={openViewModal} onClose={closeYoutubeModal} colorTheme={colorTheme}>
         <YoutubeViewer
           width={'100%'}

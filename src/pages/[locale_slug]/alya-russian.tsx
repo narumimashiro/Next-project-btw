@@ -1,34 +1,36 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
+import type { GetStaticPaths, GetStaticProps } from 'next'
 import { useEffect, useState } from 'react'
+import React from 'react'
 import { useRecoilValue } from 'recoil'
+
 import { useTranslation } from 'next-i18next'
 
-import React from 'react'
 import styles from '@/styles/AlyaRussian.module.scss'
 
 import { BodyText } from '@/components/atom/componentsTemplate'
+import Loading from '@/components/atom/loading'
 import { useCustomContext } from '@/components/customProvider'
 import Meta from '@/components/meta'
 import { PageTemplateWithHeader } from '@/components/molecules/pageComponents'
-import { TabPanel, Tabs } from '@/stories/Tab/Tab'
-import {
-  PostGoogleTranslateApi,
-  TranslationDataState
-} from '@/recoil/services/postGoogleTranslate'
-import { AlyaWordListState, GetAlyaWordListApi } from '@/recoil/services/getAlyaWordList'
-import {
-  PostWordRegistrationApi,
-  RegistrationDataState
-} from '@/recoil/services/postWordRegistration'
-import { StrongButton } from '@/stories/Button/StrongButton'
-import { BasicButton } from '@/stories/Button/BasicButton'
 import {
   AlyaTranslationCard,
   AlyaWordListCard,
   UserInputTextArea
 } from '@/components/organisms/alyaComponents'
 import { API_STATUS } from '@/hooks/useApiStatus'
-import Loading from '@/components/atom/loading'
+import { AlyaWordListState, GetAlyaWordListApi } from '@/recoil/services/getAlyaWordList'
+import {
+  PostGoogleTranslateApi,
+  TranslationDataState
+} from '@/recoil/services/postGoogleTranslate'
+import {
+  PostWordRegistrationApi,
+  RegistrationDataState
+} from '@/recoil/services/postWordRegistration'
+
+import { BasicButton } from '@/stories/Button/BasicButton'
+import { StrongButton } from '@/stories/Button/StrongButton'
+import { TabPanel, Tabs } from '@/stories/Tab/Tab'
 import { Toast } from '@/stories/Toast/Toast'
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -104,8 +106,7 @@ const TeachMeAlya = () => {
           onClick={handleRegisterWord}
           className={styles.execButton}
           disabled={
-            !Boolean(translateAlya.translated_text) ||
-            API_STATUS.LOADING === wordRegistrationFetchState
+            !translateAlya.translated_text || API_STATUS.LOADING === wordRegistrationFetchState
           }>
           {t('STRID_alya_register_word_list')}
         </BasicButton>

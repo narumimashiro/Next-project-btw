@@ -1,17 +1,19 @@
 import { useEffect, useState } from 'react'
 import { useRecoilValue } from 'recoil'
+
+import MicIcon from '@mui/icons-material/Mic'
+import { Card, Switch, useTheme } from '@mui/material'
 import { useTranslation } from 'next-i18next'
 
-import { Card, Switch, useTheme } from '@mui/material'
-import MicIcon from '@mui/icons-material/Mic'
 import styles from '@/styles/organisms/AlyaComponents.module.scss'
 
-import { TranslationDataState } from '@/recoil/services/postGoogleTranslate'
-import { TextArea } from '@/stories/TextField/TextArea'
-import { API_STATUS } from '@/hooks/useApiStatus'
-import Loading from '@/components/atom/loading'
 import { AnnotationText, BodyText } from '@/components/atom/componentsTemplate'
+import Loading from '@/components/atom/loading'
+import { API_STATUS } from '@/hooks/useApiStatus'
 import { textToSpeech } from '@/lib/utils'
+import { TranslationDataState } from '@/recoil/services/postGoogleTranslate'
+
+import { TextArea } from '@/stories/TextField/TextArea'
 
 export const UserInputTextArea = ({
   onInputText
@@ -70,11 +72,11 @@ export const AlyaTranslationCard = () => {
             onClick={handleSpeachText}>
             <MicIcon />
           </button>
-          {unsupportSpeach && (
+          {unsupportSpeach ? (
             <AnnotationText className={styles.unsupport}>
               {t('STRID_cmn_unsupport')}
             </AnnotationText>
-          )}
+          ) : null}
         </div>
       </div>
     </Card>
@@ -104,25 +106,25 @@ export const AlyaWordListCard = ({
 
   return (
     <Card className={`${styles.translationCard} mb-16`}>
-      {iconLeft && <img src="/images/alya_icon2.png" alt="" />}
+      {iconLeft ? <img src="/images/alya_icon2.png" alt="" /> : null}
       <div className={styles.translationContainer}>
         <BodyText className={styles.textArea}>
           {selectForeign ? wordForeignLang : wordNativeLang}
         </BodyText>
         <div className={styles.underContents}>
           <div className={styles.readingText}>
-            {selectForeign && (
+            {selectForeign ? (
               <button
                 className={`button-active-${colorTheme} ${styles.micbutton}`}
                 onClick={handleSpeachText}>
                 <MicIcon />
               </button>
-            )}
-            {unsupportSpeach && (
+            ) : null}
+            {unsupportSpeach ? (
               <AnnotationText className={styles.unsupport}>
                 {t('STRID_cmn_unsupport')}
               </AnnotationText>
-            )}
+            ) : null}
           </div>
           <div className="flex-center">
             <Switch
