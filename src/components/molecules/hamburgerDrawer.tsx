@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
+
 import { useTheme } from '@mui/material'
 
 import styles from '@/styles/molecules/HamburgerDrawer.module.scss'
+
+import { fireOnEnterKey } from '@/lib/utils'
+
 import { Drawer } from '@/stories/Drawer/Drawer'
 
 export type HamburgerDrawerProps = {
@@ -12,10 +16,16 @@ export const HamburgerDrawer = ({ children }: HamburgerDrawerProps) => {
   const colorTheme = theme.palette.mode
   const [openMenu, setOpenMenu] = useState(false)
 
+  const closeMenu = () => setOpenMenu(false)
+
   const renderChildrenWithClose = React.Children.map(children, (child) => {
     if (React.isValidElement(child)) {
       return (
-        <div role="button" onClick={() => setOpenMenu(false)}>
+        <div
+          role="button"
+          tabIndex={0}
+          onClick={closeMenu}
+          onKeyDown={fireOnEnterKey(closeMenu)}>
           {child}
         </div>
       )

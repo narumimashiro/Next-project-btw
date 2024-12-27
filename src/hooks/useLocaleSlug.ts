@@ -3,8 +3,8 @@
  * get router query locale
  */
 
-import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { useState, useEffect } from 'react'
 
 export const VALID_LOCALE = ['ja-jp', 'en-us']
 export const I18NEXT_LOCALE = 'i18next_locale'

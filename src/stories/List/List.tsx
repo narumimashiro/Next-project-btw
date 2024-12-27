@@ -17,7 +17,9 @@ export const List = ({ colorTheme, className = '', groupName, children }: ListPr
 
   return (
     <div className={`${styles[`BTW_list-${color}`]} ${className}`}>
-      {groupName && <SubTitleText className={styles.BTW_groupName}>{groupName}</SubTitleText>}
+      {groupName ? (
+        <SubTitleText className={styles.BTW_groupName}>{groupName}</SubTitleText>
+      ) : null}
       {children}
     </div>
   )

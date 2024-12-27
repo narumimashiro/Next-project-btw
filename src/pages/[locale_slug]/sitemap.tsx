@@ -1,4 +1,5 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
+import type { GetStaticPaths, GetStaticProps } from 'next'
+
 import { useTranslation } from 'next-i18next'
 
 import Meta from '@/components/meta'

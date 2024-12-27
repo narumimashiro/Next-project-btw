@@ -1,6 +1,24 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:storybook/recommended"],
-  "plugins": ["import", "unused-imports"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:storybook/recommended",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@next/next/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "plugins": ["import", "unused-imports", "jsx-a11y", "react"],
   "rules": {
     "no-unused-expressions": "error",
     "no-empty": [
@@ -12,54 +30,67 @@
     "no-console": "error",
     "no-debugger": "error",
     "no-alert": "error",
+    "prefer-const": ["error"],
     "no-unused-vars": ["warn", { "args": "none" }],
     "no-multiple-empty-lines": ["error", { "max": 1 }],
     "@next/next/no-img-element": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-no-leaked-render": ["error", { "validStrategies": ["ternary", "coerce"] }],
+    "jsx-a11y/no-autofocus": ["error", { "ignoreNonDOM": true }],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ],
+    "@typescript-eslint/no-require-imports": "off",
+    "@typescript-eslint/consistent-type-imports": ["error", { "prefer": "type-imports" }],
+    "@typescript-eslint/no-explicit-any": "error",
     "unused-imports/no-unused-imports": "error",
     "import/order": [
       "error",
       {
-        "groups": ["builtin", "external", "internal"],
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling"],
+          "type",
+          "index",
+          "object"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "pathGroupsExcludedImportTypes": ["builtin"],
         "pathGroups": [
           {
-            "pattern": "next/**",
+            "pattern": "{react,recoil,next,next/**}",
             "group": "external",
             "position": "before"
           },
           {
-            "pattern": "react",
-            "group": "external",
-            "position": "before"
-          },
-          {
-            "pattern": "recoil",
-            "group": "external",
-            "position": "before"
-          },
-          {
-            "pattern": "@mui/**",
-            "group": "external",
-            "position": "before"
+            "pattern": "{next-i18next,@mui/**,material-ui}",
+            "group": "external"
           },
           {
             "pattern": "@/styles/**",
-            "group": "internal"
+            "group": "internal",
+            "position": "before"
           },
           {
-            "pattern": "@/components/**",
-            "group": "internal"
+            "pattern": "{@/stories/**,@/img/**}",
+            "group": "internal",
+            "position": "after"
           },
           {
-            "pattern": "@/recoil/**",
-            "group": "internal"
-          },
-          {
-            "pattern": "@/hooks/**",
-            "group": "internal"
-          },
-          {
-            "pattern": "@/libs/**",
-            "group": "internal"
+            "pattern": "@/**",
+            "group": "internal",
+            "position": "before"
           }
         ]
       }

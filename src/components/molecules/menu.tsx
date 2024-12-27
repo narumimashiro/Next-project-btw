@@ -1,34 +1,29 @@
-import React, { useEffect, useState } from 'react'
-import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
-import { useTheme } from '@mui/material'
+import React, { useEffect, useState } from 'react'
 
-import LanguageIcon from '@mui/icons-material/Language'
-import Brightness4Icon from '@mui/icons-material/Brightness4'
 import AccountTreeIcon from '@mui/icons-material/AccountTree'
+import Brightness4Icon from '@mui/icons-material/Brightness4'
+import LanguageIcon from '@mui/icons-material/Language'
+import { useTheme } from '@mui/material'
+import { useTranslation } from 'next-i18next'
 
-import { useLocaleSlug, useRouterLocale } from '@/hooks/useLocaleSlug'
-import {
-  ColorTheme,
-  CUSTOM_MODE,
-  DARK_MODE,
-  LIGHT_MODE,
-  useUserColorTheme
-} from '@/hooks/useThemeStyle'
+import styles from '@/styles/molecules/Menu.module.scss'
+
 import {
   AnnotationText,
   CheckListItem,
   SubTitleText,
   WebHorizon
 } from '@/components/atom/componentsTemplate'
-import { Menu, MenuContext } from '@/stories/Menu/Menu'
+import { useLocaleSlug, useRouterLocale } from '@/hooks/useLocaleSlug'
+import type { ColorTheme } from '@/hooks/useThemeStyle'
+import { CUSTOM_MODE, DARK_MODE, LIGHT_MODE, useUserColorTheme } from '@/hooks/useThemeStyle'
+
+import ArrowPrevDark from '@/img/dark/arrow_down_dark.svg'
+import ArrowPrevLight from '@/img/light/arrow_down_light.svg'
 import { List } from '@/stories/List/List'
 import { ListItem } from '@/stories/List/ListItem'
-
-import ArrowPrevLight from '@/img/light/arrow_down_light.svg'
-import ArrowPrevDark from '@/img/dark/arrow_down_dark.svg'
-
-import styles from '@/styles/molecules/Menu.module.scss'
+import { Menu, MenuContext } from '@/stories/Menu/Menu'
 
 export const UserMenu = () => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
@@ -247,7 +242,7 @@ const LightDarkModeChange = () => {
   )
 }
 
-const OthersContents = ({ openContent, setOpenContent, setTopTitleText }: SettingContent) => {
+const OthersContents = ({ openContent }: SettingContent) => {
   const { t } = useTranslation()
   const theme = useTheme()
   const colorTheme = theme.palette.mode

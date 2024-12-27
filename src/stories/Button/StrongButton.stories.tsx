@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import { StrongButton } from './StrongButton'
 
-import { StrongButton, StrongButtonProps } from './StrongButton'
+import type { StrongButtonProps } from './StrongButton'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'BTW-Custom/StrongButton',

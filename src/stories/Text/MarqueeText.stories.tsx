@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import { MarqueeText } from './MarqueeText'
 
-import { MarqueeText, MarqueeTextProps } from './MarqueeText'
+import type { MarqueeTextProps } from './MarqueeText'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'BTW-Custom/MarqueeText',

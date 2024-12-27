@@ -1,8 +1,9 @@
 import { useEffect, useState, useRef } from 'react'
 
 import { useTheme } from '@mui/material'
-import ArrowDownLight from '@/img/light/arrow_down_light.svg'
+
 import ArrowDownDark from '@/img/dark/arrow_down_dark.svg'
+import ArrowDownLight from '@/img/light/arrow_down_light.svg'
 
 import styles from './Accordion.module.scss'
 

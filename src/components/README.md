@@ -10,22 +10,22 @@
 
 # Atomic Design
 
-  - [最初に](#最初に)
-  - [AtomicDesign構成要素](#AtomicDesign構成要素)
-  - [各要素について](#各要素について)
-    - [Atomos](#atomos)
-    - [Molecules](#molecules)
-    - [Organisms](#organisms)
-    - [Template](#template)
-    - [Pages](#pages)
-  - [Atomic Designのメリット](#Atomic-Designのメリット)
-    - [再利用性が高い](#再利用性が高い)
-    - [小さな単位で問題の把握ができる](#小さな単位で問題の把握ができる)
-    - [デザインの一貫性](#デザインの一貫性)
-  - [Atomic Designのデメリット](#Atomic-Designのデメリット)
-    - [ファイル数が激増](#ファイル数が激増)
-    - [開発メンバ同士の認識共有に齟齬](#開発メンバ同士の認識共有に齟齬)
-    - [エンジニアとデザイナーのコミュニケーション難易度](#エンジニアとデザイナーのコミュニケーション難易度)
+- [最初に](#最初に)
+- [AtomicDesign構成要素](#AtomicDesign構成要素)
+- [各要素について](#各要素について)
+  - [Atomos](#atomos)
+  - [Molecules](#molecules)
+  - [Organisms](#organisms)
+  - [Template](#template)
+  - [Pages](#pages)
+- [Atomic Designのメリット](#Atomic-Designのメリット)
+  - [再利用性が高い](#再利用性が高い)
+  - [小さな単位で問題の把握ができる](#小さな単位で問題の把握ができる)
+  - [デザインの一貫性](#デザインの一貫性)
+- [Atomic Designのデメリット](#Atomic-Designのデメリット)
+  - [ファイル数が激増](#ファイル数が激増)
+  - [開発メンバ同士の認識共有に齟齬](#開発メンバ同士の認識共有に齟齬)
+  - [エンジニアとデザイナーのコミュニケーション難易度](#エンジニアとデザイナーのコミュニケーション難易度)
 
 ## 最初に
 
@@ -36,6 +36,7 @@ ReactやVueといったフロントサイドの技術と相性が良い
 Atomosという最小単位から始まり、Molecules / Organisms / Templates / Pagesとステップ分けして構成を考えていく
 
 ## AtomicDesign構成要素
+
 - atomos (原子)
 - molecules (分子)
 - organisms (生物)

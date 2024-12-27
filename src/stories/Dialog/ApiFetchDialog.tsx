@@ -1,11 +1,14 @@
 import { useEffect } from 'react'
+
 import { useTheme } from '@mui/material'
 import { useTranslation } from 'next-i18next'
+
 import Loading from '@/components/atom/loading'
-import { API_STATUS, ApiStatusType } from '@/hooks/useApiStatus'
-import { ConfirmDialog } from './ConfirmDialog'
+import type { ApiStatusType } from '@/hooks/useApiStatus'
+import { API_STATUS } from '@/hooks/useApiStatus'
 
 import styles from './ApiFetchDialog.module.scss'
+import { ConfirmDialog } from './ConfirmDialog'
 
 export type ApiFetchDialogProps = {
   apiStatus: ApiStatusType

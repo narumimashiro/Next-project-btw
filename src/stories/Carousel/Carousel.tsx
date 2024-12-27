@@ -2,10 +2,10 @@ import { useState, useRef, useEffect } from 'react'
 
 import { useTheme } from '@mui/material'
 
-import prevLight from '@/img/light/arrow_preview.svg'
-import nextLight from '@/img/light/arrow_next.svg'
-import prevDark from '@/img/dark/arrow_preview.svg'
 import nextDark from '@/img/dark/arrow_next.svg'
+import prevDark from '@/img/dark/arrow_preview.svg'
+import nextLight from '@/img/light/arrow_next.svg'
+import prevLight from '@/img/light/arrow_preview.svg'
 
 import styles from './Carousel.module.scss'
 

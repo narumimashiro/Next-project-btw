@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
+
 import { useTheme } from '@mui/material'
 
-import closeLight from '@/img/light/clear.svg'
 import closeDark from '@/img/dark/clear.svg'
+import closeLight from '@/img/light/clear.svg'
 
 import styles from './Toast.module.scss'
 

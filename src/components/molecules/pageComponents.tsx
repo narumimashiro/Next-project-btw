@@ -1,4 +1,5 @@
-import styles from '@/styles/molecules/PageComponents.module.scss'
+import styles from '@/styles/molecules/pageComponents.module.scss'
+
 import { useCustomContext } from '@/components/customProvider'
 
 type PageTemplateProps = {

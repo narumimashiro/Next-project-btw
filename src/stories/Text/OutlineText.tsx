@@ -1,4 +1,5 @@
 import { useTheme } from '@mui/material'
+
 import styles from './OutlineText.module.scss'
 
 type CustomOutline = {
@@ -29,7 +30,7 @@ export const OutlineText = ({
 
   const customize = customColor
     ? {
-        color: customColor[color].backgroundColor,
+        'color': customColor[color].backgroundColor,
         '--shadow-color': customColor[color].outlineColor
       }
     : {

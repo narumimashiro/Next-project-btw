@@ -1,7 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { useEffect, useState } from 'react'
 
-import { ViewModal, ViewModalProps } from './ViewModal'
+import { ViewModal } from './ViewModal'
+
+import type { ViewModalProps } from './ViewModal'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'BTW-Custom/ViewModal',

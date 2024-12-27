@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import { GooglePlayLink } from './GooglePlayLink'
 
-import { GooglePlayLink, GooglePlayLinkProps } from './GooglePlayLink'
+import type { GooglePlayLinkProps } from './GooglePlayLink'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'BTW-Custom/GooglePlayLink',
