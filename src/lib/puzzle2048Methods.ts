@@ -2,12 +2,19 @@
  * 2048 Game special rules
  * 1. Bocchi panel is only 1 cell (Drop rate: 3%)
  * 2. Kita panel is only 1 cell (Drop rate: 3%)
+ * 3. Nijika panel equals number 2 panel (Drop rate: about 4%)
+ * 4. If Nijika panel is generated, background turns rainbow-colored (Rate: about 1%)
  */
 
 export const PANEL_NUMBER_TWO = 2
 export const PANEL_NUMBER_FOUR = 4
 export const BOCCHI_PANEL_NUMBER = 1
+export const NIJIKA_PANEL_NUMBER = 2.5
 export const KITA_PANEL_NUMBER = 194
+
+const castNumber = (number: number): number => {
+  return Math.floor(number)
+}
 
 export const addRandomNumber = (board: number[][]) => {
   const emptyCells = []
@@ -29,17 +36,18 @@ export const addRandomNumber = (board: number[][]) => {
 const pickAddNumber = (board: number[][]) => {
   const randomNumber = Math.floor(Math.random() * 100)
   if (randomNumber < 3) {
-    // Rule : Bocchi panel is only 1
+    // Bocchi panel is only 1 cell (Drop rate: 3%)
     return board.some((row) => row.includes(BOCCHI_PANEL_NUMBER))
       ? PANEL_NUMBER_TWO
       : BOCCHI_PANEL_NUMBER
   } else if (3 <= randomNumber && randomNumber < 6) {
-    // Rule : Kita panel is only 1
+    // 2. Kita panel is only 1 cell (Drop rate: 3%)
     return board.some((row) => row.includes(KITA_PANEL_NUMBER))
       ? PANEL_NUMBER_TWO
       : KITA_PANEL_NUMBER
   } else if (6 <= randomNumber && randomNumber < 90) {
-    return PANEL_NUMBER_TWO
+    // 3. Nijika panel equals number 2 panel (Drop rate: about 4%)
+    return Math.floor(Math.random() * 100) < 5 ? NIJIKA_PANEL_NUMBER : PANEL_NUMBER_TWO
   } else {
     return PANEL_NUMBER_FOUR
   }
@@ -81,8 +89,8 @@ export const addNumberLeftside = (board: number[][]): number[][] => {
         }
         row[i + 1] = 0
       }
-      if (row[i] === row[i + 1]) {
-        row[i] *= 2
+      if (castNumber(row[i]) === castNumber(row[i + 1])) {
+        row[i] = castNumber(row[i]) * 2
         row[i + 1] = 0
       }
     }
@@ -106,8 +114,8 @@ export const addNumberRightside = (board: number[][]): number[][] => {
         }
         row[i - 1] = 0
       }
-      if (row[i] === row[i - 1]) {
-        row[i] *= 2
+      if (castNumber(row[i]) === castNumber(row[i - 1])) {
+        row[i] = castNumber(row[i]) * 2
         row[i - 1] = 0
       }
     }
@@ -116,17 +124,37 @@ export const addNumberRightside = (board: number[][]): number[][] => {
 }
 
 export const handleMoveLeft = (board: number[][]): number[][] => {
-  return addRandomNumber(moveLeft(addNumberLeftside(moveLeft(board))))
+  const newBoard = moveLeft(addNumberLeftside(moveLeft(board)))
+  if (JSON.stringify(board) !== JSON.stringify(newBoard)) {
+    return addRandomNumber(newBoard)
+  } else {
+    return newBoard
+  }
 }
 
 export const handleMoveRight = (board: number[][]): number[][] => {
-  return addRandomNumber(moveRight(addNumberRightside(moveRight(board))))
+  const newBoard = moveRight(addNumberRightside(moveRight(board)))
+  if (JSON.stringify(board) !== JSON.stringify(newBoard)) {
+    return addRandomNumber(newBoard)
+  } else {
+    return newBoard
+  }
 }
 
 export const handleMoveUp = (board: number[][]): number[][] => {
-  return convertColumnToRow(handleMoveLeft(convertColumnToRow(board)))
+  const newBoard = convertColumnToRow(handleMoveLeft(convertColumnToRow(board)))
+  if (JSON.stringify(board) !== JSON.stringify(newBoard)) {
+    return addRandomNumber(newBoard)
+  } else {
+    return newBoard
+  }
 }
 
 export const handleMoveDown = (board: number[][]): number[][] => {
-  return convertColumnToRow(handleMoveRight(convertColumnToRow(board)))
+  const newBoard = convertColumnToRow(handleMoveRight(convertColumnToRow(board)))
+  if (JSON.stringify(board) !== JSON.stringify(newBoard)) {
+    return addRandomNumber(newBoard)
+  } else {
+    return newBoard
+  }
 }

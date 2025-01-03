@@ -55,30 +55,22 @@ const Puzzle2048Game = () => {
 
   const onClickRight = () => {
     const newBoard = handleMoveRight(board2048)
-    if (JSON.stringify(board2048) !== JSON.stringify(newBoard)) {
-      setBoard2048([...newBoard])
-    }
+    setBoard2048([...newBoard])
   }
 
   const onClickLeft = () => {
     const newBoard = handleMoveLeft(board2048)
-    if (JSON.stringify(board2048) !== JSON.stringify(newBoard)) {
-      setBoard2048([...newBoard])
-    }
+    setBoard2048([...newBoard])
   }
 
   const onClickUp = () => {
     const newBoard = handleMoveUp(board2048)
-    if (JSON.stringify(board2048) !== JSON.stringify(newBoard)) {
-      setBoard2048([...newBoard])
-    }
+    setBoard2048([...newBoard])
   }
 
   const onClickDown = () => {
     const newBoard = handleMoveDown(board2048)
-    if (JSON.stringify(board2048) !== JSON.stringify(newBoard)) {
-      setBoard2048([...newBoard])
-    }
+    setBoard2048([...newBoard])
   }
 
   return (

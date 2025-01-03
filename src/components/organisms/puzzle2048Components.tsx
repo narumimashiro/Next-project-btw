@@ -4,7 +4,11 @@ import { useTheme } from '@mui/material'
 
 import styles from '@/styles/organisms/Puzzle2048Components.module.scss'
 
-import { BOCCHI_PANEL_NUMBER, KITA_PANEL_NUMBER } from '@/lib/puzzle2048Methods'
+import {
+  BOCCHI_PANEL_NUMBER,
+  KITA_PANEL_NUMBER,
+  NIJIKA_PANEL_NUMBER
+} from '@/lib/puzzle2048Methods'
 
 const useBocchiPanelCtrl = (board: number[][]) => {
   const OPERATION_COUNT = 5
@@ -65,6 +69,10 @@ const BoardCell = ({ number }: { number: number }) => {
   const theme = useTheme()
   const colorTheme = theme.palette.mode
 
+  // 4. If Nijika panel is generated, background turns rainbow-colored (Rate: about 1%)
+  const classNameRainbow =
+    number === NIJIKA_PANEL_NUMBER && Math.floor(Math.random() * 10) < 3 ? styles.rainbow : ''
+
   const displayNumber =
     number === 0
       ? ''
@@ -72,10 +80,13 @@ const BoardCell = ({ number }: { number: number }) => {
         ? 'ぼ'
         : number === KITA_PANEL_NUMBER
           ? 'ｷﾀｰﾝ'
-          : number
+          : number === NIJIKA_PANEL_NUMBER
+            ? '虹'
+            : number
 
   return (
-    <div className={`${styles.boardCell} ${styles[`cell-${colorTheme}-${number}`]}`}>
+    <div
+      className={`${styles.boardCell} ${styles[`cell-${colorTheme}-${Math.floor(number)}`]} ${classNameRainbow}`}>
       {displayNumber}
     </div>
   )

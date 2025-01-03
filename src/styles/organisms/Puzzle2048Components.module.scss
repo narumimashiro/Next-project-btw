@@ -95,3 +95,18 @@
 .cell-dark-194 {
   background-color: red;
 }
+
+.rainbow {
+  height: 100%;
+  animation: 4s rainbow linear infinite;
+}
+@keyframes rainbow {
+  0% { background: rgba(230, 0, 0, 0.6); }
+  14% { background: rgba(243, 152, 0, 0.6); }
+  28% { background: rgba(255, 241, 0, 0.6); }
+  42% { background: rgba(0, 153, 68, 0.6); }
+  56% { background: rgba(0, 104, 183, 0.6); }
+  70% { background: rgba(29, 32, 136, 0.6); }
+  85% { background: rgba(146, 7, 131, 0.6); }
+  100% { background: rgba(230, 0, 0, 0.6); }
+}
