@@ -35,6 +35,7 @@ export const addRandomNumber = (board: number[][]) => {
 
 const pickAddNumber = (board: number[][]) => {
   const randomNumber = Math.floor(Math.random() * 100)
+  console.log(randomNumber)
   if (randomNumber < 3) {
     // Bocchi panel is only 1 cell (Drop rate: 3%)
     return board.some((row) => row.includes(BOCCHI_PANEL_NUMBER))
@@ -142,7 +143,9 @@ export const handleMoveRight = (board: number[][]): number[][] => {
 }
 
 export const handleMoveUp = (board: number[][]): number[][] => {
-  const newBoard = convertColumnToRow(handleMoveLeft(convertColumnToRow(board)))
+  const newBoard = convertColumnToRow(
+    moveLeft(addNumberLeftside(moveLeft(convertColumnToRow(board))))
+  )
   if (JSON.stringify(board) !== JSON.stringify(newBoard)) {
     return addRandomNumber(newBoard)
   } else {
@@ -151,7 +154,9 @@ export const handleMoveUp = (board: number[][]): number[][] => {
 }
 
 export const handleMoveDown = (board: number[][]): number[][] => {
-  const newBoard = convertColumnToRow(handleMoveRight(convertColumnToRow(board)))
+  const newBoard = convertColumnToRow(
+    moveRight(addNumberRightside(moveRight(convertColumnToRow(board))))
+  )
   if (JSON.stringify(board) !== JSON.stringify(newBoard)) {
     return addRandomNumber(newBoard)
   } else {
