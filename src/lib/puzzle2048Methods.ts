@@ -44,7 +44,7 @@ const pickAddNumber = (board: number[][]) => {
   } else if (6 <= randomNumber && randomNumber < 9) {
     return judgeRyoPanel(board)
   } else if (9 <= randomNumber && randomNumber < 90) {
-    return judgeRyoPanel(board)
+    return judgeNijikaPanel()
   } else {
     return PANEL_NUMBER_FOUR
   }
