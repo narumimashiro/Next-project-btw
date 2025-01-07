@@ -44,7 +44,7 @@ const pickAddNumber = (board: number[][]) => {
   } else if (6 <= randomNumber && randomNumber < 9) {
     return judgeRyoPanel(board)
   } else if (9 <= randomNumber && randomNumber < 90) {
-    return judgeNijikaPanel()
+    return judgeRyoPanel(board)
   } else {
     return PANEL_NUMBER_FOUR
   }
@@ -71,7 +71,7 @@ const judgeKitaPanel = (board: number[][]): number => {
 
 const judgeRyoPanel = (board: number[][]): number => {
   // 5. Ryo panel is only 1 cell (Drop rate: 3%)
-  return board.some((row) => row.includes(KITA_PANEL_NUMBER))
+  return board.some((row) => row.includes(RYO_PANEL_NUMBER))
     ? judgeNijikaPanel()
     : RYO_PANEL_NUMBER
 }
@@ -103,13 +103,11 @@ export const addNumberLeftside = (board: number[][]): number[][] => {
         const { baseNumber, combinedNum } = additionControlKitachan(row[i], row[i + 1])
         row[i] = baseNumber
         row[i + 1] = combinedNum
-      }
-      if (RYO_PANEL_NUMBER === row[i] || RYO_PANEL_NUMBER === row[i + 1]) {
+      } else if (RYO_PANEL_NUMBER === row[i] || RYO_PANEL_NUMBER === row[i + 1]) {
         const { baseNumber, combinedNum } = additionControlRyochan(row[i], row[i + 1])
         row[i] = baseNumber
         row[i + 1] = combinedNum
-      }
-      if (castNumber(row[i]) === castNumber(row[i + 1])) {
+      } else if (castNumber(row[i]) === castNumber(row[i + 1])) {
         row[i] = castNumber(row[i]) * 2
         row[i + 1] = PANEL_NUMBER_EMPTY
       }
@@ -125,13 +123,11 @@ export const addNumberRightside = (board: number[][]): number[][] => {
         const { baseNumber, combinedNum } = additionControlKitachan(row[i], row[i - 1])
         row[i] = baseNumber
         row[i - 1] = combinedNum
-      }
-      if (RYO_PANEL_NUMBER === row[i] || RYO_PANEL_NUMBER === row[i - 1]) {
+      } else if (RYO_PANEL_NUMBER === row[i] || RYO_PANEL_NUMBER === row[i - 1]) {
         const { baseNumber, combinedNum } = additionControlRyochan(row[i], row[i - 1])
         row[i] = baseNumber
         row[i - 1] = combinedNum
-      }
-      if (castNumber(row[i]) === castNumber(row[i - 1])) {
+      } else if (castNumber(row[i]) === castNumber(row[i - 1])) {
         row[i] = castNumber(row[i]) * 2
         row[i - 1] = PANEL_NUMBER_EMPTY
       }
@@ -162,7 +158,8 @@ const additionControlRyochan = (baseNum: number, combinedNum: number) => {
     BOCCHI_PANEL_NUMBER === baseNum ||
     BOCCHI_PANEL_NUMBER === combinedNum ||
     KITA_PANEL_NUMBER === baseNum ||
-    KITA_PANEL_NUMBER === combinedNum
+    KITA_PANEL_NUMBER === combinedNum ||
+    (RYO_PANEL_NUMBER === baseNum && RYO_PANEL_NUMBER === combinedNum)
   ) {
     return { baseNumber: RYO_PANEL_NUMBER, combinedNum: RYO_PANEL_NUMBER }
   }
