@@ -82,6 +82,10 @@ const Sitemap = () => {
     {
       text: t('STRID_meta_otaku_webcamera'),
       src: `/${locale}/web-camera/otaku-camera`
+    },
+    {
+      text: t('TEMP_MyFav.Game'),
+      src: `/${locale}/fav-game`
     }
   ]
   const otherContents = [
