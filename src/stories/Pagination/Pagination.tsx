@@ -56,6 +56,7 @@ export const Pagination = ({
   )
 
   useEffect(() => {
+    const dispItemsCount = 2 * 2 + siblingCount * 2 + 1
     const calculateMiddleRange = (): number[] => {
       if (isEdgeIndex(currentPage)) {
         const isEdge = Math.floor(Math.min(2 * 2 + siblingCount * 2 + 1, count) / 2)
@@ -78,9 +79,15 @@ export const Pagination = ({
 
     const buildRange = (): number[] => {
       const range = []
-      range.push(PAGE_TOP, ...(borderLeftEllipsis ? [ELLIPSIS] : [PAGE_TOP + 1]))
+      range.push(
+        PAGE_TOP,
+        ...(borderLeftEllipsis && dispItemsCount < count ? [ELLIPSIS] : [PAGE_TOP + 1])
+      )
       range.push(...calculateMiddleRange())
-      range.push(...(borderRightEllipsis ? [ELLIPSIS] : [pageLastIndex - 1]), pageLastIndex)
+      range.push(
+        ...(borderRightEllipsis && dispItemsCount < count ? [ELLIPSIS] : [pageLastIndex - 1]),
+        pageLastIndex
+      )
       return range
     }
 
