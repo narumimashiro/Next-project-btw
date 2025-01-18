@@ -4,6 +4,8 @@
   --dark-background-color: #121212;
   --light-overlay-color: #00000080;
   --dark-overlay-color: #ffffff33;
+  --light-select-color: #bcbcbc;
+  --dark-select-color: #8c8c8c;
   --light-hover-color: #eeeeee;
   --dark-hover-color: #444444;
   --light-disabled-text-color: #c0c0c0;
@@ -170,8 +172,7 @@ button {
 
 .button-active-light {
   @extend .button-light;
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: var(--light-hover-color);
   }
   &:disabled {
@@ -188,8 +189,7 @@ button {
 
 .button-active-dark {
   @extend .button-dark;
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: var(--dark-hover-color);
   }
   &:disabled {
