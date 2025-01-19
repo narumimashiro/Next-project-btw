@@ -1,4 +1,5 @@
 import type { GetStaticPaths, GetStaticProps } from 'next'
+import { useRouter } from 'next/router'
 import { useEffect, useMemo, useRef, useState } from 'react'
 
 import { useTheme } from '@mui/material'
@@ -15,8 +16,12 @@ import {
   SelectAnimeDrawerMenu,
   SelectorCharacter
 } from '@/components/organisms/webCameraComponents'
+import { useLocaleSlug } from '@/hooks/useLocaleSlug'
 import { isMobileDevice } from '@/lib/isMobileDevice'
+import { useManageMenuHidden } from '@/recoil/manageMenu'
 
+import ArrowBackDark from '@/img/dark/arrow_preview.svg'
+import ArrowBackLight from '@/img/light/arrow_preview.svg'
 import { StrongButton } from '@/stories/Button/StrongButton'
 import { ViewModal } from '@/stories/Modal/ViewModal'
 import { Toast } from '@/stories/Toast/Toast'
@@ -201,7 +206,25 @@ const WebCamera = ({ characterGroup }: WebcameraProps) => {
   )
 }
 
+const BackPageButton = () => {
+  const theme = useTheme()
+  const colorTheme = theme.palette.mode
+  const router = useRouter()
+  const locale = useLocaleSlug()
+
+  const handleClick = () => {
+    router.push(`/${locale}/web-camera`)
+  }
+
+  return (
+    <button className={`button-active-${colorTheme} ${styles.backpage}`} onClick={handleClick}>
+      <img src={colorTheme === 'light' ? ArrowBackLight.src : ArrowBackDark.src} alt="" />
+    </button>
+  )
+}
+
 const OtakuCamera = () => {
+  useManageMenuHidden()
   const { t } = useTranslation()
   const isMobile = isMobileDevice()
 
@@ -224,6 +247,7 @@ const OtakuCamera = () => {
       ) : (
         <>
           <div className={styles['otaku-camera']}>
+            <BackPageButton />
             <WebCamera characterGroup={selectedGroup} />
             <SelectAnimeDrawerMenu onSelect={setSelectedGroup} />
           </div>
