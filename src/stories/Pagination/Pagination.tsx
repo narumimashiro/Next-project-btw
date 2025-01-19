@@ -59,12 +59,14 @@ export const Pagination = ({
     const dispItemsCount = 2 * 2 + siblingCount * 2 + 1
     const calculateMiddleRange = (): number[] => {
       if (isEdgeIndex(currentPage)) {
-        const isEdge = Math.floor(Math.min(2 * 2 + siblingCount * 2 + 1, count) / 2)
+        const isEdge = Math.floor(Math.min(dispItemsCount, count - 1) / 2)
         const leftEdge =
-          isEdge > currentPage
+          isEdge >= currentPage
             ? Math.max(2, isEdge - siblingCount)
-            : Math.min(pageLastIndex - 2, pageLastIndex - isEdge - siblingCount)
-
+            : Math.min(
+                pageLastIndex - 2,
+                Math.max(pageLastIndex - isEdge - siblingCount, isEdge)
+              )
         return Array.from(
           { length: Math.min(pageLastIndex - 1, leftEdge + 1 + siblingCount * 2) - leftEdge },
           (_, i) => leftEdge + i
@@ -79,6 +81,7 @@ export const Pagination = ({
 
     const buildRange = (): number[] => {
       const range = []
+      if (count <= BORDER_ITEM_RANGE * 2 + 1) return Array.from({ length: count }, (_, i) => i)
       range.push(
         PAGE_TOP,
         ...(borderLeftEllipsis && dispItemsCount < count ? [ELLIPSIS] : [PAGE_TOP + 1])
