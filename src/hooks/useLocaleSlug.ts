@@ -30,6 +30,13 @@ export const useLocaleSlug = () => {
   return i18nextLocale
 }
 
+export const useUrlLocaleSlug = () => {
+  const router = useRouter()
+  const { locale_slug } = router.query
+
+  return locale_slug as string
+}
+
 export const useDefaultLocale = () => {
   const [defaultLocale, setDefaultLocale] = useState(LOCALE.JAPANESE.DEFAULT)
 
@@ -45,13 +52,15 @@ export const useRouterLocale = () => {
   const localeSlug = useLocaleSlug()
 
   const routerNewUrl = (locale: string) => {
-    const { ...queries } = router.query
-    const updatedQuery = {
-      ...queries,
-      locale_slug: locale
+    const { locale_slug, ...queries } = router.query
+    if (locale_slug) {
+      const updatedQuery = {
+        ...queries,
+        locale_slug: locale
+      }
+      router.replace({ query: updatedQuery }, undefined, { shallow: true })
+      localStorage.setItem(I18NEXT_LOCALE, locale)
     }
-    router.push({ query: updatedQuery })
-    localStorage.setItem(I18NEXT_LOCALE, locale)
   }
 
   return { localeSlug, routerNewUrl }
