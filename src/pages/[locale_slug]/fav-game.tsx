@@ -1,4 +1,5 @@
 import type { GetStaticPaths, GetStaticProps } from 'next'
+import { useState } from 'react'
 
 import { useTranslation } from 'next-i18next'
 
@@ -6,7 +7,11 @@ import styles from '@/styles/FavGame.module.scss'
 
 import { useCustomContext } from '@/components/customProvider'
 import Meta from '@/components/meta'
-import { CatchcopyContext, MyFavGameLinks } from '@/components/organisms/favGameComponents'
+import {
+  CatchcopyContext,
+  MyFavGameLinks,
+  ThumbnailList
+} from '@/components/organisms/favGameComponents'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { language }: { language: string[] } = require('@/locales/config')
@@ -33,6 +38,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 const FavGame = () => {
   const { t } = useTranslation()
   const { isPortrait, isTabletSize } = useCustomContext()
+  const [viewFavGameDetail, setViewFavGameDetail] = useState(false)
 
   return (
     <>
@@ -41,9 +47,18 @@ const FavGame = () => {
         <div className={styles['page-container-portrait']}>
           <MyFavGameLinks size="single" />
           <div className={styles['page-contents']}>
-            <div className={styles.leftpain}>
-              <CatchcopyContext isPortrait={true} />
-            </div>
+            {viewFavGameDetail ? (
+              <>TEST</>
+            ) : (
+              <>
+                <div className={styles.leftpain}>
+                  <CatchcopyContext isPortrait={true} />
+                </div>
+                <div className={styles.rightpain}>
+                  <ThumbnailList openDetail={() => setViewFavGameDetail(true)} />
+                </div>
+              </>
+            )}
           </div>
         </div>
       ) : isTabletSize ? (
@@ -57,6 +72,9 @@ const FavGame = () => {
           </div>
           <div className={styles.rightpain}>
             <MyFavGameLinks size="normal" />
+            <div className={styles['profile-detail']}>
+              <ThumbnailList openDetail={() => setViewFavGameDetail(true)} />
+            </div>
           </div>
         </div>
       )}

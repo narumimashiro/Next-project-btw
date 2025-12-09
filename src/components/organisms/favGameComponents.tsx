@@ -9,19 +9,19 @@ import type { CarouselSize } from '@/stories/Carousel/SwiperCarousel'
 import { SwiperCarousel } from '@/stories/Carousel/SwiperCarousel'
 import { OutlineText } from '@/stories/Text/OutlineText'
 
-const WUTHERIN_WAVES = 'wuthering_waves'
-const PROJECTSEKAI = 'project_sekai'
-const ARKNIGHTS = 'arknights'
-const ENDFIELD = 'endfield'
-const GENSHIN = 'genshin'
-const STARRAIL = 'starrail'
+const WUTHERIN_WAVES = 3400
+const PROJECTSEKAI = 3939
+const ARKNIGHTS = 9696
+const ENDFIELD = 2434
+const GENSHIN = 1203
+const STARRAIL = 5426
 
 type GameInfo = {
   gameTitle: string
   thumbnailSrc: string
 }
 
-export const myFavGameInfoList: Record<string, GameInfo> = {
+export const myFavGameInfoList: Record<number, GameInfo> = {
   [WUTHERIN_WAVES]: {
     gameTitle: 'Wuthering Waves',
     thumbnailSrc: '/images/myfavgame/wutheringwaves.png'
@@ -139,6 +139,20 @@ export const CatchcopyContext = ({ isPortrait }: { isPortrait: boolean }) => {
   )
 }
 
-export const ThumbnailList = () => {
-  return <></>
+type ThumbnailListProps = {
+  openDetail: () => void
+}
+export const ThumbnailList = ({ openDetail }: ThumbnailListProps) => {
+  return (
+    <div className={`${styles.thumbnailList} invisible-scroll`}>
+      {Object.keys(myFavGameInfoList).map((key) => {
+        const { gameTitle, thumbnailSrc } = myFavGameInfoList[Number(key)]
+        return (
+          <button key={key} className={styles.thumbnail} onClick={openDetail}>
+            <img src={thumbnailSrc} alt={gameTitle} />
+          </button>
+        )
+      })}
+    </div>
+  )
 }
