@@ -1,29 +1,51 @@
 # 🩺 依存関係ヘルスレポート
 
-> 🎹 **天馬 咲希**: やったやった！パッケージ全部見てきたよ！セキュリティも大事だよね！🎹
+> 🎵 **初音ミク**: パッケージの状態、確認したよ！セキュリティも大事だから気をつけてね🎵
 
-**実行日時**: 2026/03/19 01:16:23 JST
+**実行日時**: 2026/03/19 01:30:50 JST
 
 ---
 
 ## 📦 npm outdated
 
 ```
-Package              Current   Wanted   Latest  Location  Depended by
-@emotion/react       MISSING  11.14.0  11.14.0  -         Next-project-btw
-@emotion/styled      MISSING  11.14.1  11.14.1  -         Next-project-btw
-@mui/icons-material  MISSING   5.18.0    7.3.9  -         Next-project-btw
-@mui/material        MISSING   5.18.0    7.3.9  -         Next-project-btw
-axios                MISSING   1.13.6   1.13.6  -         Next-project-btw
-i18next              MISSING  23.16.8  25.8.18  -         Next-project-btw
-ismobilejs           MISSING    1.1.1    1.1.1  -         Next-project-btw
-next                 MISSING   14.0.3   16.1.7  -         Next-project-btw
-next-i18next         MISSING   15.4.3   15.4.3  -         Next-project-btw
-react                MISSING   18.3.1   19.2.4  -         Next-project-btw
-react-dom            MISSING   18.3.1   19.2.4  -         Next-project-btw
-recoil               MISSING    0.7.7    0.7.7  -         Next-project-btw
-sass                 MISSING   1.98.0   1.98.0  -         Next-project-btw
-swiper               MISSING  11.2.10   12.1.2  -         Next-project-btw
+Package                            Current    Wanted   Latest  Location                                       Depended by
+@emotion/styled                    11.14.0   11.14.1  11.14.1  node_modules/@emotion/styled                   Next-project-btw
+@mui/icons-material                5.16.13    5.18.0    7.3.9  node_modules/@mui/icons-material               Next-project-btw
+@mui/material                      5.16.13    5.18.0    7.3.9  node_modules/@mui/material                     Next-project-btw
+@storybook/addon-essentials         7.6.20    7.6.24   8.6.14  node_modules/@storybook/addon-essentials       Next-project-btw
+@storybook/addon-interactions       7.6.20    7.6.24   8.6.14  node_modules/@storybook/addon-interactions     Next-project-btw
+@storybook/addon-links              7.6.20    7.6.24   10.3.0  node_modules/@storybook/addon-links            Next-project-btw
+@storybook/addon-onboarding         1.0.11    1.0.11   10.3.0  node_modules/@storybook/addon-onboarding       Next-project-btw
+@storybook/addon-viewport           7.6.20    7.6.24    9.0.8  node_modules/@storybook/addon-viewport         Next-project-btw
+@storybook/blocks                   7.6.20    7.6.24   8.6.14  node_modules/@storybook/blocks                 Next-project-btw
+@storybook/nextjs                   7.6.20    7.6.24   10.3.0  node_modules/@storybook/nextjs                 Next-project-btw
+@storybook/react                    7.6.20    7.6.24   10.3.0  node_modules/@storybook/react                  Next-project-btw
+@storybook/test                     7.6.20    7.6.24   8.6.15  node_modules/@storybook/test                   Next-project-btw
+@types/node                       20.17.10  20.19.37   25.5.0  node_modules/@types/node                       Next-project-btw
+@types/react                       18.3.18   18.3.28  19.2.14  node_modules/@types/react                      Next-project-btw
+@types/react-dom                    18.3.5    18.3.7   19.2.3  node_modules/@types/react-dom                  Next-project-btw
+@types/yargs                       17.0.33   17.0.35  17.0.35  node_modules/@types/yargs                      Next-project-btw
+@typescript-eslint/eslint-plugin    8.18.2    8.57.1   8.57.1  node_modules/@typescript-eslint/eslint-plugin  Next-project-btw
+@typescript-eslint/parser           8.18.2    8.57.1   8.57.1  node_modules/@typescript-eslint/parser         Next-project-btw
+axios                                1.7.9    1.13.6   1.13.6  node_modules/axios                             Next-project-btw
+eslint                              8.57.1    8.57.1   10.0.3  node_modules/eslint                            Next-project-btw
+eslint-config-next                  14.2.4    14.2.4   16.1.7  node_modules/eslint-config-next                Next-project-btw
+eslint-config-prettier               9.1.0     9.1.2   10.1.8  node_modules/eslint-config-prettier            Next-project-btw
+eslint-plugin-import                2.31.0    2.32.0   2.32.0  node_modules/eslint-plugin-import              Next-project-btw
+eslint-plugin-prettier               5.2.1     5.5.5    5.5.5  node_modules/eslint-plugin-prettier            Next-project-btw
+eslint-plugin-storybook             0.6.15    0.6.15   10.3.0  node_modules/eslint-plugin-storybook           Next-project-btw
+eslint-plugin-unused-imports         4.1.4     4.4.1    4.4.1  node_modules/eslint-plugin-unused-imports      Next-project-btw
+i18next                            23.16.8   23.16.8  25.8.18  node_modules/i18next                           Next-project-btw
+next                                14.0.3    14.0.3   16.1.7  node_modules/next                              Next-project-btw
+next-i18next                        15.4.1    15.4.3   15.4.3  node_modules/next-i18next                      Next-project-btw
+prettier                             3.4.2     3.8.1    3.8.1  node_modules/prettier                          Next-project-btw
+react                               18.3.1    18.3.1   19.2.4  node_modules/react                             Next-project-btw
+react-dom                           18.3.1    18.3.1   19.2.4  node_modules/react-dom                         Next-project-btw
+sass                                1.83.0    1.98.0   1.98.0  node_modules/sass                              Next-project-btw
+storybook                           7.6.20    7.6.24   10.3.0  node_modules/storybook                         Next-project-btw
+swiper                             11.1.15   11.2.10   12.1.2  node_modules/swiper                            Next-project-btw
+typescript                           5.7.2     5.9.3    5.9.3  node_modules/typescript                        Next-project-btw
 ```
 
 ---
@@ -103,7 +125,7 @@ info     : 0
 
 ■ @storybook/docs-tools [MODERATE]
   影響バージョン: <=0.0.0-pr-34011-sha-c45b0f3f || 6.5.17-alpha.0 - 8.2.0-beta.3
-  修正: @storybook/blocks@8.6.14 へのアップデートが必要
+  修正: @storybook/react@10.3.0 へのアップデートが必要
 
 ■ @storybook/nextjs [MODERATE]
   影響バージョン: *
