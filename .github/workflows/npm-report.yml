@@ -20,6 +20,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: narumikr/link-sekai-actions/prsk-doctor-deps@v3
+      - uses: narumikr/link-sekai-actions/prsk-doctor-deps@develop/doctor-deps
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
