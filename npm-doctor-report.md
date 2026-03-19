@@ -1,8 +1,8 @@
 # 🩺 依存関係ヘルスレポート
 
-> 🎵 **初音ミク**: パッケージの状態、確認したよ！セキュリティも大事だから気をつけてね🎵
+> 🐧 **桐谷 遥**: 依存関係、一通り見てきました。古いものがあっても焦らず対応していこうね。
 
-**実行日時**: 2026/03/19 01:30:50 JST
+**実行日時**: 2026/03/19 11:43:35 JST
 
 ---
 
@@ -30,14 +30,14 @@ Package                            Current    Wanted   Latest  Location         
 @typescript-eslint/parser           8.18.2    8.57.1   8.57.1  node_modules/@typescript-eslint/parser         Next-project-btw
 axios                                1.7.9    1.13.6   1.13.6  node_modules/axios                             Next-project-btw
 eslint                              8.57.1    8.57.1   10.0.3  node_modules/eslint                            Next-project-btw
-eslint-config-next                  14.2.4    14.2.4   16.1.7  node_modules/eslint-config-next                Next-project-btw
+eslint-config-next                  14.2.4    14.2.4   16.2.0  node_modules/eslint-config-next                Next-project-btw
 eslint-config-prettier               9.1.0     9.1.2   10.1.8  node_modules/eslint-config-prettier            Next-project-btw
 eslint-plugin-import                2.31.0    2.32.0   2.32.0  node_modules/eslint-plugin-import              Next-project-btw
 eslint-plugin-prettier               5.2.1     5.5.5    5.5.5  node_modules/eslint-plugin-prettier            Next-project-btw
 eslint-plugin-storybook             0.6.15    0.6.15   10.3.0  node_modules/eslint-plugin-storybook           Next-project-btw
 eslint-plugin-unused-imports         4.1.4     4.4.1    4.4.1  node_modules/eslint-plugin-unused-imports      Next-project-btw
 i18next                            23.16.8   23.16.8  25.8.18  node_modules/i18next                           Next-project-btw
-next                                14.0.3    14.0.3   16.1.7  node_modules/next                              Next-project-btw
+next                                14.0.3    14.0.3   16.2.0  node_modules/next                              Next-project-btw
 next-i18next                        15.4.1    15.4.3   15.4.3  node_modules/next-i18next                      Next-project-btw
 prettier                             3.4.2     3.8.1    3.8.1  node_modules/prettier                          Next-project-btw
 react                               18.3.1    18.3.1   19.2.4  node_modules/react                             Next-project-btw
@@ -77,7 +77,7 @@ info     : 0
 
 ■ @next/eslint-plugin-next [HIGH]
   影響バージョン: 14.0.5-canary.0 - 15.0.0-rc.1
-  修正: eslint-config-next@16.1.7 へのアップデートが必要
+  修正: eslint-config-next@16.2.0 へのアップデートが必要
 
 ■ @storybook/addon-controls [MODERATE]
   影響バージョン: <=0.0.0-pr-34011-sha-c45b0f3f || 6.5.17-alpha.0 - 8.2.0-beta.3
@@ -125,7 +125,7 @@ info     : 0
 
 ■ @storybook/docs-tools [MODERATE]
   影響バージョン: <=0.0.0-pr-34011-sha-c45b0f3f || 6.5.17-alpha.0 - 8.2.0-beta.3
-  修正: @storybook/react@10.3.0 へのアップデートが必要
+  修正: @storybook/blocks@8.6.14 へのアップデートが必要
 
 ■ @storybook/nextjs [MODERATE]
   影響バージョン: *
@@ -219,7 +219,7 @@ info     : 0
 
 ■ eslint-config-next [HIGH]
   影響バージョン: 14.0.5-canary.0 - 15.0.0-rc.1
-  修正: eslint-config-next@16.1.7 へのアップデートが必要
+  修正: eslint-config-next@16.2.0 へのアップデートが必要
 
 ■ express [LOW]
   影響バージョン: 4.17.0 - 4.21.2 || 5.0.0-alpha.1 - 5.0.1
@@ -245,7 +245,7 @@ info     : 0
   影響バージョン: 10.2.0 - 10.4.5
   glob CLI: Command injection via -c/--cmd executes matches with shell:true
   https://github.com/advisories/GHSA-5j98-mcp5-4vw2
-  修正: eslint-config-next@16.1.7 へのアップデートが必要
+  修正: eslint-config-next@16.2.0 へのアップデートが必要
 
 ■ image-size [HIGH]
   影響バージョン: 1.1.0 - 1.2.0
@@ -327,10 +327,10 @@ info     : 0
   https://github.com/advisories/GHSA-h25m-26qc-wcjf
   Authorization Bypass in Next.js Middleware
   https://github.com/advisories/GHSA-f82v-jwr5-mffw
-  Next.js: HTTP request smuggling in rewrites
-  https://github.com/advisories/GHSA-ggv3-7p47-pfv8
   Next.js: Unbounded next/image disk cache growth can exhaust storage
   https://github.com/advisories/GHSA-3x4c-7xq6-9pq8
+  Next.js: HTTP request smuggling in rewrites
+  https://github.com/advisories/GHSA-ggv3-7p47-pfv8
   修正: next@14.2.35 へのアップデートが必要
 
 ■ node-polyfill-webpack-plugin [LOW]
