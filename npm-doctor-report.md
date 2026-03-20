@@ -1,8 +1,8 @@
 # 🩺 依存関係ヘルスレポート
 
-> 🐧 **桐谷 遥**: 依存関係、一通り見てきました。古いものがあっても焦らず対応していこうね。
+> 🍬 **鳳 えむ**: わんだほ～い！パッケージのチェック完了だよ！みんなの環境が安全でハッピーになれるね！🍬
 
-**実行日時**: 2026/03/19 11:43:35 JST
+**実行日時**: 2026/03/20 11:34:18 JST
 
 ---
 
@@ -15,12 +15,12 @@ Package                            Current    Wanted   Latest  Location         
 @mui/material                      5.16.13    5.18.0    7.3.9  node_modules/@mui/material                     Next-project-btw
 @storybook/addon-essentials         7.6.20    7.6.24   8.6.14  node_modules/@storybook/addon-essentials       Next-project-btw
 @storybook/addon-interactions       7.6.20    7.6.24   8.6.14  node_modules/@storybook/addon-interactions     Next-project-btw
-@storybook/addon-links              7.6.20    7.6.24   10.3.0  node_modules/@storybook/addon-links            Next-project-btw
-@storybook/addon-onboarding         1.0.11    1.0.11   10.3.0  node_modules/@storybook/addon-onboarding       Next-project-btw
+@storybook/addon-links              7.6.20    7.6.24   10.3.1  node_modules/@storybook/addon-links            Next-project-btw
+@storybook/addon-onboarding         1.0.11    1.0.11   10.3.1  node_modules/@storybook/addon-onboarding       Next-project-btw
 @storybook/addon-viewport           7.6.20    7.6.24    9.0.8  node_modules/@storybook/addon-viewport         Next-project-btw
 @storybook/blocks                   7.6.20    7.6.24   8.6.14  node_modules/@storybook/blocks                 Next-project-btw
-@storybook/nextjs                   7.6.20    7.6.24   10.3.0  node_modules/@storybook/nextjs                 Next-project-btw
-@storybook/react                    7.6.20    7.6.24   10.3.0  node_modules/@storybook/react                  Next-project-btw
+@storybook/nextjs                   7.6.20    7.6.24   10.3.1  node_modules/@storybook/nextjs                 Next-project-btw
+@storybook/react                    7.6.20    7.6.24   10.3.1  node_modules/@storybook/react                  Next-project-btw
 @storybook/test                     7.6.20    7.6.24   8.6.15  node_modules/@storybook/test                   Next-project-btw
 @types/node                       20.17.10  20.19.37   25.5.0  node_modules/@types/node                       Next-project-btw
 @types/react                       18.3.18   18.3.28  19.2.14  node_modules/@types/react                      Next-project-btw
@@ -34,16 +34,16 @@ eslint-config-next                  14.2.4    14.2.4   16.2.0  node_modules/esli
 eslint-config-prettier               9.1.0     9.1.2   10.1.8  node_modules/eslint-config-prettier            Next-project-btw
 eslint-plugin-import                2.31.0    2.32.0   2.32.0  node_modules/eslint-plugin-import              Next-project-btw
 eslint-plugin-prettier               5.2.1     5.5.5    5.5.5  node_modules/eslint-plugin-prettier            Next-project-btw
-eslint-plugin-storybook             0.6.15    0.6.15   10.3.0  node_modules/eslint-plugin-storybook           Next-project-btw
+eslint-plugin-storybook             0.6.15    0.6.15   10.3.1  node_modules/eslint-plugin-storybook           Next-project-btw
 eslint-plugin-unused-imports         4.1.4     4.4.1    4.4.1  node_modules/eslint-plugin-unused-imports      Next-project-btw
-i18next                            23.16.8   23.16.8  25.8.18  node_modules/i18next                           Next-project-btw
+i18next                            23.16.8   23.16.8  25.8.20  node_modules/i18next                           Next-project-btw
 next                                14.0.3    14.0.3   16.2.0  node_modules/next                              Next-project-btw
 next-i18next                        15.4.1    15.4.3   15.4.3  node_modules/next-i18next                      Next-project-btw
 prettier                             3.4.2     3.8.1    3.8.1  node_modules/prettier                          Next-project-btw
 react                               18.3.1    18.3.1   19.2.4  node_modules/react                             Next-project-btw
 react-dom                           18.3.1    18.3.1   19.2.4  node_modules/react-dom                         Next-project-btw
 sass                                1.83.0    1.98.0   1.98.0  node_modules/sass                              Next-project-btw
-storybook                           7.6.20    7.6.24   10.3.0  node_modules/storybook                         Next-project-btw
+storybook                           7.6.20    7.6.24   10.3.1  node_modules/storybook                         Next-project-btw
 swiper                             11.1.15   11.2.10   12.1.2  node_modules/swiper                            Next-project-btw
 typescript                           5.7.2     5.9.3    5.9.3  node_modules/typescript                        Next-project-btw
 ```
@@ -93,7 +93,7 @@ info     : 0
 
 ■ @storybook/addon-onboarding [MODERATE]
   影響バージョン: 0.0.19--canary.33.684ad81.0 - 0.0.19--canary.40.e7afff4.0 || 0.0.20--canary.40.25bbf96.0 - 0.0.20--canary.42.babf260.0 || 0.0.29--canary.40.3282e5c.0 - 0.0.29--canary.40.69103b8.0 || 0.0.30-canary.40.9cbd35d.0 - 2.0.0-next.2
-  修正: @storybook/addon-onboarding@10.3.0 へのアップデートが必要
+  修正: @storybook/addon-onboarding@10.3.1 へのアップデートが必要
 
 ■ @storybook/blocks [MODERATE]
   影響バージョン: <=8.2.0-beta.3
@@ -113,7 +113,7 @@ info     : 0
 
 ■ @storybook/core-common [MODERATE]
   影響バージョン: <=0.0.0-pr-34011-sha-c45b0f3f || 6.5.17-alpha.0 - 8.2.0-beta.3
-  修正: @storybook/nextjs@10.3.0 へのアップデートが必要
+  修正: @storybook/nextjs@10.3.1 へのアップデートが必要
 
 ■ @storybook/core-server [MODERATE]
   影響バージョン: <=0.0.0-pr-34011-sha-c45b0f3f || 6.5.17-alpha.0 - 8.2.0-beta.3
@@ -129,7 +129,7 @@ info     : 0
 
 ■ @storybook/nextjs [MODERATE]
   影響バージョン: *
-  修正: @storybook/nextjs@10.3.0 へのアップデートが必要
+  修正: @storybook/nextjs@10.3.1 へのアップデートが必要
 
 ■ @storybook/preset-react-webpack [MODERATE]
   影響バージョン: <=8.2.0-beta.3
@@ -137,11 +137,11 @@ info     : 0
 
 ■ @storybook/react [MODERATE]
   影響バージョン: <=0.0.0-pr-34011-sha-c45b0f3f || 6.5.17-alpha.0 - 8.2.0-beta.3
-  修正: @storybook/react@10.3.0 へのアップデートが必要
+  修正: @storybook/react@10.3.1 へのアップデートが必要
 
 ■ @storybook/telemetry [MODERATE]
   影響バージョン: <=0.0.0-pr-34011-sha-c45b0f3f || 6.5.17-alpha.0 - 8.2.0-beta.3
-  修正: @storybook/addon-onboarding@10.3.0 へのアップデートが必要
+  修正: @storybook/addon-onboarding@10.3.1 へのアップデートが必要
 
 ■ @typescript-eslint/parser [HIGH]
   影響バージョン: 6.16.0 - 7.5.0
@@ -191,7 +191,7 @@ info     : 0
 
 ■ browserify-sign [LOW]
   影響バージョン: >=2.4.0
-  修正: @storybook/nextjs@10.3.0 へのアップデートが必要
+  修正: @storybook/nextjs@10.3.1 へのアップデートが必要
 
 ■ compression [LOW]
   影響バージョン: 1.0.3 - 1.8.0
@@ -199,23 +199,23 @@ info     : 0
 
 ■ create-ecdh [LOW]
   影響バージョン: *
-  修正: @storybook/nextjs@10.3.0 へのアップデートが必要
+  修正: @storybook/nextjs@10.3.1 へのアップデートが必要
 
 ■ crypto-browserify [LOW]
   影響バージョン: >=3.4.0
-  修正: @storybook/nextjs@10.3.0 へのアップデートが必要
+  修正: @storybook/nextjs@10.3.1 へのアップデートが必要
 
 ■ elliptic [LOW]
   影響バージョン: *
   Elliptic Uses a Cryptographic Primitive with a Risky Implementation
   https://github.com/advisories/GHSA-848j-6mx2-7j84
-  修正: @storybook/nextjs@10.3.0 へのアップデートが必要
+  修正: @storybook/nextjs@10.3.1 へのアップデートが必要
 
 ■ esbuild [MODERATE]
   影響バージョン: <=0.24.2
   esbuild enables any website to send any requests to the development server and read the response
   https://github.com/advisories/GHSA-67mh-4wv8-2f99
-  修正: @storybook/nextjs@10.3.0 へのアップデートが必要
+  修正: @storybook/nextjs@10.3.1 へのアップデートが必要
 
 ■ eslint-config-next [HIGH]
   影響バージョン: 14.0.5-canary.0 - 15.0.0-rc.1
@@ -226,9 +226,11 @@ info     : 0
   修正: npm audit fix で対応可能
 
 ■ flatted [HIGH]
-  影響バージョン: <3.4.0
+  影響バージョン: <=3.4.1
   flatted vulnerable to unbounded recursion DoS in parse() revive phase
   https://github.com/advisories/GHSA-25h7-pfq9-p65f
+  Prototype Pollution via parse() in NodeJS flatted
+  https://github.com/advisories/GHSA-rf6f-7fwh-wjgh
   修正: npm audit fix で対応可能
 
 ■ form-data [CRITICAL]
@@ -296,7 +298,7 @@ info     : 0
   修正: npm audit fix で対応可能
 
 ■ next [CRITICAL]
-  影響バージョン: 0.9.9 - 16.1.6
+  影響バージョン: 0.9.9 - 15.5.13
   Next.js Server-Side Request Forgery in Server Actions
   https://github.com/advisories/GHSA-fr5h-rqp8-mj6g
   Next.js Cache Poisoning
@@ -327,15 +329,15 @@ info     : 0
   https://github.com/advisories/GHSA-h25m-26qc-wcjf
   Authorization Bypass in Next.js Middleware
   https://github.com/advisories/GHSA-f82v-jwr5-mffw
-  Next.js: Unbounded next/image disk cache growth can exhaust storage
-  https://github.com/advisories/GHSA-3x4c-7xq6-9pq8
   Next.js: HTTP request smuggling in rewrites
   https://github.com/advisories/GHSA-ggv3-7p47-pfv8
+  Next.js: Unbounded next/image disk cache growth can exhaust storage
+  https://github.com/advisories/GHSA-3x4c-7xq6-9pq8
   修正: next@14.2.35 へのアップデートが必要
 
 ■ node-polyfill-webpack-plugin [LOW]
   影響バージョン: <=4.0.0
-  修正: @storybook/nextjs@10.3.0 へのアップデートが必要
+  修正: @storybook/nextjs@10.3.1 へのアップデートが必要
 
 ■ on-headers [LOW]
   影響バージョン: <1.1.0
