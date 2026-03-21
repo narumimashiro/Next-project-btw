@@ -1,8 +1,8 @@
 # 🩺 依存関係ヘルスレポート
 
-> 🍬 **鳳 えむ**: わんだほ～い！パッケージのチェック完了だよ！みんなの環境が安全でハッピーになれるね！🍬
+> 🐹 **小豆沢 こはね**: 依存関係レポート、できたよ！古いパッケージ、少しずつでも追いつけるように更新しようよ！
 
-**実行日時**: 2026/03/20 11:34:18 JST
+**実行日時**: 2026/03/21 11:28:49 JST
 
 ---
 
@@ -29,15 +29,15 @@ Package                            Current    Wanted   Latest  Location         
 @typescript-eslint/eslint-plugin    8.18.2    8.57.1   8.57.1  node_modules/@typescript-eslint/eslint-plugin  Next-project-btw
 @typescript-eslint/parser           8.18.2    8.57.1   8.57.1  node_modules/@typescript-eslint/parser         Next-project-btw
 axios                                1.7.9    1.13.6   1.13.6  node_modules/axios                             Next-project-btw
-eslint                              8.57.1    8.57.1   10.0.3  node_modules/eslint                            Next-project-btw
-eslint-config-next                  14.2.4    14.2.4   16.2.0  node_modules/eslint-config-next                Next-project-btw
+eslint                              8.57.1    8.57.1   10.1.0  node_modules/eslint                            Next-project-btw
+eslint-config-next                  14.2.4    14.2.4   16.2.1  node_modules/eslint-config-next                Next-project-btw
 eslint-config-prettier               9.1.0     9.1.2   10.1.8  node_modules/eslint-config-prettier            Next-project-btw
 eslint-plugin-import                2.31.0    2.32.0   2.32.0  node_modules/eslint-plugin-import              Next-project-btw
 eslint-plugin-prettier               5.2.1     5.5.5    5.5.5  node_modules/eslint-plugin-prettier            Next-project-btw
 eslint-plugin-storybook             0.6.15    0.6.15   10.3.1  node_modules/eslint-plugin-storybook           Next-project-btw
 eslint-plugin-unused-imports         4.1.4     4.4.1    4.4.1  node_modules/eslint-plugin-unused-imports      Next-project-btw
-i18next                            23.16.8   23.16.8  25.8.20  node_modules/i18next                           Next-project-btw
-next                                14.0.3    14.0.3   16.2.0  node_modules/next                              Next-project-btw
+i18next                            23.16.8   23.16.8   25.9.0  node_modules/i18next                           Next-project-btw
+next                                14.0.3    14.0.3   16.2.1  node_modules/next                              Next-project-btw
 next-i18next                        15.4.1    15.4.3   15.4.3  node_modules/next-i18next                      Next-project-btw
 prettier                             3.4.2     3.8.1    3.8.1  node_modules/prettier                          Next-project-btw
 react                               18.3.1    18.3.1   19.2.4  node_modules/react                             Next-project-btw
@@ -77,7 +77,7 @@ info     : 0
 
 ■ @next/eslint-plugin-next [HIGH]
   影響バージョン: 14.0.5-canary.0 - 15.0.0-rc.1
-  修正: eslint-config-next@16.2.0 へのアップデートが必要
+  修正: eslint-config-next@16.2.1 へのアップデートが必要
 
 ■ @storybook/addon-controls [MODERATE]
   影響バージョン: <=0.0.0-pr-34011-sha-c45b0f3f || 6.5.17-alpha.0 - 8.2.0-beta.3
@@ -92,7 +92,7 @@ info     : 0
   修正: @storybook/addon-essentials@8.6.14 へのアップデートが必要
 
 ■ @storybook/addon-onboarding [MODERATE]
-  影響バージョン: 0.0.19--canary.33.684ad81.0 - 0.0.19--canary.40.e7afff4.0 || 0.0.20--canary.40.25bbf96.0 - 0.0.20--canary.42.babf260.0 || 0.0.29--canary.40.3282e5c.0 - 0.0.29--canary.40.69103b8.0 || 0.0.30-canary.40.9cbd35d.0 - 2.0.0-next.2
+  影響バージョン: 0.0.20--canary.40.25bbf96.0 - 0.0.20--canary.42.babf260.0 || 0.0.29--canary.40.3282e5c.0 - 0.0.29--canary.40.69103b8.0 || 0.0.30-canary.40.9cbd35d.0 - 2.0.0-next.2
   修正: @storybook/addon-onboarding@10.3.1 へのアップデートが必要
 
 ■ @storybook/blocks [MODERATE]
@@ -219,7 +219,7 @@ info     : 0
 
 ■ eslint-config-next [HIGH]
   影響バージョン: 14.0.5-canary.0 - 15.0.0-rc.1
-  修正: eslint-config-next@16.2.0 へのアップデートが必要
+  修正: eslint-config-next@16.2.1 へのアップデートが必要
 
 ■ express [LOW]
   影響バージョン: 4.17.0 - 4.21.2 || 5.0.0-alpha.1 - 5.0.1
@@ -247,7 +247,7 @@ info     : 0
   影響バージョン: 10.2.0 - 10.4.5
   glob CLI: Command injection via -c/--cmd executes matches with shell:true
   https://github.com/advisories/GHSA-5j98-mcp5-4vw2
-  修正: eslint-config-next@16.2.0 へのアップデートが必要
+  修正: eslint-config-next@16.2.1 へのアップデートが必要
 
 ■ image-size [HIGH]
   影響バージョン: 1.1.0 - 1.2.0
@@ -380,7 +380,7 @@ info     : 0
   修正: npm audit fix で対応可能
 
 ■ storybook [HIGH]
-  影響バージョン: <=0.0.0-pr-34193-sha-7695cbc2 || 6.5.17-alpha.0 - 8.2.0-beta.3
+  影響バージョン: <=0.0.0-pr-34235-sha-a7c7a978 || 6.5.17-alpha.0 - 8.2.0-beta.3
   Storybook manager bundle may expose environment variables during build
   https://github.com/advisories/GHSA-8452-54wp-rmv6
   修正: npm audit fix で対応可能
