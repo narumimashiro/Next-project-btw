@@ -1,8 +1,8 @@
 # 🩺 依存関係ヘルスレポート
 
-> 🥧 **望月 穂波**: 依存関係のチェック、してきましたよ。何かあれば一緒に考えますね🥧
+> 🌸 **花里 みのり**: もっともっとも～っとセキュリティ万全にしてこうよ！チェック完了！！
 
-**実行日時**: 2026/03/22 11:44:16 JST
+**実行日時**: 2026/03/23 11:44:25 JST
 
 ---
 
@@ -36,7 +36,7 @@ eslint-plugin-import                2.31.0    2.32.0   2.32.0  node_modules/esli
 eslint-plugin-prettier               5.2.1     5.5.5    5.5.5  node_modules/eslint-plugin-prettier            Next-project-btw
 eslint-plugin-storybook             0.6.15    0.6.15   10.3.1  node_modules/eslint-plugin-storybook           Next-project-btw
 eslint-plugin-unused-imports         4.1.4     4.4.1    4.4.1  node_modules/eslint-plugin-unused-imports      Next-project-btw
-i18next                            23.16.8   23.16.8  25.10.3  node_modules/i18next                           Next-project-btw
+i18next                            23.16.8   23.16.8  25.10.4  node_modules/i18next                           Next-project-btw
 next                                14.0.3    14.0.3   16.2.1  node_modules/next                              Next-project-btw
 next-i18next                        15.4.1    15.4.3   15.4.3  node_modules/next-i18next                      Next-project-btw
 prettier                             3.4.2     3.8.1    3.8.1  node_modules/prettier                          Next-project-btw
