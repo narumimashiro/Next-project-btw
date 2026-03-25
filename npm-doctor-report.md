@@ -1,8 +1,8 @@
 # 🩺 依存関係ヘルスレポート
 
-> 🌟 **天馬 司**: 未来のスターが認めた依存関係チェック、完了！古いパッケージも恐れるな！！✨
+> 🍜 **日野森 志歩**: 古いの残ってたけど、それはちゃんと自分で判断してよ！一応確認はしといたから！
 
-**実行日時**: 2026/03/24 11:35:44 JST
+**実行日時**: 2026/03/25 11:41:10 JST
 
 ---
 
@@ -36,15 +36,15 @@ eslint-plugin-import                2.31.0    2.32.0   2.32.0  node_modules/esli
 eslint-plugin-prettier               5.2.1     5.5.5    5.5.5  node_modules/eslint-plugin-prettier            Next-project-btw
 eslint-plugin-storybook             0.6.15    0.6.15   10.3.3  node_modules/eslint-plugin-storybook           Next-project-btw
 eslint-plugin-unused-imports         4.1.4     4.4.1    4.4.1  node_modules/eslint-plugin-unused-imports      Next-project-btw
-i18next                            23.16.8   23.16.8  25.10.5  node_modules/i18next                           Next-project-btw
+i18next                            23.16.8   23.16.8  25.10.9  node_modules/i18next                           Next-project-btw
 next                                14.0.3    14.0.3   16.2.1  node_modules/next                              Next-project-btw
-next-i18next                        15.4.1    15.4.3   16.0.0  node_modules/next-i18next                      Next-project-btw
+next-i18next                        15.4.1    15.4.3   16.0.2  node_modules/next-i18next                      Next-project-btw
 prettier                             3.4.2     3.8.1    3.8.1  node_modules/prettier                          Next-project-btw
 react                               18.3.1    18.3.1   19.2.4  node_modules/react                             Next-project-btw
 react-dom                           18.3.1    18.3.1   19.2.4  node_modules/react-dom                         Next-project-btw
 sass                                1.83.0    1.98.0   1.98.0  node_modules/sass                              Next-project-btw
 storybook                           7.6.20    7.6.24   10.3.3  node_modules/storybook                         Next-project-btw
-swiper                             11.1.15   11.2.10   12.1.2  node_modules/swiper                            Next-project-btw
+swiper                             11.1.15   11.2.10   12.1.3  node_modules/swiper                            Next-project-btw
 typescript                           5.7.2     5.9.3    6.0.2  node_modules/typescript                        Next-project-btw
 ```
 
@@ -389,7 +389,7 @@ info     : 0
   影響バージョン: 6.5.1 - 12.1.1
   Prototype pollution in swiper
   https://github.com/advisories/GHSA-hmx5-qpq5-p643
-  修正: swiper@12.1.2 へのアップデートが必要
+  修正: swiper@12.1.3 へのアップデートが必要
 
 ■ tar [HIGH]
   影響バージョン: <=7.5.10
