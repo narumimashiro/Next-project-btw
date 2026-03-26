@@ -1,8 +1,8 @@
 # 🩺 依存関係ヘルスレポート
 
-> 🍜 **日野森 志歩**: 古いの残ってたけど、それはちゃんと自分で判断してよ！一応確認はしといたから！
+> 🍊 **鏡音リン**: 全部チェックしてきた！気になるとこあったらちゃんと見てね！🍊
 
-**実行日時**: 2026/03/25 11:41:10 JST
+**実行日時**: 2026/03/26 11:48:24 JST
 
 ---
 
@@ -53,11 +53,11 @@ typescript                           5.7.2     5.9.3    6.0.2  node_modules/type
 ## 🔒 npm audit
 
 ```
-合計 57 件の脆弱性が検出されました
+合計 59 件の脆弱性が検出されました
 
 critical : 5
-high     : 17
-moderate : 24
+high     : 18
+moderate : 25
 low      : 11
 info     : 0
 
@@ -353,6 +353,14 @@ info     : 0
   https://github.com/advisories/GHSA-v62p-rq8g-8h59
   修正: npm audit fix で対応可能
 
+■ picomatch [HIGH]
+  影響バージョン: <=2.3.1
+  Picomatch has a ReDoS vulnerability via extglob quantifiers
+  https://github.com/advisories/GHSA-c2c7-rcm5-vvqj
+  Picomatch: Method Injection in POSIX Character Classes causes incorrect Glob Matching
+  https://github.com/advisories/GHSA-3v7f-55p6-f55p
+  修正: npm audit fix で対応可能
+
 ■ qs [MODERATE]
   影響バージョン: <=6.14.1
   qs's arrayLimit bypass in comma parsing allows denial of service
@@ -433,5 +441,11 @@ info     : 0
   https://github.com/advisories/GHSA-8fgc-7cc6-rx7x
   webpack buildHttp HttpUriPlugin allowedUris bypass via HTTP redirects → SSRF + cache persistence
   https://github.com/advisories/GHSA-38r7-794h-5758
+  修正: npm audit fix で対応可能
+
+■ yaml [MODERATE]
+  影響バージョン: 1.0.0 - 1.10.2
+  yaml is vulnerable to Stack Overflow via deeply nested YAML collections
+  https://github.com/advisories/GHSA-48c2-rrv3-qjmp
   修正: npm audit fix で対応可能
 ```
