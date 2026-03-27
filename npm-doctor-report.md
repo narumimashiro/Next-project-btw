@@ -1,51 +1,51 @@
 # 🩺 依存関係ヘルスレポート
 
-> 🍊 **鏡音リン**: 全部チェックしてきた！気になるとこあったらちゃんと見てね！🍊
+> 🎸 **星乃 一歌**: 依存関係のチェック、やってみた！古くなってるものは、少しずつでも更新していこうね！
 
-**実行日時**: 2026/03/26 11:48:24 JST
+**実行日時**: 2026/03/27 11:50:39 JST
 
 ---
 
 ## 📦 npm outdated
 
 ```
-Package                            Current    Wanted   Latest  Location                                       Depended by
-@emotion/styled                    11.14.0   11.14.1  11.14.1  node_modules/@emotion/styled                   Next-project-btw
-@mui/icons-material                5.16.13    5.18.0    7.3.9  node_modules/@mui/icons-material               Next-project-btw
-@mui/material                      5.16.13    5.18.0    7.3.9  node_modules/@mui/material                     Next-project-btw
-@storybook/addon-essentials         7.6.20    7.6.24   8.6.14  node_modules/@storybook/addon-essentials       Next-project-btw
-@storybook/addon-interactions       7.6.20    7.6.24   8.6.14  node_modules/@storybook/addon-interactions     Next-project-btw
-@storybook/addon-links              7.6.20    7.6.24   10.3.3  node_modules/@storybook/addon-links            Next-project-btw
-@storybook/addon-onboarding         1.0.11    1.0.11   10.3.3  node_modules/@storybook/addon-onboarding       Next-project-btw
-@storybook/addon-viewport           7.6.20    7.6.24    9.0.8  node_modules/@storybook/addon-viewport         Next-project-btw
-@storybook/blocks                   7.6.20    7.6.24   8.6.14  node_modules/@storybook/blocks                 Next-project-btw
-@storybook/nextjs                   7.6.20    7.6.24   10.3.3  node_modules/@storybook/nextjs                 Next-project-btw
-@storybook/react                    7.6.20    7.6.24   10.3.3  node_modules/@storybook/react                  Next-project-btw
-@storybook/test                     7.6.20    7.6.24   8.6.15  node_modules/@storybook/test                   Next-project-btw
-@types/node                       20.17.10  20.19.37   25.5.0  node_modules/@types/node                       Next-project-btw
-@types/react                       18.3.18   18.3.28  19.2.14  node_modules/@types/react                      Next-project-btw
-@types/react-dom                    18.3.5    18.3.7   19.2.3  node_modules/@types/react-dom                  Next-project-btw
-@types/yargs                       17.0.33   17.0.35  17.0.35  node_modules/@types/yargs                      Next-project-btw
-@typescript-eslint/eslint-plugin    8.18.2    8.57.2   8.57.2  node_modules/@typescript-eslint/eslint-plugin  Next-project-btw
-@typescript-eslint/parser           8.18.2    8.57.2   8.57.2  node_modules/@typescript-eslint/parser         Next-project-btw
-axios                                1.7.9    1.13.6   1.13.6  node_modules/axios                             Next-project-btw
-eslint                              8.57.1    8.57.1   10.1.0  node_modules/eslint                            Next-project-btw
-eslint-config-next                  14.2.4    14.2.4   16.2.1  node_modules/eslint-config-next                Next-project-btw
-eslint-config-prettier               9.1.0     9.1.2   10.1.8  node_modules/eslint-config-prettier            Next-project-btw
-eslint-plugin-import                2.31.0    2.32.0   2.32.0  node_modules/eslint-plugin-import              Next-project-btw
-eslint-plugin-prettier               5.2.1     5.5.5    5.5.5  node_modules/eslint-plugin-prettier            Next-project-btw
-eslint-plugin-storybook             0.6.15    0.6.15   10.3.3  node_modules/eslint-plugin-storybook           Next-project-btw
-eslint-plugin-unused-imports         4.1.4     4.4.1    4.4.1  node_modules/eslint-plugin-unused-imports      Next-project-btw
-i18next                            23.16.8   23.16.8  25.10.9  node_modules/i18next                           Next-project-btw
-next                                14.0.3    14.0.3   16.2.1  node_modules/next                              Next-project-btw
-next-i18next                        15.4.1    15.4.3   16.0.2  node_modules/next-i18next                      Next-project-btw
-prettier                             3.4.2     3.8.1    3.8.1  node_modules/prettier                          Next-project-btw
-react                               18.3.1    18.3.1   19.2.4  node_modules/react                             Next-project-btw
-react-dom                           18.3.1    18.3.1   19.2.4  node_modules/react-dom                         Next-project-btw
-sass                                1.83.0    1.98.0   1.98.0  node_modules/sass                              Next-project-btw
-storybook                           7.6.20    7.6.24   10.3.3  node_modules/storybook                         Next-project-btw
-swiper                             11.1.15   11.2.10   12.1.3  node_modules/swiper                            Next-project-btw
-typescript                           5.7.2     5.9.3    6.0.2  node_modules/typescript                        Next-project-btw
+Package                            Current    Wanted    Latest  Location                                       Depended by
+@emotion/styled                    11.14.0   11.14.1   11.14.1  node_modules/@emotion/styled                   Next-project-btw
+@mui/icons-material                5.16.13    5.18.0     7.3.9  node_modules/@mui/icons-material               Next-project-btw
+@mui/material                      5.16.13    5.18.0     7.3.9  node_modules/@mui/material                     Next-project-btw
+@storybook/addon-essentials         7.6.20    7.6.24    8.6.14  node_modules/@storybook/addon-essentials       Next-project-btw
+@storybook/addon-interactions       7.6.20    7.6.24    8.6.14  node_modules/@storybook/addon-interactions     Next-project-btw
+@storybook/addon-links              7.6.20    7.6.24    10.3.3  node_modules/@storybook/addon-links            Next-project-btw
+@storybook/addon-onboarding         1.0.11    1.0.11    10.3.3  node_modules/@storybook/addon-onboarding       Next-project-btw
+@storybook/addon-viewport           7.6.20    7.6.24     9.0.8  node_modules/@storybook/addon-viewport         Next-project-btw
+@storybook/blocks                   7.6.20    7.6.24    8.6.14  node_modules/@storybook/blocks                 Next-project-btw
+@storybook/nextjs                   7.6.20    7.6.24    10.3.3  node_modules/@storybook/nextjs                 Next-project-btw
+@storybook/react                    7.6.20    7.6.24    10.3.3  node_modules/@storybook/react                  Next-project-btw
+@storybook/test                     7.6.20    7.6.24    8.6.15  node_modules/@storybook/test                   Next-project-btw
+@types/node                       20.17.10  20.19.37    25.5.0  node_modules/@types/node                       Next-project-btw
+@types/react                       18.3.18   18.3.28   19.2.14  node_modules/@types/react                      Next-project-btw
+@types/react-dom                    18.3.5    18.3.7    19.2.3  node_modules/@types/react-dom                  Next-project-btw
+@types/yargs                       17.0.33   17.0.35   17.0.35  node_modules/@types/yargs                      Next-project-btw
+@typescript-eslint/eslint-plugin    8.18.2    8.57.2    8.57.2  node_modules/@typescript-eslint/eslint-plugin  Next-project-btw
+@typescript-eslint/parser           8.18.2    8.57.2    8.57.2  node_modules/@typescript-eslint/parser         Next-project-btw
+axios                                1.7.9    1.13.6    1.13.6  node_modules/axios                             Next-project-btw
+eslint                              8.57.1    8.57.1    10.1.0  node_modules/eslint                            Next-project-btw
+eslint-config-next                  14.2.4    14.2.4    16.2.1  node_modules/eslint-config-next                Next-project-btw
+eslint-config-prettier               9.1.0     9.1.2    10.1.8  node_modules/eslint-config-prettier            Next-project-btw
+eslint-plugin-import                2.31.0    2.32.0    2.32.0  node_modules/eslint-plugin-import              Next-project-btw
+eslint-plugin-prettier               5.2.1     5.5.5     5.5.5  node_modules/eslint-plugin-prettier            Next-project-btw
+eslint-plugin-storybook             0.6.15    0.6.15    10.3.3  node_modules/eslint-plugin-storybook           Next-project-btw
+eslint-plugin-unused-imports         4.1.4     4.4.1     4.4.1  node_modules/eslint-plugin-unused-imports      Next-project-btw
+i18next                            23.16.8   23.16.8  25.10.10  node_modules/i18next                           Next-project-btw
+next                                14.0.3    14.0.3    16.2.1  node_modules/next                              Next-project-btw
+next-i18next                        15.4.1    15.4.3    16.0.2  node_modules/next-i18next                      Next-project-btw
+prettier                             3.4.2     3.8.1     3.8.1  node_modules/prettier                          Next-project-btw
+react                               18.3.1    18.3.1    19.2.4  node_modules/react                             Next-project-btw
+react-dom                           18.3.1    18.3.1    19.2.4  node_modules/react-dom                         Next-project-btw
+sass                                1.83.0    1.98.0    1.98.0  node_modules/sass                              Next-project-btw
+storybook                           7.6.20    7.6.24    10.3.3  node_modules/storybook                         Next-project-btw
+swiper                             11.1.15   11.2.10    12.1.3  node_modules/swiper                            Next-project-btw
+typescript                           5.7.2     5.9.3     6.0.2  node_modules/typescript                        Next-project-btw
 ```
 
 ---
@@ -53,12 +53,12 @@ typescript                           5.7.2     5.9.3    6.0.2  node_modules/type
 ## 🔒 npm audit
 
 ```
-合計 59 件の脆弱性が検出されました
+合計 60 件の脆弱性が検出されました
 
 critical : 5
 high     : 18
-moderate : 25
-low      : 11
+moderate : 27
+low      : 10
 info     : 0
 
 ----------------------------------------
@@ -181,12 +181,14 @@ info     : 0
   影響バージョン: 1.19.0 - 1.20.3 || 2.0.0-beta.1 - 2.0.2
   修正: npm audit fix で対応可能
 
-■ brace-expansion [LOW]
-  影響バージョン: 1.0.0 - 1.1.11 || 2.0.0 - 2.0.1
+■ brace-expansion [MODERATE]
+  影響バージョン: <=5.0.4
   brace-expansion Regular Expression Denial of Service vulnerability
   https://github.com/advisories/GHSA-v6h2-p8h4-qcjw
   brace-expansion Regular Expression Denial of Service vulnerability
   https://github.com/advisories/GHSA-v6h2-p8h4-qcjw
+  brace-expansion: Zero-step sequence causes process hang and memory exhaustion
+  https://github.com/advisories/GHSA-f886-m6hf-6m8v
   修正: npm audit fix で対応可能
 
 ■ browserify-sign [LOW]
@@ -248,6 +250,12 @@ info     : 0
   glob CLI: Command injection via -c/--cmd executes matches with shell:true
   https://github.com/advisories/GHSA-5j98-mcp5-4vw2
   修正: eslint-config-next@16.2.1 へのアップデートが必要
+
+■ handlebars [MODERATE]
+  影響バージョン: 4.0.0 - 4.7.8
+  Handlebars.js has Prototype Pollution Leading to XSS through Partial Template Injection
+  https://github.com/advisories/GHSA-2qvq-rjwj-gvw9
+  修正: npm audit fix で対応可能
 
 ■ image-size [HIGH]
   影響バージョン: 1.1.0 - 1.2.0
@@ -388,7 +396,7 @@ info     : 0
   修正: npm audit fix で対応可能
 
 ■ storybook [HIGH]
-  影響バージョン: <=0.0.0-pr-34281-sha-d910f6e6 || 6.5.17-alpha.0 - 8.2.0-beta.3
+  影響バージョン: <=0.0.0-pr-34355-sha-efbb5599 || 6.5.17-alpha.0 - 8.2.0-beta.3
   Storybook manager bundle may expose environment variables during build
   https://github.com/advisories/GHSA-8452-54wp-rmv6
   修正: npm audit fix で対応可能
