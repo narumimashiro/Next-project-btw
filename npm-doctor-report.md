@@ -1,8 +1,8 @@
 # 🩺 依存関係ヘルスレポート
 
-> 🎸 **星乃 一歌**: 依存関係のチェック、やってみた！古くなってるものは、少しずつでも更新していこうね！
+> 🤖 **草薙 寧々**: ﾊﾟｯｹｰｼﾞﾁｪｯｸｶﾝﾘｮｳ!!...パッケージのチェック、してきたよ。古いの、ちゃんと見てね。🤖
 
-**実行日時**: 2026/03/27 11:50:39 JST
+**実行日時**: 2026/03/28 11:39:53 JST
 
 ---
 
@@ -28,7 +28,7 @@ Package                            Current    Wanted    Latest  Location        
 @types/yargs                       17.0.33   17.0.35   17.0.35  node_modules/@types/yargs                      Next-project-btw
 @typescript-eslint/eslint-plugin    8.18.2    8.57.2    8.57.2  node_modules/@typescript-eslint/eslint-plugin  Next-project-btw
 @typescript-eslint/parser           8.18.2    8.57.2    8.57.2  node_modules/@typescript-eslint/parser         Next-project-btw
-axios                                1.7.9    1.13.6    1.13.6  node_modules/axios                             Next-project-btw
+axios                                1.7.9    1.14.0    1.14.0  node_modules/axios                             Next-project-btw
 eslint                              8.57.1    8.57.1    10.1.0  node_modules/eslint                            Next-project-btw
 eslint-config-next                  14.2.4    14.2.4    16.2.1  node_modules/eslint-config-next                Next-project-btw
 eslint-config-prettier               9.1.0     9.1.2    10.1.8  node_modules/eslint-config-prettier            Next-project-btw
@@ -38,7 +38,7 @@ eslint-plugin-storybook             0.6.15    0.6.15    10.3.3  node_modules/esl
 eslint-plugin-unused-imports         4.1.4     4.4.1     4.4.1  node_modules/eslint-plugin-unused-imports      Next-project-btw
 i18next                            23.16.8   23.16.8  25.10.10  node_modules/i18next                           Next-project-btw
 next                                14.0.3    14.0.3    16.2.1  node_modules/next                              Next-project-btw
-next-i18next                        15.4.1    15.4.3    16.0.2  node_modules/next-i18next                      Next-project-btw
+next-i18next                        15.4.1    15.4.3    16.0.3  node_modules/next-i18next                      Next-project-btw
 prettier                             3.4.2     3.8.1     3.8.1  node_modules/prettier                          Next-project-btw
 react                               18.3.1    18.3.1    19.2.4  node_modules/react                             Next-project-btw
 react-dom                           18.3.1    18.3.1    19.2.4  node_modules/react-dom                         Next-project-btw
@@ -53,12 +53,12 @@ typescript                           5.7.2     5.9.3     6.0.2  node_modules/typ
 ## 🔒 npm audit
 
 ```
-合計 60 件の脆弱性が検出されました
+合計 61 件の脆弱性が検出されました
 
-critical : 5
-high     : 18
-moderate : 27
-low      : 10
+critical : 6
+high     : 20
+moderate : 26
+low      : 9
 info     : 0
 
 ----------------------------------------
@@ -182,11 +182,13 @@ info     : 0
   修正: npm audit fix で対応可能
 
 ■ brace-expansion [MODERATE]
-  影響バージョン: <=5.0.4
+  影響バージョン: <=1.1.12 || 2.0.0 - 2.0.2
   brace-expansion Regular Expression Denial of Service vulnerability
   https://github.com/advisories/GHSA-v6h2-p8h4-qcjw
   brace-expansion Regular Expression Denial of Service vulnerability
   https://github.com/advisories/GHSA-v6h2-p8h4-qcjw
+  brace-expansion: Zero-step sequence causes process hang and memory exhaustion
+  https://github.com/advisories/GHSA-f886-m6hf-6m8v
   brace-expansion: Zero-step sequence causes process hang and memory exhaustion
   https://github.com/advisories/GHSA-f886-m6hf-6m8v
   修正: npm audit fix で対応可能
@@ -223,8 +225,8 @@ info     : 0
   影響バージョン: 14.0.5-canary.0 - 15.0.0-rc.1
   修正: eslint-config-next@16.2.1 へのアップデートが必要
 
-■ express [LOW]
-  影響バージョン: 4.17.0 - 4.21.2 || 5.0.0-alpha.1 - 5.0.1
+■ express [HIGH]
+  影響バージョン: 4.0.0-rc1 - 4.21.2 || 5.0.0-alpha.1 - 5.0.1
   修正: npm audit fix で対応可能
 
 ■ flatted [HIGH]
@@ -251,8 +253,18 @@ info     : 0
   https://github.com/advisories/GHSA-5j98-mcp5-4vw2
   修正: eslint-config-next@16.2.1 へのアップデートが必要
 
-■ handlebars [MODERATE]
+■ handlebars [CRITICAL]
   影響バージョン: 4.0.0 - 4.7.8
+  Handlebars.js has JavaScript Injection in CLI Precompiler via Unescaped Names and Options
+  https://github.com/advisories/GHSA-xjpj-3mr7-gcpf
+  Handlebars.js has JavaScript Injection via AST Type Confusion when passing an object as dynamic partial
+  https://github.com/advisories/GHSA-xhpv-hc6g-r9c6
+  Handlebars.js has Denial of Service via Malformed Decorator Syntax in Template Compilation
+  https://github.com/advisories/GHSA-9cx6-37pm-9jff
+  Handlebars.js has JavaScript Injection via AST Type Confusion by tampering @partial-block
+  https://github.com/advisories/GHSA-3mfm-83xf-c92r
+  Handlebars.js has JavaScript Injection via AST Type Confusion
+  https://github.com/advisories/GHSA-2w6w-674q-4c4q
   Handlebars.js has Prototype Pollution Leading to XSS through Partial Template Injection
   https://github.com/advisories/GHSA-2qvq-rjwj-gvw9
   修正: npm audit fix で対応可能
@@ -353,6 +365,12 @@ info     : 0
   https://github.com/advisories/GHSA-76c9-3jph-rj3q
   修正: npm audit fix で対応可能
 
+■ path-to-regexp [HIGH]
+  影響バージョン: <0.1.13
+  path-to-regexp vulnerable to Regular Expression Denial of Service via multiple route parameters
+  https://github.com/advisories/GHSA-37ch-88jc-xwx2
+  修正: npm audit fix で対応可能
+
 ■ pbkdf2 [CRITICAL]
   影響バージョン: 3.0.3 - 3.1.2
   pbkdf2 returns predictable uninitialized/zero-filled memory for non-normalized or unimplemented algos
@@ -363,10 +381,10 @@ info     : 0
 
 ■ picomatch [HIGH]
   影響バージョン: <=2.3.1
-  Picomatch has a ReDoS vulnerability via extglob quantifiers
-  https://github.com/advisories/GHSA-c2c7-rcm5-vvqj
   Picomatch: Method Injection in POSIX Character Classes causes incorrect Glob Matching
   https://github.com/advisories/GHSA-3v7f-55p6-f55p
+  Picomatch has a ReDoS vulnerability via extglob quantifiers
+  https://github.com/advisories/GHSA-c2c7-rcm5-vvqj
   修正: npm audit fix で対応可能
 
 ■ qs [MODERATE]
@@ -378,9 +396,11 @@ info     : 0
   修正: npm audit fix で対応可能
 
 ■ serialize-javascript [HIGH]
-  影響バージョン: <=7.0.2
+  影響バージョン: <=7.0.4
   Serialize JavaScript is Vulnerable to RCE via RegExp.flags and Date.prototype.toISOString()
   https://github.com/advisories/GHSA-5c6j-r48x-rmvq
+  Serialize JavaScript has CPU Exhaustion Denial of Service via crafted array-like objects
+  https://github.com/advisories/GHSA-qj8w-gfj5-8c6v
   修正: npm audit fix で対応可能
 
 ■ sha.js [CRITICAL]
@@ -396,7 +416,7 @@ info     : 0
   修正: npm audit fix で対応可能
 
 ■ storybook [HIGH]
-  影響バージョン: <=0.0.0-pr-34355-sha-efbb5599 || 6.5.17-alpha.0 - 8.2.0-beta.3
+  影響バージョン: <=0.0.0-pr-34370-sha-b4eae34c || 6.5.17-alpha.0 - 8.2.0-beta.3
   Storybook manager bundle may expose environment variables during build
   https://github.com/advisories/GHSA-8452-54wp-rmv6
   修正: npm audit fix で対応可能
