@@ -1,8 +1,8 @@
 # 🩺 依存関係ヘルスレポート
 
-> 🌸 **花里 みのり**: もっともっとも～っとセキュリティ万全にしてこうよ！チェック完了！！
+> 🐧 **桐谷 遥**: パッケージのこと、少し心配だったから確認してみたよ...。何かあれば教えてね🐧
 
-**実行日時**: 2026/03/29 11:54:32 JST
+**実行日時**: 2026/03/30 11:57:33 JST
 
 ---
 
@@ -267,6 +267,10 @@ info     : 0
   https://github.com/advisories/GHSA-2w6w-674q-4c4q
   Handlebars.js has Prototype Pollution Leading to XSS through Partial Template Injection
   https://github.com/advisories/GHSA-2qvq-rjwj-gvw9
+  Handlebars.js has a Prototype Method Access Control Gap via Missing __lookupSetter__ Blocklist Entry
+  https://github.com/advisories/GHSA-7rx3-28cr-v5wh
+  Handlebars.js has a Property Access Validation Bypass in container.lookup
+  https://github.com/advisories/GHSA-442j-39wm-28r2
   修正: npm audit fix で対応可能
 
 ■ image-size [HIGH]
