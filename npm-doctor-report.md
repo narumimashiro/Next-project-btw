@@ -1,8 +1,8 @@
 # 🩺 依存関係ヘルスレポート
 
-> 🐧 **桐谷 遥**: パッケージのこと、少し心配だったから確認してみたよ...。何かあれば教えてね🐧
+> 🐹 **小豆沢 こはね**: パッケージのチェック、頑張って確認してきたよ！セキュリティ大事だと思うから！🐹
 
-**実行日時**: 2026/03/30 11:57:33 JST
+**実行日時**: 2026/03/31 11:50:05 JST
 
 ---
 
@@ -26,9 +26,9 @@ Package                            Current    Wanted   Latest  Location         
 @types/react                       18.3.18   18.3.28  19.2.14  node_modules/@types/react                      Next-project-btw
 @types/react-dom                    18.3.5    18.3.7   19.2.3  node_modules/@types/react-dom                  Next-project-btw
 @types/yargs                       17.0.33   17.0.35  17.0.35  node_modules/@types/yargs                      Next-project-btw
-@typescript-eslint/eslint-plugin    8.18.2    8.57.2   8.57.2  node_modules/@typescript-eslint/eslint-plugin  Next-project-btw
-@typescript-eslint/parser           8.18.2    8.57.2   8.57.2  node_modules/@typescript-eslint/parser         Next-project-btw
-axios                                1.7.9    1.14.0   1.14.0  node_modules/axios                             Next-project-btw
+@typescript-eslint/eslint-plugin    8.18.2    8.58.0   8.58.0  node_modules/@typescript-eslint/eslint-plugin  Next-project-btw
+@typescript-eslint/parser           8.18.2    8.58.0   8.58.0  node_modules/@typescript-eslint/parser         Next-project-btw
+axios                                1.7.9    1.14.1   1.14.1  node_modules/axios                             Next-project-btw
 eslint                              8.57.1    8.57.1   10.1.0  node_modules/eslint                            Next-project-btw
 eslint-config-next                  14.2.4    14.2.4   16.2.1  node_modules/eslint-config-next                Next-project-btw
 eslint-config-prettier               9.1.0     9.1.2   10.1.8  node_modules/eslint-config-prettier            Next-project-btw
@@ -36,7 +36,7 @@ eslint-plugin-import                2.31.0    2.32.0   2.32.0  node_modules/esli
 eslint-plugin-prettier               5.2.1     5.5.5    5.5.5  node_modules/eslint-plugin-prettier            Next-project-btw
 eslint-plugin-storybook             0.6.15    0.6.15   10.3.3  node_modules/eslint-plugin-storybook           Next-project-btw
 eslint-plugin-unused-imports         4.1.4     4.4.1    4.4.1  node_modules/eslint-plugin-unused-imports      Next-project-btw
-i18next                            23.16.8   23.16.8   26.0.1  node_modules/i18next                           Next-project-btw
+i18next                            23.16.8   23.16.8   26.0.2  node_modules/i18next                           Next-project-btw
 next                                14.0.3    14.0.3   16.2.1  node_modules/next                              Next-project-btw
 next-i18next                        15.4.1    15.4.3   16.0.4  node_modules/next-i18next                      Next-project-btw
 prettier                             3.4.2     3.8.1    3.8.1  node_modules/prettier                          Next-project-btw
@@ -125,7 +125,7 @@ info     : 0
 
 ■ @storybook/docs-tools [MODERATE]
   影響バージョン: <=0.0.0-pr-34011-sha-c45b0f3f || 6.5.17-alpha.0 - 8.2.0-beta.3
-  修正: @storybook/blocks@8.6.14 へのアップデートが必要
+  修正: @storybook/react@10.3.3 へのアップデートが必要
 
 ■ @storybook/nextjs [MODERATE]
   影響バージョン: *
@@ -255,12 +255,6 @@ info     : 0
 
 ■ handlebars [CRITICAL]
   影響バージョン: 4.0.0 - 4.7.8
-  Handlebars.js has JavaScript Injection in CLI Precompiler via Unescaped Names and Options
-  https://github.com/advisories/GHSA-xjpj-3mr7-gcpf
-  Handlebars.js has JavaScript Injection via AST Type Confusion when passing an object as dynamic partial
-  https://github.com/advisories/GHSA-xhpv-hc6g-r9c6
-  Handlebars.js has Denial of Service via Malformed Decorator Syntax in Template Compilation
-  https://github.com/advisories/GHSA-9cx6-37pm-9jff
   Handlebars.js has JavaScript Injection via AST Type Confusion by tampering @partial-block
   https://github.com/advisories/GHSA-3mfm-83xf-c92r
   Handlebars.js has JavaScript Injection via AST Type Confusion
@@ -271,6 +265,12 @@ info     : 0
   https://github.com/advisories/GHSA-7rx3-28cr-v5wh
   Handlebars.js has a Property Access Validation Bypass in container.lookup
   https://github.com/advisories/GHSA-442j-39wm-28r2
+  Handlebars.js has JavaScript Injection in CLI Precompiler via Unescaped Names and Options
+  https://github.com/advisories/GHSA-xjpj-3mr7-gcpf
+  Handlebars.js has JavaScript Injection via AST Type Confusion when passing an object as dynamic partial
+  https://github.com/advisories/GHSA-xhpv-hc6g-r9c6
+  Handlebars.js has Denial of Service via Malformed Decorator Syntax in Template Compilation
+  https://github.com/advisories/GHSA-9cx6-37pm-9jff
   修正: npm audit fix で対応可能
 
 ■ image-size [HIGH]
@@ -420,7 +420,7 @@ info     : 0
   修正: npm audit fix で対応可能
 
 ■ storybook [HIGH]
-  影響バージョン: <=0.0.0-pr-34370-sha-b4eae34c || 6.5.17-alpha.0 - 8.2.0-beta.3
+  影響バージョン: <=0.0.0-pr-34396-sha-69743144 || 6.5.17-alpha.0 - 8.2.0-beta.3
   Storybook manager bundle may expose environment variables during build
   https://github.com/advisories/GHSA-8452-54wp-rmv6
   修正: npm audit fix で対応可能
