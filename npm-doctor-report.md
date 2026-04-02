@@ -1,8 +1,8 @@
 # 🩺 依存関係ヘルスレポート
 
-> 🎹 **天馬 咲希**: やったやった！パッケージ全部見てきたよ！セキュリティも大事だよね！🎹
+> ⭐ **白石 杏**: 依存関係チェック完了！古いのあったらすぐ更新な！⭐
 
-**実行日時**: 2026/04/01 12:19:54 JST
+**実行日時**: 2026/04/02 11:46:07 JST
 
 ---
 
@@ -38,7 +38,7 @@ eslint-plugin-storybook             0.6.15    0.6.15   10.3.3  node_modules/esli
 eslint-plugin-unused-imports         4.1.4     4.4.1    4.4.1  node_modules/eslint-plugin-unused-imports      Next-project-btw
 i18next                            23.16.8   23.16.8   26.0.3  node_modules/i18next                           Next-project-btw
 next                                14.0.3    14.0.3   16.2.2  node_modules/next                              Next-project-btw
-next-i18next                        15.4.1    15.4.3   16.0.4  node_modules/next-i18next                      Next-project-btw
+next-i18next                        15.4.1    15.4.3   16.0.5  node_modules/next-i18next                      Next-project-btw
 prettier                             3.4.2     3.8.1    3.8.1  node_modules/prettier                          Next-project-btw
 react                               18.3.1    18.3.1   19.2.4  node_modules/react                             Next-project-btw
 react-dom                           18.3.1    18.3.1   19.2.4  node_modules/react-dom                         Next-project-btw
@@ -56,8 +56,8 @@ typescript                           5.7.2     5.9.3    6.0.2  node_modules/type
 合計 61 件の脆弱性が検出されました
 
 critical : 6
-high     : 20
-moderate : 26
+high     : 21
+moderate : 25
 low      : 9
 info     : 0
 
@@ -92,7 +92,7 @@ info     : 0
   修正: @storybook/addon-essentials@8.6.14 へのアップデートが必要
 
 ■ @storybook/addon-onboarding [MODERATE]
-  影響バージョン: 0.0.20--canary.40.25bbf96.0 - 0.0.20--canary.42.babf260.0 || 0.0.29--canary.40.3282e5c.0 - 0.0.29--canary.40.69103b8.0 || 0.0.30-canary.40.9cbd35d.0 - 2.0.0-next.2
+  影響バージョン: 0.0.29--canary.40.3282e5c.0 - 0.0.29--canary.40.69103b8.0 || 0.0.30-canary.40.9cbd35d.0 - 2.0.0-next.2
   修正: @storybook/addon-onboarding@10.3.3 へのアップデートが必要
 
 ■ @storybook/blocks [MODERATE]
@@ -293,10 +293,14 @@ info     : 0
   https://github.com/advisories/GHSA-mh29-5h37-fv8m
   修正: npm audit fix で対応可能
 
-■ lodash [MODERATE]
-  影響バージョン: 4.0.0 - 4.17.21
+■ lodash [HIGH]
+  影響バージョン: <=4.17.23
   Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions
   https://github.com/advisories/GHSA-xxjr-mmjv-4gpg
+  lodash vulnerable to Code Injection via `_.template` imports key names
+  https://github.com/advisories/GHSA-r5fr-rjxr-66jc
+  lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`
+  https://github.com/advisories/GHSA-f23m-r3pf-42rh
   修正: npm audit fix で対応可能
 
 ■ minimatch [HIGH]
@@ -420,7 +424,7 @@ info     : 0
   修正: npm audit fix で対応可能
 
 ■ storybook [HIGH]
-  影響バージョン: <=0.0.0-pr-34413-sha-0948f75d || 6.5.17-alpha.0 - 8.2.0-beta.3
+  影響バージョン: <=0.0.0-pr-34428-sha-d7a905aa || 6.5.17-alpha.0 - 8.2.0-beta.3
   Storybook manager bundle may expose environment variables during build
   https://github.com/advisories/GHSA-8452-54wp-rmv6
   修正: npm audit fix で対応可能
