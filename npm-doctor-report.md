@@ -1,8 +1,8 @@
 # 🩺 依存関係ヘルスレポート
 
-> 🎀 **暁山 瑞希**: パッケージのチェック、してきたよ！あはは、古いの結構あったりしてね！🎀
+> ❄️ **朝比奈 まふゆ**: パッケージのこと、調べてみた...。脆弱性があるなら、直した方がいいと思う。❄️
 
-**実行日時**: 2026/04/03 11:48:55 JST
+**実行日時**: 2026/04/04 11:38:45 JST
 
 ---
 
@@ -22,14 +22,14 @@ Package                            Current    Wanted   Latest  Location         
 @storybook/nextjs                   7.6.20    7.6.24   10.3.4  node_modules/@storybook/nextjs                 Next-project-btw
 @storybook/react                    7.6.20    7.6.24   10.3.4  node_modules/@storybook/react                  Next-project-btw
 @storybook/test                     7.6.20    7.6.24   8.6.15  node_modules/@storybook/test                   Next-project-btw
-@types/node                       20.17.10  20.19.37   25.5.0  node_modules/@types/node                       Next-project-btw
+@types/node                       20.17.10  20.19.39   25.5.2  node_modules/@types/node                       Next-project-btw
 @types/react                       18.3.18   18.3.28  19.2.14  node_modules/@types/react                      Next-project-btw
 @types/react-dom                    18.3.5    18.3.7   19.2.3  node_modules/@types/react-dom                  Next-project-btw
 @types/yargs                       17.0.33   17.0.35  17.0.35  node_modules/@types/yargs                      Next-project-btw
 @typescript-eslint/eslint-plugin    8.18.2    8.58.0   8.58.0  node_modules/@typescript-eslint/eslint-plugin  Next-project-btw
 @typescript-eslint/parser           8.18.2    8.58.0   8.58.0  node_modules/@typescript-eslint/parser         Next-project-btw
 axios                                1.7.9    1.14.0   1.14.0  node_modules/axios                             Next-project-btw
-eslint                              8.57.1    8.57.1   10.1.0  node_modules/eslint                            Next-project-btw
+eslint                              8.57.1    8.57.1   10.2.0  node_modules/eslint                            Next-project-btw
 eslint-config-next                  14.2.4    14.2.4   16.2.2  node_modules/eslint-config-next                Next-project-btw
 eslint-config-prettier               9.1.0     9.1.2   10.1.8  node_modules/eslint-config-prettier            Next-project-btw
 eslint-plugin-import                2.31.0    2.32.0   2.32.0  node_modules/eslint-plugin-import              Next-project-btw
@@ -92,7 +92,7 @@ info     : 0
   修正: @storybook/addon-essentials@8.6.14 へのアップデートが必要
 
 ■ @storybook/addon-onboarding [MODERATE]
-  影響バージョン: 0.0.29--canary.40.3282e5c.0 - 0.0.29--canary.40.69103b8.0 || 0.0.30-canary.40.9cbd35d.0 - 2.0.0-next.2
+  影響バージョン: 0.0.19--canary.33.684ad81.0 - 0.0.19--canary.40.e7afff4.0 || 0.0.20--canary.40.25bbf96.0 - 0.0.20--canary.42.babf260.0 || 0.0.29--canary.40.3282e5c.0 - 0.0.29--canary.40.69103b8.0 || 0.0.30-canary.40.9cbd35d.0 - 2.0.0-next.2
   修正: @storybook/addon-onboarding@10.3.4 へのアップデートが必要
 
 ■ @storybook/blocks [MODERATE]
@@ -125,7 +125,7 @@ info     : 0
 
 ■ @storybook/docs-tools [MODERATE]
   影響バージョン: <=0.0.0-pr-34011-sha-c45b0f3f || 6.5.17-alpha.0 - 8.2.0-beta.3
-  修正: @storybook/blocks@8.6.14 へのアップデートが必要
+  修正: @storybook/react@10.3.4 へのアップデートが必要
 
 ■ @storybook/nextjs [MODERATE]
   影響バージョン: *
@@ -424,7 +424,7 @@ info     : 0
   修正: npm audit fix で対応可能
 
 ■ storybook [HIGH]
-  影響バージョン: <=0.0.0-pr-34428-sha-d7a905aa || 6.5.17-alpha.0 - 8.2.0-beta.3
+  影響バージョン: <=0.0.0-pr-34440-sha-67c14961 || 6.5.17-alpha.0 - 8.2.0-beta.3
   Storybook manager bundle may expose environment variables during build
   https://github.com/advisories/GHSA-8452-54wp-rmv6
   修正: npm audit fix で対応可能
