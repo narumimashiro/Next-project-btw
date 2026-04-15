@@ -27,4 +27,4 @@ jobs:
       - uses: narumikr/link-sekai-actions/prsk-doctor-deps@chore/prsk-doctor-branch-select
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          branch: 'chore/test'
+          branch: 'chore/test-report'
