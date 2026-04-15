@@ -1,8 +1,8 @@
 # 🩺 依存関係ヘルスレポート
 
-> 🐧 **桐谷 遥**: 依存関係少し心配だったから確認してレポートにまとめたよ。私も手伝うから確認しちゃおう🐧
+> 🍷 **MEIKO**: パッケージのセキュリティしっかり確認しておいたわ。焦らず一つずつ見ていきましょ🍷
 
-**実行日時**: 2026/04/15 20:12:42 JST
+**実行日時**: 2026/04/15 21:01:44 JST
 
 ---
 
@@ -37,7 +37,7 @@ eslint-plugin-prettier               5.2.1     5.5.5    5.5.5  node_modules/esli
 eslint-plugin-simple-import-sort    12.1.1    12.1.1   13.0.0  node_modules/eslint-plugin-simple-import-sort  Next-project-btw
 eslint-plugin-storybook             0.6.15    0.6.15   10.3.5  node_modules/eslint-plugin-storybook           Next-project-btw
 eslint-plugin-unused-imports         4.1.4     4.4.1    4.4.1  node_modules/eslint-plugin-unused-imports      Next-project-btw
-i18next                            23.16.8   23.16.8   26.0.4  node_modules/i18next                           Next-project-btw
+i18next                            23.16.8   23.16.8   26.0.5  node_modules/i18next                           Next-project-btw
 next                                14.0.3    14.0.3   16.2.3  node_modules/next                              Next-project-btw
 next-i18next                        15.4.1    15.4.3   16.0.5  node_modules/next-i18next                      Next-project-btw
 prettier                             3.4.2     3.8.3    3.8.3  node_modules/prettier                          Next-project-btw
