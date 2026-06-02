@@ -1,8 +1,8 @@
 # 🩺 依存関係ヘルスレポート
 
-> 💧 **日野森 雫**: パッケージの状態確認してきたわよ～。必要あれば更新していきましょう💧
+> 🎹 **天馬 咲希**: 依存関係チェック完了だよ～！脆弱性あったら怖いから、早めにレポートチェックしてねっ🎹
 
-**実行日時**: 2026/04/15 21:46:29 JST
+**実行日時**: 2026/04/16 11:34:12 JST
 
 ---
 
@@ -30,7 +30,7 @@ Package                            Current    Wanted   Latest  Location         
 @typescript-eslint/parser           8.18.2    8.58.2   8.58.2  node_modules/@typescript-eslint/parser         Next-project-btw
 axios                                1.7.9    1.15.0   1.15.0  node_modules/axios                             Next-project-btw
 eslint                              8.57.1    8.57.1   10.2.0  node_modules/eslint                            Next-project-btw
-eslint-config-next                  14.2.4    14.2.4   16.2.3  node_modules/eslint-config-next                Next-project-btw
+eslint-config-next                  14.2.4    14.2.4   16.2.4  node_modules/eslint-config-next                Next-project-btw
 eslint-config-prettier               9.1.0     9.1.2   10.1.8  node_modules/eslint-config-prettier            Next-project-btw
 eslint-plugin-import                2.31.0    2.32.0   2.32.0  node_modules/eslint-plugin-import              Next-project-btw
 eslint-plugin-prettier               5.2.1     5.5.5    5.5.5  node_modules/eslint-plugin-prettier            Next-project-btw
@@ -38,7 +38,7 @@ eslint-plugin-simple-import-sort    12.1.1    12.1.1   13.0.0  node_modules/esli
 eslint-plugin-storybook             0.6.15    0.6.15   10.3.5  node_modules/eslint-plugin-storybook           Next-project-btw
 eslint-plugin-unused-imports         4.1.4     4.4.1    4.4.1  node_modules/eslint-plugin-unused-imports      Next-project-btw
 i18next                            23.16.8   23.16.8   26.0.5  node_modules/i18next                           Next-project-btw
-next                                14.0.3    14.0.3   16.2.3  node_modules/next                              Next-project-btw
+next                                14.0.3    14.0.3   16.2.4  node_modules/next                              Next-project-btw
 next-i18next                        15.4.1    15.4.3   16.0.5  node_modules/next-i18next                      Next-project-btw
 prettier                             3.4.2     3.8.3    3.8.3  node_modules/prettier                          Next-project-btw
 react                               18.3.1    18.3.1   19.2.5  node_modules/react                             Next-project-btw
@@ -78,7 +78,7 @@ info     : 0
 
 ■ @next/eslint-plugin-next [HIGH]
   影響バージョン: 14.0.5-canary.0 - 15.0.0-rc.1
-  修正: eslint-config-next@16.2.3 へのアップデートが必要
+  修正: eslint-config-next@16.2.4 へのアップデートが必要
 
 ■ @storybook/addon-controls [MODERATE]
   影響バージョン: <=0.0.0-pr-34011-sha-c45b0f3f || 6.5.17-alpha.0 - 8.2.0-beta.3
@@ -161,17 +161,17 @@ info     : 0
   修正: npm audit fix で対応可能
 
 ■ axios [CRITICAL]
-  影響バージョン: <=1.14.0
+  影響バージョン: 1.0.0 - 1.14.0
   axios Requests Vulnerable To Possible SSRF and Credential Leakage via Absolute URL
   https://github.com/advisories/GHSA-jr5f-v2jv-69x6
   Axios is vulnerable to DoS attack through lack of data size check
   https://github.com/advisories/GHSA-4hjh-wcwx-xvwj
   Axios is Vulnerable to Denial of Service via __proto__ Key in mergeConfig
   https://github.com/advisories/GHSA-43fc-jf86-j433
-  Axios has a NO_PROXY Hostname Normalization Bypass Leads to SSRF
-  https://github.com/advisories/GHSA-3p68-rc4w-qgx5
   Axios has Unrestricted Cloud Metadata Exfiltration via Header Injection Chain
   https://github.com/advisories/GHSA-fvcv-3m26-pcqx
+  Axios has a NO_PROXY Hostname Normalization Bypass Leads to SSRF
+  https://github.com/advisories/GHSA-3p68-rc4w-qgx5
   修正: npm audit fix で対応可能
 
 ■ bn.js [MODERATE]
@@ -234,7 +234,7 @@ info     : 0
 
 ■ eslint-config-next [HIGH]
   影響バージョン: 14.0.5-canary.0 - 15.0.0-rc.1
-  修正: eslint-config-next@16.2.3 へのアップデートが必要
+  修正: eslint-config-next@16.2.4 へのアップデートが必要
 
 ■ express [HIGH]
   影響バージョン: 4.0.0-rc1 - 4.21.2 || 5.0.0-alpha.1 - 5.0.1
@@ -268,7 +268,7 @@ info     : 0
   影響バージョン: 10.2.0 - 10.4.5
   glob CLI: Command injection via -c/--cmd executes matches with shell:true
   https://github.com/advisories/GHSA-5j98-mcp5-4vw2
-  修正: eslint-config-next@16.2.3 へのアップデートが必要
+  修正: eslint-config-next@16.2.4 へのアップデートが必要
 
 ■ handlebars [CRITICAL]
   影響バージョン: 4.0.0 - 4.7.8
@@ -443,7 +443,7 @@ info     : 0
   修正: npm audit fix で対応可能
 
 ■ storybook [HIGH]
-  影響バージョン: <=0.0.0-pr-34537-sha-cd66a6a9 || 6.5.17-alpha.0 - 8.2.0-beta.3
+  影響バージョン: <=0.0.0-pr-34555-sha-78a8c24a || 6.5.17-alpha.0 - 8.2.0-beta.3
   Storybook manager bundle may expose environment variables during build
   https://github.com/advisories/GHSA-8452-54wp-rmv6
   修正: npm audit fix で対応可能
